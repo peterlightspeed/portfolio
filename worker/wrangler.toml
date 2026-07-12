@@ -1,0 +1,7 @@
+name = "peter-contact-worker"
+main = "contact-worker.js"
+compatibility_date = "2024-09-23"
+
+# RESEND_API_KEY is NOT set here - it must be added as a secret after
+# deploying, via: wrangler secret put RESEND_API_KEY
+# See WORKER_DEPLOYMENT.md for the full walkthrough.

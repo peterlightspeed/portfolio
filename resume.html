@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Peter Lightspeed | Backend Developer & AI Engineer</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="View Peter Lightspeed's ATS-friendly resume online. Backend developer and AI engineer with expertise in Python, Go, FastAPI, and AI-powered SaaS products.">
+    <meta name="keywords" content="Peter Lightspeed CV, Peter Lightspeed resume, backend developer CV, Python developer resume, Go developer resume, AI engineer CV, hire Peter Lightspeed">
+    <meta name="author" content="Peter Eluwade Toluwanimi">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://peterlightspeed.github.io/portfolio/resume.html">
+     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://peterlightspeed.github.io/portfolio/resume.html">
+    <meta property="og:title" content="Resume - Peter Lightspeed">
+    <meta property="og:description" content="View Peter Lightspeed's resume online, or download the ATS-friendly PDF version.">
+    <meta property="og:image" content="https://peterlightspeed.github.io/portfolio/images/profile/peter-picture.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://peterlightspeed.github.io/portfolio/resume.html">
+    <meta property="twitter:title" content="Resume - Peter Lightspeed">
+    <meta property="twitter:description" content="View Peter Lightspeed's resume online, or download the ATS-friendly PDF version.">
+    <meta property="twitter:image" content="https://peterlightspeed.github.io/portfolio/images/profile/peter-picture.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="css/resume.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logos/peter-logo.png">
+
+    <!-- Dark Mode Styles -->
+    <link rel="stylesheet" href="css/darkmode.css">
+    <style>
+        /*Universal Mobile Responsiveness Fix */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Keep layout clean but allow sidebar to show */
+.row, .container, .container-fluid, section {
+  overflow-x: hidden !important;
+}
+
+/* Specifically allow sidebar overflow */
+.social-sidebar {
+  overflow-x: visible !important;
+}
+
+
+/* Responsive text scaling for small screens */
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+
+
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVBAR -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <div class="brand-logo me-3">
+                        <img src="images/logos/peter-logo.png" alt="Peter Logo" class="rounded-circle" width="45" height="45">
+                    </div>
+                    <div class="brand-text">
+                        <span class="fs-4 fw-bold d-none d-sm-inline">Peter Lightspeed</span>
+                        <span class="fs-4 fw-bold d-inline d-sm-none">Peter</span>
+                    </div>
+                </a>
+                
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3 active" href="#" id="navbarDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                                More
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="labs.html">
+                                    <i class="bi bi-flask me-2 text-primary"></i>Labs
+                                </a></li>
+                                <li><a class="dropdown-item" href="demo.html">
+                                    <i class="bi bi-play-circle-fill me-2 text-primary"></i>Live Demos
+                                </a></li>
+                                <li><a class="dropdown-item" href="sax.html">
+                                    <i class="bi bi-music-note-beamed me-2 text-primary"></i>Sax Services
+                                </a></li>
+                                <li><a class="dropdown-item" href="products.html">
+                                    <i class="bi bi-box-seam me-2 text-primary"></i>Products
+                                </a></li>
+                                <li><a class="dropdown-item" href="testimonials.html">
+                                    <i class="bi bi-chat-quote-fill me-2 text-primary"></i>Testimonials
+                                </a></li>
+                                <li><a class="dropdown-item" href="certifications.html">
+                                    <i class="bi bi-award-fill me-2 text-primary"></i>Certifications
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sponsor.html">
+                                    <i class="bi bi-heart-fill me-2 text-danger"></i>Sponsor Me
+                                </a></li>
+                                <li><a class="dropdown-item active" href="resume.html" aria-current="page">
+                                    <i class="bi bi-file-earmark-person-fill me-2 text-primary"></i>Resume
+                                </a></li>
+                                <li><a class="dropdown-item" href="cv.html">
+                                    <i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i>Download CV
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Contact Button (visible on larger screens) -->
+                        <li class="nav-item d-none d-lg-block ms-2">
+                            <a href="contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
+                                <i class="bi bi-envelope-fill me-1"></i> Hire Me
+                            </a>
+                        </li>
+                        <!-- Dark Mode Toggle (injected by darkmode.js) -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Breadcrumbs -->
+    <div class="bg-light py-2">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Resume</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="py-5">
+            <div class="container resume-container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 no-print">
+                    <h2 class="h3 mb-0">Resume</h2>
+                    <div class="d-flex gap-2">
+                        <a href="documents/eluwade-peter-toluwanimi-resume.pdf" class="btn btn-primary btn-sm" download>
+                            <i class="bi bi-download me-1"></i>Download Resume (PDF)
+                        </a>
+                        <button class="btn btn-outline-primary btn-sm" onclick="window.print()">
+                            <i class="bi bi-printer me-1"></i>Print
+                        </button>
+                    </div>
+                </div>
+
+                <article class="resume-sheet" data-aos="fade-up">
+                    <header class="resume-header">
+                        <h1 class="resume-name">Eluwade Peter Toluwanimi</h1>
+                        <p class="resume-headline">Backend Developer &amp; AI Engineer | Founder, PLSTech</p>
+                        <p class="resume-contact">
+                            Nigeria &nbsp;&middot;&nbsp; petereluwade55@gmail.com &nbsp;&middot;&nbsp; 08108821809
+                            &nbsp;&middot;&nbsp; <a href="index.html">peterlightspeed.github.io/portfolio</a>
+                            &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" target="_blank" rel="noopener">LinkedIn</a>
+                            &nbsp;&middot;&nbsp; <a href="https://github.com/peterlightspeed" target="_blank" rel="noopener">GitHub</a>
+                        </p>
+                    </header>
+
+                    <section class="resume-section">
+                        <h2>Summary</h2>
+                        <p>Computer Science student, backend developer, and founder of PLSTech. I build AI-powered
+                        SaaS products, backend systems, and developer tools using Python, Go, and modern web
+                        technologies, while documenting my learning journey through technical content, live coding
+                        sessions, and open-source projects. Long-term mission: building software that helps
+                        businesses automate work through practical AI.</p>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Core Skills</h2>
+                        <p><strong>Backend:</strong> Python, Go, FastAPI, Flask, REST APIs, PostgreSQL, Supabase</p>
+                        <p><strong>Frontend &amp; Tools:</strong> HTML, CSS, Bootstrap, JavaScript, Git, GitHub</p>
+                        <p><strong>AI &amp; Automation:</strong> Prompt engineering, AI integration for web (chatbots,
+                        automation), practical machine learning workflows</p>
+                        <p><strong>Currently Learning:</strong> Django, React, Next.js, Docker, Redis, Linux, Nginx,
+                        AWS, GraphQL, Microservices, CI/CD, Testing, LangChain, RAG, Vector Databases, AI Agents,
+                        System Design</p>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Flagship Projects</h2>
+
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>PLS Nexus &mdash; AI-Powered SaaS Platform</h3>
+                                <span class="resume-meta">Active Development</span>
+                            </div>
+                            <p>An AI-powered SaaS platform for entrepreneurs and small businesses, built with
+                            Python, Go, FastAPI, Flask, PostgreSQL, and Supabase. Long-term vision includes AI
+                            assistants, workflow automation, CRM, analytics, customer communication, business
+                            management, and productivity tools.</p>
+                        </div>
+
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>PLS Nexus Talent Intelligence &mdash; AI-Powered Resume Screening Backend</h3>
+                                <span class="resume-meta">Backend Developer &middot; Jul 2026 &ndash; Present</span>
+                            </div>
+                            <ul>
+                                <li>Developed a production-ready REST API using FastAPI, PostgreSQL, and SQLAlchemy Async.</li>
+                                <li>Implemented JWT authentication, secure password hashing, and protected API endpoints.</li>
+                                <li>Built a PDF resume processing pipeline supporting validation, storage, and text extraction.</li>
+                                <li>Applied Repository and Service design patterns to create a scalable backend architecture.</li>
+                                <li>Implemented comprehensive exception handling and asynchronous database operations.</li>
+                                <li>Integrated Alembic migrations and OpenAPI documentation for maintainable API development.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Work Experience</h2>
+
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>Founder &amp; SEO Blogger &mdash; PLS WorldNews</h3>
+                                <span class="resume-meta">Mar 2025 &ndash; Present &middot; Hybrid</span>
+                            </div>
+                            <ul>
+                                <li>Founded and manage a growing entertainment/news blog on Blogger.</li>
+                                <li>Write and publish 2000+ word SEO-friendly articles on trending topics.</li>
+                                <li>Implemented meta tags, internal links, and custom labels for better structure and visibility.</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>Freelance Web Developer</h3>
+                                <span class="resume-meta">Feb 2025 &ndash; Present &middot; Remote</span>
+                            </div>
+                            <ul>
+                                <li>Designed fast, mobile-friendly websites using HTML, CSS (Flexbox), and Bootstrap.</li>
+                                <li>Developed business and portfolio sites for clients, including fashion stores and media brands.</li>
+                                <li>Integrated contact forms and messaging integrations to boost client engagement.</li>
+                                <li>Trained clients on how to manage and update their websites.</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>Frontend Web Developer / Master Instructor &mdash; Camex Global Concept</h3>
+                                <span class="resume-meta">Feb 2025 &ndash; Jul 2025 &middot; Hybrid</span>
+                            </div>
+                            <ul>
+                                <li>Delivered training in front-end coding, Canva, and CapCut.</li>
+                                <li>Assisted with registration and enrollment documentation projects.</li>
+                                <li>Designed layouts for documents, ID cards, and branding materials.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Education</h2>
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>B.Sc. Computer Science (In Progress)</h3>
+                                <span class="resume-meta">Jan 2026 &ndash; Jan 2030</span>
+                            </div>
+                            <p>Lagos State University</p>
+                        </div>
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>High School Certificate (GCE)</h3>
+                                <span class="resume-meta">Sep 2023 &ndash; Jun 2025</span>
+                            </div>
+                            <p>Glory Crown International High School &mdash; President, Junior Engineers, Technologists, and Scientists (JETS) Club</p>
+                        </div>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Certifications</h2>
+                        <ul>
+                            <li>AI Bootcamp &mdash; AI Academy Africa (2025)</li>
+                            <li>Google Ads Search Certification (2025&ndash;2026)</li>
+                            <li>FreeCodeCamp Responsive Web Design (2025)</li>
+                            <li>Soft Skills Certificate &mdash; WAVE (2024)</li>
+                            <li>Trade Test Grade III, II &amp; I &mdash; Federal Ministry of Labour &amp; Productivity</li>
+                            <li>Digital Services Certificate &mdash; Camex Global Concept</li>
+                            <li>Computer Studies Certificate &mdash; WAPA Skill Acquisition Centre (2025)</li>
+                        </ul>
+                        <p class="small text-muted no-print">Full details on the <a href="certifications.html">Certifications page</a>.</p>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Additional Information</h2>
+                        <p>Typing Speed: 65+ WPM &middot; Languages: English (fluent), Basic Japanese &middot;
+                        Interests: Saxophone performance, technical content creation, open-source</p>
+                    </section>
+                </article>
+            </div>
+        </section>
+    <footer class="footer bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="footer-brand">
+                        <h4 class="fw-bold mb-3 text-white">
+                            <i class="bi bi-lightning-charge text-warning me-2"></i>
+                            Peter Lightspeed 
+                        </h4>
+                        <p class="mb-3 text-white"> 
+                        Your trusted partner for smart web development and digital solutions delivering quality, speed, and precision powered by creativity and AI.
+                        </p>
+                        
+                        <!-- Quick Stats -->
+                        <div class="footer-stats mb-3">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h6 class="fw-bold text-warning mb-0">50+</h6>
+                                        <small class=" text-light">Projects</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h6 class="fw-bold text-success mb-0">100%</h6>
+                                        <small class=" text-light">Satisfied</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h6 class="fw-bold text-info mb-0">24/7</h6>
+                                        <small class=" text-light">Support</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Newsletter Signup -->
+                        <div class="newsletter-signup">
+                            <h6 class="text-uppercase fw-bold mb-3 text-warning">Stay Updated</h6>
+                            <p class="mb-3 small">Subscribe to get notified about new projects and updates.</p>
+                            <form id="newsletterForm" action="https://formspree.io/f/meoljzde" method="POST">
+                                <div class="input-group mb-3">
+                                    <input type="email" name="email" class="form-control newsletter-input" id="newsletterEmail" 
+                                           placeholder="Enter your email" required>
+                                    <button class="btn btn-warning" type="submit" id="newsletterBtn">
+                                        <i class="bi bi-envelope"></i> Subscribe
+                                    </button>
+                                </div>
+                                <!-- Hidden fields -->
+                                <input type="hidden" name="_subject" value="New Portfolio Newsletter Subscription">
+                                <input type="hidden" name="source" value="Portfolio Website">
+                                <input type="text" name="_gotcha" style="display:none !important">
+                            </form>
+                            <div id="newsletterMessage" class="mt-2" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h6 class="text-uppercase fw-bold mb-3 text-warning">Quick Links</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a class="footer-link" href="index.html">
+                                <i class="bi bi-house me-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="about.html">
+                                <i class="bi bi-person me-2"></i>About Me
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html">
+                                <i class="bi bi-gear me-2"></i>Services
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="projects.html">
+                                <i class="bi bi-folder me-2"></i>Portfolio
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <h6 class="text-uppercase fw-bold mb-3 text-warning">My Services</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#web-development">
+                                <i class="bi bi-laptop me-2"></i>Web Development
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#graphic-design">
+                                <i class="bi bi-palette me-2"></i>Graphic Design
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#social-media">
+                                <i class="bi bi-share me-2"></i>Social Media Management
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#data-entry">
+                                <i class="bi bi-keyboard me-2"></i>Data Entry & Typing
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#content-creation">
+                                <i class="bi bi-pencil-square me-2"></i>Content Creation
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#digital-marketing">
+                                <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <h6 class="text-uppercase fw-bold mb-3 text-warning">Get In Touch</h6>
+                    
+                    <!-- Contact Information -->
+                    <div class="contact-info mb-4">
+                        <div class="contact-item mb-2">
+                            <a class="footer-link" href="mailto:petereluwade55@gmail.com">
+                                <i class="bi bi-envelope me-2"></i>
+                                petereluwade55@gmail.com
+                            </a>
+                        </div>
+                        <div class="contact-item mb-2">
+                            <a class="footer-link" href="https://wa.me/2348108821809" target="_blank">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                +234 810 882 1809
+                            </a>
+                        </div>
+                        <div class="contact-item mb-2">
+                            <span class="footer-link">
+                                <i class="bi bi-geo-alt me-2"></i>
+                                Nigeria (Remote Services)
+                            </span>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <span class="footer-link">
+                                <i class="bi bi-clock me-2"></i>
+                                Available 24/7
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="social-section">
+                        <h6 class="fw-semibold mb-3 text-white">Follow Me</h6>
+                        <div class="social-links">
+                            <a class="social-icon twitter" 
+                               href="https://x.com/peter8118533304" 
+                               target="_blank" 
+                               title="Follow me on Twitter"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            <a class="social-icon instagram" 
+                               href="https://www.instagram.com/eluwadepeter" 
+                               target="_blank" 
+                               title="Follow me on Instagram"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a class="social-icon linkedin" 
+                               href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" 
+                               target="_blank" 
+                               title="Connect on LinkedIn"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a class="social-icon tiktok" 
+                               href="https://www.tiktok.com/@eluwadepeter" 
+                               target="_blank" 
+                               title="Watch my TikTok videos"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                            <a class="social-icon youtube" 
+                               href="https://www.youtube.com/@peterlightspeedvibes" 
+                               target="_blank" 
+                               title="Subscribe to my YouTube"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a class="social-icon whatsapp" 
+                               href="https://wa.me/2348108821809" 
+                               target="_blank" 
+                               title="Chat on WhatsApp"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SOCIAL MEDIA SIDEBAR ===== -->
+<div class="social-sidebar">
+    <div class="social-sidebar-toggle" id="socialToggle">
+        <i class="bi bi-share-fill"></i>
+    </div>
+    <div class="social-sidebar-content" id="socialContent">
+        <div class="social-sidebar-header">
+            <h6>Follow Me</h6>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="social-links-sidebar">
+            <a href="https://x.com/peterlightspeed" target="_blank" rel="noopener" class="social-link twitter">
+                <i class="bi bi-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/eluwadepeter" target="_blank" rel="noopener" class="social-link instagram">
+                <i class="bi bi-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" target="_blank" rel="noopener" class="social-link linkedin">
+                <i class="bi bi-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://www.tiktok.com/@eluwadepeter" target="_blank" rel="noopener" class="social-link tiktok">
+                <i class="bi bi-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+            <a href="https://www.youtube.com/@petereluwade" target="_blank" rel="noopener" class="social-link youtube">
+                <i class="bi bi-youtube"></i>
+                <span>YouTube</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575074189195" target="_blank" rel="noopener" class="social-link facebook">
+                <i class="bi bi-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://wa.me/2348108821809" target="_blank" rel="noopener" class="social-link whatsapp">
+                <i class="bi bi-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:petereluwade55@gmail.com" class="social-link email">
+                <i class="bi bi-envelope-fill"></i>
+                <span>Email</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <small>Connect with Peter Lightspeed</small>
+        </div>
+    </div>
+</div>
+            
+
+            <!-- Footer Bottom -->
+            <hr class="my-4 border-secondary opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-light">
+                        <small>
+                            © 2026 <strong class="text-white">Eluwade Peter Toluwanimi</strong>. All rights reserved.
+                        </small>
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-bottom-links">
+                        <a href="#" class="footer-link me-3" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                            <small>Privacy Policy</small>
+                        </a>
+                        <a href="#" class="footer-link me-3" data-bs-toggle="modal" data-bs-target="#termsModal">
+                            <small>Terms of Service</small>
+                        </a>
+                        <a href="#home" class="footer-link">
+                            <small>Back to Top <i class="bi bi-arrow-up"></i></small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Built with love -->
+            <div class="text-center mt-3">
+                <small class="text-light">
+                    Built with <i class="bi bi-heart-fill text-danger"></i> by Peter Lightspeed | 
+                    Backend Developer & AI Engineer
+                </small>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Information Collection</h6>
+                    <p>I collect information you provide directly to me, such as when you contact me for services or subscribe to updates.</p>
+                    
+                    <h6>Use of Information</h6>
+                    <p>I use the information to provide services, communicate with you, and improve my offerings.</p>
+                    
+                    <h6>Information Sharing</h6>
+                    <p>I do not sell, trade, or otherwise transfer your personal information to third parties without your consent.</p>
+                    
+                    <h6>Contact</h6>
+                    <p>If you have questions about this Privacy Policy, please contact me at petereluwade55@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Service Agreement</h6>
+                    <p>By hiring my services, you agree to these terms and conditions.</p>
+                    
+                    <h6>Payment Terms</h6>
+                    <p>Payment is required as agreed upon before project commencement. Refunds are subject to project completion status.</p>
+                    
+                    <h6>Intellectual Property</h6>
+                    <p>Upon full payment, you own the rights to the delivered work. I retain the right to showcase the work in my portfolio.</p>
+                    
+                    <h6>Limitation of Liability</h6>
+                    <p>I strive for excellence but cannot guarantee specific results. My liability is limited to the amount paid for services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-banner">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-md-8">
+                    <p class="mb-md-0">This website uses cookies to improve your experience and analyze traffic. 
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Learn more</a></p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button onclick="acceptCookies()" class="btn btn-light">Accept</button>
+                    <button onclick="declineCookies()" class="btn btn-outline-light ms-2">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Download Tracking Modal -->
+    <div class="modal fade" id="downloadTrackingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thank You for Downloading</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you for downloading my CV. If you have any questions or would like to discuss potential opportunities, please don't hesitate to reach out.</p>
+                    <form id="downloadTrackingForm" action="https://formspree.io/f/meoljzde" method="POST">
+                        <div class="mb-3">
+                            <label for="trackingName" class="form-label">Your Name (Optional)</label>
+                            <input type="text" class="form-control" id="trackingName" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trackingEmail" class="form-label">Your Email (Optional)</label>
+                            <input type="email" class="form-control" id="trackingEmail" name="email">
+                            <div class="form-text">Share your email if you'd like me to follow up with you.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="trackingCompany" class="form-label">Company (Optional)</label>
+                            <input type="text" class="form-control" id="trackingCompany" name="company">
+                        </div>
+                        
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="_subject" value="CV Download Tracking">
+                        <input type="hidden" name="downloadType" id="downloadType" value="">
+                        <input type="hidden" name="source" value="CV Page">
+                        <input type="text" name="_gotcha" style="display:none !important">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Skip</button>
+                    <button type="button" class="btn btn-primary" id="submitTrackingBtn">Submit & Continue Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Core JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- Dark Mode -->
+    <script src="js/darkmode.js"></script>
+    
+    <!-- Page-specific JavaScript -->
+    <script src="js/newsletter.js"></script>
+    <script src="js/resume.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NKNYWDH33"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Only initialize if consent was given
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            gtag('config', 'G-9NKNYWDH33');
+        }
+    </script>
+
+<script src="js/bot.js"></script>

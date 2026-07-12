@@ -1,0 +1,85 @@
+/* Labs page styles */
+
+.lab-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.lab-card-placeholder {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px dashed #ced4da;
+    box-shadow: none;
+}
+
+.typing-sample {
+    background: #f8f9fa;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    border: 1px solid #e9ecef;
+}
+
+.palette-swatch {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 6px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.palette-swatch:hover {
+    transform: translateY(-3px);
+}
+
+.palette-swatch span {
+    background: rgba(255, 255, 255, 0.85);
+    color: #212529;
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+@media (max-width: 576px) {
+    .palette-swatch {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Take a Short Break / Snake */
+.lab-card-break {
+    background: #fff;
+    border: 1px solid #e9ecef;
+}
+
+.snake-canvas {
+    background: #0f1115;
+    border-radius: 8px;
+    max-width: 100%;
+    touch-action: none;
+    outline-offset: 3px;
+}
+
+.snake-canvas:focus-visible {
+    outline: 3px solid #0d6efd;
+}
+
+.snake-dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.snake-dpad-btn {
+    width: 44px;
+    height: 44px;
+}

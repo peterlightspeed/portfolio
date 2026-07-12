@@ -1,0 +1,1255 @@
+/* =====================================================================
+   GLOBAL STYLES & RESETS
+   ===================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Smooth scrolling behavior for anchor links */
+    scroll-behavior: smooth;
+    /* Offset for fixed navbar to prevent content from being hidden */
+    scroll-padding-top: 70px; 
+}
+
+body {
+    /* Main typography and font smoothing */
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     overflow-x: hidden;
+    /* Main fade-in animation for the entire page */
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Base image styling for responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Base button styling */
+.btn {
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 12px rgba(220, 53, 69, 0.4);
+    color: white;
+}
+
+/* Navbar Styling */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+/* Prevent the navbar from ever wrapping into a second line on large screens.
+   Bootstrap's navbar-expand-lg only collapses below 992px; between 992px and
+   ~1300px, if content doesn't fit it can wrap unless we explicitly forbid it. */
+@media (min-width: 992px) {
+    .navbar > .container {
+        flex-wrap: nowrap;
+    }
+
+    .navbar-collapse {
+        flex-wrap: nowrap;
+    }
+
+    .navbar-nav {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+        white-space: nowrap;
+    }
+}
+
+/* Tighter zone (992px-1199px): reduce padding/font-size slightly instead of
+   letting anything wrap. Bootstrap Icons + text still fit comfortably since
+   the nav was trimmed to 5 top-level items + More. */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar-nav .nav-link {
+        padding-left: 0.6rem !important;
+        padding-right: 0.6rem !important;
+        font-size: 0.92rem;
+    }
+
+    .navbar-nav .nav-item.d-lg-block .btn {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Brand logo styling */
+.brand-logo {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.brand-logo img {
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar-brand:hover .brand-logo img {
+    transform: scale(1.1);
+}
+
+/* Navigation links styling */
+.navbar-nav .nav-link {
+    position: relative;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 70%;
+    opacity: 1;
+}
+
+/* Active navigation styling */
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    font-weight: 600;
+    position: relative;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.3s ease;
+}
+
+.dropdown-item {
+    padding: 0.7rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.dropdown-divider {
+    margin: 0.5rem 0;
+}
+
+/* =====================================================================
+   CARDS & PROJECTS
+   ===================================================================== */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 25px;
+    background: #ffffff;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.project-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.tech-badge {
+    background-color: #0d6efd;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+/* =====================================================================
+   HEADINGS
+   ===================================================================== */
+h2 {
+    font-weight: bold;
+    text-align: center;
+    color: #212529;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #0d6efd;
+    border-radius: 2px;
+}
+
+/* =====================================================================
+   SOCIAL MEDIA ICONS & BUTTONS
+   ===================================================================== */
+/* Social media icon styling (footer) */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    margin: 10px 5px 10px 5px;
+}
+
+/* Individual social media colors for icons */
+.social-icon.twitter { background-color: #1da1f2; }
+.social-icon.instagram {
+    background-color: #e1306c;
+}
+.social-icon.linkedin { background-color: #0077b5; }
+.social-icon.tiktok { background-color: #000000; }
+.social-icon.youtube { background-color: #ff0000; }
+.social-icon.whatsapp { background-color: #25d366; }
+
+/* Social icon hover effects */
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: white !important;
+}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.footer {
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #0d6efd;
+}
+
+.footer-brand {
+    position: relative;
+}
+
+.footer-stats .stat-item {
+    padding: 0.75rem 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+.footer-stats .stat-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(13, 110, 253, 0.5);
+}
+
+/* Newsletter Signup Styles */
+.newsletter-signup {
+    background: rgba(13, 110, 253, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(13, 110, 253, 0.25);
+    margin-top: 1rem;
+}
+
+.newsletter-input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #333 !important;
+    font-size: 0.9rem;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.newsletter-input:focus {
+    background: rgba(255, 255, 255, 1) !important;
+    border-color: #0d6efd !important;
+    color: #333 !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
+}
+
+.newsletter-signup .btn-warning {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.newsletter-signup .btn-warning:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+}
+
+.footer-link {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    color: #5ba4ff;
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+.footer-link i {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover i {
+    opacity: 1;
+}
+
+.contact-item {
+    transition: all 0.3s ease;
+    padding: 0.25rem 0;
+}
+
+.contact-item:hover {
+    transform: translateX(3px);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    margin-bottom: 70px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    right: 0;
+    margin-right: 15px;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+    font-size: 1.2rem;
+}
+
+.back-to-top:hover {
+    background: #ffcd39;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 110, 253, 0.95);
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.cookie-banner.show {
+    display: block;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================================
+   ANIMATIONS
+   ===================================================================== */
+/* Main page content fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Secondary fade-in animation for elements */
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================================
+   RESPONSIVE DESIGN
+   ===================================================================== */
+/* Mobile responsive adjustments for screens up to 768px wide */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .footer .col-md-3 {
+        text-align: center !important;
+        margin-bottom: 2rem;
+    }
+
+    .footer h6.text-warning::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive adjustments for screens up to 576px wide */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Fix navbar on mobile */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(13, 110, 253, 0.95);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    .dropdown-menu {
+        background-color: rgba(13, 110, 253, 0.95) !important;
+    }
+    
+    .dropdown-item {
+        color: white !important;
+    }
+    
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+}
+
+/* =====================================================================
+   SOCIAL MEDIA SIDEBAR
+   ===================================================================== */
+.social-sidebar {
+    position: fixed;
+    top: 50%;
+    right: -280px; 
+    max-width: 100%;
+    transform: translateY(-50%);
+    z-index: 1060;
+    transition: right 0.3s ease-in-out;
+}
+
+.social-sidebar.active {
+    right: 0;
+}
+
+.social-sidebar-toggle {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #0d6efd;
+    border-radius: 25px 0 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.social-sidebar-toggle:hover {
+    left: -45px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-sidebar-toggle i {
+    color: white;
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.social-sidebar-content {
+    width: 280px;
+    height: auto;
+    max-height: 80vh;
+    background-color: #ffffff;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    border: 1px solid #e9ecef;
+}
+
+.social-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 15px 0 0 0;
+}
+
+.social-sidebar-header h6 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-links-sidebar {
+    padding: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    color: #495057;
+    border: 1px solid transparent;
+}
+
+.social-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.social-link i {
+    font-size: 1.3rem;
+    width: 30px;
+    margin-right: 1rem;
+}
+
+.social-link span {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Individual social media colors */
+.social-link.twitter:hover {
+    background-color: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.social-link.instagram:hover {
+    background-color: #e1306c;
+    border-color: #e1306c;
+}
+
+.social-link.linkedin:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+}
+
+.social-link.tiktok:hover {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.social-link.youtube:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+.social-link.facebook:hover {
+    background-color: #1877f2;
+    border-color: #1877f2;
+}
+
+.social-link.whatsapp:hover {
+    background-color: #25d366;
+    border-color: #25d366;
+}
+
+.social-link.email:hover {
+    background-color: #ea4335;
+    border-color: #ea4335;
+}
+
+.sidebar-footer {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 0 0 0 15px;
+    border-top: 1px solid #e9ecef;
+}
+
+.sidebar-footer small {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .social-sidebar {
+        right: -250px;
+    }
+    
+    .social-sidebar-content {
+        width: 250px;
+    }
+    
+    .social-sidebar-toggle {
+        left: -45px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-sidebar-toggle i {
+        font-size: 1rem;
+    }
+    
+    .social-links-sidebar {
+        padding: 1rem;
+    }
+    
+    .social-link {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .social-link i {
+        font-size: 1.1rem;
+        width: 25px;
+        margin-right: 0.8rem;
+    }
+    
+    .social-link span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .social-sidebar-content {
+    background-color: #1e1e1e;
+    border-color: #404040;
+}
+
+[data-theme="dark"] .social-link {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .sidebar-footer {
+    background-color: #404040;
+    border-color: #555555;
+}
+
+[data-theme="dark"] .sidebar-footer small {
+    color: #adb5bd;
+}
+
+/* Smooth scrollbar for sidebar */
+.social-sidebar-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.social-sidebar-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.social-sidebar-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.social-sidebar-content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Animation for social links */
+.social-link {
+    position: relative;
+     overflow: hidden; 
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.social-link:hover::before {
+    left: 100%;
+}
+
+/* Notification badge */
+.social-sidebar-toggle::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #ff4757;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Hide notification after first interaction */
+.social-sidebar.interacted .social-sidebar-toggle::after {
+    display: none;
+}
+/* Ensure sidebar toggle remains visible */
+.social-sidebar-toggle {
+  z-index: 1100;
+}
+
+/* Fix hero text overlap */
+.hero-section h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section .lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+}
+/* =====================================================================
+   PROFESSIONAL LOADING SCREEN
+   ===================================================================== */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d6efd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-container {
+    text-align: center;
+    color: white;
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-loader {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    animation: logoFloat 3s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading-progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 280px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.loading-text {
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    opacity: 0.9;
+    animation: textPulse 2s ease-in-out infinite;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.progress-percentage {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+@keyframes logoFloat {
+    0%, 100% { 
+        transform: translateY(0px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    50% { 
+        transform: translateY(-10px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes textPulse {
+    0%, 100% { opacity: 0.75; }
+    50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .loading-container {
+        padding: 1rem;
+    }
+    
+    .loading-logo {
+        width: 80px;
+        height: 80px;
+        padding: 12px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+    
+    .progress-bar {
+        width: 220px;
+        height: 5px;
+    }
+    
+    .loading-text {
+        font-size: 1rem;
+    }
+    
+    .progress-percentage {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-logo {
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .progress-bar {
+        width: 180px;
+    }
+    
+    .loading-text {
+        font-size: 0.9rem;
+    }
+}
+
+.loading-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+/* Ensure sidebar toggle remains visible */
+.social-sidebar-toggle {
+  z-index: 1100;
+}
+
+
+/* =====================================================================
+   VISUAL ENHANCEMENTS - Professional Backgrounds & Images
+   ===================================================================== */
+
+/* Professional Summary Background */
+#summary {
+    background: 
+        linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)),
+        url('../images/backgrounds/summary-background.jpg') center/cover no-repeat fixed;
+    position: relative;
+}
+
+/* Service Cards with Images */
+.service-preview-card {
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.service-preview-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+}
+
+/* Testimonials Section Background */
+#testimonials-preview {
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+        url('../images/backgrounds/testimonials-background.jpg') center/cover no-repeat fixed;
+    position: relative;
+}
+
+/* Contact CTA Background */
+#contact-preview {
+    background: 
+        linear-gradient(rgba(13, 110, 253, 0.9), rgba(10, 88, 202, 0.9)),
+        url('../images/backgrounds/contact-cta.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+/* Stat Cards Enhancement */
+.stat-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ============================================================
+   SHARED TOAST NOTIFICATIONS
+   Used by: take-a-break reminder (script.js), Labs "hire me"
+   nudge (labs.js). One shared component, styled once.
+   ============================================================ */
+.pl-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    max-width: 340px;
+    background: #fff;
+    color: #212529;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    padding: 1rem 1.1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    z-index: 1080;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-left: 4px solid #0d6efd;
+}
+
+.pl-toast-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pl-toast-icon {
+    font-size: 1.4rem;
+    color: #0d6efd;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.pl-toast-body strong {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.pl-toast-body p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #555;
+}
+
+.pl-toast-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.pl-toast-close:hover {
+    color: #333;
+}
+
+.pl-toast-cta {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .pl-toast {
+        left: 16px;
+        right: 16px;
+        max-width: none;
+        bottom: 16px;
+    }
+}
+
+/* Respect dark mode if the toast happens to render while dark mode is active */
+body.dark-mode .pl-toast {
+    background: #1e1e2f;
+    color: #f1f1f1;
+}
+
+body.dark-mode .pl-toast-body p {
+    color: #cfcfcf;
+}

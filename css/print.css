@@ -1,0 +1,64 @@
+/* Print-only styles. Loaded via <link media="print"> so this never affects on-screen rendering. */
+
+@media print {
+    /* Hide site chrome that has no place on a printed page */
+    nav.navbar,
+    nav[aria-label="breadcrumb"],
+    footer.footer,
+    .social-sidebar,
+    #cookieConsent,
+    .no-print,
+    #chatbot-container,
+    #chatbot-toggle,
+    .back-to-top,
+    #backToTop {
+        display: none !important;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .resume-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .resume-sheet {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+    }
+
+    .resume-header {
+        border-bottom: 2px solid #000 !important;
+    }
+
+    .resume-headline,
+    .resume-section h2 {
+        color: #000 !important;
+    }
+
+    .resume-contact a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    a[href]::after {
+        content: none !important;
+    }
+
+    .resume-section {
+        page-break-inside: avoid;
+    }
+
+    @page {
+        margin: 1.5cm;
+    }
+}

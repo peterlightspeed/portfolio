@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional software products by PLSTech — AI-powered data tools built for growing businesses and enterprise worldwide. PLS Nigerian SMB Data Sanitizer and PLS Business Intelligence Suite.">
+    <meta name="keywords" content="PLSTech, Peter Eluwade, data sanitizer, business intelligence software, SMB software, AI data tools, Python software, data cleaning tools">
+    <meta name="author" content="Peter Eluwade">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://peterlightspeed.github.io/portfolio/products.html">
+    <title>Products | PLSTech — Peter Lightspeed</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://peterlightspeed.github.io/portfolio/products.html">
+    <meta property="og:title" content="Products | PLSTech — Professional AI & Data Software">
+    <meta property="og:description" content="Professional AI-powered data tools built for growing businesses — PLS Nigerian SMB Data Sanitizer and PLS Business Intelligence Suite by Peter Eluwade.">
+    <meta property="og:image" content="images/logos/peter-logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Products | PLSTech">
+    <meta name="twitter:description" content="Professional AI-powered data tools for growing businesses and modern organizations by Peter Eluwade.">
+    <meta name="twitter:image" content="images/logos/peter-logo.png">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Portfolio Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Dark Mode Styles -->
+    <link rel="stylesheet" href="css/darkmode.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logos/peter-logo.png">
+
+    <style>
+        .product-hero {
+            background: linear-gradient(135deg, #0a1f44 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 5rem 0 4rem;
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 16px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.13) !important;
+        }
+
+        .product-section-header {
+            border-left: 4px solid #0d6efd;
+            padding-left: 1rem;
+        }
+
+        .edition-card {
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+        }
+
+        .edition-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .edition-card.community { border-top: 4px solid #198754; }
+        .edition-card.pro       { border-top: 4px solid #0d6efd; }
+        .edition-card.web       { border-top: 4px solid #6f42c1; }
+
+        .edition-badge-community { background: #d1f5d3; color: #155724; font-weight: 700; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
+        .edition-badge-pro       { background: #dbeafe; color: #1e40af; font-weight: 700; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
+        .edition-badge-web       { background: #ede9fe; color: #5b21b6; font-weight: 700; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
+
+        .status-available   { background: #d1f5d3; color: #155724; }
+        .status-coming-soon { background: #fef3c7; color: #92400e; }
+
+        body.dark-mode .edition-card { background: #1a1a2e; border-color: #2d2d4e; }
+        body.dark-mode .edition-badge-community { background: #0d2a10; color: #6ee07a; }
+        body.dark-mode .edition-badge-pro       { background: #0f1e3d; color: #7cb3ff; }
+        body.dark-mode .edition-badge-web       { background: #1e1040; color: #c4b5fd; }
+        body.dark-mode .status-available        { background: #0d2a10; color: #6ee07a; }
+        body.dark-mode .status-coming-soon      { background: #2a1f00; color: #fbbf24; }
+
+        .tech-pill {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            background: #e8f0fe;
+            color: #1a3a6e;
+            margin: 2px;
+        }
+
+        body.dark-mode .tech-pill { background: #1a3a6e; color: #9dc3ff; }
+
+        .stat-strip { background: #f8f9fa; border-radius: 12px; }
+        body.dark-mode .stat-strip { background: #1e1e1e; }
+        .stat-number { font-size: 2rem; font-weight: 700; color: #0d6efd; }
+
+        /* Roadmap */
+        .roadmap-section { background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%); }
+        body.dark-mode .roadmap-section { background: #111827; }
+
+        .roadmap-timeline { position: relative; padding-left: 2rem; }
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.6rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #0d6efd, #6f42c1);
+            border-radius: 3px;
+        }
+
+        .roadmap-item { position: relative; margin-bottom: 2.5rem; }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -1.65rem;
+            top: 0.4rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #0d6efd40;
+        }
+        body.dark-mode .roadmap-item::before { border-color: #1a1a2e; }
+
+        .roadmap-quarter {
+            display: inline-block;
+            background: #0d6efd;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+
+        .roadmap-card {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        body.dark-mode .roadmap-card { background: #1a1a2e; border-color: #2d2d4e; }
+
+        .roadmap-card-icon { font-size: 1.4rem; flex-shrink: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <div class="brand-logo me-3">
+                        <img src="images/logos/peter-logo.png" alt="Peter Logo" class="rounded-circle" width="45" height="45">
+                    </div>
+                    <div class="brand-text">
+                        <span class="fs-4 fw-bold d-none d-sm-inline">Peter Lightspeed</span>
+                        <span class="fs-4 fw-bold d-inline d-sm-none">Peter</span>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3 active" href="#" id="navbarDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                                More
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="labs.html">
+                                    <i class="bi bi-flask me-2 text-primary"></i>Labs
+                                </a></li>
+                                <li><a class="dropdown-item" href="demo.html">
+                                    <i class="bi bi-play-circle-fill me-2 text-primary"></i>Live Demos
+                                </a></li>
+                                <li><a class="dropdown-item" href="sax.html">
+                                    <i class="bi bi-music-note-beamed me-2 text-primary"></i>Sax Services
+                                </a></li>
+                                <li><a class="dropdown-item active" href="products.html" aria-current="page">
+                                    <i class="bi bi-box-seam me-2 text-primary"></i>Products
+                                </a></li>
+                                <li><a class="dropdown-item" href="testimonials.html">
+                                    <i class="bi bi-chat-quote-fill me-2 text-primary"></i>Testimonials
+                                </a></li>
+                                <li><a class="dropdown-item" href="certifications.html">
+                                    <i class="bi bi-award-fill me-2 text-primary"></i>Certifications
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sponsor.html">
+                                    <i class="bi bi-heart-fill me-2 text-danger"></i>Sponsor Me
+                                </a></li>
+                                <li><a class="dropdown-item" href="resume.html">
+                                    <i class="bi bi-file-earmark-person-fill me-2 text-primary"></i>Resume
+                                </a></li>
+                                <li><a class="dropdown-item" href="cv.html">
+                                    <i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i>Download CV
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Contact Button (visible on larger screens) -->
+                        <li class="nav-item d-none d-lg-block ms-2">
+                            <a href="contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
+                                <i class="bi bi-envelope-fill me-1"></i> Hire Me
+                            </a>
+                        </li>
+                        <!-- Dark Mode Toggle (injected by darkmode.js) -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb" class="bg-light border-bottom py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Products</li>
+            </ol>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="product-hero text-center">
+            <div class="container" data-aos="fade-up">
+                <span class="badge bg-light text-primary mb-3 px-3 py-2 fs-6">
+                    <i class="bi bi-building me-1"></i> PLSTech
+                </span>
+                <h1 class="display-5 fw-bold mb-3">Professional Software Products</h1>
+                <p class="lead mb-4" style="max-width:620px;margin:auto;">
+                    Enterprise-grade AI and data tools built to solve real-world business challenges at scale.
+                    Engineered by Peter Eluwade to deliver reliable results for growing organizations.
+                </p>
+                <a href="#product-list" class="btn btn-light btn-lg text-primary fw-bold px-4">
+                    <i class="bi bi-box-seam me-2"></i>Explore Products
+                </a>
+            </div>
+        </section>
+
+        <!-- STATS STRIP -->
+        <section class="py-4">
+            <div class="container">
+                <div class="stat-strip p-4">
+                    <div class="row text-center g-4">
+                        <div class="col-4">
+                            <div class="stat-number">2</div>
+                            <div class="text-muted small">Software Products</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number"><i class="bi bi-cpu-fill"></i></div>
+                            <div class="text-muted small">AI-Powered</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number"><i class="bi bi-globe2"></i></div>
+                            <div class="text-muted small">Built for Scale</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS LIST -->
+        <section id="product-list" class="py-5">
+            <div class="container">
+
+                <!-- ── PRODUCT 1 ───────────────────────────────── -->
+                <div class="mb-5" data-aos="fade-up" id="smb-sanitizer">
+                    <div class="product-section-header mb-2">
+                        <span class="badge bg-success mb-2">Python / Pandas / AI</span>
+                        <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                            <i class="bi bi-funnel-fill text-success"></i>
+                            PLS Nigerian SMB Data Sanitizer
+                        </h2>
+                        <p class="text-muted mb-0">
+                            A Python/Pandas toolkit that cleans, normalises, and validates messy business data —
+                            phone numbers, names, addresses, and currencies — in seconds.
+                            Built for growing organizations that inherit spreadsheet chaos.
+                        </p>
+                    </div>
+                    <div class="mb-3">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Pandas</span>
+                        <span class="tech-pill">Data Cleaning</span>
+                        <span class="tech-pill">Regex</span>
+                        <span class="tech-pill">CLI</span>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Community Edition -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="edition-card community p-4 d-flex flex-column">
+                                <span class="badge edition-badge-community mb-3 align-self-start px-2 py-1">Community Edition</span>
+                                <h5 class="fw-bold mb-2">Community</h5>
+                                <ul class="list-unstyled small text-muted flex-grow-1 mb-3">
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Phone number normalisation</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Address and contact-data standardization</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Currency formatting</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>CLI tool included</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>MIT Licensed</li>
+                                </ul>
+                                <div class="mb-3">
+                                    <span class="badge status-available px-2 py-1">
+                                        <i class="bi bi-check-circle me-1"></i>Available Now
+                                    </span>
+                                </div>
+                                <a href="https://github.com/peterlightspeed" target="_blank" rel="noopener"
+                                   class="btn btn-success btn-sm fw-semibold">
+                                    <i class="bi bi-github me-1"></i>View on GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Pro Edition -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="edition-card pro p-4 d-flex flex-column">
+                                <span class="badge edition-badge-pro mb-3 align-self-start px-2 py-1">Pro Edition</span>
+                                <h5 class="fw-bold mb-2">Pro</h5>
+                                <ul class="list-unstyled small text-muted flex-grow-1 mb-3">
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Everything in Community</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>AI-powered duplicate detection</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Bulk CSV / Excel processing</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>REST API integration</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Priority support</li>
+                                </ul>
+                                <div class="mb-3">
+                                    <span class="badge status-coming-soon px-2 py-1">
+                                        <i class="bi bi-clock me-1"></i>Coming September 2026
+                                    </span>
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm fw-semibold" disabled>
+                                    <i class="bi bi-hourglass-split me-1"></i>Coming Soon
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Web Edition -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="edition-card web p-4 d-flex flex-column">
+                                <span class="badge edition-badge-web mb-3 align-self-start px-2 py-1">Web Edition</span>
+                                <h5 class="fw-bold mb-2">Web App</h5>
+                                <ul class="list-unstyled small text-muted flex-grow-1 mb-3">
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-purple me-1" style="color:#6f42c1"></i>Everything in Pro</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>Browser-based dashboard</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>Team collaboration</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>Cloud data storage</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>Scheduled cleaning jobs</li>
+                                </ul>
+                                <div class="mb-3">
+                                    <span class="badge status-coming-soon px-2 py-1">
+                                        <i class="bi bi-clock me-1"></i>Coming September 2026
+                                    </span>
+                                </div>
+                                <button class="btn btn-outline-secondary btn-sm fw-semibold" disabled>
+                                    <i class="bi bi-hourglass-split me-1"></i>Coming Soon
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
+                <!-- ── PRODUCT 2 ───────────────────────────────── -->
+                <div class="mb-5" data-aos="fade-up" id="bi-suite">
+                    <div class="product-section-header mb-2">
+                        <span class="badge bg-primary mb-2">Python / SQL / Power BI</span>
+                        <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                            <i class="bi bi-bar-chart-fill text-primary"></i>
+                            PLS Business Intelligence Suite
+                        </h2>
+                        <p class="text-muted mb-0">
+                            A full-stack Business Intelligence platform designed for growing organizations and modern businesses — from raw data ingestion
+                            to automated reports, KPI dashboards, and executive-ready insights. No enterprise budget required.
+                        </p>
+                    </div>
+                    <div class="mb-3">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">SQL</span>
+                        <span class="tech-pill">Power BI</span>
+                        <span class="tech-pill">Pandas</span>
+                        <span class="tech-pill">Data Engineering</span>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Community Edition -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="edition-card community p-4 d-flex flex-column">
+                                <span class="badge edition-badge-community mb-3 align-self-start px-2 py-1">Community Edition</span>
+                                <h5 class="fw-bold mb-2">Community</h5>
+                                <ul class="list-unstyled small text-muted flex-grow-1 mb-3">
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Core BI pipeline</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Pre-built KPI templates</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>CSV/Excel data sources</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Basic charting</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>MIT Licensed</li>
+                                </ul>
+                                <div class="mb-3">
+                                    <span class="badge status-coming-soon px-2 py-1">
+                                        <i class="bi bi-clock me-1"></i>Coming Soon
+                                    </span>
+                                </div>
+                                <button class="btn btn-outline-success btn-sm fw-semibold" disabled>
+                                    <i class="bi bi-hourglass-split me-1"></i>Coming Soon
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pro Edition -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="edition-card pro p-4 d-flex flex-column">
+                                <span class="badge edition-badge-pro mb-3 align-self-start px-2 py-1">Pro Edition</span>
+                                <h5 class="fw-bold mb-2">Pro</h5>
+                                <ul class="list-unstyled small text-muted flex-grow-1 mb-3">
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Everything in Community</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Advanced ML forecasting</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Multi-database connectors</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Automated PDF reports</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-1"></i>Priority support</li>
+                                </ul>
+                                <div class="mb-3">
+                                    <span class="badge status-coming-soon px-2 py-1">
+                                        <i class="bi bi-clock me-1"></i>Coming September 2026
+                                    </span>
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm fw-semibold" disabled>
+                                    <i class="bi bi-hourglass-split me-1"></i>Coming Soon
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Web Edition -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="edition-card web p-4 d-flex flex-column">
+                                <span class="badge edition-badge-web mb-3 align-self-start px-2 py-1">Web Edition</span>
+                                <h5 class="fw-bold mb-2">Web App</h5>
+                                <ul class="list-unstyled small text-muted flex-grow-1 mb-3">
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>Everything in Pro</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>Live web dashboards</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>Real-time data sync</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>User role management</li>
+                                    <li class="mb-1"><i class="bi bi-check-circle-fill me-1" style="color:#6f42c1"></i>White-label option</li>
+                                </ul>
+                                <div class="mb-3">
+                                    <span class="badge status-coming-soon px-2 py-1">
+                                        <i class="bi bi-clock me-1"></i>Coming September 2026
+                                    </span>
+                                </div>
+                                <button class="btn btn-outline-secondary btn-sm fw-semibold" disabled>
+                                    <i class="bi bi-hourglass-split me-1"></i>Coming Soon
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRODUCT ROADMAP -->
+        <section class="py-5 roadmap-section" id="roadmap">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-primary mb-2 px-3 py-2">Product Roadmap</span>
+                    <h2 class="fw-bold">What's Coming</h2>
+                    <p class="text-muted">Upcoming releases for PLSTech products</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="roadmap-timeline" data-aos="fade-up">
+
+                            <!-- Q3 2026 -->
+                            <div class="roadmap-item">
+                                <span class="roadmap-quarter">2026 Q3 — July to September</span>
+                                <div class="roadmap-card">
+                                    <span class="roadmap-card-icon text-success"><i class="bi bi-funnel-fill"></i></span>
+                                    <div>
+                                        <div class="fw-semibold small">PLS Nigerian SMB Data Sanitizer</div>
+                                        <div class="text-muted" style="font-size:0.82rem;">Pro Edition Launch</div>
+                                    </div>
+                                    <span class="badge status-coming-soon ms-auto px-2 py-1" style="font-size:0.72rem;">Sep 2026</span>
+                                </div>
+                                <div class="roadmap-card">
+                                    <span class="roadmap-card-icon text-purple"><i class="bi bi-funnel-fill" style="color:#6f42c1"></i></span>
+                                    <div>
+                                        <div class="fw-semibold small">PLS Nigerian SMB Data Sanitizer</div>
+                                        <div class="text-muted" style="font-size:0.82rem;">Web Edition Launch</div>
+                                    </div>
+                                    <span class="badge status-coming-soon ms-auto px-2 py-1" style="font-size:0.72rem;">Sep 2026</span>
+                                </div>
+                                <div class="roadmap-card">
+                                    <span class="roadmap-card-icon text-success"><i class="bi bi-bar-chart-fill"></i></span>
+                                    <div>
+                                        <div class="fw-semibold small">PLS Business Intelligence Suite</div>
+                                        <div class="text-muted" style="font-size:0.82rem;">Community Edition Launch</div>
+                                    </div>
+                                    <span class="badge status-coming-soon ms-auto px-2 py-1" style="font-size:0.72rem;">Sep 2026</span>
+                                </div>
+                            </div>
+
+                            <!-- Q4 2026 -->
+                            <div class="roadmap-item">
+                                <span class="roadmap-quarter" style="background:#6f42c1;">2026 Q4 — October to December</span>
+                                <div class="roadmap-card">
+                                    <span class="roadmap-card-icon text-primary"><i class="bi bi-bar-chart-fill"></i></span>
+                                    <div>
+                                        <div class="fw-semibold small">PLS Business Intelligence Suite</div>
+                                        <div class="text-muted" style="font-size:0.82rem;">Pro Edition Launch</div>
+                                    </div>
+                                    <span class="badge status-coming-soon ms-auto px-2 py-1" style="font-size:0.72rem;">Q4 2026</span>
+                                </div>
+                                <div class="roadmap-card">
+                                    <span class="roadmap-card-icon" style="color:#6f42c1;"><i class="bi bi-bar-chart-fill"></i></span>
+                                    <div>
+                                        <div class="fw-semibold small">PLS Business Intelligence Suite</div>
+                                        <div class="text-muted" style="font-size:0.82rem;">Web Edition Launch</div>
+                                    </div>
+                                    <span class="badge status-coming-soon ms-auto px-2 py-1" style="font-size:0.72rem;">Q4 2026</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA STRIP -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container text-center" data-aos="fade-up">
+                <h2 class="fw-bold mb-3">Need a Custom Software Solution?</h2>
+                <p class="lead mb-4">Peter builds bespoke AI tools, data pipelines, and automation systems for businesses. Let's talk about your requirements.</p>
+                <a href="contact.html" class="btn btn-light btn-lg text-primary fw-bold px-4">
+                    <i class="bi bi-chat-dots-fill me-2"></i>Get in Touch
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <img loading="lazy" src="images/logos/peter-logo.png" alt="Peter Lightspeed" class="rounded-circle me-2" width="40" height="40">
+                        <span class="fs-5 fw-bold text-white">Peter Lightspeed</span>
+                    </div>
+                    <p class="footer-description">Founder of PLSTech — AI, data engineering, and web development professional based in Nigeria.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="footer-title h6 mb-3">Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
+                        <li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
+                        <li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
+                        <li class="mb-2"><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="footer-title h6 mb-3">Connect</h3>
+                    <div class="social-links">
+                        <a href="https://x.com/peterlightspeed" target="_blank" rel="noopener" class="footer-social-link me-3">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/eluwadepeter" target="_blank" rel="noopener" class="footer-social-link me-3">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" target="_blank" rel="noopener" class="footer-social-link me-3">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/peterlightspeed" target="_blank" rel="noopener" class="footer-social-link">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color:rgba(255,255,255,0.2)">
+            <p class="text-center text-muted mb-0" style="font-size:0.875rem;">
+                &copy; 2026 Peter Lightspeed / PLSTech. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Portfolio Core JS -->
+    <script src="js/script.js"></script>
+    <!-- Dark Mode -->
+    <script src="js/darkmode.js"></script>
+    <!-- Chatbot -->
+    <script src="js/bot.js"></script>
+
+    <script>
+        AOS.init({ duration: 700, once: true });
+    </script>
+</body>
+</html>

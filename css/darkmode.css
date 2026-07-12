@@ -1,0 +1,698 @@
+/**
+ * DARK MODE STYLES
+ * ================
+ * Applied when <body> has the class "dark-mode".
+ * Smooth transition on all major properties.
+ *
+ * HOW TO CUSTOMIZE DARK COLORS:
+ * - Background:  change --dm-bg
+ * - Card color:  change --dm-card
+ * - Text:        change --dm-text
+ * - Muted text:  change --dm-muted
+ */
+
+:root {
+  --dm-bg:     #121212;
+  --dm-card:   #1E1E1E;
+  --dm-card2:  #252525;
+  --dm-text:   #FFFFFF;
+  --dm-muted:  #B3B3B3;
+  --dm-border: #333333;
+  --dm-input:  #2a2a2a;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Body ─────────────────────────────────────────────── */
+body.dark-mode {
+  background-color: var(--dm-bg) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ── Typography ───────────────────────────────────────── */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode label,
+body.dark-mode td,
+body.dark-mode th {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode span:not(.badge):not(.tech-badge):not(.tech-pill):not(.product-tag):not(.status-open-source):not(.status-template):not(.status-coming-soon):not(.navbar-toggler-icon) {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .text-muted,
+body.dark-mode .card-description,
+body.dark-mode small {
+  color: var(--dm-muted) !important;
+}
+
+body.dark-mode .text-dark {
+  color: var(--dm-text) !important;
+}
+
+/* ── Cards ────────────────────────────────────────────── */
+body.dark-mode .card,
+body.dark-mode .skills-card,
+body.dark-mode .service-preview-card,
+body.dark-mode .project-card,
+body.dark-mode .product-card,
+body.dark-mode .soft-skill-item,
+body.dark-mode .cert-card,
+body.dark-mode .reason-card,
+body.dark-mode .sponsor-card,
+body.dark-mode .testimonial-card {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .card-title,
+body.dark-mode .card-text,
+body.dark-mode .card-body {
+  color: var(--dm-text) !important;
+}
+
+/* ── Sections with light backgrounds ─────────────────── */
+body.dark-mode .bg-light,
+body.dark-mode section.py-5.bg-light,
+body.dark-mode .section-alt,
+body.dark-mode .stat-strip {
+  background-color: #1a1a1a !important;
+}
+
+/* ── White background sections ────────────────────────── */
+body.dark-mode section:not(.bg-primary):not(.product-hero),
+body.dark-mode .py-5:not(.bg-primary):not(.product-hero) {
+  background-color: var(--dm-bg) !important;
+}
+
+/* ── Navbar ────────────────────────────────────────────── */
+body.dark-mode .navbar.bg-primary {
+  background-color: #0a2d6e !important;
+}
+
+/* ── Dark-mode toggle button ──────────────────────────── */
+.dark-mode-btn {
+  transition: all 0.2s ease;
+}
+
+body.dark-mode .dark-mode-btn {
+  background-color: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* ── Inputs & Forms ───────────────────────────────────── */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: var(--dm-input) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: var(--dm-muted) !important;
+}
+
+body.dark-mode .form-label {
+  color: var(--dm-text) !important;
+}
+
+/* Contact form wrapper */
+body.dark-mode .contact-form-wrapper {
+  background: rgba(13, 110, 253, 0.08) !important;
+  border-color: rgba(13, 110, 253, 0.25) !important;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+body.dark-mode .footer,
+body.dark-mode footer {
+  background-color: #0a0a0a !important;
+}
+
+body.dark-mode .sidebar-footer {
+  background-color: #2a2a2a !important;
+  border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .sidebar-footer small {
+  color: var(--dm-muted) !important;
+}
+
+body.dark-mode .newsletter-signup {
+  background: rgba(13,110,253,0.12) !important;
+  border-color: rgba(13,110,253,0.25) !important;
+}
+
+body.dark-mode .newsletter-input {
+  background-color: var(--dm-input) !important;
+  color: var(--dm-text) !important;
+  border-color: var(--dm-border) !important;
+}
+
+/* ── Social Sidebar ───────────────────────────────────── */
+body.dark-mode .social-sidebar-content {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .social-link {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .social-link:not(:hover) {
+  border-color: transparent !important;
+}
+
+body.dark-mode .social-links-sidebar {
+  background-color: var(--dm-card) !important;
+}
+
+/* ── Dropdown menus ───────────────────────────────────── */
+body.dark-mode .dropdown-menu {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .dropdown-item {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: rgba(13,110,253,0.15) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ── Progress bars (skill bars) ───────────────────────── */
+body.dark-mode .progress {
+  background-color: #333 !important;
+}
+
+/* ── Borders & dividers ───────────────────────────────── */
+body.dark-mode .dropdown-divider,
+body.dark-mode hr {
+  border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .border,
+body.dark-mode .border-top,
+body.dark-mode .border-bottom {
+  border-color: var(--dm-border) !important;
+}
+
+/* ── Accordion (FAQ) ──────────────────────────────────── */
+body.dark-mode .accordion-item {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .accordion-button {
+  background-color: var(--dm-card) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: rgba(13,110,253,0.15) !important;
+  color: #5ba4ff !important;
+}
+
+body.dark-mode .accordion-button::after {
+  filter: invert(1);
+}
+
+body.dark-mode .accordion-collapse {
+  background-color: var(--dm-card) !important;
+}
+
+/* ── Tables ───────────────────────────────────────────── */
+body.dark-mode table,
+body.dark-mode .table {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .table td,
+body.dark-mode .table th {
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255,255,255,0.04) !important;
+}
+
+/* ── Sponsor / Donation elements ──────────────────────── */
+body.dark-mode .sponsorship-body,
+body.dark-mode .sponsorship-card {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .donation-btn {
+  background-color: var(--dm-card2) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .subscription-label {
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+  background-color: var(--dm-card) !important;
+}
+
+body.dark-mode .subscription-label:hover {
+  background-color: var(--dm-card2) !important;
+}
+
+/* ── Breadcrumbs ──────────────────────────────────────── */
+body.dark-mode .breadcrumb {
+  background-color: transparent !important;
+}
+
+body.dark-mode .breadcrumb-item,
+body.dark-mode .breadcrumb-item a {
+  color: var(--dm-muted) !important;
+}
+
+body.dark-mode .breadcrumb-item.active {
+  color: var(--dm-text) !important;
+}
+
+/* ── Stat cards ───────────────────────────────────────── */
+body.dark-mode .stat-card {
+  background-color: var(--dm-card) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ── List groups ──────────────────────────────────────── */
+body.dark-mode .list-group-item {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ── Badges that should stay readable ────────────────── */
+body.dark-mode .badge.bg-light {
+  background-color: rgba(255,255,255,0.15) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ── AI Skills badges ─────────────────────────────────── */
+body.dark-mode .ai-skill-badge {
+  background-color: #1a3a6e !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+}
+
+/* ── Tech pills ───────────────────────────────────────── */
+body.dark-mode .tech-pill {
+  background-color: #1a3a6e !important;
+  color: #9dc3ff !important;
+}
+
+/* ── Footer links ─────────────────────────────────────── */
+body.dark-mode a.footer-link {
+  color: #9dc3ff !important;
+}
+
+body.dark-mode a.footer-link:hover {
+  color: #ffffff !important;
+}
+
+/* ── Preloader ────────────────────────────────────────── */
+body.dark-mode #preloader {
+  background: var(--dm-bg) !important;
+}
+
+/* ── Outline buttons in dark mode ─────────────────────── */
+body.dark-mode .btn-outline-secondary {
+  color: var(--dm-muted) !important;
+  border-color: var(--dm-muted) !important;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+  background-color: var(--dm-muted) !important;
+  color: var(--dm-bg) !important;
+}
+
+/* ── White-bg utility overrides ───────────────────────── */
+body.dark-mode .bg-white {
+  background-color: var(--dm-card) !important;
+}
+
+/* ── Scrollbar in sidebar ─────────────────────────────── */
+body.dark-mode .social-sidebar-content::-webkit-scrollbar-track {
+  background: var(--dm-border) !important;
+}
+
+body.dark-mode .social-sidebar-content::-webkit-scrollbar-thumb {
+  background: #555 !important;
+}
+
+/* ══════════════════════════════════════════════════════
+   PHASE 3 ADDITIONS — VISIBILITY & CONTRAST FIXES
+   ══════════════════════════════════════════════════════ */
+
+/* ── Service cards (services.css hardcodes #fff) ────── */
+body.dark-mode .service-card {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .service-card h3,
+body.dark-mode .service-card h4,
+body.dark-mode .service-card p {
+  color: var(--dm-text) !important;
+}
+
+/* ── Feature boxes (services.css hardcodes #fff) ───── */
+body.dark-mode .feature-box {
+  background-color: var(--dm-card) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .feature-box h3,
+body.dark-mode .feature-box p {
+  color: var(--dm-text) !important;
+}
+
+/* ── Card body (style.css hardcodes background #fff) ── */
+body.dark-mode .card-body {
+  background-color: var(--dm-card) !important;
+}
+
+/* ── Accordion body (services.css hardcodes #f8f9fa) ── */
+body.dark-mode .accordion-body {
+  background-color: var(--dm-card2) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ── Sax service cards ──────────────────────────────── */
+body.dark-mode .sax-service-card {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .sax-service-card h3,
+body.dark-mode .sax-service-card p {
+  color: var(--dm-text) !important;
+}
+
+/* ── Chatbot widget (injected by bot.js) ────────────── */
+body.dark-mode #chatbot-widget {
+  background-color: var(--dm-card) !important;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5) !important;
+}
+
+body.dark-mode #chat-area-widget {
+  background-color: var(--dm-bg) !important;
+}
+
+body.dark-mode .chat-form-container {
+  background-color: var(--dm-card) !important;
+  border-top-color: var(--dm-border) !important;
+}
+
+body.dark-mode .bot-message {
+  background-color: #2a2a3a !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .bot-message a {
+  color: #5ba4ff !important;
+}
+
+body.dark-mode .user-message {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode #user-input-widget {
+  background-color: var(--dm-input) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode #user-input-widget::placeholder {
+  color: var(--dm-muted) !important;
+}
+
+body.dark-mode .typing-indicator {
+  background-color: #2a2a3a !important;
+}
+
+body.dark-mode .typing-dot {
+  background-color: var(--dm-muted) !important;
+}
+
+body.dark-mode .message-time {
+  color: var(--dm-muted) !important;
+}
+
+/* ── Outline buttons — full set for dark mode ──────── */
+body.dark-mode .btn-outline-primary {
+  color: #5ba4ff !important;
+  border-color: #5ba4ff !important;
+}
+body.dark-mode .btn-outline-primary:hover,
+body.dark-mode .btn-outline-primary:focus {
+  background-color: #5ba4ff !important;
+  color: #121212 !important;
+}
+
+body.dark-mode .btn-outline-success {
+  color: #6ee07a !important;
+  border-color: #6ee07a !important;
+}
+body.dark-mode .btn-outline-success:hover,
+body.dark-mode .btn-outline-success:focus {
+  background-color: #6ee07a !important;
+  color: #121212 !important;
+}
+
+body.dark-mode .btn-outline-info {
+  color: #5ec8e5 !important;
+  border-color: #5ec8e5 !important;
+}
+body.dark-mode .btn-outline-info:hover,
+body.dark-mode .btn-outline-info:focus {
+  background-color: #5ec8e5 !important;
+  color: #121212 !important;
+}
+
+body.dark-mode .btn-outline-warning {
+  color: #ffd166 !important;
+  border-color: #ffd166 !important;
+}
+body.dark-mode .btn-outline-warning:hover,
+body.dark-mode .btn-outline-warning:focus {
+  background-color: #ffd166 !important;
+  color: #121212 !important;
+}
+
+body.dark-mode .btn-outline-danger {
+  color: #f07070 !important;
+  border-color: #f07070 !important;
+}
+body.dark-mode .btn-outline-danger:hover,
+body.dark-mode .btn-outline-danger:focus {
+  background-color: #f07070 !important;
+  color: #121212 !important;
+}
+
+/* ── Disabled button states ─────────────────────────── */
+body.dark-mode .btn:disabled,
+body.dark-mode .btn[disabled] {
+  opacity: 0.55 !important;
+  color: var(--dm-muted) !important;
+  border-color: var(--dm-border) !important;
+  background-color: transparent !important;
+}
+
+/* ── Breadcrumb nav container ───────────────────────── */
+body.dark-mode nav.bg-light {
+  background-color: #1a1a1a !important;
+  border-bottom-color: var(--dm-border) !important;
+}
+
+body.dark-mode .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--dm-muted) !important;
+}
+
+/* ── Link colors in dark mode ───────────────────────── */
+body.dark-mode a:not(.btn):not(.nav-link):not(.navbar-brand):not(.dropdown-item):not(.footer-link):not(.footer-social-link) {
+  color: #5ba4ff !important;
+}
+
+body.dark-mode a:not(.btn):not(.nav-link):not(.navbar-brand):not(.dropdown-item):not(.footer-link):not(.footer-social-link):hover {
+  color: #90c0ff !important;
+}
+
+/* ── Footer social icons ────────────────────────────── */
+body.dark-mode .footer-social-link {
+  color: var(--dm-muted) !important;
+}
+
+body.dark-mode .footer-social-link:hover {
+  color: #ffffff !important;
+}
+
+/* ── Products roadmap section ───────────────────────── */
+body.dark-mode .roadmap-section {
+  background: #111827 !important;
+}
+
+body.dark-mode .roadmap-card {
+  background: #1a1a2e !important;
+  border-color: #2d2d4e !important;
+}
+
+/* ── Edition cards (products page) ─────────────────── */
+body.dark-mode .edition-card {
+  background-color: #1a1a2e !important;
+  border-color: #2d2d4e !important;
+}
+
+body.dark-mode .edition-badge-community { background: #0d2a10 !important; color: #6ee07a !important; }
+body.dark-mode .edition-badge-pro       { background: #0f1e3d !important; color: #7cb3ff !important; }
+body.dark-mode .edition-badge-web       { background: #1e1040 !important; color: #c4b5fd !important; }
+body.dark-mode .status-available        { background: #0d2a10 !important; color: #6ee07a !important; }
+body.dark-mode .status-coming-soon      { background: #2a1f00 !important; color: #fbbf24 !important; }
+
+/* ── Product section header border ─────────────────── */
+body.dark-mode .product-section-header {
+  border-left-color: #5ba4ff !important;
+}
+
+/* ── Mobile navbar dropdown in dark mode ────────────── */
+@media (max-width: 991px) {
+  body.dark-mode .navbar-collapse {
+    background-color: #0a2d6e !important;
+  }
+  body.dark-mode .dropdown-menu {
+    background-color: #0f1e3d !important;
+  }
+}
+
+/* ── Sax page hero section ──────────────────────────── */
+body.dark-mode .hero-section {
+  background-color: var(--dm-bg) !important;
+}
+
+body.dark-mode .hero-title,
+body.dark-mode .hero-subtitle,
+body.dark-mode .hero-description {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .hero-badge {
+  background-color: #1a3a6e !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+}
+
+body.dark-mode .hero-social .social-link {
+  color: var(--dm-muted) !important;
+  border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .hero-social .social-link:hover {
+  color: var(--dm-text) !important;
+}
+
+/* ── Sax page section headers ───────────────────────── */
+body.dark-mode .section-title {
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .sax-section-title {
+  color: var(--dm-text) !important;
+}
+
+/* ── Sax about/stats sections ───────────────────────── */
+body.dark-mode .about-section,
+body.dark-mode .stats-section,
+body.dark-mode .performances-section,
+body.dark-mode .pricing-section,
+body.dark-mode .contact-section-sax {
+  background-color: var(--dm-bg) !important;
+}
+
+body.dark-mode .stat-number,
+body.dark-mode .stat-label {
+  color: var(--dm-text) !important;
+}
+
+/* ── Sax pricing table ───────────────────────────────── */
+body.dark-mode .pricing-card {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+body.dark-mode .price-amount {
+  color: var(--dm-text) !important;
+}
+
+/* ── Sax CTA card ────────────────────────────────────── */
+body.dark-mode .cta-card {
+  background-color: #0a2d6e !important;
+}
+
+/* ── Sax church policy section ──────────────────────── */
+body.dark-mode .church-policy-section {
+  background-color: #0a2d6e !important;
+}
+
+/* ── Sax performance cards ──────────────────────────── */
+body.dark-mode .performance-card {
+  background-color: var(--dm-card) !important;
+  border-color: var(--dm-border) !important;
+}
+
+/* ── Back-to-top button ──────────────────────────────── */
+body.dark-mode .back-to-top {
+  background: #ffc107 !important;
+  color: #000000 !important;
+}
+
+/* ── Stat card white bg override ────────────────────── */
+body.dark-mode .stat-card {
+  background-color: var(--dm-card) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ── Summary section ────────────────────────────────── */
+body.dark-mode #summary {
+  background-color: var(--dm-bg) !important;
+  background-image: none !important;
+}
+
+/* ── Testimonials section bg override ──────────────── */
+body.dark-mode #testimonials-preview {
+  background-color: var(--dm-bg) !important;
+  background-image: none !important;
+}
+
+/* ── Contact CTA section ────────────────────────────── */
+body.dark-mode #contact-preview {
+  background-image: linear-gradient(rgba(13,110,253,0.85), rgba(10,88,202,0.85)),
+    url('../images/backgrounds/contact-cta.jpg') !important;
+}

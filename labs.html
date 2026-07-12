@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Password Generator, Typing Test & Dev Tools Online | Peter Lightspeed Labs</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Free online developer tools: a free password generator (no sign up), typing speed test, binary to decimal converter, JSON formatter, color palette generator, and a quick Snake game break. Built by backend developer Peter Lightspeed.">
+    <meta name="keywords" content="free password generator no sign up, online typing speed test, wpm test free, binary to decimal converter online, decimal to binary converter, json formatter online free, json validator, color palette generator online, random color palette generator, play snake online free, browser snake game, developer tools online, free coding tools">
+    <meta name="author" content="Peter Eluwade Toluwanimi">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://peterlightspeed.github.io/portfolio/labs.html">
+     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://peterlightspeed.github.io/portfolio/labs.html">
+    <meta property="og:title" content="Free Password Generator, Typing Test & Dev Tools Online | Peter Lightspeed Labs">
+    <meta property="og:description" content="Free password generator (no sign up), online typing speed test, JSON formatter, binary/decimal converter, color palette generator, and a Snake game break — all in your browser.">
+    <meta property="og:image" content="https://peterlightspeed.github.io/portfolio/images/profile/peter-picture.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://peterlightspeed.github.io/portfolio/labs.html">
+    <meta property="twitter:title" content="Free Password Generator, Typing Test & Dev Tools Online | Peter Lightspeed Labs">
+    <meta property="twitter:description" content="Free password generator (no sign up), online typing speed test, JSON formatter, binary/decimal converter, color palette generator, and a Snake game break — all in your browser.">
+    <meta property="twitter:image" content="https://peterlightspeed.github.io/portfolio/images/profile/peter-picture.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="css/labs.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Dark Mode Styles -->
+    <link rel="stylesheet" href="css/darkmode.css">
+    
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/labs.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logos/peter-logo.png">
+    <!-- JSON-LD: tools listed on this page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Free Developer Tools - Peter Lightspeed Labs",
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "position": 1,
+          "name": "Free Password Generator - No Sign Up",
+          "applicationCategory": "SecurityApplication",
+          "operatingSystem": "Any (runs in browser)",
+          "url": "https://peterlightspeed.github.io/portfolio/labs.html#password-generator",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 2,
+          "name": "Online Typing Speed Test (WPM)",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any (runs in browser)",
+          "url": "https://peterlightspeed.github.io/portfolio/labs.html#typing-test",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 3,
+          "name": "Binary to Decimal Converter",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any (runs in browser)",
+          "url": "https://peterlightspeed.github.io/portfolio/labs.html#binary-converter",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 4,
+          "name": "Online JSON Formatter and Validator",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Any (runs in browser)",
+          "url": "https://peterlightspeed.github.io/portfolio/labs.html#json-formatter",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 5,
+          "name": "Color Palette Generator",
+          "applicationCategory": "DesignApplication",
+          "operatingSystem": "Any (runs in browser)",
+          "url": "https://peterlightspeed.github.io/portfolio/labs.html#color-palette",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "Game",
+          "position": 6,
+          "name": "Snake (Browser Game)",
+          "genre": "Arcade",
+          "url": "https://peterlightspeed.github.io/portfolio/labs.html#take-a-break"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- HEADER & NAVBAR -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <div class="brand-logo me-3">
+                        <img src="images/logos/peter-logo.png" alt="Peter Logo" class="rounded-circle" width="45" height="45">
+                    </div>
+                    <div class="brand-text">
+                        <span class="fs-4 fw-bold d-none d-sm-inline">Peter Lightspeed</span>
+                        <span class="fs-4 fw-bold d-inline d-sm-none">Peter</span>
+                    </div>
+                </a>
+                
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3 active" href="#" id="navbarDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                                More
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item active" href="labs.html" aria-current="page">
+                                    <i class="bi bi-flask me-2 text-primary"></i>Labs
+                                </a></li>
+                                <li><a class="dropdown-item" href="demo.html">
+                                    <i class="bi bi-play-circle-fill me-2 text-primary"></i>Live Demos
+                                </a></li>
+                                <li><a class="dropdown-item" href="sax.html">
+                                    <i class="bi bi-music-note-beamed me-2 text-primary"></i>Sax Services
+                                </a></li>
+                                <li><a class="dropdown-item" href="products.html">
+                                    <i class="bi bi-box-seam me-2 text-primary"></i>Products
+                                </a></li>
+                                <li><a class="dropdown-item" href="testimonials.html">
+                                    <i class="bi bi-chat-quote-fill me-2 text-primary"></i>Testimonials
+                                </a></li>
+                                <li><a class="dropdown-item" href="certifications.html">
+                                    <i class="bi bi-award-fill me-2 text-primary"></i>Certifications
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sponsor.html">
+                                    <i class="bi bi-heart-fill me-2 text-danger"></i>Sponsor Me
+                                </a></li>
+                                <li><a class="dropdown-item" href="resume.html">
+                                    <i class="bi bi-file-earmark-person-fill me-2 text-primary"></i>Resume
+                                </a></li>
+                                <li><a class="dropdown-item" href="cv.html">
+                                    <i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i>Download CV
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Contact Button (visible on larger screens) -->
+                        <li class="nav-item d-none d-lg-block ms-2">
+                            <a href="contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
+                                <i class="bi bi-envelope-fill me-1"></i> Hire Me
+                            </a>
+                        </li>
+                        <!-- Dark Mode Toggle (injected by darkmode.js) -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- LABS HEADER -->
+        <section class="py-5 bg-primary text-white project-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8" data-aos="fade-right">
+                        <h1 class="display-4 fw-bold mb-3">Free Developer Tools &amp; Labs</h1>
+                        <p class="lead mb-0">A free password generator, online typing speed test, JSON formatter, binary/decimal converter, and color palette generator &mdash; all running in your browser, no sign up required. Plus a Snake game if you need a quick break.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LAB NAV -->
+        <section class="py-4 bg-light">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-center gap-2" data-aos="fade-up">
+                    <a href="#typing-test" class="btn btn-outline-primary btn-sm">Typing Speed Test</a>
+                    <a href="#password-generator" class="btn btn-outline-primary btn-sm">Password Generator</a>
+                    <a href="#binary-converter" class="btn btn-outline-primary btn-sm">Binary &harr; Decimal</a>
+                    <a href="#json-formatter" class="btn btn-outline-primary btn-sm">JSON Formatter</a>
+                    <a href="#color-palette" class="btn btn-outline-primary btn-sm">Color Palette Generator</a>
+                    <a href="#take-a-break" class="btn btn-outline-secondary btn-sm">Take a Break</a>
+                    <a href="#coming-soon" class="btn btn-outline-secondary btn-sm">Coming Soon</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TYPING SPEED TEST -->
+        <section class="py-5" id="typing-test">
+            <div class="container">
+                <div class="lab-card p-4 p-md-5" data-aos="fade-up">
+                    <h2 class="h3 mb-3"><i class="bi bi-keyboard me-2 text-primary"></i>Free Online Typing Speed Test (WPM)</h2>
+                    <p class="text-muted mb-4">Test your typing speed in words per minute (WPM) and accuracy, free and instant &mdash; no sign up. Type the sample text below as quickly and accurately as you can.</p>
+                    <p id="typingSample" class="typing-sample p-3 rounded mb-3"></p>
+                    <textarea id="typingInput" class="form-control mb-3" rows="3" placeholder="Start typing here..." disabled></textarea>
+                    <div class="d-flex flex-wrap gap-4 mb-3">
+                        <div><strong id="typingWpm">0</strong> <span class="text-muted small">WPM</span></div>
+                        <div><strong id="typingAccuracy">100</strong><span class="text-muted small">% Accuracy</span></div>
+                        <div><strong id="typingTime">0</strong><span class="text-muted small">s Elapsed</span></div>
+                    </div>
+                    <button id="typingRestart" class="btn btn-primary btn-sm">Restart Test</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASSWORD GENERATOR -->
+        <section class="py-5 bg-light" id="password-generator">
+            <div class="container">
+                <div class="lab-card p-4 p-md-5" data-aos="fade-up">
+                    <h2 class="h3 mb-3"><i class="bi bi-shield-lock me-2 text-primary"></i>Free Password Generator &mdash; No Sign Up</h2>
+                    <p class="text-muted mb-4">A free, secure password generator with no sign up and no account needed. Everything runs locally in your browser &mdash; nothing is ever sent anywhere.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" id="passwordOutput" class="form-control" readonly aria-label="Generated password">
+                        <button class="btn btn-outline-primary" id="passwordCopy" type="button"><i class="bi bi-clipboard"></i> Copy</button>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3">
+                        <div class="col-md-6">
+                            <label for="passwordLength" class="form-label small mb-1">Length: <span id="passwordLengthValue">16</span></label>
+                            <input type="range" class="form-range" min="6" max="32" value="16" id="passwordLength">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="passwordUppercase" checked>
+                                <label class="form-check-label small" for="passwordUppercase">Uppercase (A-Z)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="passwordNumbers" checked>
+                                <label class="form-check-label small" for="passwordNumbers">Numbers (0-9)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="passwordSymbols" checked>
+                                <label class="form-check-label small" for="passwordSymbols">Symbols (!@#$)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="passwordGenerate" class="btn btn-primary btn-sm">Generate Password</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BINARY <-> DECIMAL CONVERTER -->
+        <section class="py-5" id="binary-converter">
+            <div class="container">
+                <div class="lab-card p-4 p-md-5" data-aos="fade-up">
+                    <h2 class="h3 mb-3"><i class="bi bi-arrow-left-right me-2 text-primary"></i>Binary to Decimal Converter (Free, Online)</h2>
+                    <p class="text-muted mb-4">Convert binary to decimal or decimal to binary instantly, free and online. Type a value in either field to convert it right away.</p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="binaryInput" class="form-label small mb-1">Binary</label>
+                            <input type="text" id="binaryInput" class="form-control" placeholder="e.g. 1010" inputmode="numeric">
+                            <div id="binaryError" class="form-text text-danger"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="decimalInput" class="form-label small mb-1">Decimal</label>
+                            <input type="text" id="decimalInput" class="form-control" placeholder="e.g. 10" inputmode="numeric">
+                            <div id="decimalError" class="form-text text-danger"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JSON FORMATTER -->
+        <section class="py-5 bg-light" id="json-formatter">
+            <div class="container">
+                <div class="lab-card p-4 p-md-5" data-aos="fade-up">
+                    <h2 class="h3 mb-3"><i class="bi bi-braces me-2 text-primary"></i>Free Online JSON Formatter &amp; Validator</h2>
+                    <p class="text-muted mb-4">Format, validate, and minify JSON online for free. Paste JSON to pretty-print it &mdash; runs entirely in your browser, nothing is uploaded.</p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="jsonInput" class="form-label small mb-1">Input</label>
+                            <textarea id="jsonInput" class="form-control" rows="10" placeholder='{"example": true}'></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="jsonOutput" class="form-label small mb-1">Formatted Output</label>
+                            <textarea id="jsonOutput" class="form-control" rows="10" readonly></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 mt-3">
+                        <button id="jsonFormat" class="btn btn-primary btn-sm">Format</button>
+                        <button id="jsonMinify" class="btn btn-outline-primary btn-sm">Minify</button>
+                        <button id="jsonClear" class="btn btn-outline-secondary btn-sm">Clear</button>
+                    </div>
+                    <div id="jsonStatus" class="form-text mt-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLOR PALETTE GENERATOR -->
+        <section class="py-5" id="color-palette">
+            <div class="container">
+                <div class="lab-card p-4 p-md-5" data-aos="fade-up">
+                    <h2 class="h3 mb-3"><i class="bi bi-palette me-2 text-primary"></i>Free Online Color Palette Generator</h2>
+                    <p class="text-muted mb-4">Generate a random 5-color palette for free, with hex codes ready to copy. Click any swatch to copy its hex code.</p>
+                    <div id="paletteContainer" class="d-flex flex-wrap gap-2 mb-3"></div>
+                    <button id="paletteGenerate" class="btn btn-primary btn-sm">Generate New Palette</button>
+                    <div id="paletteCopyFeedback" class="form-text mt-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAKE A SHORT BREAK -->
+        <section class="py-5" id="take-a-break">
+            <div class="container">
+                <div class="lab-card lab-card-break p-4 p-md-5" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <span class="badge bg-secondary rounded-pill px-3 py-2 mb-2">Take a Short Break</span>
+                        <h2 class="h3 mb-2"><i class="bi bi-controller me-2 text-primary"></i>Play Snake Online, Free</h2>
+                        <p class="text-muted mb-0">A small, polished, free browser Snake game. Just for fun &mdash; not the point of this portfolio.</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="d-flex gap-4 mb-3">
+                            <div><strong id="snakeScore">0</strong> <span class="text-muted small">Score</span></div>
+                            <div><strong id="snakeHighScore">0</strong> <span class="text-muted small">Best</span></div>
+                        </div>
+                        <canvas id="snakeCanvas" width="320" height="320" class="snake-canvas mb-3" tabindex="0" aria-label="Snake game board"></canvas>
+                        <div class="d-flex gap-2 mb-2">
+                            <button id="snakeStart" class="btn btn-primary btn-sm">Start / Restart</button>
+                        </div>
+                        <div class="snake-dpad d-md-none" aria-hidden="true">
+                            <button type="button" class="btn btn-outline-secondary snake-dpad-btn" data-dir="up"><i class="bi bi-arrow-up"></i></button>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-outline-secondary snake-dpad-btn" data-dir="left"><i class="bi bi-arrow-left"></i></button>
+                                <button type="button" class="btn btn-outline-secondary snake-dpad-btn" data-dir="down"><i class="bi bi-arrow-down"></i></button>
+                                <button type="button" class="btn btn-outline-secondary snake-dpad-btn" data-dir="right"><i class="bi bi-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <p class="text-muted small mt-2 d-none d-md-block">Use arrow keys or WASD to play.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMING SOON -->
+        <section class="py-5 bg-light" id="coming-soon">
+            <div class="container">
+                <h2 class="section-title text-center mb-2" data-aos="fade-up">Coming Soon</h2>
+                <p class="text-center text-muted mb-5" data-aos="fade-up">More experiments in progress.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="lab-card lab-card-placeholder p-4 text-center h-100">
+                            <i class="bi bi-robot fs-1 text-muted mb-2 d-block"></i>
+                            <h3 class="h6 mb-1">Mini AI Assistant</h3>
+                            <span class="badge bg-secondary">Planned</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                        <div class="lab-card lab-card-placeholder p-4 text-center h-100">
+                            <i class="bi bi-diagram-2 fs-1 text-muted mb-2 d-block"></i>
+                            <h3 class="h6 mb-1">Algorithm Visualizer</h3>
+                            <span class="badge bg-secondary">Planned</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="lab-card lab-card-placeholder p-4 text-center h-100">
+                            <i class="bi bi-terminal fs-1 text-muted mb-2 d-block"></i>
+                            <h3 class="h6 mb-1">Terminal Emulator</h3>
+                            <span class="badge bg-secondary">Planned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- FOOTER -->
+    <footer class="footer bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="footer-brand">
+                        <h4 class="fw-bold mb-3 text-white">
+                            <i class="bi bi-lightning-charge text-warning me-2"></i>
+                            Peter Lightspeed 
+                        </h4>
+                        <p class="mb-3 text-white"> 
+                        Your trusted partner for smart web development and digital solutions delivering quality, speed, and precision powered by creativity and AI.
+                        </p>
+                        
+                        <!-- Quick Stats -->
+                        <div class="footer-stats mb-3">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h6 class="fw-bold text-warning mb-0">50+</h6>
+                                        <small class=" text-light">Projects</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h6 class="fw-bold text-success mb-0">95%</h6>
+                                        <small class=" text-light">Satisfied</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h6 class="fw-bold text-info mb-0">24/7</h6>
+                                        <small class=" text-light">Support</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Newsletter Signup -->
+                        <div class="newsletter-signup">
+                            <h6 class="text-uppercase fw-bold mb-3 text-warning">Stay Updated</h6>
+                            <p class="mb-3 small">Subscribe to get notified about new projects and updates.</p>
+                            <form id="newsletterForm" action="https://formspree.io/f/meoljzde" method="POST">
+                                <div class="input-group mb-3">
+                                    <input type="email" name="email" class="form-control newsletter-input" id="newsletterEmail" 
+                                           placeholder="Enter your email" required>
+                                    <button class="btn btn-warning" type="submit" id="newsletterBtn">
+                                        <i class="bi bi-envelope"></i> Subscribe
+                                    </button>
+                                </div>
+                                <!-- Hidden fields -->
+                                <input type="hidden" name="_subject" value="New Portfolio Newsletter Subscription">
+                                <input type="hidden" name="source" value="Portfolio Website">
+                                <input type="text" name="_gotcha" style="display:none !important">
+                            </form>
+                            <div id="newsletterMessage" class="mt-2" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h6 class="text-uppercase fw-bold mb-3 text-warning">Quick Links</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a class="footer-link" href="index.html">
+                                <i class="bi bi-house me-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="about.html">
+                                <i class="bi bi-person me-2"></i>About Me
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html">
+                                <i class="bi bi-gear me-2"></i>Services
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="projects.html">
+                                <i class="bi bi-folder me-2"></i>Portfolio
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <h6 class="text-uppercase fw-bold mb-3 text-warning">My Services</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#web-development">
+                                <i class="bi bi-laptop me-2"></i>Web Development
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#graphic-design">
+                                <i class="bi bi-palette me-2"></i>Graphic Design
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#social-media">
+                                <i class="bi bi-share me-2"></i>Social Media Management
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#data-entry">
+                                <i class="bi bi-keyboard me-2"></i>Data Entry & Typing
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#content-creation">
+                                <i class="bi bi-pencil-square me-2"></i>Content Creation
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#digital-marketing">
+                                <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="services.html#ai-web-solutions">
+                                <i class="bi bi-cpu me-2"></i>AI & Web Solutions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <h6 class="text-uppercase fw-bold mb-3 text-warning">Get In Touch</h6>
+                    
+                    <!-- Contact Information -->
+                    <div class="contact-info mb-4">
+                        <div class="contact-item mb-2">
+                            <a class="footer-link" href="mailto:petereluwade55@gmail.com">
+                                <i class="bi bi-envelope me-2"></i>
+                                petereluwade55@gmail.com
+                            </a>
+                        </div>
+                        <div class="contact-item mb-2">
+                            <a class="footer-link" href="https://wa.me/2348108821809" target="_blank">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                +234 810 882 1809
+                            </a>
+                        </div>
+                        <div class="contact-item mb-2">
+                            <span class="footer-link">
+                                <i class="bi bi-geo-alt me-2"></i>
+                                Nigeria (Remote Services)
+                            </span>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <span class="footer-link">
+                                <i class="bi bi-clock me-2"></i>
+                                Available 24/7
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="social-section">
+                        <h6 class="fw-semibold mb-3 text-white">Follow Me</h6>
+                        <div class="social-links">
+                            <a class="social-icon twitter" 
+                               href="https://x.com/peterlightspeed" 
+                               target="_blank" 
+                               title="Follow me on Twitter"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            <a class="social-icon instagram" 
+                               href="https://www.instagram.com/eluwadepeter" 
+                               target="_blank" 
+                               title="Follow me on Instagram"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a class="social-icon linkedin" 
+                               href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" 
+                               target="_blank" 
+                               title="Connect on LinkedIn"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a class="social-icon tiktok" 
+                               href="https://www.tiktok.com/@eluwadepeter" 
+                               target="_blank" 
+                               title="Watch my TikTok videos"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                            <a class="social-icon youtube" 
+                               href="https://www.youtube.com/@peterlightspeedvibes" 
+                               target="_blank" 
+                               title="Subscribe to my YouTube"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a class="social-icon whatsapp" 
+                               href="https://wa.me/2348108821809" 
+                               target="_blank" 
+                               title="Chat on WhatsApp"
+                               data-bs-toggle="tooltip">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <hr class="my-4 border-secondary opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-light">
+                        <small>
+                            © 2026 <strong class="text-white">Eluwade Peter Toluwanimi</strong>. All rights reserved.
+                        </small>
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-bottom-links">
+                        <a href="#" class="footer-link me-3" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                            <small>Privacy Policy</small>
+                        </a>
+                        <a href="#" class="footer-link me-3" data-bs-toggle="modal" data-bs-target="#termsModal">
+                            <small>Terms of Service</small>
+                        </a>
+                        <a href="#home" class="footer-link">
+                            <small>Back to Top <i class="bi bi-arrow-up"></i></small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Built with love -->
+            <div class="text-center mt-3">
+                <small class="text-light">
+                    Built with <i class="bi bi-heart-fill text-danger"></i> by Peter Lightspeed | 
+                    Backend Developer & AI Engineer
+                </small>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Information Collection</h6>
+                    <p>I collect information you provide directly to me, such as when you contact me for services or subscribe to updates.</p>
+                    
+                    <h6>Use of Information</h6>
+                    <p>I use the information to provide services, communicate with you, and improve my offerings.</p>
+                    
+                    <h6>Information Sharing</h6>
+                    <p>I do not sell, trade, or otherwise transfer your personal information to third parties without your consent.</p>
+                    
+                    <h6>Contact</h6>
+                    <p>If you have questions about this Privacy Policy, please contact me at petereluwade55@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Service Agreement</h6>
+                    <p>By hiring my services, you agree to these terms and conditions.</p>
+                    
+                    <h6>Payment Terms</h6>
+                    <p>Payment is required as agreed upon before project commencement. Refunds are subject to project completion status.</p>
+                    
+                    <h6>Intellectual Property</h6>
+                    <p>Upon full payment, you own the rights to the delivered work. I retain the right to showcase the work in my portfolio.</p>
+                    
+                    <h6>Limitation of Liability</h6>
+                    <p>I strive for excellence but cannot guarantee specific results. My liability is limited to the amount paid for services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-banner">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-md-8">
+                    <p class="mb-md-0">This website uses cookies to improve your experience and analyze traffic. 
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Learn more</a></p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button onclick="acceptCookies()" class="btn btn-light">Accept</button>
+                    <button onclick="declineCookies()" class="btn btn-outline-light ms-2">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Core JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- Dark Mode -->
+    <script src="js/darkmode.js"></script>
+    
+    <!-- Page-specific JavaScript -->
+    <script src="js/newsletter.js"></script>
+    <script src="js/labs.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYGD6Z4GQD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Only initialize if consent was given
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            gtag('config', 'G-PYGD6Z4GQD');
+        }
+    </script>
+<!-- ===== SOCIAL MEDIA SIDEBAR ===== -->
+<div class="social-sidebar">
+    <div class="social-sidebar-toggle" id="socialToggle">
+        <i class="bi bi-share-fill"></i>
+    </div>
+    <div class="social-sidebar-content" id="socialContent">
+        <div class="social-sidebar-header">
+            <h6>Follow Me</h6>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="social-links-sidebar">
+            <a href="https://x.com/peterlightspeed" target="_blank" rel="noopener" class="social-link twitter">
+                <i class="bi bi-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/eluwadepeter" target="_blank" rel="noopener" class="social-link instagram">
+                <i class="bi bi-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" target="_blank" rel="noopener" class="social-link linkedin">
+                <i class="bi bi-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://www.tiktok.com/@eluwadepeter" target="_blank" rel="noopener" class="social-link tiktok">
+                <i class="bi bi-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+            <a href="https://www.youtube.com/@petereluwade" target="_blank" rel="noopener" class="social-link youtube">
+                <i class="bi bi-youtube"></i>
+                <span>YouTube</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575074189195" target="_blank" rel="noopener" class="social-link facebook">
+                <i class="bi bi-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://wa.me/2348108821809" target="_blank" rel="noopener" class="social-link whatsapp">
+                <i class="bi bi-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:petereluwade55@gmail.com" class="social-link email">
+                <i class="bi bi-envelope-fill"></i>
+                <span>Email</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <small>Connect with Peter Lightspeed</small>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/bot.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
