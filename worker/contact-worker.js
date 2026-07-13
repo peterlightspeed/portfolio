@@ -22,7 +22,7 @@ const MAX_TOTAL_ATTACHMENT_BYTES = 10 * 1024 * 1024; // 10MB combined, matches t
 const ALLOWED_ORIGINS = [
     'http://127.0.0.1:5500',
     'http://localhost:5500',
-    'https://peterlightspeed.github.io/portfolio',
+    'https://peterlightspeed.github.io/', 
 ];
 
 function corsHeaders(origin) {
