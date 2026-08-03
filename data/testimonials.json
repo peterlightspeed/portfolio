@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "gideon-oluwapelumi-beat-blast",
+    "author": "Gideon Oluwapelumi",
+    "role": "Host, Beat Blast Flier",
+    "avatar": "images/testimonials/gideon-oluwapelumi.jpeg",
+    "rating": 5,
+    "service": "Graphics design",
+    "quote": "Peter lightspeed delivered a flier that perfectly matched the energy of Gidi Beat Blast. The design was bold, rhythmic and instantly got attention just like a good drum beat. Highly professional and easy to work with!",
+    "draft": false
+  },
+  {
+    "slug": "andrew-stephen-forex",
+    "author": "Andrew Stephen",
+    "role": "Forex Mentor",
+    "avatar": "images/testimonials/andrew.jpg",
+    "rating": 5,
+    "service": "Graphic Design",
+    "quote": "Peter completely exceeded my expectations with the forex flier design. The layout was sleek, the colors were well balanced, and it captured the professionalism I needed to attract serious clients. I will definitely work with him again.",
+    "draft": false
+  },
+  {
+    "slug": "tochukwu-nsofor-flyer",
+    "author": "Tochukwu Nsofor",
+    "role": "Basketball Coach",
+    "avatar": "images/testimonials/tochukwu.png",
+    "rating": 4.5,
+    "service": "Graphics Design",
+    "quote": "Peter completely exceeded my expectations with the forex flier design. The layout was sleek, the colors were well balanced, and it captured the professionalism I needed to attract serious clients. I will definitely work with him again.",
+    "draft": false
+  },
+  {
+    "slug": "tochukwu-nsofor-website",
+    "author": "Tochukwu Nsofor",
+    "role": "Basketball Coach",
+    "avatar": "images/testimonials/tochukwu.png",
+    "rating": 4.5,
+    "service": "Website Design",
+    "quote": "Peter completely exceeded my expectations with the website he created for me and my team.",
+    "draft": false
+  },
+  {
+    "slug": "sinachi-franklin-ezeonyeka",
+    "author": "Sinachi Franklin Ezeonyeka",
+    "role": "Camex Global Concept — Student",
+    "avatar": "images/testimonials/sinachi.jpeg",
+    "rating": 5,
+    "service": "Website development",
+    "quote": "Peter is an amazing web development instructor! His lessons were clear, practical, and easy to follow. He helped me understand HTML, CSS, and JavaScript in a way that truly boosted my confidence. I'm really grateful for his patience, guidance, and passion for teaching.",
+    "draft": false
+  },
+  {
+    "slug": "camex-global-concept-munachi",
+    "author": "Camex Global Concept – Munachi",
+    "role": "Student",
+    "avatar": "images/testimonials/munachi.jpg",
+    "rating": 5,
+    "service": "Website development",
+    "quote": "Learning web development from Peter was a great experience. He explained concepts clearly, guided me through projects, and gave me the confidence to build on my own. I'm truly grateful for his support and mentorship.",
+    "draft": false
+  },
+  {
+    "slug": "isaac-oluwadamilare",
+    "author": "Isaac Oluwadamilare",
+    "role": "Data Analyst",
+    "avatar": "images/testimonials/isaac.webp",
+    "rating": 4.5,
+    "service": "Website Design",
+    "quote": "I hired Peter to build my portfolio website for me and he did it without any delay, it was so responsive and professional looking. I will definitely work with him again.",
+    "draft": false
+  }
+]

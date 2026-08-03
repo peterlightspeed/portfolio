@@ -1,0 +1,46 @@
+{
+  "core": [
+    {
+      "group": "Backend",
+      "icon": "bi-hdd-stack",
+      "note": "Technologies I can genuinely build projects with.",
+      "items": ["Python", "Go", "FastAPI", "Flask", "REST APIs", "PostgreSQL", "Supabase"]
+    },
+    {
+      "group": "Frontend & Tools",
+      "icon": "bi-code-slash",
+      "note": "Technologies I can genuinely build projects with.",
+      "items": ["HTML", "CSS", "Bootstrap", "JavaScript", "React", "TypeScript", "Git", "GitHub"]
+    },
+    {
+      "group": "AI & LLMs",
+      "icon": "bi-robot",
+      "note": "Applied in shipped projects — see PLS Nexus Talent Intelligence (Google Gemini via google-genai) and the AI Cover Letter Generator (HuggingFace Transformers).",
+      "items": ["AI Integration", "LLM APIs (Google Gemini)", "HuggingFace Transformers", "Prompt Engineering"]
+    }
+  ],
+  "learning": {
+    "note": "Actively studying — not claiming production experience yet.",
+    "items": ["Django", "Next.js", "Docker", "Redis", "Linux", "Nginx", "AWS", "GraphQL", "Microservices", "CI/CD", "Testing", "LangChain", "RAG", "Vector Databases", "AI Agents", "System Design"],
+    "roadmap": [
+      { "category": "Backend", "icon": "bi-hdd-stack", "items": ["Django", "GraphQL", "Microservices", "System Design"] },
+      { "category": "Frontend", "icon": "bi-code-slash", "items": ["Next.js"] },
+      { "category": "Cloud", "icon": "bi-cloud", "items": ["AWS"] },
+      { "category": "AI", "icon": "bi-robot", "items": ["LangChain", "RAG", "Vector Databases", "AI Agents"] },
+      { "category": "DevOps", "icon": "bi-gear-wide-connected", "items": ["Docker", "Redis", "Linux", "Nginx", "CI/CD", "Testing"] }
+    ]
+  },
+  "softSkillsIntro": "Alongside backend development, Python, Go, and AI engineering, I bring strong time management, communication, problem solving, teamwork, creativity, and adaptability to every project and mentorship session.",
+  "tools": [
+    { "name": "HTML5", "icon": "bi-filetype-html" },
+    { "name": "CSS3", "icon": "bi-filetype-css" },
+    { "name": "JavaScript", "icon": "bi-filetype-js" },
+    { "name": "WordPress", "icon": "bi-wordpress" },
+    { "name": "Bootstrap", "icon": "bi-bootstrap" },
+    { "name": "Photoshop", "text": "Ps" },
+    { "name": "Canva", "text": "Cv" },
+    { "name": "Microsoft Office", "icon": "bi-microsoft" },
+    { "name": "Google Analytics", "icon": "bi-graph-up" },
+    { "name": "GitHub", "icon": "bi-github" }
+  ]
+}

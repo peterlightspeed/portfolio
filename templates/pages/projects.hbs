@@ -1,0 +1,44 @@
+        <section class="page-hero bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="fw-bold display-6">Projects</h1>
+                <p class="lead mb-0">Engineering work that demonstrates how I think and build — client solutions, open-source code, and experiments. Looking for the software I ship as products? <a href="/products/" class="text-white text-decoration-underline">See Products</a>.</p>
+            </div>
+        </section>
+
+        <section class="py-4 border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap gap-2 justify-content-center" id="projectFilters">
+                    <button class="btn btn-sm btn-primary filter-btn active" data-filter="all">All</button>
+                    {{#each categories}}
+                    <button class="btn btn-sm btn-outline-primary filter-btn" data-filter="{{this}}">{{this}}</button>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        {{#each groups}}
+        <section class="py-5 {{#if alt}}bg-light{{/if}}" id="{{slug}}">
+            <div class="container">
+                <div class="d-flex align-items-center gap-2 mb-4">
+                    <i class="bi {{icon}} fs-3 text-primary"></i>
+                    <div>
+                        <h2 class="h4 fw-bold mb-0">{{label}}</h2>
+                        <p class="small text-muted mb-0">{{description}}</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    {{#each items}}
+                    {{> project-card}}
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+        {{/each}}
+
+        {{#if draftCount}}
+        <section class="py-4 bg-light border-top">
+            <div class="container text-center text-muted small">
+                <i class="bi bi-hourglass-split me-1"></i>{{draftCount}} more project{{#if (gt draftCount 1)}}s{{/if}} in the pipeline — added here automatically once documented.
+            </div>
+        </section>
+        {{/if}}

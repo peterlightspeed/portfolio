@@ -1,0 +1,25 @@
+        <section class="page-hero bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="fw-bold display-6">Career Timeline</h1>
+                <p class="lead mb-0">Auto-generated from projects, education, and certifications — nothing here is hand-maintained.</p>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container" style="max-width: 760px;">
+                <div class="timeline">
+                    {{#each events}}
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-{{color}}"><i class="bi {{icon}}"></i></div>
+                        <div class="timeline-content">
+                            <span class="badge bg-light text-dark border mb-1">{{dateLabel}}</span>
+                            <h3 class="h6 mb-1">{{title}}</h3>
+                            {{#if subtitle}}<p class="small text-muted mb-1">{{subtitle}}</p>{{/if}}
+                            {{#if description}}<p class="small mb-0">{{description}}</p>{{/if}}
+                            {{#if href}}<a href="{{href}}" class="small">View <i class="bi bi-arrow-right"></i></a>{{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>

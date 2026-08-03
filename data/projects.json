@@ -1,0 +1,749 @@
+[
+  {
+    "slug": "pls-nexus-talent-intelligence",
+    "title": "PLS Nexus Talent Intelligence",
+    "shortDescription": "AI-powered resume analysis backend, built module by module as the first piece of PLS Nexus. Users register, upload a PDF resume, and receive an AI-generated ATS score, strengths, weaknesses, and improvement suggestions.",
+    "problem": "Recruiters and hiring teams struggle to efficiently screen large volumes of resumes and pull out meaningful candidate insights.",
+    "solution": "A backend-first SaaS module: users register, log in, upload a PDF resume, and receive an AI-generated analysis (ATS score, strengths, weaknesses, missing keywords, recommended improvements). Built on a layered FastAPI architecture with async SQLAlchemy, Alembic migrations, and Pydantic v2 schemas kept deliberately separate from the ORM models — the entity design (User → Resume → AnalysisReport) and auth pattern are meant to become the reusable template for every future PLS Nexus module.",
+    "architecture": "FastAPI + async SQLAlchemy over PostgreSQL, with Alembic for migrations. Core entities: User (1—N) Resume (1—N) AnalysisReport — reports are one-to-many rather than one-to-one so a resume can be re-analyzed without a schema change. JWT auth via python-jose + bcrypt. Resume text is extracted with pypdf and persisted (not just held in memory) so analysis can be re-run without a re-upload. AI analysis calls Google's Gemini API via the google-genai SDK.",
+    "techStack": [
+      "Python 3.13",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy (Async)",
+      "Alembic",
+      "Pydantic v2",
+      "JWT (python-jose)",
+      "bcrypt",
+      "pypdf",
+      "Google Gemini (google-genai)",
+      "Uvicorn",
+      "Pytest"
+    ],
+    "features": [
+      "User registration & JWT-authenticated login",
+      "Protected routes via dependency injection",
+      "Secure PDF resume upload with validation",
+      "Automatic PDF text extraction (persisted, not just in-memory)",
+      "AI-generated resume analysis via Google Gemini: ATS score, strengths, weaknesses, missing keywords, recommended improvements",
+      "Resume management & metadata storage",
+      "Alembic database migrations",
+      "Auto-generated Swagger/OpenAPI docs",
+      "/health endpoint for deploy monitoring"
+    ],
+    "inProgress": "Full public documentation (architecture diagram, setup guide, API docs, deployment) — being written once the implementation itself is complete, by design (see the project's own docs/PLANNING.md). Deferred for a later version: refresh tokens, history search, rate limiting, and background job queues.",
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/pls-nexus-talent-intelligence",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "",
+    "screenshots": [],
+    "status": "In Progress",
+    "role": "Backend Developer",
+    "date": "2026-07",
+    "category": "backend",
+    "tags": [
+      "ai",
+      "saas",
+      "backend"
+    ],
+    "featured": true,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "product",
+    "_todo": [
+      "No screenshot possible — this is a backend-only API (FastAPI + Swagger docs), no frontend UI exists or is planned yet."
+    ]
+  },
+  {
+    "slug": "peterlightspeed-ai-cover-letter",
+    "title": "Peterlightspeed – AI Cover Letter Generator",
+    "shortDescription": "An AI-powered web app that generates short, human-sounding cover letters from a candidate's CV and a job description, using open-source language models.",
+    "problem": "",
+    "solution": "A lightweight AI-powered web application that generates short and human cover letters from a candidate's CV and job description.",
+    "architecture": "",
+    "techStack": [
+      "Python",
+      "Gradio",
+      "HuggingFace Transformers",
+      "Google Colab"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/peterlight-ai-cover-letter",
+      "liveDemo": "https://huggingface.co/spaces/Peter-lightspeed/peterlightspeed-ai-cover-letter",
+      "video": ""
+    },
+    "image": "",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "ai",
+    "tags": [
+      "ai"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "open-source",
+    "_todo": [
+      "Add a real screenshot (image field currently empty — showing placeholder icon)."
+    ]
+  },
+  {
+    "slug": "lightspeed-hospital-template",
+    "title": "Lightspeed Hospital Template",
+    "shortDescription": "A responsive hospital website template for healthcare organizations and medical professionals — clean, accessible, and focused on user trust.",
+    "problem": "",
+    "solution": "A responsive hospital website template for healthcare organizations and medical professionals, built to feel accessible and trustworthy.",
+    "architecture": "",
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "JavaScript"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/lightspeed-hospital-template",
+      "liveDemo": "/demo.html?project=hospital",
+      "video": ""
+    },
+    "image": "images/projects/lightspeed-hospital.webp",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web",
+      "healthcare"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "client"
+  },
+  {
+    "slug": "coach-gideon",
+    "title": "Coach Gideon Basketball Website",
+    "shortDescription": "A multi-page website built for Eluwade Gideon Oluwapelumi, a private basketball skills coach based in Lagos, Nigeria — training programs, schedule, gallery, and a booking-oriented contact flow.",
+    "problem": "",
+    "solution": "A plain HTML5 + Bootstrap 5 site covering home, about, training programs & pricing, weekly availability/booking, a filterable media gallery, and contact — with a chatbot widget and gallery filtering handled in vanilla JavaScript, and a Vite dev server used only for local development (no bundling of JS/CSS in production).",
+    "architecture": "Static multi-page site (index/about/services/schedule/gallery/contact), custom styles and a chatbot + gallery-filter script in a shared assets folder, Vite used purely as a dev server and build copy step — all HTML files and assets are copied through verbatim.",
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "Bootstrap 5.3.3",
+      "Bootstrap Icons",
+      "Vanilla JavaScript",
+      "Vite (dev server only)"
+    ],
+    "features": [
+      "Home, About, Services/Pricing, Schedule/Booking, filterable Gallery, and Contact pages",
+      "Chatbot widget",
+      "Filterable media gallery",
+      "Consistent brand color system (orange/dark/light-gray)"
+    ],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/coach-gideon",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "images/projects/coach-gideon.webp",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web",
+      "design"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "client",
+    "_todo": [
+      "No engineering case study planned — specifics of what was hard/tradeoffs aren't remembered well enough to write one honestly. The project description + real tech stack stand on their own."
+    ]
+  },
+  {
+    "slug": "cedarville",
+    "title": "Cedarville",
+    "shortDescription": "Responsive school website for Cedarville Private Schools, covering admissions, academics, and events for prospective families.",
+    "problem": "",
+    "solution": "A modern website built for Cedarville Private Schools to help prospective families learn about the school's admissions process, academic programs, and upcoming events.",
+    "architecture": "",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap"
+    ],
+    "features": [
+      "Admissions information and process overview",
+      "Academics section detailing programs offered",
+      "School events listing",
+      "Fully responsive design for all devices"
+    ],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/cedarville",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "images/projects/cedarville.webp",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web",
+      "education"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "client",
+    "_todo": [
+      "No engineering case study planned — specifics of what was hard/tradeoffs aren't remembered well enough to write one honestly. The project description + real tech stack stand on their own."
+    ]
+  },
+  {
+    "slug": "faith-centre-global",
+    "title": "The Faith Centre Global — Website",
+    "shortDescription": "The official website for The Faith Centre Global, a church in Okota, Lagos — a static, no-backend site where nearly every piece of content (sermons, events, books, giving, testimonies, leadership) is driven by JSON files, so day-to-day updates never require touching HTML.",
+    "problem": "A church website needs frequent content updates (new sermons, events, announcements) from non-technical staff, without a CMS backend or hosting costs.",
+    "solution": "A multi-page HTML/CSS/Bootstrap 5 site with no build step and no backend, where a JSON content layer (content/ for things that change often, config/ for things that rarely do) is fetched client-side and rendered by a single reusable renderer. js/content-loader.js fetches every content/config file and exposes it globally, firing a ready event; js/render.js listens for that event and renders every section of every page from the data, checking whether each section's container exists before touching it, so one file safely covers every page.",
+    "architecture": "Client-side JSON-CMS pattern: content-loader.js (fetch + expose data) → render.js (data-to-DOM rendering, reusable card/list renderers) → script.js (navbar, counters, filters, live search, scroll-to-top — resilient to content injected asynchronously). Also includes a service worker + PWA install banner for offline app-shell caching, and a self-contained floating 'Ministry Assistant' chat widget that matches visitor questions against a separate keyword-based knowledge base (with a marked TODO to swap in a real AI API later). Payments (Paystack), forms (Formspree), and analytics are wired but intentionally left disabled with empty placeholders until the client confirms providers — enabling them is a config edit, not a code change.",
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "Bootstrap 5",
+      "Vanilla JavaScript",
+      "JSON (client-side CMS)",
+      "Service Worker / PWA"
+    ],
+    "features": [
+      "10 pages: Home, About, Ministries, Sermons, Events, Books (bookstore w/ WhatsApp checkout), Media Centre, Giving, Livestream, Contact",
+      "Entire content layer JSON-driven — 16 content/config files, zero HTML edits for routine updates",
+      "Self-contained 'Ministry Assistant' chat widget answering common visitor questions",
+      "Installable as a PWA with offline app-shell caching",
+      "Paystack giving, Formspree contact forms, and analytics pre-wired but disabled until credentials are supplied",
+      "Prayer request modal, testimonials, FAQ accordion, live-search"
+    ],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "A documented roadmap (ROADMAP.md) and a FUTURE_SUPABASE.md note on how a database could later power dynamic features beyond the current static/JSON approach.",
+    "links": {
+      "github": "https://github.com/peterlightspeed/faithcenterglobal",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web",
+      "community",
+      "cms"
+    ],
+    "featured": true,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "client",
+    "_todo": [
+      "Add a real screenshot (image field currently empty — showing placeholder icon)."
+    ]
+  },
+  {
+    "slug": "freedom-reign-basketball-academy",
+    "title": "Freedom Reign Basketball Academy",
+    "shortDescription": "A responsive basketball academy website that gives information about the academy and showcases the coaches and the team.",
+    "problem": "",
+    "solution": "A responsive basketball academy website that gives information about the academy and showcases the coaches and the team.",
+    "architecture": "",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/freedomreign",
+      "liveDemo": "/demo.html?project=basketball",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/sEc0qgE.png",
+    "screenshots": [],
+    "status": "Ongoing Project",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "client"
+  },
+  {
+    "slug": "hope-assessment-app",
+    "title": "Hope Assessment App",
+    "shortDescription": "A healthcare assessment platform for patient registration, screening, and clinical workflow management, built with Next.js, React, and TypeScript.",
+    "problem": "",
+    "solution": "A healthcare assessment platform handling patient registration, screening, and clinical workflow management, with a component system built on Radix UI primitives (shadcn/ui-style), form handling via React Hook Form + Zod validation, and Zustand for state.",
+    "architecture": "Next.js app directory structure with a component library (components/, contexts/, lib/, types/) and Tailwind + Radix UI for the design system.",
+    "techStack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "React Hook Form",
+      "Zod",
+      "Zustand",
+      "Framer Motion",
+      "date-fns"
+    ],
+    "features": [
+      "Patient registration",
+      "Clinical screening workflow",
+      "Form validation via React Hook Form + Zod",
+      "Component system built on Radix UI primitives"
+    ],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/hope-assessment-app",
+      "liveDemo": "https://hope-assessment-app.vercel.app",
+      "video": ""
+    },
+    "image": "images/projects/hope-assessment-app.webp",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web",
+      "react",
+      "typescript",
+      "healthcare"
+    ],
+    "featured": true,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "client",
+    "_todo": [
+      "No engineering case study planned — specifics of what was hard/tradeoffs aren't remembered well enough to write one honestly. The project description + real tech stack stand on their own."
+    ]
+  },
+  {
+    "slug": "peterlightspeed-projects",
+    "title": "PeterLightspeed Projects",
+    "shortDescription": "Source code for my Python, Go, AI, and web development tutorials and live coding sessions — a learning resource for anyone following along or exploring the same topics independently.",
+    "problem": "",
+    "solution": "This repository collects the code behind my tutorials and live coding sessions, covering a range of topics across Python, Go, AI, and web development, organized by topic/session with practical, beginner-to-intermediate friendly code samples.",
+    "architecture": "",
+    "techStack": [
+      "Python",
+      "Go"
+    ],
+    "features": [
+      "Tutorial source code organized by topic/session",
+      "Examples spanning Python, Go, and AI",
+      "Practical, beginner-to-intermediate friendly code samples"
+    ],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/peterlightspeed_projects",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "",
+    "screenshots": [],
+    "status": "Ongoing",
+    "date": "",
+    "category": "content",
+    "tags": [
+      "education",
+      "python",
+      "go",
+      "tutorials"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "open-source"
+  },
+  {
+    "slug": "lightspeed-tube",
+    "title": "Lightspeed Tube",
+    "shortDescription": "A feature-rich YouTube clone with a modern UI, video streaming, and user interaction capabilities.",
+    "problem": "",
+    "solution": "A feature-rich YouTube clone with a modern UI, video streaming, and user interaction capabilities.",
+    "architecture": "",
+    "techStack": [
+      "HTML",
+      "JavaScript",
+      "CSS"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "images/projects/lightspeed-tube.webp",
+    "screenshots": [],
+    "status": "In Development",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web",
+      "social"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "restaurant-web",
+    "title": "Restaurant Web",
+    "shortDescription": "A sleek and modern website for a restaurant, featuring online menus, reservation forms, and a gallery.",
+    "problem": "",
+    "solution": "A sleek and modern website for a restaurant, featuring online menus, reservation forms, and a gallery.",
+    "architecture": "",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "/demo.html?project=restaurant",
+      "video": ""
+    },
+    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&h=300&fit=crop&crop=center",
+    "screenshots": [],
+    "status": "In Progress",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "dynamic-hero-page",
+    "title": "Dynamic Hero Page",
+    "shortDescription": "An engaging hero page with interactive animations and a strong call-to-action, built for high conversion rates.",
+    "problem": "",
+    "solution": "An engaging hero page with interactive animations and a strong call-to-action, built for high conversion rates.",
+    "architecture": "",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "/demo.html?project=web3",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/bXmX09r.png",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web",
+      "design"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "formspree-contact-form",
+    "title": "Formspree Contact Form",
+    "shortDescription": "A professional contact form built with HTML, CSS, and Bootstrap, integrated with Formspree for real-time email submissions and smooth success feedback.",
+    "problem": "",
+    "solution": "A professional contact form built with HTML, CSS, and Bootstrap, integrated with Formspree for real-time email submissions and smooth success feedback.",
+    "architecture": "",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Formspree"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "/demo.html?project=form",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/YpEEkNu.png",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "plsworldnews-blog",
+    "title": "PLSWorldNews Blog",
+    "shortDescription": "Entertainment and lifestyle blog with daily posts, SEO optimization, and AdSense integration.",
+    "problem": "",
+    "solution": "Entertainment and lifestyle blog with daily posts, SEO optimization, and AdSense integration.",
+    "architecture": "",
+    "techStack": [
+      "Blogger",
+      "SEO",
+      "Content Writing"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "/demo.html?project=blog",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/ynpID4a.png",
+    "screenshots": [],
+    "status": "Active Project",
+    "date": "",
+    "category": "content",
+    "tags": [
+      "content",
+      "web"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "personal-portfolio-website",
+    "title": "Personal Portfolio Website",
+    "shortDescription": "A responsive portfolio website showcasing my skills, projects, and services as a backend developer and AI engineer.",
+    "problem": "",
+    "solution": "A responsive portfolio website showcasing my skills, projects, and services as a backend developer and AI engineer.",
+    "architecture": "",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/portfolio",
+      "liveDemo": "/demo.html?project=portfolio",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/YhCPbz5.png",
+    "screenshots": [],
+    "status": "Current Project",
+    "date": "",
+    "category": "web",
+    "tags": [
+      "web"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "open-source"
+  },
+  {
+    "slug": "beat-blast-flier",
+    "title": "Beat Blast Flier",
+    "shortDescription": "Promotional flier design for Gidi Beat Blast music event featuring bold, energetic visuals that capture the event's vibe.",
+    "problem": "",
+    "solution": "Promotional flier design for Gidi Beat Blast music event featuring bold, energetic visuals that capture the event's vibe.",
+    "architecture": "",
+    "techStack": [
+      "Canva",
+      "Graphic Design",
+      "Event Promotion"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/IAko0ri.png",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "design",
+    "tags": [
+      "content",
+      "design"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "forex-mentor-flyer",
+    "title": "Forex Mentor Flyer",
+    "shortDescription": "Professional flyer design for Andrew Carse FX Village with sleek layout and balanced colors to attract serious clients.",
+    "problem": "",
+    "solution": "Professional flyer design for Andrew Carse FX Village with sleek layout and balanced colors to attract serious clients.",
+    "architecture": "",
+    "techStack": [
+      "Photoshop",
+      "Graphic Design",
+      "Marketing"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/t0xSPd5.png",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "design",
+    "tags": [
+      "design"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "basketball-academy-flyer",
+    "title": "Basketball Academy Flyer",
+    "shortDescription": "Eye-catching and energetic flyer design for Tochukwu's Basketball Hub that perfectly captures the dynamic spirit of the sport.",
+    "problem": "",
+    "solution": "Eye-catching and energetic flyer design for Tochukwu's Basketball Hub that perfectly captures the dynamic spirit of the sport.",
+    "architecture": "",
+    "techStack": [
+      "Canva",
+      "Graphic Design",
+      "Sports Marketing"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/Smwo35d.png",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "design",
+    "tags": [
+      "design"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  },
+  {
+    "slug": "basketball-academy-xmas-camp-flyer",
+    "title": "Basketball Academy Xmas Camp Flyer",
+    "shortDescription": "A vibrant and festive promotional flyer designed for Freedom Reign Basketball Academy's Christmas Camp, showcasing training dates, skill-building activities, fees, bank details, and contact information in a lively holiday-themed layout.",
+    "problem": "",
+    "solution": "A vibrant and festive promotional flyer designed for Freedom Reign Basketball Academy's Christmas Camp, showcasing training dates, skill-building activities, fees, bank details, and contact information in a lively holiday-themed layout.",
+    "architecture": "",
+    "techStack": [
+      "Canva",
+      "Graphic Design",
+      "Branding",
+      "Sports Promotion"
+    ],
+    "features": [],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "https://i.imgur.com/r4N8pTV.png",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "",
+    "category": "design",
+    "tags": [
+      "design"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "labs"
+  }
+]

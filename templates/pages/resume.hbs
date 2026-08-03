@@ -1,0 +1,104 @@
+        <section class="py-5">
+            <div class="container resume-container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 no-print">
+                    <h1 class="h3 mb-0">Resume</h1>
+                    <div class="d-flex gap-2">
+                        <a href="/{{site.documents.resume}}" class="btn btn-primary btn-sm" download>
+                            <i class="bi bi-download me-1"></i>Download Resume (PDF)
+                        </a>
+                        <button class="btn btn-outline-primary btn-sm" onclick="window.print()">
+                            <i class="bi bi-printer me-1"></i>Print
+                        </button>
+                        <a href="/timeline.html" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-signpost-split me-1"></i>Timeline View
+                        </a>
+                    </div>
+                </div>
+
+                <article class="resume-sheet" data-aos="fade-up">
+                    <header class="resume-header">
+                        <h2 class="resume-name">{{site.name}} Toluwanimi</h2>
+                        <p class="resume-headline">{{site.jobTitle}} | Founder, {{site.company}}</p>
+                        <p class="resume-contact">
+                            {{site.location.country}} &nbsp;&middot;&nbsp; {{site.email}} &nbsp;&middot;&nbsp;
+                            <a href="/">peterlightspeed.github.io/portfolio</a>
+                            {{#each site.socials}}
+                            {{#if (eq this.id "linkedin")}}&nbsp;&middot;&nbsp; <a href="{{this.url}}" target="_blank" rel="noopener">{{this.label}}</a>{{/if}}
+                            {{#if (eq this.id "github")}}&nbsp;&middot;&nbsp; <a href="{{this.url}}" target="_blank" rel="noopener">{{this.label}}</a>{{/if}}
+                            {{/each}}
+                        </p>
+                    </header>
+
+                    <section class="resume-section">
+                        <h2>Summary</h2>
+                        <p>{{site.resumeSummary}}</p>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Core Skills</h2>
+                        {{#each skills.core}}
+                        <p><strong>{{group}}:</strong> {{#each items}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
+                        {{/each}}
+                        <p><strong>Currently Learning:</strong> {{#each skills.learning.items}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Flagship Projects</h2>
+                        {{#each projects}}
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>{{title}}</h3>
+                                {{#if status}}<span class="resume-meta">{{status}}</span>{{/if}}
+                            </div>
+                            <p>{{solution}}</p>
+                        </div>
+                        {{/each}}
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Work Experience</h2>
+                        {{#each experience}}
+                        {{#if (eq type "work")}}
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>{{title}}</h3>
+                                <span class="resume-meta">{{period}}</span>
+                            </div>
+                            <p>{{description}}</p>
+                        </div>
+                        {{/if}}
+                        {{/each}}
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Education</h2>
+                        {{#each experience}}
+                        {{#if (eq type "education")}}
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>{{title}}</h3>
+                                <span class="resume-meta">{{period}}</span>
+                            </div>
+                            {{#if institution}}<p>{{institution}}</p>{{/if}}
+                        </div>
+                        {{/if}}
+                        {{/each}}
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Certifications</h2>
+                        <ul>
+                            {{#each certificates}}
+                            <li>{{title}}{{#if issuer}} — {{issuer}}{{/if}}</li>
+                            {{/each}}
+                        </ul>
+                        <p class="small text-muted no-print">Full details on the <a href="/certifications.html">Certifications page</a>.</p>
+                    </section>
+
+                    <section class="resume-section">
+                        <h2>Additional Information</h2>
+                        <p>Typing Speed: {{site.additionalInfo.typingSpeed}} &middot; Languages: {{site.additionalInfo.languages}} &middot; Interests: {{site.additionalInfo.interests}}</p>
+                    </section>
+                </article>
+            </div>
+        </section>

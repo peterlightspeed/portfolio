@@ -1,0 +1,62 @@
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="/">
+                    <img src="/{{site.logo}}" alt="{{site.name}} logo" height="32" class="me-2" loading="eager">
+                    {{site.alternateName}}
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        {{#each site.primaryNav}}
+                        <li class="nav-item">
+                            <a class="nav-link px-3 {{activeIf ../page this.match}}" href="{{this.href}}">{{this.label}}</a>
+                        </li>
+                        {{/each}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
+                                {{#each site.moreNav}}
+                                {{#if this.divider}}
+                                <li><hr class="dropdown-divider"></li>
+                                {{else}}
+                                <li><a class="dropdown-item" href="{{this.href}}">
+                                    <i class="bi {{this.icon}} me-2 text-primary"></i>{{this.label}}
+                                </a></li>
+                                {{/if}}
+                                {{/each}}
+                            </ul>
+                        </li>
+                        <li class="nav-item d-none d-lg-block ms-2">
+                            <a href="/contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
+                                <i class="bi bi-envelope-fill me-1"></i> Hire Me
+                            </a>
+                        </li>
+                        <li class="nav-item search-nav-item ms-2">
+                            <button type="button" class="btn btn-outline-light btn-sm rounded-pill" id="siteSearchOpen" aria-label="Search site">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SITE-WIDE SEARCH MODAL (data comes from /public/search-index.json, built automatically) -->
+    <div class="site-search-modal" id="siteSearchModal" hidden>
+        <div class="site-search-panel">
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control" id="siteSearchInput" placeholder="Search projects, products, skills, certificates..." autocomplete="off">
+                <button class="btn btn-outline-secondary" type="button" id="siteSearchClose" aria-label="Close search">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div id="siteSearchResults" class="site-search-results"></div>
+        </div>
+    </div>

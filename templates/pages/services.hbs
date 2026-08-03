@@ -1,0 +1,157 @@
+        <section class="py-5 bg-primary text-white services-header">
+            <div class="container text-center" data-aos="fade-in">
+                <h1 class="display-4 fw-bold mb-3">{{services.hero.title}}</h1>
+                <p class="lead col-lg-8 mx-auto">{{services.hero.lead}}</p>
+            </div>
+        </section>
+
+        <section class="py-5" id="mentorship">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center" data-aos="fade-up">
+                        <span class="badge bg-primary rounded-pill px-3 py-2 mb-3">{{services.mentorship.badge}}</span>
+                        <h2 class="section-title mb-3">{{services.mentorship.title}}</h2>
+                        <p class="lead text-muted mb-4">{{services.mentorship.lead}}</p>
+                        <div class="row g-3 text-start mb-4">
+                            {{#each services.mentorship.points}}
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-start">
+                                    <i class="bi {{icon}} text-primary fs-4 me-2"></i>
+                                    <span>{{text}}</span>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <a href="{{services.mentorship.cta.href}}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                            <i class="bi bi-whatsapp me-2"></i>{{services.mentorship.cta.label}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light" id="freelance-services">
+            <div class="container">
+                <h2 class="section-title text-center mb-2" data-aos="fade-up">Work With Me</h2>
+                <p class="text-center text-muted mb-5" data-aos="fade-up">Straightforward pricing, no hidden fees. Message me on WhatsApp to get started.</p>
+                <div class="row g-4">
+                    {{#each services.pricingPackages}}
+                    <div class="col-md-6 col-lg-3">
+                        <div class="service-card h-100 d-flex flex-column">
+                            <div class="service-icon"><i class="bi {{icon}}"></i></div>
+                            <h3 class="h5">{{title}}</h3>
+                            <p class="small text-muted flex-grow-1">{{description}}</p>
+                            <ul class="list-unstyled pricing-list mb-3">
+                                {{#each tiers}}<li><strong>{{label}}:</strong> {{price}}</li>{{/each}}
+                            </ul>
+                            <a href="{{cta.href}}" class="btn btn-primary mt-auto" target="_blank" rel="noopener">
+                                <i class="bi bi-whatsapp me-2"></i>{{cta.label}}
+                            </a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" id="service-grid">
+            <div class="container">
+                <div class="row g-4">
+                    {{#each services.serviceGrid}}
+                    <div class="col-md-6 col-lg-4" id="{{slug}}">
+                        <div class="service-card h-100">
+                            <div class="service-icon text-{{color}}"><i class="bi {{icon}}"></i></div>
+                            <h3 class="h4">{{title}}</h3>
+                            <p>{{description}}</p>
+                            <ul class="list-unstyled service-features">
+                                {{#each features}}<li><i class="bi bi-check-circle-fill text-success"></i> {{this}}</li>{{/each}}
+                            </ul>
+                            <a href="/contact.html?service={{urlencode title}}" class="btn btn-outline-{{color}} mt-auto">Get a Quote</a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-primary mb-2 px-3 py-2">{{services.aiServicesIntro.badge}}</span>
+                    <h2 class="fw-bold">{{services.aiServicesIntro.title}}</h2>
+                    <p class="text-muted col-lg-7 mx-auto">{{services.aiServicesIntro.lead}}</p>
+                </div>
+                <div class="row g-4">
+                    {{#each services.aiServiceGrid}}
+                    <div class="col-md-6 col-lg-4" id="{{slug}}">
+                        <div class="service-card h-100">
+                            <div class="service-icon text-{{color}}"><i class="bi {{icon}}"></i></div>
+                            <h3 class="h4">{{title}}</h3>
+                            <p>{{description}}</p>
+                            <ul class="list-unstyled service-features">
+                                {{#each features}}<li><i class="bi bi-check-circle-fill text-success"></i> {{this}}</li>{{/each}}
+                            </ul>
+                            <a href="/contact.html?service={{urlencode title}}" class="btn btn-outline-{{color}} mt-auto">Get a Quote</a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">Why Choose Me?</h2>
+                <div class="row g-4">
+                    {{#each services.whyChooseMe}}
+                    <div class="col-md-4">
+                        <div class="feature-box p-4">
+                            <div class="feature-icon text-{{color}} mb-3"><i class="bi {{icon}}"></i></div>
+                            <h3 class="h5">{{title}}</h3>
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">Frequently Asked Questions</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion" data-aos="fade-up">
+                            {{#each services.faq}}
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading{{@index}}">
+                                    <button class="accordion-button {{#unless (eq @index 0)}}collapsed{{/unless}}" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{@index}}" aria-expanded="{{#if (eq @index 0)}}true{{else}}false{{/if}}" aria-controls="faqCollapse{{@index}}">
+                                        {{question}}
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse{{@index}}" class="accordion-collapse collapse {{#if (eq @index 0)}}show{{/if}}" aria-labelledby="faqHeading{{@index}}" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">{{answer}}</div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+                        <h2 class="display-6 fw-bold mb-3">{{services.cta.title}}</h2>
+                        <p class="lead mb-0">{{services.cta.lead}}</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                        <a href="{{services.cta.buttonHref}}" class="btn btn-light btn-lg text-primary fw-bold px-4 py-3">
+                            <i class="bi bi-folder-fill me-2"></i>{{services.cta.buttonLabel}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>

@@ -1,0 +1,60 @@
+        <section class="page-hero bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="fw-bold display-6">Certifications & Education</h1>
+                <p class="lead mb-0">Formal training and credentials behind the work.</p>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    {{#each certificates}}
+                    {{> cert-card}}
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light" id="skills">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Skills</h2>
+                <div class="row g-4">
+                    {{#each skills.core}}
+                    <div class="col-md-6">
+                        <h3 class="h6 fw-bold"><i class="bi {{icon}} me-2 text-primary"></i>{{group}}</h3>
+                        <p class="small text-muted">{{note}}</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            {{#each items}}<span class="tech-badge">{{this}}</span>{{/each}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="mt-4">
+                    <h3 class="h6 fw-bold"><i class="bi bi-mortarboard me-2 text-primary"></i>Currently Learning</h3>
+                    <p class="small text-muted">{{skills.learning.note}}</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        {{#each skills.learning.items}}<span class="tech-badge tech-badge-learning">{{this}}</span>{{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" id="experience">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Education & Training Timeline</h2>
+                <div class="row g-4">
+                    {{#each experience}}
+                    <div class="col-md-6">
+                        <div class="d-flex gap-3">
+                            <div class="flex-shrink-0"><i class="bi {{icon}} fs-3 text-{{color}}"></i></div>
+                            <div>
+                                <h3 class="h6 mb-1">{{title}}</h3>
+                                <p class="small text-muted mb-1">{{institution}} &middot; {{period}}</p>
+                                <p class="small mb-0">{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>

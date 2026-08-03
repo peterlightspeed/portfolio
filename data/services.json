@@ -1,0 +1,193 @@
+{
+  "hero": {
+    "title": "My Services",
+    "lead": "Tailored solutions to elevate your brand and streamline your operations. I provide a versatile range of digital services with speed and precision."
+  },
+  "mentorship": {
+    "badge": "Mentorship",
+    "title": "Learning Backend Dev? I Can Help You Get Unstuck.",
+    "lead": "I mentor developers learning Python and backend fundamentals, drawing on hands-on experience building PLS Nexus and teaching publicly on LinkedIn Live, YouTube, and TikTok.",
+    "points": [
+      { "icon": "bi-code-square", "text": "Real code review on your actual projects, not generic feedback" },
+      { "icon": "bi-signpost-split", "text": "A personalized learning path based on where you're stuck" },
+      { "icon": "bi-compass", "text": "Honest career guidance for backend/AI roles" }
+    ],
+    "cta": { "label": "Ask About Mentorship", "href": "https://wa.me/2348108821809?text=Hi%20Peter%2C%20I%27m%20interested%20in%20Python%20%26%20Backend%20Dev%20Mentorship" }
+  },
+  "pricingPackages": [
+    {
+      "slug": "mentorship",
+      "icon": "bi-mortarboard-fill",
+      "title": "Python & Backend Dev Mentorship",
+      "description": "Personalized 1-on-1 mentoring for developers learning Python and backend fundamentals. Get code reviews, project guidance, and a clear learning path — tailored to where you're stuck, not a generic course.",
+      "tiers": [
+        { "label": "Single session (60 min)", "price": "₦15,000 / $12" },
+        { "label": "4-session monthly package", "price": "₦50,000 / $38" }
+      ],
+      "cta": { "label": "Chat on WhatsApp", "href": "https://wa.me/2348108821809?text=Hi%20Peter%2C%20I%27m%20interested%20in%20Python%20%26%20Backend%20Dev%20Mentorship" }
+    },
+    {
+      "slug": "small-business-website",
+      "icon": "bi-globe2",
+      "title": "Website Development for Small Businesses",
+      "description": "Fast, responsive websites for small businesses and personal brands — built with clean HTML/CSS/Bootstrap and connected to WhatsApp or social platforms so customers can reach you instantly.",
+      "tiers": [
+        { "label": "Starter package (3-5 pages)", "price": "₦120,000 / $90" },
+        { "label": "Custom / e-commerce", "price": "Quote on request" }
+      ],
+      "cta": { "label": "Chat on WhatsApp", "href": "https://wa.me/2348108821809?text=Hi%20Peter%2C%20I%27m%20interested%20in%20Website%20Development%20for%20Small%20Businesses" }
+    },
+    {
+      "slug": "python-automation-scripts",
+      "icon": "bi-robot",
+      "title": "Python Automation & Script Development",
+      "description": "Custom Python scripts to automate repetitive tasks — data cleaning, report generation, file processing, simple integrations. Fast turnaround, clear scope, no bloated deliverables.",
+      "tiers": [
+        { "label": "Simple script", "price": "from ₦20,000 / $15" },
+        { "label": "Multi-step automation", "price": "from ₦80,000 / $60" }
+      ],
+      "cta": { "label": "Chat on WhatsApp", "href": "https://wa.me/2348108821809?text=Hi%20Peter%2C%20I%27m%20interested%20in%20Python%20Automation%20%26%20Script%20Development" }
+    },
+    {
+      "slug": "resume-linkedin",
+      "icon": "bi-file-earmark-person",
+      "title": "Resume & LinkedIn Optimization",
+      "description": "ATS-friendly resumes and LinkedIn profiles built specifically for tech job seekers and career switchers — clear positioning, honest framing of in-progress skills, and a profile recruiters actually read.",
+      "tiers": [
+        { "label": "CV only", "price": "₦15,000 / $12" },
+        { "label": "CV + LinkedIn overhaul", "price": "₦25,000 / $18" }
+      ],
+      "cta": { "label": "Chat on WhatsApp", "href": "https://wa.me/2348108821809?text=Hi%20Peter%2C%20I%27m%20interested%20in%20Resume%20%26%20LinkedIn%20Optimization" }
+    }
+  ],
+  "serviceGrid": [
+    {
+      "slug": "web-development",
+      "icon": "bi-laptop",
+      "color": "primary",
+      "title": "Web Development",
+      "description": "Building responsive, fast, and user-friendly websites from scratch to establish your online presence.",
+      "features": ["Custom Websites", "E-commerce Solutions", "Landing Pages", "Website Maintenance"]
+    },
+    {
+      "slug": "graphic-design",
+      "icon": "bi-palette-fill",
+      "color": "danger",
+      "title": "Graphic Design",
+      "description": "Creating stunning visuals that communicate your brand's message and capture your audience's attention.",
+      "features": ["Logos & Branding", "Social Media Graphics", "Flyers & Banners", "UI/UX Design Mockups"]
+    },
+    {
+      "slug": "social-media",
+      "icon": "bi-share-fill",
+      "color": "info",
+      "title": "Social Media Management",
+      "description": "Managing your social media presence to grow your audience, engage your community, and drive results.",
+      "features": ["Content Scheduling", "Community Engagement", "Performance Analytics", "Strategy Development"]
+    },
+    {
+      "slug": "content-creation",
+      "icon": "bi-pencil-square",
+      "color": "warning",
+      "title": "Content Creation",
+      "description": "Crafting compelling blog posts, articles, and video scripts that resonate with your audience and boost SEO.",
+      "features": ["Blog & Article Writing", "Video Scripting", "SEO Content Strategy", "Copywriting"]
+    },
+    {
+      "slug": "data-entry",
+      "icon": "bi-keyboard-fill",
+      "color": "secondary",
+      "title": "Data Entry & Typing",
+      "description": "Providing fast and accurate data entry, transcription, and document formatting services to keep you organized.",
+      "features": ["Fast Typing (80+ WPM)", "Data Cleansing", "Transcription Services", "Spreadsheet Management"]
+    },
+    {
+      "slug": "ai-web-solutions",
+      "icon": "bi-cpu",
+      "color": "warning",
+      "title": "AI & Web Content Development",
+      "description": "Creating intelligent, SEO-optimized content and web copy that blends creativity with automation tools — perfect for blogs, portfolios, and digital brands.",
+      "features": ["AI-Assisted Content Creation", "SEO Blog & Web Copywriting", "Automated Writing Tools Integration", "Digital Branding Content"]
+    },
+    {
+      "slug": "digital-marketing",
+      "icon": "bi-megaphone-fill",
+      "color": "success",
+      "title": "Digital Marketing",
+      "description": "Implementing effective digital marketing strategies to increase your online visibility and drive conversions.",
+      "features": ["SEO & SEM", "Email Marketing Campaigns", "Ad Campaign Management", "Analytics & Reporting"]
+    }
+  ],
+  "aiServicesIntro": {
+    "badge": "AI & Technical Expertise",
+    "title": "AI, Data & Automation Services",
+    "lead": "Advanced technical services powered by machine learning, Python automation, and data engineering — the core of PLSTech's capabilities."
+  },
+  "aiServiceGrid": [
+    {
+      "slug": "ai-development",
+      "icon": "bi-robot",
+      "color": "primary",
+      "title": "AI Development",
+      "description": "Building intelligent applications powered by machine learning models, NLP, and computer vision to automate complex business workflows.",
+      "features": ["Custom AI Model Training", "OpenAI / LLM Integration", "AI-powered Workflows", "Intelligent Automation"]
+    },
+    {
+      "slug": "machine-learning",
+      "icon": "bi-graph-up-arrow",
+      "color": "success",
+      "title": "Machine Learning Solutions",
+      "description": "Developing predictive models and data-driven solutions that help businesses forecast trends, detect anomalies, and make smarter decisions.",
+      "features": ["Predictive Analytics", "Classification & Clustering", "Anomaly Detection", "Model Deployment"]
+    },
+    {
+      "slug": "python-automation",
+      "icon": "bi-gear-wide-connected",
+      "color": "warning",
+      "title": "Python Automation",
+      "description": "Eliminating repetitive manual tasks with custom Python scripts and automation pipelines that save time and reduce human error.",
+      "features": ["Web Scraping & Crawling", "Report Generation", "Task Scheduling", "API Integration Scripts"]
+    },
+    {
+      "slug": "business-intelligence",
+      "icon": "bi-bar-chart-fill",
+      "color": "info",
+      "title": "Business Intelligence",
+      "description": "Transforming raw business data into clear dashboards, KPI reports, and executive insights that drive faster and better decisions.",
+      "features": ["KPI Dashboard Design", "Power BI / Data Viz", "Automated Reporting", "Sales & Revenue Analytics"]
+    },
+    {
+      "slug": "data-engineering",
+      "icon": "bi-database-fill-gear",
+      "color": "purple",
+      "title": "Data Engineering",
+      "description": "Designing and building robust data pipelines, ETL workflows, and data warehouses that make your data reliable, clean, and analysis-ready.",
+      "features": ["ETL Pipeline Development", "Data Cleaning & Normalisation", "Database Design", "Data Quality Assurance"]
+    },
+    {
+      "slug": "chatbot-development",
+      "icon": "bi-chat-dots-fill",
+      "color": "danger",
+      "title": "Chatbot Development",
+      "description": "Building intelligent conversational AI assistants for websites, WhatsApp, and business portals that engage customers 24/7.",
+      "features": ["Customer Support Bots", "WhatsApp Integration", "Lead Capture Bots", "FAQ Automation"]
+    }
+  ],
+  "whyChooseMe": [
+    { "icon": "bi-lightning-charge-fill", "color": "primary", "title": "Lightning Speed", "description": "I deliver high-quality work with exceptional speed and efficiency, ensuring your projects are completed on time, every time." },
+    { "icon": "bi-gem", "color": "success", "title": "Unmatched Quality", "description": "My commitment to excellence means I don't just complete tasks—I deliver polished, professional results that exceed expectations." },
+    { "icon": "bi-tools", "color": "info", "title": "Versatile Skillset", "description": "From web development to graphic design and content creation, my diverse skills provide a one-stop solution for your digital needs." }
+  ],
+  "faq": [
+    { "question": "What are your working hours?", "answer": "I operate on a flexible schedule to accommodate clients across different time zones. I am available 24/7 for communication and can adjust my working hours to align with your project needs." },
+    { "question": "How do you handle payments?", "answer": "For most projects, I require a 50% upfront payment to begin work, with the remaining 50% due upon completion. I accept payments through various platforms, including bank transfers and online payment gateways, for your convenience." },
+    { "question": "What is your revision process?", "answer": "I believe in collaborative success. Each project typically includes two rounds of revisions to ensure the final product meets your expectations. Additional revisions can be accommodated as needed, which may affect the project timeline and cost." },
+    { "question": "Can you handle urgent projects?", "answer": "Yes, I can often accommodate rush projects depending on my current workload. Urgent projects may be subject to an additional fee. Please contact me with your requirements, and I'll let you know my availability." }
+  ],
+  "cta": {
+    "title": "See My Skills in Action",
+    "lead": "Words are great, but results speak louder. Explore my portfolio to see how I've helped other clients succeed.",
+    "buttonLabel": "View My Work",
+    "buttonHref": "/projects/"
+  }
+}

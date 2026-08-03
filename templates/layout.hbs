@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+    <a href="#main-content" class="visually-hidden-focusable skip-link">Skip to main content</a>
+
+{{> nav}}
+
+{{#if breadcrumbs}}
+    <div class="bg-light py-2">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    {{#each breadcrumbs}}
+                    {{#if @last}}
+                    <li class="breadcrumb-item active" aria-current="page">{{label}}</li>
+                    {{else}}
+                    <li class="breadcrumb-item"><a href="{{href}}">{{label}}</a></li>
+                    {{/if}}
+                    {{/each}}
+                </ol>
+            </nav>
+        </div>
+    </div>
+{{/if}}
+
+    <main id="main-content">
+{{{body}}}
+    </main>
+
+{{> footer}}
+
+{{> scripts}}
+</body>
+</html>

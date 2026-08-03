@@ -1,0 +1,92 @@
+[
+  {
+    "type": "work",
+    "title": "AI & Python Development Intern",
+    "institution": "Oasis Infobyte",
+    "period": "Aug 2026 - Present",
+    "icon": "bi-briefcase-fill",
+    "color": "primary",
+    "description": "Building production-quality Python projects and developing AI and automation solutions. Writing clean, maintainable, production-ready code, using Git and GitHub professionally, and creating documentation and project demonstrations while applying software engineering best practices. Ongoing — this entry will be updated as the internship progresses.",
+    "draft": false
+  },
+  {
+    "type": "work",
+    "title": "Founder & SEO Blogger — PLS WorldNews",
+    "institution": "PLS WorldNews",
+    "period": "Mar 2025 - Present · Hybrid",
+    "icon": "bi-briefcase-fill",
+    "color": "primary",
+    "description": "Founded and manage a growing entertainment/news blog on Blogger. Write and publish 2000+ word SEO-friendly articles on trending topics. Implemented meta tags, internal links, and custom labels for better structure and visibility.",
+    "draft": false
+  },
+  {
+    "type": "work",
+    "title": "Freelance Web Developer",
+    "institution": "Self-employed",
+    "period": "Feb 2025 - Present · Remote",
+    "icon": "bi-briefcase-fill",
+    "color": "primary",
+    "description": "Designed fast, mobile-friendly websites using HTML, CSS (Flexbox), and Bootstrap. Developed business and portfolio sites for clients, including fashion stores and media brands. Integrated contact forms and messaging integrations to boost client engagement. Trained clients on how to manage and update their websites.",
+    "draft": false
+  },
+  {
+    "type": "work",
+    "title": "Frontend Web Developer / Master Instructor",
+    "institution": "Camex Global Concept",
+    "period": "Feb 2025 - Jul 2025 · Hybrid",
+    "icon": "bi-briefcase-fill",
+    "color": "primary",
+    "description": "Delivered training in front-end coding, Canva, and CapCut. Assisted with registration and enrollment documentation projects. Designed layouts for documents, ID cards, and branding materials.",
+    "draft": false
+  },
+  {
+    "type": "education",
+    "title": "Bachelor of Science in Computer Science",
+    "institution": "Lagos State University",
+    "period": "Jan 2026 - Jan 2030",
+    "icon": "bi-mortarboard-fill",
+    "color": "primary",
+    "description": "Currently working toward a degree in Computer Science.",
+    "draft": false
+  },
+  {
+    "type": "education",
+    "title": "High School Certificate (GCE)",
+    "institution": "Glory Crown International High School — President, Junior Engineers, Technologists, and Scientists (JETS) Club",
+    "period": "Sep 2023 - Jun 2025",
+    "icon": "bi-mortarboard-fill",
+    "color": "secondary",
+    "description": "",
+    "draft": false
+  },
+  {
+    "type": "education",
+    "title": "Digital Services Internship",
+    "institution": "Camex Global Concept",
+    "period": "2025",
+    "icon": "bi-award-fill",
+    "color": "success",
+    "description": "Certified in digital skills, including typing, basic graphic design, file conversion, and document formatting during hands-on training.",
+    "draft": false
+  },
+  {
+    "type": "education",
+    "title": "Website Development",
+    "institution": "February 2025",
+    "period": "2025",
+    "icon": "bi-laptop-fill",
+    "color": "info",
+    "description": "Intensive training in modern web development technologies, including HTML5, CSS3, responsive design, and front-end frameworks.",
+    "draft": false
+  },
+  {
+    "type": "education",
+    "title": "Computer Studies",
+    "institution": "WAPA",
+    "period": "2024-2025",
+    "icon": "bi-palette-fill",
+    "color": "warning",
+    "description": "Comprehensive course covering design principles, color theory, typography, layout design, and digital illustration techniques.",
+    "draft": false
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "name": "peterlightspeed-portfolio",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Peter Eluwade (Peter Lightspeed) — personal developer portfolio. Static site generated from JSON/Markdown content in /data and /content. Output is plain HTML/CSS/vanilla JS, deployed to GitHub Pages.",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node build/build.js",
+    "watch": "node build/build.js --watch",
+    "serve": "npx serve dist -l 4000",
+    "dev": "npm run build && npm run serve",
+    "new:project": "node scripts/new-entry.js project",
+    "new:product": "node scripts/new-entry.js product",
+    "new:article": "node scripts/new-entry.js article",
+    "new:certificate": "node scripts/new-entry.js certificate",
+    "new:talk": "node scripts/new-entry.js talk",
+    "validate": "node build/lib/validate.js",
+    "fetch:github": "node build/lib/github.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "marked": "^12.0.2",
+    "gray-matter": "^4.0.3"
+  }
+}

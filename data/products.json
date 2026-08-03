@@ -1,0 +1,489 @@
+[
+  {
+    "slug": "pls-nexus",
+    "title": "PLS Nexus",
+    "badge": "Flagship Platform · Python / Go / FastAPI",
+    "icon": "bi-hexagon-fill",
+    "shortDescription": "The flagship AI-powered SaaS platform for entrepreneurs and small businesses — being built module by module, starting with Talent Intelligence.",
+    "longDescription": "Rather than one monolithic build, PLS Nexus is being developed as a series of modules, each with its own repository and its own focused scope. PLS Nexus Talent Intelligence is the first of these modules — an AI resume-analysis backend — with its entity design and auth pattern intended to become the reusable template for every module that follows: workflow automation, CRM, analytics, and business management.",
+    "problem": "Small teams stitch together a dozen separate tools to run their operations — AI assistants, workflow automation, CRM, analytics, communication, and productivity tools all live in different apps.",
+    "techStack": [
+      "Python",
+      "Go",
+      "FastAPI",
+      "PostgreSQL",
+      "Supabase",
+      "Bootstrap",
+      "JavaScript"
+    ],
+    "features": [
+      "AI Assistants (planned)",
+      "Workflow Automation (planned)",
+      "CRM (planned)",
+      "Analytics (planned)",
+      "Customer Communication (planned)",
+      "Business Management (planned)"
+    ],
+    "links": {
+      "github": "",
+      "liveDemo": ""
+    },
+    "editions": [
+      {
+        "name": "Platform",
+        "tier": "flagship",
+        "features": [
+          "First module (Talent Intelligence) in active development — see its own project page",
+          "Reusable auth/entity architecture designed to extend across future modules",
+          "No public repository yet — module repos are published individually as they mature"
+        ],
+        "status": "in-development",
+        "statusLabel": "Active Development",
+        "cta": {
+          "label": "See Talent Intelligence",
+          "href": "/projects/pls-nexus-talent-intelligence/",
+          "icon": "bi-arrow-right-circle"
+        }
+      }
+    ],
+    "roadmap": [
+      {
+        "stage": "Now",
+        "detail": "Talent Intelligence module — AI resume analysis backend"
+      },
+      {
+        "stage": "Next",
+        "detail": "Workflow automation module, reusing the auth/entity patterns built for Talent Intelligence"
+      },
+      {
+        "stage": "Later",
+        "detail": "CRM and customer communication tools"
+      },
+      {
+        "stage": "Future",
+        "detail": "Analytics dashboard and business management suite"
+      }
+    ],
+    "workType": "product",
+    "featured": true,
+    "flagship": true,
+    "draft": false
+  },
+  {
+    "slug": "dataflow-ai",
+    "_todo": [
+      "Update status/statusLabel once out of ~v0.5 (e.g. 'Beta' or 'v1.0 Released')",
+      "Add links.github once (if) the repo goes public",
+      "Add links.liveDemo once publicly deployed",
+      "Re-check features list against actual shipped functionality before making this public-facing — current list is scoped to what was confirmed, not the full roadmap",
+      "Consider adding a screenshot once there's a UI worth showing"
+    ],
+    "title": "DataFlow AI",
+    "badge": "Python / FastAPI / React / TypeScript / PostgreSQL",
+    "icon": "bi-database-fill-gear",
+    "shortDescription": "A production-grade AI-powered business data intelligence platform — upload CSV/Excel datasets, profile and analyze them, detect data quality issues, clean and standardize records, and generate intelligent reports.",
+    "longDescription": "DataFlow AI is currently a private repository under active development (around v0.5), so this description is intentionally limited to what has been confirmed rather than filled in with assumed features. It helps businesses upload CSV and Excel datasets, profile and analyze business data, detect data quality issues, clean and standardize records, generate intelligent reports, and prepare datasets for AI and business analytics.",
+    "problem": "Businesses accumulate messy CSV/Excel data across tools with no consistent way to profile it, catch quality issues, or prepare it for analysis without a data engineer on staff.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "features": [
+      "CSV and Excel dataset upload",
+      "Business data profiling and analysis",
+      "Data quality issue detection",
+      "Record cleaning and standardization",
+      "Intelligent report generation",
+      "Dataset preparation for AI and business analytics"
+    ],
+    "links": {
+      "github": "",
+      "liveDemo": ""
+    },
+    "editions": [
+      {
+        "name": "Platform",
+        "tier": "private",
+        "features": [
+          "Private repository — not publicly deployed",
+          "Actively in development (~v0.5)",
+          "Some information intentionally limited while the repo is private"
+        ],
+        "status": "private",
+        "statusLabel": "Private Project · In Progress",
+        "cta": {
+          "label": "Private Repository",
+          "href": "",
+          "icon": "bi-lock-fill"
+        }
+      }
+    ],
+    "workType": "product",
+    "featured": true,
+    "draft": false
+  },
+  {
+    "slug": "pls-compress",
+    "title": "PLS Compress",
+    "badge": "FastAPI / Pillow / pikepdf",
+    "icon": "bi-file-earmark-zip-fill",
+    "shortDescription": "A no-sign-up toolkit for shrinking images, shrinking PDFs, and merging PDFs — everything processed in memory through a Python backend, nothing stored after the response goes back.",
+    "longDescription": "PLS Compress rebuilds a PDF's internal structure with pikepdf and, where it's safe to do so, re-encodes oversized embedded photos at a lower quality — page text is never touched, so documents stay sharp and stay searchable. Images are re-encoded through Pillow with a chosen format, quality, and optional width cap, with EXIF rotation respected. Every tool shows a before-and-after size comparison and percentage reduction before download. The frontend is server-rendered HTML with a single Jinja2 template and vanilla JS — no build step, no framework, so anyone can clone the repo and run it immediately.",
+    "problem": "Shrinking a photo or a bloated PDF for email or upload usually means signing up for a web tool, and merging multiple PDFs into one is rarely free. PLS Compress needed no account and left nothing stored server-side.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "Uvicorn",
+      "Pillow",
+      "pikepdf",
+      "pypdf",
+      "Jinja2",
+      "Vanilla JS"
+    ],
+    "features": [
+      "Image compression (JPG/PNG/WEBP/BMP) with format, quality, and width controls",
+      "EXIF-aware rotation handling",
+      "PDF compression that re-encodes oversized embedded images without touching page text",
+      "Merge 2-20 PDFs into one, in upload order",
+      "Before/after size comparison with percentage reduction",
+      "In-memory processing — no database, no persistence, nothing stored after the response"
+    ],
+    "links": {
+      "github": "https://github.com/peterlightspeed/pls-compress",
+      "liveDemo": "https://pls-compress.onrender.com/"
+    },
+    "status": "Live",
+    "editions": [
+      {
+        "name": "Free / Open Source",
+        "tier": "community",
+        "features": [
+          "Image compression (JPG/PNG/WEBP/BMP)",
+          "PDF compression & merging",
+          "25MB per-file limit, up to 20 files merged",
+          "Free to explore, learn from, and adapt"
+        ],
+        "status": "available",
+        "statusLabel": "Live Now",
+        "cta": {
+          "label": "Try It Live",
+          "href": "https://pls-compress.onrender.com/",
+          "icon": "bi-box-arrow-up-right"
+        }
+      }
+    ],
+    "featured": true,
+    "draft": false,
+    "workType": "product",
+    "image": "images/products/pls-compress.webp"
+  },
+  {
+    "slug": "pls-qr",
+    "title": "PLS QR",
+    "badge": "FastAPI / ReportLab / qrcode",
+    "icon": "bi-qr-code",
+    "shortDescription": "Turn a list of links or text into a batch of styled QR codes in seconds — paste a list or upload a CSV, export as a ZIP of PNGs or one printable PDF sheet.",
+    "longDescription": "Making QR codes one at a time on a generic web tool is fine for a single link — it stops being fine the moment there's a real list behind it: a menu with twelve items, an event with fifty attendee badges, a warehouse full of product labels. PLS QR automates that repetitive step. Input is parsed into label/data pairs from pasted text or an uploaded CSV (recognizing data/value/url/link and label/name columns), each rendered as a styled QR code with a configurable error-correction level, then exported either as an in-memory ZIP of PNGs or laid out into a grid on printable PDF sheets via ReportLab.",
+    "problem": "Bulk QR code generation for events, menus, or product labels usually means a paid tool or manually generating codes one by one.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "Uvicorn",
+      "qrcode",
+      "Pillow",
+      "ReportLab",
+      "Jinja2",
+      "Vanilla JS"
+    ],
+    "features": [
+      "Paste a list or upload a CSV (auto-detects label/data columns)",
+      "Custom code color, background color, and error-correction level",
+      "Export as a ZIP of individually labeled PNGs",
+      "Export as a printable PDF sheet (2-4 column grid, auto paginated)",
+      "Up to 300 items per batch"
+    ],
+    "links": {
+      "github": "https://github.com/peterlightspeed/pls-qr",
+      "liveDemo": "https://pls-qr.onrender.com/"
+    },
+    "status": "Live",
+    "editions": [
+      {
+        "name": "Free / Open Source",
+        "tier": "community",
+        "features": [
+          "Batch QR generation from text or CSV",
+          "ZIP and printable PDF export",
+          "Up to 300 items per batch",
+          "Free to explore, learn from, and adapt"
+        ],
+        "status": "available",
+        "statusLabel": "Live Now",
+        "cta": {
+          "label": "Try It Live",
+          "href": "https://pls-qr.onrender.com/",
+          "icon": "bi-box-arrow-up-right"
+        }
+      }
+    ],
+    "featured": true,
+    "draft": false,
+    "workType": "product",
+    "image": "images/products/pls-qr.webp"
+  },
+  {
+    "slug": "pls-snip",
+    "title": "PLS Snip",
+    "badge": "FastAPI / SQLite",
+    "icon": "bi-link-45deg",
+    "shortDescription": "A no-sign-up URL shortener. Paste a long link, get a short one back, and check click stats later using a private management link — no account, no password.",
+    "longDescription": "Creating a short link also returns a one-time management link built from a second, unrelated random token — the same trust model as an unlisted share link. Opening it later shows click count, creation/expiry dates, and last-clicked time, and lets you delete the link. Custom aliases are validated against a reserved-word list so a custom code can never collide with a real route, and links can be set to expire after 1, 7, 30, or 90 days, or never. Runs on a single SQLite file in WAL mode — no separate database server to install.",
+    "problem": "Most URL shorteners require an account just to see basic click stats on a link you created thirty seconds ago.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "Uvicorn",
+      "SQLite",
+      "Jinja2",
+      "Vanilla JS"
+    ],
+    "features": [
+      "Custom aliases (3-30 chars) or auto-generated short codes",
+      "Optional expiry: never, 1, 7, 30, or 90 days",
+      "Private, token-based management link — click count, created/expiry/last-clicked dates, delete",
+      "No account, no login — the management link itself is the access control",
+      "Reserved-word protection so custom aliases can't collide with real routes"
+    ],
+    "links": {
+      "github": "https://github.com/peterlightspeed/pls-snip",
+      "liveDemo": "https://pls-snip.onrender.com"
+    },
+    "status": "Live",
+    "editions": [
+      {
+        "name": "Free / Open Source",
+        "tier": "community",
+        "features": [
+          "Link shortening with custom aliases",
+          "Expiry controls",
+          "Token-based stats & management, no account needed"
+        ],
+        "status": "available",
+        "statusLabel": "Live Now",
+        "cta": {
+          "label": "Try It Live",
+          "href": "https://pls-snip.onrender.com",
+          "icon": "bi-box-arrow-up-right"
+        }
+      }
+    ],
+    "featured": false,
+    "draft": false,
+    "workType": "product",
+    "image": "images/products/pls-snip.webp"
+  },
+  {
+    "slug": "pls-crack",
+    "title": "PLS Crack",
+    "badge": "FastAPI / Game Logic",
+    "icon": "bi-controller",
+    "shortDescription": "A no-sign-up code-breaking game. The server picks a hidden sequence of colors; you try to find it before you run out of attempts, using scored feedback to narrow it down.",
+    "longDescription": "A classic code-breaking puzzle that genuinely needs a backend: if the secret code were generated in the browser it would sit in plain sight in the page's JavaScript, so the secret lives server-side and is only revealed once a game has actually ended. Starting a game creates an entry in an in-memory dictionary keyed by an unguessable token (secrets.token_urlsafe) — a capability rather than an identity, so there's nothing to sign up for. Scoring counts exact position-and-color matches first, then, from what's left, counts shared colors without double-counting any single peg — the part of this kind of puzzle that's easy to get subtly wrong when a color repeats, so it's covered by unit tests.",
+    "problem": "A Mastermind-style guessing game can't be built as a purely client-side page without exposing the secret code in the page's own source.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "Uvicorn",
+      "Jinja2",
+      "Vanilla JS"
+    ],
+    "features": [
+      "Configurable code length (3-6), color count (4-8), and attempts (4-12)",
+      "Server-held secret, revealed only when the game ends",
+      "Peg-and-ring scored feedback per guess (exact-match vs. wrong-position)",
+      "Token-based game state — no login, no database, in-memory with automatic cleanup after inactivity"
+    ],
+    "links": {
+      "github": "https://github.com/peterlightspeed/pls-crack",
+      "liveDemo": "https://pls-crack-tv5k.onrender.com"
+    },
+    "status": "Live",
+    "editions": [
+      {
+        "name": "Free / Open Source",
+        "tier": "community",
+        "features": [
+          "Configurable difficulty",
+          "Server-authoritative game logic with unit-tested scoring",
+          "No account needed"
+        ],
+        "status": "available",
+        "statusLabel": "Live Now",
+        "cta": {
+          "label": "Try It Live",
+          "href": "https://pls-crack-tv5k.onrender.com",
+          "icon": "bi-box-arrow-up-right"
+        }
+      }
+    ],
+    "featured": false,
+    "draft": false,
+    "workType": "product",
+    "image": "images/products/pls-crack.webp"
+  },
+  {
+    "slug": "smb-data-sanitizer",
+    "title": "PLS Nigerian SMB Data Sanitizer",
+    "badge": "Python / Pandas",
+    "icon": "bi-funnel-fill",
+    "shortDescription": "A production-grade Python data engineering pipeline for sanitizing and standardizing Nigerian SME transaction data — phone numbers, currency, dates, and duplicates, with a full quality report.",
+    "longDescription": "This is the Community Edition, published as a free portfolio project, with a Pro Edition (larger example datasets, a dataset generator, a benchmark suite, and extended documentation) planned separately. The pipeline handles multi-encoding CSV ingestion (UTF-8, latin-1, cp1252) with automatic fallback, normalizes Nigerian phone numbers to E.164 format, strips Naira symbols and formatting from currency fields, standardizes mixed date formats to YYYY-MM-DD using fully vectorized pandas operations, and produces a per-field quality report after cleaning.",
+    "techStack": [
+      "Python 3.11+",
+      "pandas 2.0+",
+      "numpy",
+      "argparse",
+      "unittest"
+    ],
+    "editions": [
+      {
+        "name": "Community",
+        "tier": "community",
+        "features": [
+          "Phone number normalization (E.164)",
+          "Currency cleaning (Naira symbols, commas, formatting)",
+          "Mixed date-format standardization",
+          "Configurable missing-value handling",
+          "Duplicate removal + post-clean quality report",
+          "CLI via argparse, structured logging, unit + integration tests",
+          "1,000-row example dataset included"
+        ],
+        "status": "available",
+        "statusLabel": "Available Now",
+        "cta": {
+          "label": "View on GitHub",
+          "href": "https://github.com/peterlightspeed/pls-nigerian-smb-data-sanitizer-community",
+          "icon": "bi-github"
+        }
+      },
+      {
+        "name": "Pro",
+        "tier": "pro",
+        "features": [
+          "Everything in Community",
+          "Enterprise-scale example datasets (10k / 50k / 100k rows)",
+          "Dataset generator & benchmark suite",
+          "Architecture & troubleshooting documentation",
+          "Commercial license"
+        ],
+        "status": "coming-soon",
+        "statusLabel": "Coming Soon",
+        "cta": {
+          "label": "Coming Soon",
+          "href": "",
+          "icon": "bi-hourglass-split"
+        }
+      },
+      {
+        "name": "Web App",
+        "tier": "web",
+        "features": [
+          "Everything in Pro",
+          "Live web dashboards",
+          "Real-time data sync",
+          "User role management"
+        ],
+        "status": "coming-soon",
+        "statusLabel": "Coming Soon",
+        "cta": {
+          "label": "Coming Soon",
+          "href": "",
+          "icon": "bi-hourglass-split"
+        }
+      }
+    ],
+    "links": {
+      "github": "https://github.com/peterlightspeed/pls-nigerian-smb-data-sanitizer-community",
+      "liveDemo": ""
+    },
+    "featured": true,
+    "draft": false,
+    "workType": "product"
+  },
+  {
+    "slug": "bi-suite",
+    "title": "PLS Business Intelligence Suite",
+    "badge": "Python / SQL / Power BI",
+    "icon": "bi-bar-chart-fill",
+    "shortDescription": "A full-stack Business Intelligence platform designed for growing organizations and modern businesses — from raw data ingestion to automated reports, KPI dashboards, and executive-ready insights. No enterprise budget required.",
+    "techStack": [
+      "Python",
+      "SQL",
+      "Power BI",
+      "Pandas",
+      "Data Engineering"
+    ],
+    "editions": [
+      {
+        "name": "Community",
+        "tier": "community",
+        "features": [
+          "Core BI pipeline",
+          "Pre-built KPI templates",
+          "CSV/Excel data sources",
+          "Basic charting",
+          "MIT Licensed"
+        ],
+        "status": "coming-soon",
+        "statusLabel": "Coming Soon",
+        "cta": {
+          "label": "Coming Soon",
+          "href": "",
+          "icon": "bi-hourglass-split"
+        }
+      },
+      {
+        "name": "Pro",
+        "tier": "pro",
+        "features": [
+          "Everything in Community",
+          "Advanced ML forecasting",
+          "Multi-database connectors",
+          "Automated PDF reports",
+          "Priority support"
+        ],
+        "status": "coming-soon",
+        "statusLabel": "Coming September 2026",
+        "cta": {
+          "label": "Coming Soon",
+          "href": "",
+          "icon": "bi-hourglass-split"
+        }
+      },
+      {
+        "name": "Web App",
+        "tier": "web",
+        "features": [
+          "Everything in Pro",
+          "Browser-based dashboard",
+          "Team collaboration",
+          "Cloud data storage",
+          "Scheduled cleaning jobs"
+        ],
+        "status": "coming-soon",
+        "statusLabel": "Coming September 2026",
+        "cta": {
+          "label": "Coming Soon",
+          "href": "",
+          "icon": "bi-hourglass-split"
+        }
+      }
+    ],
+    "featured": true,
+    "draft": false,
+    "workType": "product"
+  }
+]

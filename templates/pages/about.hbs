@@ -1,0 +1,145 @@
+        <section class="about-hero bg-primary text-white py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                        <h1 class="display-4 fw-bold mb-3">About Me</h1>
+                        <p class="lead">I'm Eluwade Peter Toluwanimi, a backend developer and AI engineer passionate about building smart, scalable, and user-focused digital solutions.</p>
+                        <p>I specialize in backend development, AI engineering, and product-minded web development, helping brands, businesses, and creators grow their online presence through clean architecture, functional interfaces, and reliable systems. Every project I take on is built for both quality and performance.</p>
+                        <div class="d-flex mt-4">
+                            <a href="/contact.html" class="btn btn-light text-primary me-3"><i class="bi bi-chat-dots-fill me-2"></i>Let's Talk</a>
+                            <a href="/cv.html" class="btn btn-outline-light"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Download CV</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center" data-aos="fade-left">
+                        <div class="profile-image-container">
+                            <img loading="lazy" src="{{asset site.aboutProfileImage}}" alt="{{site.name}}" class="img-fluid rounded-circle profile-image">
+                            <div class="profile-badge"><span>{{site.stats.yearsExperience}} Experience</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" id="journey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                        <h2 class="section-title mb-4">My Journey</h2>
+                        <p class="lead mb-4">From Passion to Profession</p>
+                        <div class="story-content text-start">{{{storyHtml}}}</div>
+
+                        <div class="personal-values mt-5">
+                            <h3 class="h5 mb-4">My Core Values</h3>
+                            <div class="row g-4">
+                                {{#each site.values}}
+                                <div class="col-md-4">
+                                    <div class="value-item">
+                                        <div class="value-icon text-{{color}} mb-3"><i class="bi {{icon}}"></i></div>
+                                        <h4 class="h6">{{title}}</h4>
+                                        <p class="small">{{description}}</p>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light" id="skills">
+            <div class="container">
+                <h2 class="section-title text-center mb-5" data-aos="fade-up">My Skills &amp; Expertise</h2>
+                <div class="row g-4 mb-5">
+                    {{#each skills.core}}
+                    <div class="col-md-6">
+                        <h3 class="h6 fw-bold"><i class="bi {{icon}} me-2 text-primary"></i>{{group}}</h3>
+                        <p class="small text-muted">{{note}}</p>
+                        <div class="d-flex flex-wrap gap-2">{{#each items}}<span class="tech-badge">{{this}}</span>{{/each}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="mb-5">
+                    <h3 class="h6 fw-bold"><i class="bi bi-mortarboard me-2 text-primary"></i>Currently Learning</h3>
+                    <p class="small text-muted">{{skills.learning.note}}</p>
+                    <div class="d-flex flex-wrap gap-2">{{#each skills.learning.items}}<span class="tech-badge tech-badge-learning">{{this}}</span>{{/each}}</div>
+                </div>
+                <div class="row g-4">
+                    {{#each skills.learning.roadmap}}
+                    <div class="col-md-4 col-lg">
+                        <h4 class="h6 fw-bold"><i class="bi {{icon}} me-2 text-primary"></i>{{category}}</h4>
+                        <ul class="list-unstyled small">{{#each items}}<li>{{this}}</li>{{/each}}</ul>
+                    </div>
+                    {{/each}}
+                </div>
+                <p class="small text-muted mt-4">{{skills.softSkillsIntro}}</p>
+            </div>
+        </section>
+
+        <section class="py-5" id="experience">
+            <div class="container">
+                <h2 class="section-title text-center mb-5" data-aos="fade-up">Experience &amp; Education</h2>
+                <div class="row g-4">
+                    {{#each experience}}
+                    <div class="col-md-6">
+                        <div class="d-flex gap-3">
+                            <div class="flex-shrink-0"><i class="bi {{icon}} fs-3 text-{{color}}"></i></div>
+                            <div>
+                                <h3 class="h6 mb-1">{{title}}</h3>
+                                <p class="small text-muted mb-1">{{institution}} &middot; {{period}}</p>
+                                <p class="small mb-0">{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        {{#if awards.length}}
+        <section class="py-5" id="achievements">
+            <div class="container">
+                <h2 class="section-title text-center mb-5" data-aos="fade-up">Leadership &amp; Achievements</h2>
+                <div class="row g-4 justify-content-center">
+                    {{#each awards}}
+                    <div class="col-md-6">
+                        <div class="p-4 border rounded-3 h-100">
+                            <h3 class="h6 mb-2">{{title}}</h3>
+                            {{#if issuer}}<p class="small text-muted mb-1">{{issuer}} &middot; {{date}}</p>{{/if}}
+                            <p class="small mb-2">{{description}}</p>
+                            {{#if status}}<span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">{{status}}</span>{{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+        {{/if}}
+
+        <section class="py-5 bg-light" id="build-in-public">
+            <div class="container">
+                <h2 class="section-title text-center mb-2" data-aos="fade-up">Build in Public</h2>
+                <p class="text-center text-muted mb-5">{{community.intro}}</p>
+                <div class="row g-4">
+                    {{#each community.activities}}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-3 border rounded-3 h-100">
+                            <i class="bi {{icon}} fs-3 text-{{iconColor}} mb-2"></i>
+                            <h3 class="h6 mb-2">{{title}}</h3>
+                            <p class="small text-muted">{{description}}</p>
+                            <a href="{{href}}" target="_blank" rel="noopener" class="small">{{cta}} <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <a href="/community.html" class="d-block text-center mt-4">See the full community page <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="py-5 bg-primary text-white text-center">
+            <div class="container">
+                <h2 class="fw-bold mb-3">Let's Work Together</h2>
+                <p class="lead mb-0">Let's discuss how backend development and AI engineering can help your business.</p>
+                <a href="/contact.html" class="btn btn-light text-primary fw-bold mt-3">Get in Touch</a>
+            </div>
+        </section>

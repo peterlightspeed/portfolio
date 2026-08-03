@@ -1,0 +1,52 @@
+        <section class="product-hero text-center bg-primary text-white py-5">
+            <div class="container">
+                <h1 class="fw-bold display-6">Products</h1>
+                <p class="lead mb-0">Software people can actually use — not just code demonstrations.</p>
+            </div>
+        </section>
+
+        <section class="py-4">
+            <div class="container">
+                <p class="text-center text-muted mb-0">Every product ships as three editions: a free Community edition, a paid Pro edition, and a hosted Web edition.</p>
+            </div>
+        </section>
+
+        <section id="product-list" class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    {{#each products}}
+                    {{> product-card}}
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 roadmap-section bg-light" id="roadmap">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-5">What's Coming</h2>
+                {{#each roadmap}}
+                <div class="mb-4">
+                    <h3 class="h6 fw-bold text-{{color}}">{{quarter}}</h3>
+                    <div class="row g-3">
+                        {{#each items}}
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 h-100">
+                                <i class="bi {{icon}} text-{{iconColor}} me-2"></i><strong>{{title}}</strong>
+                                <p class="small text-muted mb-1">{{detail}}</p>
+                                <span class="badge bg-white text-dark border">{{eta}}</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <section class="py-5 bg-primary text-white text-center">
+            <div class="container">
+                <h2 class="fw-bold mb-3">Need a Custom Software Solution?</h2>
+                <p class="lead mb-4">I also build bespoke backend systems, APIs, and AI integrations for teams that need something purpose-built.</p>
+                <a href="/contact.html" class="btn btn-light btn-lg text-primary fw-bold">Let's Talk</a>
+            </div>
+        </section>

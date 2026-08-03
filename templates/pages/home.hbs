@@ -1,0 +1,132 @@
+        <section id="home" class="hero-section position-relative d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-6 hero-content" data-aos="fade-right">
+                        {{#if (eq site.availability.status "available")}}
+                        <span class="availability-badge mb-3">
+                            <span class="availability-dot"></span>{{site.availability.label}}
+                        </span>
+                        {{/if}}
+                        <h1 class="display-4 fw-bold mb-3 text-white">Hi, I'm <span class="text-danger">{{site.name}}</span></h1>
+                        <h2 class="h3 text-light mb-4 fw-light">{{site.tagline}}</h2>
+                        <p class="lead mb-4 text-light">{{site.shortBio}} <strong class="text-warning">You can also call me {{site.alternateName}}</strong></p>
+                        <div class="hero-buttons">
+                            <a href="/contact.html" class="btn btn-danger btn-lg me-2 mb-2 mb-md-0">
+                                <i class="bi bi-envelope-fill me-2"></i>Hire Me!
+                            </a>
+                            <a href="/projects/" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-collection me-2"></i>View Projects
+                            </a>
+                        </div>
+                        <div class="social-icons mt-4 d-flex gap-3">
+                            {{#each site.socials}}
+                            {{#unless (eq this.id "email")}}
+                            <a href="{{this.url}}" class="text-light fs-4" target="_blank" rel="noopener" aria-label="{{this.label}}"><i class="bi {{this.icon}}"></i></a>
+                            {{/unless}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 position-relative hero-image-container" data-aos="fade-left">
+                        <div class="hero-image">
+                            <img src="{{asset site.profileImage}}" alt="{{site.name}}" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-shape-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section id="metrics" class="py-5 bg-white">
+            <div class="container">
+                <div class="row text-center g-4">
+                    {{#each site.metrics}}
+                    <div class="col-6 col-md-4 col-lg" data-aos="fade-up">
+                        <i class="bi {{icon}} fs-2 text-primary mb-2 d-block"></i>
+                        <h3 class="h5 fw-bold mb-0">{{value}}</h3>
+                        <p class="text-muted small mb-0">{{label}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section id="currently-building" class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <span class="availability-badge mb-2"><span class="availability-dot"></span>Currently Building</span>
+                    <p class="lead mb-0 mt-2">The three things getting most of my attention right now.</p>
+                </div>
+                <div class="row g-4">
+                    {{#each currentlyBuilding}}
+                    <div class="col-md-4">
+                        <a href="{{url}}" class="text-decoration-none">
+                            <div class="currently-building-card h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="bi {{icon}} fs-4"></i>
+                                    <span class="badge bg-light text-primary">{{statusLabel}}</span>
+                                </div>
+                                <h3 class="h5 mb-2">{{title}}</h3>
+                                <p class="small mb-0">{{shortDescription}}</p>
+                            </div>
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-projects" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-2" data-aos="fade-up">Featured Projects</h2>
+                <p class="text-center text-muted mb-5" data-aos="fade-up">A few things I've been building lately</p>
+                <div class="row g-4">
+                    {{#each featuredProjects}}
+                    {{> project-card}}
+                    {{/each}}
+                </div>
+                <div class="text-center mt-4">
+                    <a href="/projects/" class="btn btn-outline-primary">View All Projects <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-products" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-2" data-aos="fade-up">Products</h2>
+                <p class="text-center text-muted mb-5" data-aos="fade-up">Tools you can actually use, not just demos</p>
+                <div class="row g-4">
+                    {{#each featuredProducts}}
+                    {{> product-card}}
+                    {{/each}}
+                </div>
+                <div class="text-center mt-4">
+                    <a href="/products/" class="btn btn-outline-primary">View All Products <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials-preview" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-2" data-aos="fade-up">What People Say</h2>
+                <div class="row g-4">
+                    {{#each testimonialsPreview}}
+                    {{> testimonial-card}}
+                    {{/each}}
+                </div>
+                <div class="text-center mt-4">
+                    <a href="/testimonials.html" class="btn btn-outline-primary">Read All Testimonials <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-5 bg-primary text-white text-center">
+            <div class="container">
+                <h2 class="fw-bold mb-3">Let's build something together</h2>
+                <p class="lead mb-4">Have a project in mind? I'm currently open to backend, AI, and SaaS engineering work.</p>
+                <a href="/contact.html" class="btn btn-light btn-lg text-primary fw-bold"><i class="bi bi-envelope-fill me-2"></i>Get in Touch</a>
+            </div>
+        </section>

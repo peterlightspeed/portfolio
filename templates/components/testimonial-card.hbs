@@ -1,0 +1,14 @@
+<div class="col-md-6 col-lg-4 testimonial-item">
+    <div class="card testimonial-card h-100 shadow-sm p-4">
+        <div class="d-flex align-items-center mb-3">
+            <img src="/{{avatar}}" alt="{{author}}" class="rounded-circle me-3" width="56" height="56" loading="lazy">
+            <div>
+                <h3 class="h6 mb-0">{{author}}</h3>
+                <p class="text-muted small mb-0">{{role}}</p>
+            </div>
+        </div>
+        <div class="text-warning mb-2">{{{stars rating}}}</div>
+        {{#if service}}<span class="badge bg-light text-dark border mb-2">{{service}}</span>{{/if}}
+        <blockquote class="mb-0"><p class="small">&ldquo;{{quote}}&rdquo;</p></blockquote>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+[
+  {
+    "quarter": "2026 Q3 — July to September",
+    "color": "primary",
+    "items": [
+      { "icon": "bi-funnel-fill", "iconColor": "success", "title": "PLS Nigerian SMB Data Sanitizer", "detail": "Pro Edition Launch", "eta": "Sep 2026" },
+      { "icon": "bi-funnel-fill", "iconColor": "purple", "title": "PLS Nigerian SMB Data Sanitizer", "detail": "Web Edition Launch", "eta": "Sep 2026" },
+      { "icon": "bi-bar-chart-fill", "iconColor": "success", "title": "PLS Business Intelligence Suite", "detail": "Community Edition Launch", "eta": "Sep 2026" }
+    ]
+  },
+  {
+    "quarter": "2026 Q4 — October to December",
+    "color": "purple",
+    "items": [
+      { "icon": "bi-bar-chart-fill", "iconColor": "primary", "title": "PLS Business Intelligence Suite", "detail": "Pro Edition Launch", "eta": "Q4 2026" },
+      { "icon": "bi-bar-chart-fill", "iconColor": "purple", "title": "PLS Business Intelligence Suite", "detail": "Web Edition Launch", "eta": "Q4 2026" }
+    ]
+  }
+]

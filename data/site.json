@@ -1,0 +1,97 @@
+{
+  "name": "Peter Eluwade",
+  "alternateName": "Peter Lightspeed",
+  "tagline": "Building AI SaaS Products with Python & Go",
+  "shortBio": "Computer Science student, backend developer, and founder of PLSTech. I build AI-powered SaaS products, backend systems, and developer tools using Python, Go, and modern web technologies, while documenting the journey through technical content, live coding sessions, and open-source projects.",
+  "jobTitle": "Backend Developer & AI Engineer",
+  "company": "PLSTech",
+  "location": {
+    "city": "Lagos",
+    "country": "Nigeria"
+  },
+  "email": "petereluwade55@gmail.com",
+  "whatsapp": "https://wa.me/2348108821809",
+  "baseUrl": "https://peterlightspeed.github.io/portfolio",
+  "repo": "https://github.com/peterlightspeed/portfolio",
+  "logo": "images/logos/peter-logo.png",
+  "profileImage": "images/profile/IMG-20250507-WA0143.jpg",
+  "aboutProfileImage": "images/profile/my-pic.webp",
+  "documents": {
+    "resume": "documents/eluwade-peter-toluwanimi-resume.pdf",
+    "cv": "documents/eluwade-peter-toluwanimi-CV.pdf",
+    "portfolioShowcase": "documents/Portfolio_Showcase.pdf",
+    "skillsAssessment": "documents/Skills_Assessment.pdf",
+    "clientReferences": "documents/Client_References.pdf"
+  },
+  "resumeSummary": "Computer Science student, backend developer, and founder of PLSTech. I build AI-powered SaaS products, backend systems, and developer tools using Python, Go, and modern web technologies, while documenting my learning journey through technical content, live coding sessions, and open-source projects. Long-term mission: building software that helps businesses automate work through practical AI.",
+  "additionalInfo": {
+    "typingSpeed": "65+ WPM",
+    "languages": "English (native), Japanese (basic)",
+    "interests": "Saxophone performance, technical content creation, open-source"
+  },
+  "values": [
+    { "icon": "bi-lightning-charge-fill", "color": "primary", "title": "Speed", "description": "I deliver quality work with exceptional efficiency, respecting your time and deadlines." },
+    { "icon": "bi-shield-check", "color": "success", "title": "Reliability", "description": "You can count on me to deliver on my promises and be there when you need support." },
+    { "icon": "bi-graph-up-arrow", "color": "info", "title": "Growth", "description": "I'm committed to continuous learning and helping your business grow and succeed." }
+  ],
+  "defaultOgImage": "public/opengraph.jpg",
+  "favicon": "public/favicon.svg",
+  "socials": [
+    { "id": "github", "label": "GitHub", "url": "https://github.com/peterlightspeed", "icon": "bi-github" },
+    { "id": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/peter-eluwade-5b8a73363/", "icon": "bi-linkedin" },
+    { "id": "x", "label": "X", "url": "https://x.com/peterlightspeed", "icon": "bi-twitter" },
+    { "id": "instagram", "label": "Instagram", "url": "https://www.instagram.com/eluwadepeter", "icon": "bi-instagram" },
+    { "id": "youtube", "label": "YouTube", "url": "https://www.youtube.com/@petereluwade", "icon": "bi-youtube" },
+    { "id": "tiktok", "label": "TikTok", "url": "https://www.tiktok.com/@eluwadepeter", "icon": "bi-tiktok" },
+    { "id": "email", "label": "Email", "url": "mailto:petereluwade55@gmail.com", "icon": "bi-envelope-fill" }
+  ],
+  "primaryNav": [
+    { "label": "Home", "href": "/", "match": "home" },
+    { "label": "Projects", "href": "/projects/", "match": "projects" },
+    { "label": "Products", "href": "/products/", "match": "products" },
+    { "label": "About", "href": "/about.html", "match": "about" },
+    { "label": "Contact", "href": "/contact.html", "match": "contact" }
+  ],
+  "moreNav": [
+    { "label": "Timeline", "href": "/timeline.html", "icon": "bi-signpost-split-fill" },
+    { "label": "Now", "href": "/now.html", "icon": "bi-lightning-charge-fill" },
+    { "label": "Community", "href": "/community.html", "icon": "bi-people-fill" },
+    { "label": "Labs", "href": "/labs.html", "icon": "bi-flask" },
+    { "label": "Live Demos", "href": "/demo.html", "icon": "bi-play-circle-fill" },
+    { "label": "Sax Services", "href": "/sax.html", "icon": "bi-music-note-beamed" },
+    { "label": "Testimonials", "href": "/testimonials.html", "icon": "bi-chat-quote-fill" },
+    { "label": "Certifications", "href": "/certifications.html", "icon": "bi-award-fill" },
+    { "divider": true },
+    { "label": "Sponsor Me", "href": "/sponsor.html", "icon": "bi-heart-fill" },
+    { "label": "Resume", "href": "/resume.html", "icon": "bi-file-earmark-person-fill" },
+    { "label": "Download CV", "href": "/cv.html", "icon": "bi-file-earmark-pdf-fill" }
+  ],
+  "footerServices": [
+    { "label": "Web Development", "href": "/services.html#web-development" },
+    { "label": "Graphic Design", "href": "/services.html#graphic-design" },
+    { "label": "Social Media", "href": "/services.html#social-media" },
+    { "label": "Data Entry", "href": "/services.html#data-entry" },
+    { "label": "Content Creation", "href": "/services.html#content-creation" },
+    { "label": "Digital Marketing", "href": "/services.html#digital-marketing" },
+    { "label": "AI & Web Solutions", "href": "/services.html#ai-web-solutions" }
+  ],
+  "availability": {
+    "status": "available",
+    "label": "Available for backend, AI & SaaS engineering work",
+    "responseTime": "I typically reply within 24 hours"
+  },
+  "metrics": [
+    { "icon": "bi-calendar3", "value": "2024", "label": "Building Since" },
+    { "icon": "bi-collection-fill", "value": "20+", "label": "Projects Built" },
+    { "icon": "bi-box-seam-fill", "value": "6", "label": "Production Products" },
+    { "icon": "bi-cpu-fill", "value": "AI · Python · Go", "label": "Backend Developer" },
+    { "icon": "bi-git", "value": "Open Source", "label": "Developer" }
+  ],
+  "currentlyBuilding": ["pls-nexus", "dataflow-ai", "pls-nexus-talent-intelligence"],
+  "stats": {
+    "projectsCompleted": "50+",
+    "clientSatisfaction": "95%",
+    "supportAvailable": "24/7",
+    "yearsExperience": "4+"
+  }
+}

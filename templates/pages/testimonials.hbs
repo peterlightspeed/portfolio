@@ -1,0 +1,16 @@
+        <section class="page-hero bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="fw-bold display-6">Testimonials</h1>
+                <p class="lead mb-0">What clients, students, and collaborators have said.</p>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    {{#each testimonials}}
+                    {{> testimonial-card}}
+                    {{/each}}
+                </div>
+            </div>
+        </section>

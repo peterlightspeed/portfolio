@@ -1,0 +1,15 @@
+<div class="col-md-6 col-lg-4 cert-item" id="{{slug}}">
+    <div class="card cert-card h-100 shadow-sm p-4 text-center">
+        {{#if logo}}<img src="{{asset logo}}" alt="{{issuer}}" class="cert-logo mb-3" loading="lazy">{{/if}}
+        <h3 class="h6 fw-bold">{{title}}</h3>
+        {{#if issuer}}<p class="certification-issuer text-muted small">Issued by: {{issuer}}</p>{{/if}}
+        {{#if dateLabel}}<p class="small text-muted">{{dateLabel}}</p>{{/if}}
+        {{#if description}}<p class="small">{{description}}</p>{{/if}}
+        <div class="d-flex flex-wrap justify-content-center gap-1 my-2">
+            {{#each skills}}<span class="tech-badge">{{this}}</span>{{/each}}
+        </div>
+        {{#if credentialUrl}}
+        <a href="{{credentialUrl}}" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">{{ctaLabel}}</a>
+        {{/if}}
+    </div>
+</div>
