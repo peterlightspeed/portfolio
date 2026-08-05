@@ -188,3 +188,16 @@
     object-position: top;
     border: 1px solid #e2e8f0;
 }
+
+/* Interactive hero network animation (homepage only) */
+.hero-network-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+/* Hero content and its background shapes must sit above the canvas */
+.hero-section .container { z-index: 1; }
+.hero-section .hero-shape-bottom { z-index: 1; }

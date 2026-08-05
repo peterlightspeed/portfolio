@@ -266,3 +266,21 @@ While inserting the visualizer's JavaScript, a `str_replace` accidentally delete
 - Confirmed, page by page, that every page's actual `<link>`/`<script>` output matches what it's supposed to load (spot-checked all 11 affected pages individually).
 - Confirmed 0 unrendered Handlebars tokens, 0 images missing `alt`, sitemap/RSS/search-index all regenerate correctly (44 URLs, 63 search entries).
 - Confirmed the new visualizer's HTML renders in the built `labs.html`.
+
+## [3.9.0] — Interactive Hero Animation + Another Missing-CSS Fix — 2026-08-05
+
+### Added
+- **Interactive particle-network animation** on the homepage hero (`js/hero-network.js`) — nodes drift and connect with fading lines, and respond to the cursor (mouse or touch) with a warm accent color forming a live constellation effect. Pure canvas + vanilla JS, zero dependencies, GitHub Pages compatible. Respects `prefers-reduced-motion` (renders one static frame instead of animating), pauses via the Page Visibility API when the tab isn't active, debounced on resize, and the canvas is `aria-hidden` with `pointer-events: none` so it never interferes with screen readers or clicking hero buttons.
+
+### Fixed — another instance of the missing-CSS bug class
+While wiring up the new animation, found that **the homepage itself** had the same bug as the 11 pages fixed last milestone: `css/hero.css` (which defines `.hero-section`, `.hero-shape-bottom`, and the rest of the hero layout) was never being loaded. Wired it in. Also swept every remaining CSS file in the project and confirmed everything is now referenced from somewhere except `highlights.css`, which is genuinely unused by any current template (verified, not assumed) and was left as-is.
+
+### Verification performed
+- `node -c` syntax-checked every JS file in the project, including the new animation, before packaging.
+- Confirmed the canvas element, `hero.css`, and `hero-network.js` all appear correctly in the built `index.html`, with correct `/portfolio` subpath prefixing.
+- Full href/src integrity check across all 44 pages — 0 broken, 0 missing subpath prefix.
+- Confirmed 0 unrendered template tokens, 0 images missing `alt`, sitemap (44 URLs)/RSS/search-index (63 entries) all regenerate correctly.
+- Reviewed dark-mode CSS interaction with the new canvas — confirmed no visual conflict (white particles remain clearly visible against the dark-mode background variant).
+
+### Known limitation, stated plainly
+I don't have a real browser in this environment, so I can't visually confirm the animation's actual on-screen appearance or interaction feel — only that it's syntactically correct, wired in correctly, and every element/class it depends on resolves. Load the live site once deployed and tell me if the motion, colors, or interaction feel need tuning (particle count, connection distance, and cursor-influence radius are all single constants at the top of `js/hero-network.js`, easy to adjust).

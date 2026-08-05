@@ -152,7 +152,7 @@ function enrich(item) {
     homeTpl,
     { site: data.site, featuredProjects, featuredProducts, testimonialsPreview, currentlyBuilding },
     buildMeta(data.site, { path: "/", description: data.site.shortBio }),
-    { page: "home", priority: 1.0, changefreq: "weekly" }
+    { page: "home", priority: 1.0, changefreq: "weekly", extraStyles: ["hero"], extraScripts: ["js/hero-network.js"] }
   );
 }
 
