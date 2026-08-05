@@ -220,3 +220,49 @@ Per your instructions, nothing below was invented or placeholder-filled:
 - Full href/src integrity check across all 44 pages after every change in this pass — 0 broken links/images at each step, including CSS `url()` background-image references.
 - Confirmed all 3 new project screenshots render on both listing and detail pages.
 - `images/` folder: reduced overall footprint substantially; noted 3 genuinely unused images left untouched (no performance cost since browsers never fetch unreferenced files).
+
+## [3.7.0] — Critical Fix: GitHub Pages Subpath — 2026-08-03
+
+### Fixed — root cause of the site being fully broken in production
+Every internal URL across the entire site (CSS, JS, images, and every internal nav/card/breadcrumb link) was built as root-absolute (`/css/style.css`, `/projects/`, etc.), which is only correct if a site is served from a domain root (`username.github.io/`). This site is a GitHub Pages **project site** — served from `peterlightspeed.github.io/portfolio/`, a subpath — so every one of those references was silently resolving one level too high and 404ing or failing to load. This explains, as one root cause: broken CSS (unstyled run-together tech badges), every broken image sitewide, and clicking internal nav links landing on the wrong URL entirely.
+
+- Added a `basePath`, derived once from `site.baseUrl` in `build/build.js` (`new URL(site.baseUrl).pathname`) — single source of truth, can't drift out of sync with the real deployed URL.
+- Added a `{{url}}` Handlebars helper that prefixes any site-relative path with `basePath`, and passes external `http(s)`/`mailto:`/`tel:` URLs through unchanged.
+- Updated `{{asset}}` to use the same subpath-aware logic.
+- Fixed all 54 hardcoded root-absolute paths across every template (found via automated scan, applied via a verified auto-fix script, then hand-verified) — css/js/images references, every internal nav/footer/breadcrumb link, every card and detail-page link, document downloads, and the redirect stubs written directly by `build.js`.
+- Fixed several data-driven hrefs the initial scan couldn't catch because they come from JSON, not template literals: `community.json` activity links, `products.json`'s PLS Nexus → Talent Intelligence cross-link, timeline event links, product edition CTAs, and project live-demo links.
+- Injected `window.SITE_BASE` into every page's `<head>` so the one static (non-templated) JS file that needs to know the subpath — `js/search.js`, for fetching `search-index.json` and building result links — resolves correctly too.
+- **Found and fixed a naming collision my own fix introduced**: registering a helper called `url` broke the homepage's "Currently Building" cards, which have a data field also called `url` — `{{url}}` (bare) started calling the helper instead of reading the field. Fixed by using `{{url this.url}}` to disambiguate.
+- **Found and fixed a second-order bug**: the first version of the `url` helper didn't guard against already-absolute external URLs the way `asset()` did, which would have broken `community.json`'s LinkedIn/YouTube/GitHub links the moment they were wrapped. Added the same `http(s)`/`mailto:`/`tel:` passthrough guard before wrapping any more data-driven hrefs.
+
+### Also fixed this pass
+- AOS fade-in animations could leave real content permanently invisible if the AOS CDN failed to load (no fallback existed). Added a guard around `AOS.init()` plus a timeout-based safety net that forces `[data-aos]` content visible regardless, in `templates/partials/scripts.hbs`.
+
+### Verification performed
+- Custom subpath-aware link/asset integrity checker (adjusted to strip `/portfolio` before checking against the local `dist/` layout) across all 44 generated pages: **0 broken references, 0 references still missing the required prefix** — up from 66+ broken/missing before this pass.
+- Confirmed external links (social profiles, GitHub repos, live demo URLs) remain untouched and correct — not accidentally prefixed.
+- Confirmed `window.SITE_BASE` is present and correctly valued on every page that loads `search.js`.
+
+## [3.8.0] — Full Site Audit: Missing Scripts/Styles, New Lab Tool — 2026-08-04
+
+### Fixed — major, previously-undiscovered bug
+While doing a full pass of the whole site, found that **every legacy-extracted page (Contact, Labs, Sax, Sponsor, Demo) and every fully-migrated page with its own stylesheet (Resume, CV, About, Services, Certifications, Testimonials, Projects) had silently lost its page-specific CSS and/or JavaScript** during earlier migrations. The original pages' `<link>`/`<script>` tags lived in their own `<head>` or after their own `<footer>` — outside the `<main>`-to-footer range my extraction/generation ever looked at — so none of it carried forward automatically.
+
+Practically, this meant: the contact form had no validation logic, every Labs tool (typing test, password generator, JSON formatter, color palette, snake game) was completely inert, the sax booking chatbot never loaded, the sponsor payment modal didn't work, and Resume/CV/About/Services/Certifications/Testimonials/Projects were all missing page-specific styling (e.g. `.resume-sheet`, `.cv-preview`, `.document-card`, `.timeline-panel` were defined only in stylesheets that were never being loaded).
+
+- Extended the existing (but previously unused) `extraScripts`/`extraStyles` mechanism and wired the correct files into every affected page in `build/build.js`.
+- Also restored the **sitewide floating chatbot** (`js/bot.js`) that was present on every page of the original site but had been dropped entirely during the Milestone 1 rebuild — confirmed it's fully self-contained (injects its own DOM, guards against double-init) and added it to the global script list in `templates/partials/scripts.hbs`, so it's back on every page at once.
+- Found and fixed a real bug inside `js/projects.js` itself while wiring it up: it referenced a `#noResults` element that doesn't exist on the new template, which would have thrown a JavaScript error on every single filter-button click. Added proper null guards before loading it.
+
+### Added — Algorithm Visualizer, moved from "Coming Soon" to actually live
+Built the Sorting Algorithm Visualizer that Labs already advertised as "Coming Soon" — Bubble/Selection/Insertion/Quick Sort, animated bar comparisons and swaps, adjustable array size and speed, live comparison/swap counters. Vanilla JS, no dependencies, consistent with the rest of Labs. Removed it from the placeholder grid since it's real now.
+
+### Fixed — a bug in my own fix
+While inserting the visualizer's JavaScript, a `str_replace` accidentally deleted the Snake game's own IIFE closing (`})();`), which broke `labs.js`'s syntax entirely — every tool on the page would have failed silently the moment the file loaded. Caught via `node -c` syntax-checking (added as a standing step — see Verification below) before it ever reached a zip.
+
+### Verification performed (a genuinely full pass this time)
+- `node -c` syntax-checked **every JavaScript file in the project**, not just the ones touched this session.
+- Subpath-aware href/src integrity check across all 44 generated pages — 0 broken, 0 missing `/portfolio` prefix.
+- Confirmed, page by page, that every page's actual `<link>`/`<script>` output matches what it's supposed to load (spot-checked all 11 affected pages individually).
+- Confirmed 0 unrendered Handlebars tokens, 0 images missing `alt`, sitemap/RSS/search-index all regenerate correctly (44 URLs, 63 search entries).
+- Confirmed the new visualizer's HTML renders in the built `labs.html`.

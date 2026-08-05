@@ -66,7 +66,7 @@
                             <ul class="list-unstyled service-features">
                                 {{#each features}}<li><i class="bi bi-check-circle-fill text-success"></i> {{this}}</li>{{/each}}
                             </ul>
-                            <a href="/contact.html?service={{urlencode title}}" class="btn btn-outline-{{color}} mt-auto">Get a Quote</a>
+                            <a href="{{url '/contact.html?service='}}{{urlencode title}}" class="btn btn-outline-{{color}} mt-auto">Get a Quote</a>
                         </div>
                     </div>
                     {{/each}}
@@ -91,7 +91,7 @@
                             <ul class="list-unstyled service-features">
                                 {{#each features}}<li><i class="bi bi-check-circle-fill text-success"></i> {{this}}</li>{{/each}}
                             </ul>
-                            <a href="/contact.html?service={{urlencode title}}" class="btn btn-outline-{{color}} mt-auto">Get a Quote</a>
+                            <a href="{{url '/contact.html?service='}}{{urlencode title}}" class="btn btn-outline-{{color}} mt-auto">Get a Quote</a>
                         </div>
                     </div>
                     {{/each}}
@@ -148,7 +148,7 @@
                         <p class="lead mb-0">{{services.cta.lead}}</p>
                     </div>
                     <div class="col-lg-4 text-lg-end" data-aos="fade-left">
-                        <a href="{{services.cta.buttonHref}}" class="btn btn-light btn-lg text-primary fw-bold px-4 py-3">
+                        <a href="{{url services.cta.buttonHref}}" class="btn btn-light btn-lg text-primary fw-bold px-4 py-3">
                             <i class="bi bi-folder-fill me-2"></i>{{services.cta.buttonLabel}}
                         </a>
                     </div>

@@ -157,9 +157,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (visibleCount === 0) {
-                noResults.classList.remove('d-none');
-                setTimeout(() => noResults.classList.add('show'), 100);
-            } else {
+                if (noResults) {
+                    noResults.classList.remove('d-none');
+                    setTimeout(() => noResults.classList.add('show'), 100);
+                }
+            } else if (noResults) {
                 noResults.classList.add('d-none');
                 noResults.classList.remove('show');
             }

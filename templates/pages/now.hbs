@@ -12,7 +12,7 @@
                 <div class="row g-3 mb-5">
                     {{#each currentProjects}}
                     <div class="col-md-6">
-                        <a href="/projects/{{slug}}/" class="text-decoration-none">
+                        <a href="{{url '/projects/'}}{{slug}}/" class="text-decoration-none">
                             <div class="p-3 border rounded-3 h-100">
                                 <strong>{{title}}</strong>
                                 <p class="small text-muted mb-0">{{status}}</p>

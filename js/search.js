@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function loadIndex() {
         if (!indexPromise) {
-            indexPromise = fetch('/public/search-index.json')
+            indexPromise = fetch(((window.SITE_BASE || '/')) + 'public/search-index.json')
                 .then((r) => r.json())
                 .then((json) => { index = json; })
                 .catch(() => { index = []; });
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .slice(0, 20)
             .map(
                 (item) => `
-        <a href="${item.url}" class="site-search-result">
+        <a href="${item.url.startsWith('http') ? item.url : (window.SITE_BASE || '/').replace(/\/$/, '') + item.url}" class="site-search-result">
           <span class="badge bg-light text-dark border">${item.type}</span>
           <div>
             <strong>${item.title}</strong>

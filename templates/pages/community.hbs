@@ -23,7 +23,7 @@
                             <i class="bi {{icon}} fs-2 text-{{iconColor}} mb-3 d-block"></i>
                             <h2 class="h6">{{title}}</h2>
                             <p class="small text-muted">{{description}}</p>
-                            <a href="{{href}}" target="_blank" rel="noopener" class="small fw-bold">{{cta}} <i class="bi bi-arrow-right"></i></a>
+                            <a href="{{url href}}" target="_blank" rel="noopener" class="small fw-bold">{{cta}} <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                     {{/each}}
@@ -37,7 +37,7 @@
                         <div class="p-3 border rounded-3">
                             <strong>{{title}}</strong>
                             <p class="small text-muted mb-1">{{event}} &middot; {{date}}</p>
-                            {{#if link}}<a href="{{link}}" class="small">Watch <i class="bi bi-arrow-right"></i></a>{{/if}}
+                            {{#if link}}<a href="{{url link}}" class="small">Watch <i class="bi bi-arrow-right"></i></a>{{/if}}
                         </div>
                     </div>
                     {{/each}}

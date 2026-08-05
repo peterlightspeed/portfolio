@@ -6,8 +6,8 @@
                         <p class="lead">I'm Eluwade Peter Toluwanimi, a backend developer and AI engineer passionate about building smart, scalable, and user-focused digital solutions.</p>
                         <p>I specialize in backend development, AI engineering, and product-minded web development, helping brands, businesses, and creators grow their online presence through clean architecture, functional interfaces, and reliable systems. Every project I take on is built for both quality and performance.</p>
                         <div class="d-flex mt-4">
-                            <a href="/contact.html" class="btn btn-light text-primary me-3"><i class="bi bi-chat-dots-fill me-2"></i>Let's Talk</a>
-                            <a href="/cv.html" class="btn btn-outline-light"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Download CV</a>
+                            <a href="{{url '/contact.html'}}" class="btn btn-light text-primary me-3"><i class="bi bi-chat-dots-fill me-2"></i>Let's Talk</a>
+                            <a href="{{url '/cv.html'}}" class="btn btn-outline-light"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Download CV</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center" data-aos="fade-left">
@@ -127,12 +127,12 @@
                             <i class="bi {{icon}} fs-3 text-{{iconColor}} mb-2"></i>
                             <h3 class="h6 mb-2">{{title}}</h3>
                             <p class="small text-muted">{{description}}</p>
-                            <a href="{{href}}" target="_blank" rel="noopener" class="small">{{cta}} <i class="bi bi-arrow-right"></i></a>
+                            <a href="{{url href}}" target="_blank" rel="noopener" class="small">{{cta}} <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                     {{/each}}
                 </div>
-                <a href="/community.html" class="d-block text-center mt-4">See the full community page <i class="bi bi-arrow-right"></i></a>
+                <a href="{{url '/community.html'}}" class="d-block text-center mt-4">See the full community page <i class="bi bi-arrow-right"></i></a>
             </div>
         </section>
 
@@ -140,6 +140,6 @@
             <div class="container">
                 <h2 class="fw-bold mb-3">Let's Work Together</h2>
                 <p class="lead mb-0">Let's discuss how backend development and AI engineering can help your business.</p>
-                <a href="/contact.html" class="btn btn-light text-primary fw-bold mt-3">Get in Touch</a>
+                <a href="{{url '/contact.html'}}" class="btn btn-light text-primary fw-bold mt-3">Get in Touch</a>
             </div>
         </section>

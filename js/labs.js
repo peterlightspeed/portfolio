@@ -464,4 +464,195 @@ document.addEventListener('DOMContentLoaded', function () {
         draw();
     })();
 
+    // --- SORTING ALGORITHM VISUALIZER ---
+    (function () {
+        const visualizer = document.getElementById('sortVisualizer');
+        if (!visualizer) return; // not on this page
+
+        const algorithmSelect = document.getElementById('sortAlgorithm');
+        const sizeSlider = document.getElementById('sortSize');
+        const sizeValue = document.getElementById('sortSizeValue');
+        const speedSlider = document.getElementById('sortSpeed');
+        const shuffleBtn = document.getElementById('sortShuffle');
+        const startBtn = document.getElementById('sortStart');
+        const comparisonsEl = document.getElementById('sortComparisons');
+        const swapsEl = document.getElementById('sortSwaps');
+
+        let values = [];
+        let bars = [];
+        let comparisons = 0;
+        let swaps = 0;
+        let runToken = 0; // bumped whenever a new run/shuffle starts, so a stale in-flight sort stops itself
+        let sorting = false;
+
+        function delay(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        }
+
+        function currentDelayMs() {
+            // Slider is 1 (slow) - 100 (fast); invert to an actual delay.
+            const speed = Number(speedSlider.value);
+            return Math.max(2, 220 - speed * 2);
+        }
+
+        function render() {
+            visualizer.innerHTML = '';
+            const max = Math.max(...values, 1);
+            bars = values.map((v) => {
+                const bar = document.createElement('div');
+                bar.className = 'sort-bar';
+                bar.style.height = `${(v / max) * 100}%`;
+                bar.style.width = `${100 / values.length}%`;
+                visualizer.appendChild(bar);
+                return bar;
+            });
+        }
+
+        function setBarState(i, state) {
+            if (!bars[i]) return;
+            bars[i].classList.remove('sort-bar-compare', 'sort-bar-swap', 'sort-bar-sorted');
+            if (state) bars[i].classList.add(state);
+        }
+
+        function updateStats() {
+            comparisonsEl.textContent = comparisons;
+            swapsEl.textContent = swaps;
+        }
+
+        function shuffle() {
+            runToken++; // invalidate any sort still animating
+            sorting = false;
+            const size = Number(sizeSlider.value);
+            values = Array.from({ length: size }, () => Math.floor(Math.random() * 95) + 5);
+            comparisons = 0;
+            swaps = 0;
+            updateStats();
+            render();
+        }
+
+        async function swap(i, j) {
+            const tmp = values[i];
+            values[i] = values[j];
+            values[j] = tmp;
+            swaps++;
+            setBarState(i, 'sort-bar-swap');
+            setBarState(j, 'sort-bar-swap');
+            const max = Math.max(...values, 1);
+            bars[i].style.height = `${(values[i] / max) * 100}%`;
+            bars[j].style.height = `${(values[j] / max) * 100}%`;
+            updateStats();
+            await delay(currentDelayMs());
+        }
+
+        async function compare(i, j) {
+            comparisons++;
+            setBarState(i, 'sort-bar-compare');
+            setBarState(j, 'sort-bar-compare');
+            updateStats();
+            await delay(currentDelayMs());
+        }
+
+        async function bubbleSort(token) {
+            for (let i = 0; i < values.length - 1; i++) {
+                for (let j = 0; j < values.length - i - 1; j++) {
+                    if (token !== runToken) return;
+                    await compare(j, j + 1);
+                    if (values[j] > values[j + 1]) await swap(j, j + 1);
+                    setBarState(j, null);
+                    setBarState(j + 1, null);
+                }
+                setBarState(values.length - i - 1, 'sort-bar-sorted');
+            }
+            setBarState(0, 'sort-bar-sorted');
+        }
+
+        async function selectionSort(token) {
+            for (let i = 0; i < values.length; i++) {
+                let minIdx = i;
+                for (let j = i + 1; j < values.length; j++) {
+                    if (token !== runToken) return;
+                    await compare(minIdx, j);
+                    setBarState(minIdx, null);
+                    if (values[j] < values[minIdx]) minIdx = j;
+                }
+                if (minIdx !== i) await swap(i, minIdx);
+                setBarState(i, 'sort-bar-sorted');
+            }
+        }
+
+        async function insertionSort(token) {
+            for (let i = 1; i < values.length; i++) {
+                let j = i;
+                while (j > 0) {
+                    if (token !== runToken) return;
+                    await compare(j - 1, j);
+                    if (values[j - 1] > values[j]) {
+                        await swap(j - 1, j);
+                        j--;
+                    } else {
+                        setBarState(j - 1, null);
+                        setBarState(j, null);
+                        break;
+                    }
+                }
+            }
+            for (let i = 0; i < values.length; i++) setBarState(i, 'sort-bar-sorted');
+        }
+
+        async function quickSort(token, lo = 0, hi = values.length - 1) {
+            if (lo >= hi) {
+                if (lo >= 0 && lo < values.length) setBarState(lo, 'sort-bar-sorted');
+                return;
+            }
+            const pivot = values[hi];
+            let i = lo - 1;
+            for (let j = lo; j < hi; j++) {
+                if (token !== runToken) return;
+                await compare(j, hi);
+                if (values[j] < pivot) {
+                    i++;
+                    if (i !== j) await swap(i, j);
+                }
+                setBarState(j, null);
+            }
+            await swap(i + 1, hi);
+            setBarState(i + 1, 'sort-bar-sorted');
+            await quickSort(token, lo, i);
+            await quickSort(token, i + 2, hi);
+        }
+
+        async function startSort() {
+            if (sorting) return;
+            sorting = true;
+            startBtn.disabled = true;
+            shuffleBtn.disabled = true;
+            const token = runToken;
+            comparisons = 0;
+            swaps = 0;
+            updateStats();
+
+            const algorithm = algorithmSelect.value;
+            if (algorithm === 'bubble') await bubbleSort(token);
+            else if (algorithm === 'selection') await selectionSort(token);
+            else if (algorithm === 'insertion') await insertionSort(token);
+            else if (algorithm === 'quick') await quickSort(token);
+
+            if (token === runToken) {
+                for (let i = 0; i < bars.length; i++) setBarState(i, 'sort-bar-sorted');
+            }
+            sorting = false;
+            startBtn.disabled = false;
+            shuffleBtn.disabled = false;
+        }
+
+        sizeSlider.addEventListener('input', () => {
+            sizeValue.textContent = sizeSlider.value;
+        });
+        sizeSlider.addEventListener('change', shuffle);
+        shuffleBtn.addEventListener('click', shuffle);
+        startBtn.addEventListener('click', startSort);
+
+        shuffle();
+    })();
+
 });

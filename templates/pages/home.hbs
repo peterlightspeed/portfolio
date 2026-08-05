@@ -11,10 +11,10 @@
                         <h2 class="h3 text-light mb-4 fw-light">{{site.tagline}}</h2>
                         <p class="lead mb-4 text-light">{{site.shortBio}} <strong class="text-warning">You can also call me {{site.alternateName}}</strong></p>
                         <div class="hero-buttons">
-                            <a href="/contact.html" class="btn btn-danger btn-lg me-2 mb-2 mb-md-0">
+                            <a href="{{url '/contact.html'}}" class="btn btn-danger btn-lg me-2 mb-2 mb-md-0">
                                 <i class="bi bi-envelope-fill me-2"></i>Hire Me!
                             </a>
-                            <a href="/projects/" class="btn btn-outline-light btn-lg">
+                            <a href="{{url '/projects/'}}" class="btn btn-outline-light btn-lg">
                                 <i class="bi bi-collection me-2"></i>View Projects
                             </a>
                         </div>
@@ -63,7 +63,7 @@
                 <div class="row g-4">
                     {{#each currentlyBuilding}}
                     <div class="col-md-4">
-                        <a href="{{url}}" class="text-decoration-none">
+                        <a href="{{url this.url}}" class="text-decoration-none">
                             <div class="currently-building-card h-100">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <i class="bi {{icon}} fs-4"></i>
@@ -89,7 +89,7 @@
                     {{/each}}
                 </div>
                 <div class="text-center mt-4">
-                    <a href="/projects/" class="btn btn-outline-primary">View All Projects <i class="bi bi-arrow-right ms-1"></i></a>
+                    <a href="{{url '/projects/'}}" class="btn btn-outline-primary">View All Projects <i class="bi bi-arrow-right ms-1"></i></a>
                 </div>
             </div>
         </section>
@@ -104,7 +104,7 @@
                     {{/each}}
                 </div>
                 <div class="text-center mt-4">
-                    <a href="/products/" class="btn btn-outline-primary">View All Products <i class="bi bi-arrow-right ms-1"></i></a>
+                    <a href="{{url '/products/'}}" class="btn btn-outline-primary">View All Products <i class="bi bi-arrow-right ms-1"></i></a>
                 </div>
             </div>
         </section>
@@ -118,7 +118,7 @@
                     {{/each}}
                 </div>
                 <div class="text-center mt-4">
-                    <a href="/testimonials.html" class="btn btn-outline-primary">Read All Testimonials <i class="bi bi-arrow-right ms-1"></i></a>
+                    <a href="{{url '/testimonials.html'}}" class="btn btn-outline-primary">Read All Testimonials <i class="bi bi-arrow-right ms-1"></i></a>
                 </div>
             </div>
         </section>
@@ -127,6 +127,6 @@
             <div class="container">
                 <h2 class="fw-bold mb-3">Let's build something together</h2>
                 <p class="lead mb-4">Have a project in mind? I'm currently open to backend, AI, and SaaS engineering work.</p>
-                <a href="/contact.html" class="btn btn-light btn-lg text-primary fw-bold"><i class="bi bi-envelope-fill me-2"></i>Get in Touch</a>
+                <a href="{{url '/contact.html'}}" class="btn btn-light btn-lg text-primary fw-bold"><i class="bi bi-envelope-fill me-2"></i>Get in Touch</a>
             </div>
         </section>

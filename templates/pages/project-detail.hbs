@@ -1,6 +1,6 @@
         <article class="project-detail py-5">
             <div class="container" style="max-width: 860px;">
-                <a href="/projects/" class="text-decoration-none small text-muted d-inline-block mb-3"><i class="bi bi-arrow-left me-1"></i>All Projects</a>
+                <a href="{{url '/projects/'}}" class="text-decoration-none small text-muted d-inline-block mb-3"><i class="bi bi-arrow-left me-1"></i>All Projects</a>
 
                 <div class="d-flex flex-wrap gap-2 mb-3">
                     <span class="badge bg-primary">{{category}}</span>
@@ -18,7 +18,7 @@
                 <div class="d-flex flex-wrap gap-2 mb-4">
                     {{#each links.github}}{{/each}}
                     {{#if links.github}}<a href="{{links.github}}" target="_blank" rel="noopener" class="btn btn-dark btn-sm"><i class="bi bi-github me-1"></i>Source</a>{{/if}}
-                    {{#if links.liveDemo}}<a href="{{links.liveDemo}}" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="bi bi-box-arrow-up-right me-1"></i>Live Demo</a>{{/if}}
+                    {{#if links.liveDemo}}<a href="{{url links.liveDemo}}" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="bi bi-box-arrow-up-right me-1"></i>Live Demo</a>{{/if}}
                     {{#if links.video}}<a href="{{links.video}}" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm"><i class="bi bi-play-circle me-1"></i>Video</a>{{/if}}
                 </div>
 
@@ -92,8 +92,8 @@
 
                 <hr class="my-5">
                 <div class="d-flex justify-content-between">
-                    <a href="/projects/" class="btn btn-outline-primary btn-sm"><i class="bi bi-arrow-left me-1"></i>Back to Projects</a>
-                    <a href="/contact.html" class="btn btn-primary btn-sm">Discuss a similar project <i class="bi bi-arrow-right ms-1"></i></a>
+                    <a href="{{url '/projects/'}}" class="btn btn-outline-primary btn-sm"><i class="bi bi-arrow-left me-1"></i>Back to Projects</a>
+                    <a href="{{url '/contact.html'}}" class="btn btn-primary btn-sm">Discuss a similar project <i class="bi bi-arrow-right ms-1"></i></a>
                 </div>
             </div>
         </article>

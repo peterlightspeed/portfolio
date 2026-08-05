@@ -384,27 +384,63 @@
             </div>
         </section>
 
+        <section class="py-5 bg-light" id="algorithm-visualizer">
+            <div class="container">
+                <div class="lab-card p-4 p-md-5" data-aos="fade-up">
+                    <h2 class="h3 mb-3"><i class="bi bi-bar-chart-steps me-2 text-primary"></i>Sorting Algorithm Visualizer</h2>
+                    <p class="text-muted mb-4">Watch Bubble Sort, Selection Sort, Insertion Sort, and Quick Sort compare and swap in real time. Built to make the difference in <em>how</em> these algorithms think about a list actually visible, not just described.</p>
+
+                    <div class="row g-3 align-items-end mb-3">
+                        <div class="col-6 col-md-3">
+                            <label for="sortAlgorithm" class="form-label small mb-1">Algorithm</label>
+                            <select id="sortAlgorithm" class="form-select form-select-sm">
+                                <option value="bubble">Bubble Sort</option>
+                                <option value="selection">Selection Sort</option>
+                                <option value="insertion">Insertion Sort</option>
+                                <option value="quick">Quick Sort</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <label for="sortSize" class="form-label small mb-1">Bars: <span id="sortSizeValue">40</span></label>
+                            <input type="range" class="form-range" min="10" max="100" value="40" id="sortSize">
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <label for="sortSpeed" class="form-label small mb-1">Speed</label>
+                            <input type="range" class="form-range" min="1" max="100" value="60" id="sortSpeed">
+                        </div>
+                        <div class="col-6 col-md-3 d-flex gap-2">
+                            <button id="sortShuffle" class="btn btn-outline-primary btn-sm flex-fill">New Array</button>
+                            <button id="sortStart" class="btn btn-primary btn-sm flex-fill">Sort</button>
+                        </div>
+                    </div>
+
+                    <div id="sortVisualizer" class="sort-visualizer mb-3" role="img" aria-label="Bar chart visualizing the array being sorted"></div>
+
+                    <div class="d-flex flex-wrap gap-4 small text-muted">
+                        <div><span class="sort-legend-swatch sort-legend-default"></span> Unsorted</div>
+                        <div><span class="sort-legend-swatch sort-legend-compare"></span> Comparing</div>
+                        <div><span class="sort-legend-swatch sort-legend-swap"></span> Swapping</div>
+                        <div><span class="sort-legend-swatch sort-legend-sorted"></span> Sorted</div>
+                        <div class="ms-auto"><strong id="sortComparisons">0</strong> comparisons &middot; <strong id="sortSwaps">0</strong> swaps</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- COMING SOON -->
-        <section class="py-5 bg-light" id="coming-soon">
+        <section class="py-5" id="coming-soon">
             <div class="container">
                 <h2 class="section-title text-center mb-2" data-aos="fade-up">Coming Soon</h2>
                 <p class="text-center text-muted mb-5" data-aos="fade-up">More experiments in progress.</p>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="lab-card lab-card-placeholder p-4 text-center h-100">
                             <i class="bi bi-robot fs-1 text-muted mb-2 d-block"></i>
                             <h3 class="h6 mb-1">Mini AI Assistant</h3>
                             <span class="badge bg-secondary">Planned</span>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-                        <div class="lab-card lab-card-placeholder p-4 text-center h-100">
-                            <i class="bi bi-diagram-2 fs-1 text-muted mb-2 d-block"></i>
-                            <h3 class="h6 mb-1">Algorithm Visualizer</h3>
-                            <span class="badge bg-secondary">Planned</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
                         <div class="lab-card lab-card-placeholder p-4 text-center h-100">
                             <i class="bi bi-terminal fs-1 text-muted mb-2 d-block"></i>
                             <h3 class="h6 mb-1">Terminal Emulator</h3>

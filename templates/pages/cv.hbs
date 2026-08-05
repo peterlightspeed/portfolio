@@ -24,10 +24,10 @@
                             <div class="cv-feature"><i class="bi bi-check-circle-fill text-success"></i><span>Project portfolio highlights</span></div>
                         </div>
                         <div class="download-options">
-                            <a href="/{{site.documents.resume}}" class="btn btn-primary btn-lg me-3 mb-3" download>
+                            <a href="{{asset site.documents.resume}}" class="btn btn-primary btn-lg me-3 mb-3" download>
                                 <i class="bi bi-file-earmark-pdf-fill me-2"></i>Download PDF
                             </a>
-                            <a href="/resume.html" class="btn btn-outline-primary btn-lg mb-3">
+                            <a href="{{url '/resume.html'}}" class="btn btn-outline-primary btn-lg mb-3">
                                 <i class="bi bi-eye-fill me-2"></i>View Online
                             </a>
                         </div>
@@ -38,7 +38,7 @@
                                 <i class="bi bi-file-earmark-person display-1 text-primary mb-3"></i>
                                 <h3 class="h5">{{site.name}} Toluwanimi</h3>
                                 <p class="text-muted small mb-3">{{site.jobTitle}}</p>
-                                <a href="/{{site.documents.resume}}" class="btn btn-primary" download>
+                                <a href="{{asset site.documents.resume}}" class="btn btn-primary" download>
                                     <i class="bi bi-download me-2"></i>Download
                                 </a>
                             </div>
@@ -57,7 +57,7 @@
                             <div class="document-icon"><i class="bi bi-bar-chart-line"></i></div>
                             <h3>Skills Assessment</h3>
                             <p>Detailed breakdown of my technical skills with proficiency levels.</p>
-                            <a href="/{{site.documents.skillsAssessment}}" class="btn btn-outline-primary" download>
+                            <a href="{{asset site.documents.skillsAssessment}}" class="btn btn-outline-primary" download>
                                 <i class="bi bi-download me-2"></i>Download Skills Assessment
                             </a>
                         </div>
@@ -67,7 +67,7 @@
                             <div class="document-icon"><i class="bi bi-images"></i></div>
                             <h3>Portfolio Showcase</h3>
                             <p>A visual walkthrough of selected projects and design work.</p>
-                            <a href="/{{site.documents.portfolioShowcase}}" class="btn btn-outline-primary" download>
+                            <a href="{{asset site.documents.portfolioShowcase}}" class="btn btn-outline-primary" download>
                                 <i class="bi bi-download me-2"></i>Download Showcase
                             </a>
                         </div>
@@ -77,7 +77,7 @@
                             <div class="document-icon"><i class="bi bi-person-lines-fill"></i></div>
                             <h3>Client References</h3>
                             <p>References from past clients and collaborators.</p>
-                            <a href="/{{site.documents.clientReferences}}" class="btn btn-outline-primary" download>
+                            <a href="{{asset site.documents.clientReferences}}" class="btn btn-outline-primary" download>
                                 <i class="bi bi-download me-2"></i>Download References
                             </a>
                         </div>
@@ -90,6 +90,6 @@
             <div class="container">
                 <h2 class="fw-bold mb-3">Have Questions About My Experience?</h2>
                 <p class="lead mb-4">I'm happy to walk through any part of my background in more detail.</p>
-                <a href="/contact.html" class="btn btn-light text-primary fw-bold">Get in Touch</a>
+                <a href="{{url '/contact.html'}}" class="btn btn-light text-primary fw-bold">Get in Touch</a>
             </div>
         </section>

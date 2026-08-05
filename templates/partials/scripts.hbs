@@ -1,10 +1,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 600, once: true });</script>
-    <script src="/js/darkmode.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/newsletter.js"></script>
-    <script src="/js/search.js"></script>
+    <script>
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 600, once: true });
+      }
+      // Safety net: if the AOS library above failed to load (CDN blocked,
+      // slow, or unreachable), the CSS that hides [data-aos] elements before
+      // their animation still loads fine, but nothing ever arrives to reveal
+      // them — content would stay invisible forever. Force it visible after
+      // a short delay regardless, so a failed animation library can never
+      // hide real content. Harmless no-op if AOS loaded normally.
+      setTimeout(function () {
+        document.querySelectorAll('[data-aos]').forEach(function (el) {
+          el.classList.add('aos-animate');
+        });
+      }, 1500);
+    </script>
+    <script src="{{url '/js/darkmode.js'}}"></script>
+    <script src="{{url '/js/script.js'}}"></script>
+    <script src="{{url '/js/newsletter.js'}}"></script>
+    <script src="{{url '/js/search.js'}}"></script>
+    <script src="{{url '/js/bot.js'}}"></script>
     {{#each extraScripts}}
-    <script src="/js/{{this}}.js"></script>
+    <script src="{{url this}}"></script>
     {{/each}}

@@ -25,7 +25,7 @@
     <meta property="twitter:image" content="https://peterlightspeed.github.io/portfolio/public/opengraph.jpg">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="preload" href="/portfolio/css/style.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
 
@@ -33,15 +33,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/cms.css">
+    <link rel="stylesheet" href="/portfolio/css/style.css">
+    <link rel="stylesheet" href="/portfolio/css/cms.css">
+    <link rel="stylesheet" href="/portfolio/css/projects.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="/images/logos/peter-logo.png">
-    <link rel="stylesheet" href="/css/darkmode.css">
+    <link rel="icon" type="image/png" href="/portfolio/images/logos/peter-logo.png">
+    <script>window.SITE_BASE = "/portfolio/";</script>
+    <link rel="stylesheet" href="/portfolio/css/darkmode.css">
 
     <script type="application/ld+json">
 {
@@ -98,8 +100,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="/">
-                    <img src="/images/logos/peter-logo.png" alt="Peter Eluwade logo" height="32" class="me-2" loading="eager">
+                <a class="navbar-brand fw-bold" href="/portfolio/">
+                    <img src="/portfolio/images/logos/peter-logo.png" alt="Peter Eluwade logo" height="32" class="me-2" loading="eager">
                     Peter Lightspeed
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -109,62 +111,62 @@
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
                         <li class="nav-item">
-                            <a class="nav-link px-3 " href="/">Home</a>
+                            <a class="nav-link px-3 " href="/portfolio/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3 active" href="/projects/">Projects</a>
+                            <a class="nav-link px-3 active" href="/portfolio/projects/">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3 " href="/products/">Products</a>
+                            <a class="nav-link px-3 " href="/portfolio/products/">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3 " href="/about.html">About</a>
+                            <a class="nav-link px-3 " href="/portfolio/about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3 " href="/contact.html">Contact</a>
+                            <a class="nav-link px-3 " href="/portfolio/contact.html">Contact</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">More</a>
                             <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/timeline.html">
+                                <li><a class="dropdown-item" href="/portfolio/timeline.html">
                                     <i class="bi bi-signpost-split-fill me-2 text-primary"></i>Timeline
                                 </a></li>
-                                <li><a class="dropdown-item" href="/now.html">
+                                <li><a class="dropdown-item" href="/portfolio/now.html">
                                     <i class="bi bi-lightning-charge-fill me-2 text-primary"></i>Now
                                 </a></li>
-                                <li><a class="dropdown-item" href="/community.html">
+                                <li><a class="dropdown-item" href="/portfolio/community.html">
                                     <i class="bi bi-people-fill me-2 text-primary"></i>Community
                                 </a></li>
-                                <li><a class="dropdown-item" href="/labs.html">
+                                <li><a class="dropdown-item" href="/portfolio/labs.html">
                                     <i class="bi bi-flask me-2 text-primary"></i>Labs
                                 </a></li>
-                                <li><a class="dropdown-item" href="/demo.html">
+                                <li><a class="dropdown-item" href="/portfolio/demo.html">
                                     <i class="bi bi-play-circle-fill me-2 text-primary"></i>Live Demos
                                 </a></li>
-                                <li><a class="dropdown-item" href="/sax.html">
+                                <li><a class="dropdown-item" href="/portfolio/sax.html">
                                     <i class="bi bi-music-note-beamed me-2 text-primary"></i>Sax Services
                                 </a></li>
-                                <li><a class="dropdown-item" href="/testimonials.html">
+                                <li><a class="dropdown-item" href="/portfolio/testimonials.html">
                                     <i class="bi bi-chat-quote-fill me-2 text-primary"></i>Testimonials
                                 </a></li>
-                                <li><a class="dropdown-item" href="/certifications.html">
+                                <li><a class="dropdown-item" href="/portfolio/certifications.html">
                                     <i class="bi bi-award-fill me-2 text-primary"></i>Certifications
                                 </a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="/sponsor.html">
+                                <li><a class="dropdown-item" href="/portfolio/sponsor.html">
                                     <i class="bi bi-heart-fill me-2 text-primary"></i>Sponsor Me
                                 </a></li>
-                                <li><a class="dropdown-item" href="/resume.html">
+                                <li><a class="dropdown-item" href="/portfolio/resume.html">
                                     <i class="bi bi-file-earmark-person-fill me-2 text-primary"></i>Resume
                                 </a></li>
-                                <li><a class="dropdown-item" href="/cv.html">
+                                <li><a class="dropdown-item" href="/portfolio/cv.html">
                                     <i class="bi bi-file-earmark-pdf-fill me-2 text-primary"></i>Download CV
                                 </a></li>
                             </ul>
                         </li>
                         <li class="nav-item d-none d-lg-block ms-2">
-                            <a href="/contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
+                            <a href="/portfolio/contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
                                 <i class="bi bi-envelope-fill me-1"></i> Hire Me
                             </a>
                         </li>
@@ -197,7 +199,7 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/portfolio/">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Projects</li>
                 </ol>
             </nav>
@@ -208,7 +210,7 @@
         <section class="page-hero bg-primary text-white text-center py-5">
             <div class="container">
                 <h1 class="fw-bold display-6">Projects</h1>
-                <p class="lead mb-0">Engineering work that demonstrates how I think and build — client solutions, open-source code, and experiments. Looking for the software I ship as products? <a href="/products/" class="text-white text-decoration-underline">See Products</a>.</p>
+                <p class="lead mb-0">Engineering work that demonstrates how I think and build — client solutions, open-source code, and experiments. Looking for the software I ship as products? <a href="/portfolio/products/" class="text-white text-decoration-underline">See Products</a>.</p>
             </div>
         </section>
 
@@ -237,16 +239,16 @@
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4 project-item" data-category="web" data-tags="web healthcare ">
                         <div class="card shadow-sm h-100 project-card">
-                            <img loading="lazy" src="/images/projects/lightspeed-hospital.webp" class="card-img-top" alt="Lightspeed Hospital Template">
+                            <img loading="lazy" src="/portfolio/images/projects/lightspeed-hospital.webp" class="card-img-top" alt="Lightspeed Hospital Template">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/lightspeed-hospital-template/" class="stretched-link-title">Lightspeed Hospital Template</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/lightspeed-hospital-template/" class="stretched-link-title">Lightspeed Hospital Template</a></h3>
                                 <p class="card-description">A responsive hospital website template for healthcare organizations and medical professionals — clean, accessible, and focused on user trust.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML5</span><span class="tech-badge">CSS3</span><span class="tech-badge">JavaScript</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/lightspeed-hospital-template/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/lightspeed-hospital-template/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -256,16 +258,16 @@
                     </div>
                     <div class="col-md-6 col-lg-4 project-item" data-category="web" data-tags="web design ">
                         <div class="card shadow-sm h-100 project-card">
-                            <img loading="lazy" src="/images/projects/coach-gideon.webp" class="card-img-top" alt="Coach Gideon Basketball Website">
+                            <img loading="lazy" src="/portfolio/images/projects/coach-gideon.webp" class="card-img-top" alt="Coach Gideon Basketball Website">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/coach-gideon/" class="stretched-link-title">Coach Gideon Basketball Website</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/coach-gideon/" class="stretched-link-title">Coach Gideon Basketball Website</a></h3>
                                 <p class="card-description">A multi-page website built for Eluwade Gideon Oluwapelumi, a private basketball skills coach based in Lagos, Nigeria — training programs, schedule, gallery, and a booking-oriented contact flow.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML5</span><span class="tech-badge">CSS3</span><span class="tech-badge">Bootstrap 5.3.3</span><span class="tech-badge">Bootstrap Icons</span><span class="tech-badge">Vanilla JavaScript</span><span class="tech-badge">Vite (dev server only)</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/coach-gideon/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/coach-gideon/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -275,16 +277,16 @@
                     </div>
                     <div class="col-md-6 col-lg-4 project-item" data-category="web" data-tags="web education ">
                         <div class="card shadow-sm h-100 project-card">
-                            <img loading="lazy" src="/images/projects/cedarville.webp" class="card-img-top" alt="Cedarville">
+                            <img loading="lazy" src="/portfolio/images/projects/cedarville.webp" class="card-img-top" alt="Cedarville">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/cedarville/" class="stretched-link-title">Cedarville</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/cedarville/" class="stretched-link-title">Cedarville</a></h3>
                                 <p class="card-description">Responsive school website for Cedarville Private Schools, covering admissions, academics, and events for prospective families.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">Bootstrap</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/cedarville/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/cedarville/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -299,13 +301,13 @@
                             </div>
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/faith-centre-global/" class="stretched-link-title">The Faith Centre Global — Website</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/faith-centre-global/" class="stretched-link-title">The Faith Centre Global — Website</a></h3>
                                 <p class="card-description">The official website for The Faith Centre Global, a church in Okota, Lagos — a static, no-backend site where nearly every piece of content (sermons, events, books, giving, testimonies, leadership) is driven by JSON files, so day-to-day updates never require touching HTML.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML5</span><span class="tech-badge">CSS3</span><span class="tech-badge">Bootstrap 5</span><span class="tech-badge">Vanilla JavaScript</span><span class="tech-badge">JSON (client-side CMS)</span><span class="tech-badge">Service Worker / PWA</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/faith-centre-global/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/faith-centre-global/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -318,13 +320,13 @@
                             <img loading="lazy" src="https://i.imgur.com/sEc0qgE.png" class="card-img-top" alt="Freedom Reign Basketball Academy">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/freedom-reign-basketball-academy/" class="stretched-link-title">Freedom Reign Basketball Academy</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/freedom-reign-basketball-academy/" class="stretched-link-title">Freedom Reign Basketball Academy</a></h3>
                                 <p class="card-description">A responsive basketball academy website that gives information about the academy and showcases the coaches and the team.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">JavaScript</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/freedom-reign-basketball-academy/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/freedom-reign-basketball-academy/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Ongoing Project</small>
@@ -334,16 +336,16 @@
                     </div>
                     <div class="col-md-6 col-lg-4 project-item" data-category="web" data-tags="web react typescript healthcare ">
                         <div class="card shadow-sm h-100 project-card">
-                            <img loading="lazy" src="/images/projects/hope-assessment-app.webp" class="card-img-top" alt="Hope Assessment App">
+                            <img loading="lazy" src="/portfolio/images/projects/hope-assessment-app.webp" class="card-img-top" alt="Hope Assessment App">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/hope-assessment-app/" class="stretched-link-title">Hope Assessment App</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/hope-assessment-app/" class="stretched-link-title">Hope Assessment App</a></h3>
                                 <p class="card-description">A healthcare assessment platform for patient registration, screening, and clinical workflow management, built with Next.js, React, and TypeScript.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Next.js</span><span class="tech-badge">React</span><span class="tech-badge">TypeScript</span><span class="tech-badge">Tailwind CSS</span><span class="tech-badge">Radix UI</span><span class="tech-badge">React Hook Form</span><span class="tech-badge">Zod</span><span class="tech-badge">Zustand</span><span class="tech-badge">Framer Motion</span><span class="tech-badge">date-fns</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/hope-assessment-app/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/hope-assessment-app/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -371,13 +373,13 @@
                             </div>
                             <div class="project-badge bg-primary text-white">ai</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/peterlightspeed-ai-cover-letter/" class="stretched-link-title">Peterlightspeed – AI Cover Letter Generator</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/peterlightspeed-ai-cover-letter/" class="stretched-link-title">Peterlightspeed – AI Cover Letter Generator</a></h3>
                                 <p class="card-description">An AI-powered web app that generates short, human-sounding cover letters from a candidate&#x27;s CV and a job description, using open-source language models.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Python</span><span class="tech-badge">Gradio</span><span class="tech-badge">HuggingFace Transformers</span><span class="tech-badge">Google Colab</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/peterlightspeed-ai-cover-letter/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/peterlightspeed-ai-cover-letter/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -392,13 +394,13 @@
                             </div>
                             <div class="project-badge bg-primary text-white">content</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/peterlightspeed-projects/" class="stretched-link-title">PeterLightspeed Projects</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/peterlightspeed-projects/" class="stretched-link-title">PeterLightspeed Projects</a></h3>
                                 <p class="card-description">Source code for my Python, Go, AI, and web development tutorials and live coding sessions — a learning resource for anyone following along or exploring the same topics independently.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Python</span><span class="tech-badge">Go</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/peterlightspeed-projects/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/peterlightspeed-projects/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Ongoing</small>
@@ -411,13 +413,13 @@
                             <img loading="lazy" src="https://i.imgur.com/YhCPbz5.png" class="card-img-top" alt="Personal Portfolio Website">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/personal-portfolio-website/" class="stretched-link-title">Personal Portfolio Website</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/personal-portfolio-website/" class="stretched-link-title">Personal Portfolio Website</a></h3>
                                 <p class="card-description">A responsive portfolio website showcasing my skills, projects, and services as a backend developer and AI engineer.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">JavaScript</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/personal-portfolio-website/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/personal-portfolio-website/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Current Project</small>
@@ -440,16 +442,16 @@
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4 project-item" data-category="web" data-tags="web social ">
                         <div class="card shadow-sm h-100 project-card">
-                            <img loading="lazy" src="/images/projects/lightspeed-tube.webp" class="card-img-top" alt="Lightspeed Tube">
+                            <img loading="lazy" src="/portfolio/images/projects/lightspeed-tube.webp" class="card-img-top" alt="Lightspeed Tube">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/lightspeed-tube/" class="stretched-link-title">Lightspeed Tube</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/lightspeed-tube/" class="stretched-link-title">Lightspeed Tube</a></h3>
                                 <p class="card-description">A feature-rich YouTube clone with a modern UI, video streaming, and user interaction capabilities.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML</span><span class="tech-badge">JavaScript</span><span class="tech-badge">CSS</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/lightspeed-tube/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/lightspeed-tube/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">In Development</small>
@@ -462,13 +464,13 @@
                             <img loading="lazy" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w&#x3D;500&amp;h&#x3D;300&amp;fit&#x3D;crop&amp;crop&#x3D;center" class="card-img-top" alt="Restaurant Web">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/restaurant-web/" class="stretched-link-title">Restaurant Web</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/restaurant-web/" class="stretched-link-title">Restaurant Web</a></h3>
                                 <p class="card-description">A sleek and modern website for a restaurant, featuring online menus, reservation forms, and a gallery.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">JavaScript</span><span class="tech-badge">Bootstrap</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/restaurant-web/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/restaurant-web/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">In Progress</small>
@@ -481,13 +483,13 @@
                             <img loading="lazy" src="https://i.imgur.com/bXmX09r.png" class="card-img-top" alt="Dynamic Hero Page">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/dynamic-hero-page/" class="stretched-link-title">Dynamic Hero Page</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/dynamic-hero-page/" class="stretched-link-title">Dynamic Hero Page</a></h3>
                                 <p class="card-description">An engaging hero page with interactive animations and a strong call-to-action, built for high conversion rates.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">JavaScript</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/dynamic-hero-page/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/dynamic-hero-page/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -500,13 +502,13 @@
                             <img loading="lazy" src="https://i.imgur.com/YpEEkNu.png" class="card-img-top" alt="Formspree Contact Form">
                             <div class="project-badge bg-primary text-white">web</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/formspree-contact-form/" class="stretched-link-title">Formspree Contact Form</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/formspree-contact-form/" class="stretched-link-title">Formspree Contact Form</a></h3>
                                 <p class="card-description">A professional contact form built with HTML, CSS, and Bootstrap, integrated with Formspree for real-time email submissions and smooth success feedback.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">JavaScript</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">Formspree</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/formspree-contact-form/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/formspree-contact-form/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -519,13 +521,13 @@
                             <img loading="lazy" src="https://i.imgur.com/ynpID4a.png" class="card-img-top" alt="PLSWorldNews Blog">
                             <div class="project-badge bg-primary text-white">content</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/plsworldnews-blog/" class="stretched-link-title">PLSWorldNews Blog</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/plsworldnews-blog/" class="stretched-link-title">PLSWorldNews Blog</a></h3>
                                 <p class="card-description">Entertainment and lifestyle blog with daily posts, SEO optimization, and AdSense integration.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Blogger</span><span class="tech-badge">SEO</span><span class="tech-badge">Content Writing</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/plsworldnews-blog/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/plsworldnews-blog/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Active Project</small>
@@ -538,13 +540,13 @@
                             <img loading="lazy" src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast Flier">
                             <div class="project-badge bg-primary text-white">design</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/beat-blast-flier/" class="stretched-link-title">Beat Blast Flier</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/beat-blast-flier/" class="stretched-link-title">Beat Blast Flier</a></h3>
                                 <p class="card-description">Promotional flier design for Gidi Beat Blast music event featuring bold, energetic visuals that capture the event&#x27;s vibe.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Canva</span><span class="tech-badge">Graphic Design</span><span class="tech-badge">Event Promotion</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/beat-blast-flier/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/beat-blast-flier/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -557,13 +559,13 @@
                             <img loading="lazy" src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Mentor Flyer">
                             <div class="project-badge bg-primary text-white">design</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/forex-mentor-flyer/" class="stretched-link-title">Forex Mentor Flyer</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/forex-mentor-flyer/" class="stretched-link-title">Forex Mentor Flyer</a></h3>
                                 <p class="card-description">Professional flyer design for Andrew Carse FX Village with sleek layout and balanced colors to attract serious clients.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Photoshop</span><span class="tech-badge">Graphic Design</span><span class="tech-badge">Marketing</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/forex-mentor-flyer/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/forex-mentor-flyer/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -576,13 +578,13 @@
                             <img loading="lazy" src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Academy Flyer">
                             <div class="project-badge bg-primary text-white">design</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/basketball-academy-flyer/" class="stretched-link-title">Basketball Academy Flyer</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/basketball-academy-flyer/" class="stretched-link-title">Basketball Academy Flyer</a></h3>
                                 <p class="card-description">Eye-catching and energetic flyer design for Tochukwu&#x27;s Basketball Hub that perfectly captures the dynamic spirit of the sport.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Canva</span><span class="tech-badge">Graphic Design</span><span class="tech-badge">Sports Marketing</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/basketball-academy-flyer/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/basketball-academy-flyer/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -595,13 +597,13 @@
                             <img loading="lazy" src="https://i.imgur.com/r4N8pTV.png" class="card-img-top" alt="Basketball Academy Xmas Camp Flyer">
                             <div class="project-badge bg-primary text-white">design</div>
                             <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5"><a href="/projects/basketball-academy-xmas-camp-flyer/" class="stretched-link-title">Basketball Academy Xmas Camp Flyer</a></h3>
+                                <h3 class="card-title h5"><a href="/portfolio/projects/basketball-academy-xmas-camp-flyer/" class="stretched-link-title">Basketball Academy Xmas Camp Flyer</a></h3>
                                 <p class="card-description">A vibrant and festive promotional flyer designed for Freedom Reign Basketball Academy&#x27;s Christmas Camp, showcasing training dates, skill-building activities, fees, bank details, and contact information in a lively holiday-themed layout.</p>
                                 <div class="tech-stack mb-2">
                                     <span class="tech-badge">Canva</span><span class="tech-badge">Graphic Design</span><span class="tech-badge">Branding</span><span class="tech-badge">Sports Promotion</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
-                                    <a href="/projects/basketball-academy-xmas-camp-flyer/" class="btn btn-primary btn-sm">
+                                    <a href="/portfolio/projects/basketball-academy-xmas-camp-flyer/" class="btn btn-primary btn-sm">
                                         <i class="bi bi-arrow-right-circle me-1"></i>View Project
                                     </a>
                                     <small class="text-muted">Completed</small>
@@ -637,23 +639,23 @@
                 <div class="col-lg-2 col-md-4 col-6">
                     <h4 class="h6 fw-bold text-white mb-3">Navigate</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a class="footer-link" href="/">Home</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/projects/">Projects</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/products/">Products</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/about.html">About</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/contact.html">Contact</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/">Home</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/projects/">Projects</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/products/">Products</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/about.html">About</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
                     <h4 class="h6 fw-bold text-white mb-3">Services</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a class="footer-link" href="/services.html#web-development">Web Development</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/services.html#graphic-design">Graphic Design</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/services.html#social-media">Social Media</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/services.html#data-entry">Data Entry</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/services.html#content-creation">Content Creation</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/services.html#digital-marketing">Digital Marketing</a></li>
-                        <li class="mb-2"><a class="footer-link" href="/services.html#ai-web-solutions">AI &amp; Web Solutions</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/services.html#web-development">Web Development</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/services.html#graphic-design">Graphic Design</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/services.html#social-media">Social Media</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/services.html#data-entry">Data Entry</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/services.html#content-creation">Content Creation</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/services.html#digital-marketing">Digital Marketing</a></li>
+                        <li class="mb-2"><a class="footer-link" href="/portfolio/services.html#ai-web-solutions">AI &amp; Web Solutions</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4">
@@ -681,10 +683,27 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 600, once: true });</script>
-    <script src="/js/darkmode.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/newsletter.js"></script>
-    <script src="/js/search.js"></script>
+    <script>
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 600, once: true });
+      }
+      // Safety net: if the AOS library above failed to load (CDN blocked,
+      // slow, or unreachable), the CSS that hides [data-aos] elements before
+      // their animation still loads fine, but nothing ever arrives to reveal
+      // them — content would stay invisible forever. Force it visible after
+      // a short delay regardless, so a failed animation library can never
+      // hide real content. Harmless no-op if AOS loaded normally.
+      setTimeout(function () {
+        document.querySelectorAll('[data-aos]').forEach(function (el) {
+          el.classList.add('aos-animate');
+        });
+      }, 1500);
+    </script>
+    <script src="/portfolio/js/darkmode.js"></script>
+    <script src="/portfolio/js/script.js"></script>
+    <script src="/portfolio/js/newsletter.js"></script>
+    <script src="/portfolio/js/search.js"></script>
+    <script src="/portfolio/js/bot.js"></script>
+    <script src="/portfolio/js/projects.js"></script>
 </body>
 </html>

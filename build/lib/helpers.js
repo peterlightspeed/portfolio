@@ -4,7 +4,22 @@
  * be able to read this one file and understand every {{helper}} used
  * anywhere in /templates.
  */
-function register(Handlebars) {
+function register(Handlebars, basePath = "") {
+  const withBase = (p) => {
+    const str = (p || "").toString();
+    if (str.startsWith("http") || str.startsWith("mailto:") || str.startsWith("tel:")) return str;
+    const clean = str.replace(/^\//, "");
+    return basePath ? `${basePath}/${clean}` : `/${clean}`;
+  };
+
+  // Prefix any site-relative path with the GitHub Pages project-site
+  // subpath (e.g. "/portfolio", derived from site.baseUrl in build.js) so
+  // the site works correctly whether it's served from a domain root or a
+  // subfolder. Use this for EVERY internal href/src in every template —
+  // css/js/images root files AND internal nav links alike. Never write a
+  // raw href="/..." or src="/..." directly in a template.
+  Handlebars.registerHelper("url", (p) => withBase(p));
+
   // Equality / comparison, for {{#if (eq a b)}}
   Handlebars.registerHelper("eq", (a, b) => a === b);
   Handlebars.registerHelper("gt", (a, b) => a > b);
@@ -29,12 +44,12 @@ function register(Handlebars) {
 
   Handlebars.registerHelper("urlencode", (s) => encodeURIComponent(s || ""));
 
-  // Resolve a local asset path (prepend leading slash) vs. an external
-  // http(s) URL (used as-is). Projects/certificates mix both kinds.
+  // Resolve a local asset path (subpath-prefixed) vs. an external http(s)
+  // URL (used as-is). Projects/certificates/products mix both kinds.
   Handlebars.registerHelper("asset", (p) => {
     if (!p) return "";
     if (p.startsWith("http")) return p;
-    return "/" + p.replace(/^\//, "");
+    return withBase(p);
   });
 
   // JSON dump — used to embed structured data / search index inline
@@ -52,8 +67,9 @@ function register(Handlebars) {
     return new Handlebars.SafeString(html);
   });
 
-  // Resolve a site-relative path against the configured baseUrl for absolute
-  // URLs (sitemap, canonical, OG tags, RSS all need absolute URLs).
+  // Resolve a site-relative path against the configured baseUrl for
+  // absolute URLs (used where a full https:// URL is required, not just
+  // a site-relative one — canonical/OG tags, sitemap, RSS).
   Handlebars.registerHelper("absUrl", function (relPath, options) {
     const site = (options && options.data && options.data.root && options.data.root.site) || this.site;
     const base = (site && site.baseUrl) || "";

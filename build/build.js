@@ -57,7 +57,14 @@ const githubMeta = readGithubCache();
 // ---------------------------------------------------------------------
 // 3. Handlebars setup
 // ---------------------------------------------------------------------
-helpers.register(Handlebars);
+// GitHub Pages "project sites" (repo name != <user>.github.io) are served
+// from a subpath, e.g. https://peterlightspeed.github.io/portfolio/ — every
+// root-relative URL in the whole site (css/js/images, internal nav links)
+// needs that "/portfolio" prefix, or it silently resolves to the domain
+// root instead and 404s/breaks. basePath is derived once, here, from the
+// single source of truth (site.baseUrl) so it can never drift out of sync.
+const basePath = new URL(data.site.baseUrl).pathname.replace(/\/$/, "");
+helpers.register(Handlebars, basePath);
 
 function registerPartial(name, relPath) {
   Handlebars.registerPartial(name, fs.readFileSync(path.join(TEMPLATES, relPath), "utf8"));
@@ -178,7 +185,7 @@ function enrich(item) {
       description: "Engineering work spanning client solutions, open-source code, and experiments.",
       breadcrumbs: [{ label: "Home", href: "/" }, { label: "Projects", href: "/projects/" }],
     }),
-    { page: "projects", priority: 0.9, changefreq: "weekly", breadcrumbs: [{ label: "Home", href: "/" }, { label: "Projects", href: "/projects/" }] }
+    { page: "projects", priority: 0.9, changefreq: "weekly", breadcrumbs: [{ label: "Home", href: "/" }, { label: "Projects", href: "/projects/" }], extraScripts: ["js/projects.js"], extraStyles: ["projects"] }
   );
 
   data.projectsPublished.forEach((project) => {
@@ -277,7 +284,7 @@ function enrich(item) {
       title: "Certifications & Education",
       description: "Formal training, credentials, and skills behind the work.",
     }),
-    { page: "certifications", priority: 0.5 }
+    { page: "certifications", priority: 0.5, extraStyles: ["certifications"] }
   );
 }
 
@@ -295,7 +302,7 @@ function enrich(item) {
       title: "Testimonials",
       description: "What clients, students, and collaborators have said.",
     }),
-    { page: "testimonials", priority: 0.5 }
+    { page: "testimonials", priority: 0.5, extraStyles: ["testimonials"] }
   );
 }
 
@@ -314,7 +321,7 @@ function enrich(item) {
       title: "About",
       description: `Discover ${data.site.name}, a ${data.site.jobTitle.toLowerCase()} from ${data.site.location.city}, ${data.site.location.country}.`,
     }),
-    { page: "about", priority: 0.7 }
+    { page: "about", priority: 0.7, extraStyles: ["about"] }
   );
 }
 
@@ -434,7 +441,7 @@ function enrich(item) {
       title: "Services",
       description: `${data.site.name} offers backend development, AI engineering, and SaaS product development services, alongside web development and technical content creation.`,
     }),
-    { page: "services", priority: 0.7 }
+    { page: "services", priority: 0.7, extraStyles: ["services"] }
   );
 }
 
@@ -481,14 +488,14 @@ function extractLegacyBody(slug) {
 }
 
 const groupAPages = [
-  { slug: "contact", page: "contact", priority: 0.8 },
-  { slug: "labs", page: "labs", priority: 0.5 },
-  { slug: "sax", page: "sax", priority: 0.3 },
-  { slug: "sponsor", page: "sponsor", priority: 0.3 },
-  { slug: "demo", page: "demo", priority: 0.4 },
+  { slug: "contact", page: "contact", priority: 0.8, extraScripts: ["js/contact.js"], extraStyles: ["contact"] },
+  { slug: "labs", page: "labs", priority: 0.5, extraScripts: ["js/labs.js"], extraStyles: ["labs"] },
+  { slug: "sax", page: "sax", priority: 0.3, extraScripts: ["public/sax-bot.js", "public/sax.js"], extraStyles: ["sax"] },
+  { slug: "sponsor", page: "sponsor", priority: 0.3, extraScripts: ["js/sponsor.js"], extraStyles: ["sponsor"] },
+  { slug: "demo", page: "demo", priority: 0.4, extraScripts: ["js/demo.js"], extraStyles: [] },
 ];
 
-groupAPages.forEach(({ slug, page, priority }) => {
+groupAPages.forEach(({ slug, page, priority, extraScripts, extraStyles }) => {
   const { body, title, description } = extractLegacyBody(slug);
   const bodyFn = () => body;
   writePage(
@@ -496,7 +503,7 @@ groupAPages.forEach(({ slug, page, priority }) => {
     bodyFn,
     {},
     buildMeta(data.site, { path: `/${slug}.html`, title, description }),
-    { page, priority }
+    { page, priority, extraScripts, extraStyles }
   );
 });
 
@@ -517,7 +524,7 @@ groupAPages.forEach(({ slug, page, priority }) => {
       title: "Resume",
       description: `View ${data.site.name}'s ATS-friendly resume online. ${data.site.jobTitle} with expertise in Python, Go, FastAPI, and AI-powered SaaS products.`,
     }),
-    { page: "resume", priority: 0.6 }
+    { page: "resume", priority: 0.6, extraStyles: ["resume", "print"] }
   );
 
   writePage(
@@ -529,7 +536,7 @@ groupAPages.forEach(({ slug, page, priority }) => {
       title: "Download CV",
       description: `Download ${data.site.name}'s CV/Resume. ${data.site.jobTitle} with expertise in Python, Go, FastAPI, and AI-powered SaaS products.`,
     }),
-    { page: "cv", priority: 0.6 }
+    { page: "cv", priority: 0.6, extraStyles: ["cv"] }
   );
 
   // 404 renders standalone (no shared nav, matching the original design
@@ -545,8 +552,8 @@ groupAPages.forEach(({ slug, page, priority }) => {
 //      those links working without hand-editing 9 legacy files.
 // ---------------------------------------------------------------------
 [
-  { from: "projects.html", to: "/projects/" },
-  { from: "products.html", to: "/products/" },
+  { from: "projects.html", to: `${basePath}/projects/` },
+  { from: "products.html", to: `${basePath}/products/` },
 ].forEach(({ from, to }) => {
   const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=${to}"><link rel="canonical" href="${to}"><title>Redirecting…</title></head><body>Redirecting to <a href="${to}">${to}</a>…</body></html>`;
   fs.writeFileSync(path.join(OUT_DIR, from), html);
