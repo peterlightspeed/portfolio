@@ -28,7 +28,7 @@
                 </div>
                 <div class="row g-4">
                     {{#each items}}
-                    {{> project-card}}
+                    {{#if ../isProducts}}{{> product-card}}{{else}}{{> project-card}}{{/if}}
                     {{/each}}
                 </div>
             </div>

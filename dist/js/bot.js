@@ -7,30 +7,36 @@
 const botConfig = (function() {
     const defaultConfig = {
         name: "Peter Assistant",
-        initialMessage: "Hi! I'm Peter's AI assistant. Peter is an AI developer, data engineer, and founder of PLS TechCompany based in Nigeria.<br><br>I can help you with:<br>• <b>AI & Machine Learning</b> services<br>• <b>Data Engineering & BI</b> projects<br>• <b>Web Development</b> work<br>• <b>PLS TechCompany products</b><br><br>What are you looking for?",
+        initialMessage: "Hi! I'm Peter's AI assistant. Peter is an AI developer, data engineer, and founder of PLSTech based in Nigeria.<br><br>I can help you with:<br>• <b>AI & Machine Learning</b> services<br>• <b>Data Engineering & BI</b> projects<br>• <b>Web Development</b> work<br>• <b>PLSTech products</b><br><br>What are you looking for?",
         typingSpeed: 40,
         responseDelay: 400,
-        botAvatar: "images/logos/peter-logo.png",
+        botAvatar: (window.SITE_BASE || '/') + "images/logos/peter-logo.png",
         knowledgeBase: {
             // General information
-            "who is peter": "Peter Lightspeed (Eluwade Peter Toluwanimi) is the founder of <b>PLS TechCompany</b> — an AI, data engineering, and web development professional based in Lagos, Nigeria. With over 4 years of experience, he builds intelligent systems, data pipelines, Python automation, and machine learning solutions for businesses. Want to see his <a href='services.html'>services</a> or <a href='projects.html'>projects</a>?",
+            "who is peter": "Peter Lightspeed (Eluwade Peter Toluwanimi) is the founder of <b>PLSTech</b> — an AI, data engineering, and web development professional based in Lagos, Nigeria. With over 4 years of experience, he builds intelligent systems, data pipelines, Python automation, and machine learning solutions for businesses. Want to see his <a href='services.html'>services</a> or <a href='projects.html'>projects</a>?",
             "what services": "Peter offers a full range of AI, data, and web services:<br><br><b>AI & Technical:</b><br>• AI Development & LLM Integration<br>• Machine Learning Solutions<br>• Python Automation<br>• Business Intelligence & Dashboards<br>• Data Engineering & ETL Pipelines<br>• Chatbot Development<br><br><b>Web & Digital:</b><br>• Web Development<br>• Graphic Design<br>• Content Creation<br>• Digital Marketing<br><br><a href='services.html'>View full Services page</a>",
             "contact": "You can contact Peter via email at petereluwade55@gmail.com or through WhatsApp at +234 810 882 1809. Alternatively, you can use the contact form on the Contact page of this website for a prompt response.",
             "social media handles": "You can connect with Peter on social media:<br><br>• Twitter/X: <a href='https://x.com/peterlightspeed' target='_blank'>@peterlightspeed</a><br>• Instagram: <a href='https://www.instagram.com/eluwadepeter' target='_blank'>@eluwadepeter</a><br>• TikTok: <a href='https://www.tiktok.com/@eluwadepeter' target='_blank'>@eluwadepeter</a><br>• Music/Saxophone: <a href='https://www.instagram.com/peterphonist' target='_blank'>@peterphonist</a><br><br>Follow for updates on his work and creative content!",
             "handles": "You can find Peter on social media: Twitter/X (@peterlightspeed), Instagram (@eluwadepeter), TikTok (@eluwadepeter), and his music handle is @peterphonist. Connect with him to stay updated!",
             "location": "Peter is based in Nigeria but provides remote services to clients worldwide. His virtual assistance knows no geographical boundaries, allowing him to serve clients across different time zones effectively.",
-            "pls techcompany": "PLS TechCompany is Peter Eluwade's software company based in Lagos, Nigeria. It focuses on building AI-powered data tools, Python automation systems, and business intelligence platforms for Nigerian SMBs. Current products: <b>PLS Nigerian SMB Data Sanitizer</b> and <b>PLS Business Intelligence Suite</b>. <a href='products.html'>View Products</a>",
-            "products": "PLS TechCompany currently has two professional software products:<br><br><b>PLS Nigerian SMB Data Sanitizer</b> — Cleans messy Nigerian business data (phones, addresses, currencies). Community Edition is available now on GitHub. Pro &amp; Web Editions coming September 2026.<br><br><b>PLS Business Intelligence Suite</b> — BI platform for Nigerian SMBs. All editions coming in 2026.<br><br><a href='products.html'>View full product details &amp; roadmap</a>",
-            "data sanitizer": "The <b>PLS Nigerian SMB Data Sanitizer</b> is a Python/Pandas toolkit that normalises Nigerian phone numbers, addresses, names, and currencies in seconds. It has 3 editions:<br>• Community (Available on GitHub now)<br>• Pro Edition (Coming Sep 2026)<br>• Web Edition (Coming Sep 2026)<br><br><a href='products.html#smb-sanitizer'>See full details</a>",
+            "pls techcompany": "PLSTech is Peter Eluwade's software company based in Lagos, Nigeria — building AI-powered SaaS platforms, free developer tools, and data engineering products. Flagship: <b>PLS Nexus</b> (AI SaaS platform, in development) and <b>DataFlow AI</b> (private, in development). Live now: <b>PLS Compress</b>, <b>PLS QR</b>, <b>PLS Snip</b>, and <b>PLS Crack</b> — all free, no sign-up. <a href='products.html'>View Products</a>",
+            "products": "PLSTech's products:<br><br><b>Live now, free, no sign-up:</b><br>• <b>PLS Compress</b> — shrink images/PDFs, merge PDFs<br>• <b>PLS QR</b> — batch QR code generator<br>• <b>PLS Snip</b> — URL shortener with click stats<br>• <b>PLS Crack</b> — a code-breaking guessing game<br><br><b>In development:</b><br>• <b>PLS Nexus</b> — flagship AI SaaS platform<br>• <b>DataFlow AI</b> — AI business data intelligence platform (private repo)<br>• <b>PLS Nigerian SMB Data Sanitizer</b> — Community Edition live now, Pro/Web coming<br>• <b>PLS Business Intelligence Suite</b> — coming 2026<br><br><a href='products.html'>View full product details</a>",
+            "data sanitizer": "The <b>PLS Nigerian SMB Data Sanitizer</b> is a Python/Pandas toolkit that normalises Nigerian phone numbers, addresses, names, and currencies in seconds. Community Edition is available now on GitHub; Pro & Web Editions are coming. <a href='products.html#smb-data-sanitizer'>See full details</a>",
+            "pls compress": "<b>PLS Compress</b> shrinks images and PDFs and merges PDFs — no sign-up, nothing stored. Free and live now. <a href='https://pls-compress.onrender.com' target='_blank'>Try it live</a>",
+            "pls qr": "<b>PLS QR</b> turns a list of links or text into a batch of styled QR codes — paste a list or upload a CSV, export as PNGs or a printable PDF sheet. Free and live now. <a href='https://pls-qr.onrender.com' target='_blank'>Try it live</a>",
+            "pls snip": "<b>PLS Snip</b> is a no-sign-up URL shortener with custom aliases, expiry controls, and private click-stats via a management link. Free and live now. <a href='https://pls-snip.onrender.com' target='_blank'>Try it live</a>",
+            "pls crack": "<b>PLS Crack</b> is a Mastermind-style code-breaking guessing game — the server holds the secret, you crack it with scored feedback. Free and live now. <a href='https://pls-crack-tv5k.onrender.com' target='_blank'>Try it live</a>",
+            "pls nexus": "<b>PLS Nexus</b> is Peter's flagship AI-powered SaaS platform for entrepreneurs and small businesses — being built module by module. Its first module, <b>PLS Nexus Talent Intelligence</b> (AI resume analysis), is in active development. <a href='products.html#pls-nexus'>Learn more</a>",
+            "dataflow ai": "<b>DataFlow AI</b> is a production-grade AI-powered business data intelligence platform — CSV/Excel upload, data profiling, quality detection, cleaning, and report generation. It's currently a private repository, actively in development (~v0.5). <a href='products.html#dataflow-ai'>Learn more</a>",
             "business intelligence": "Peter offers <b>Business Intelligence</b> services — KPI dashboards, automated reports, Power BI solutions, and sales analytics. He is also building the <b>PLS Business Intelligence Suite</b>, a dedicated BI platform for Nigerian SMBs coming in 2026. <a href='services.html#business-intelligence'>View BI Service</a> | <a href='products.html#bi-suite'>View BI Product</a>",
             "ai development": "Peter builds custom AI applications including LLM integrations, intelligent chatbots, document processing systems, and AI-powered automation workflows. He works with OpenAI APIs, Python, and machine learning frameworks. <a href='services.html#ai-development'>View AI Development Service</a>",
             "machine learning": "Peter develops machine learning models for predictive analytics, classification, anomaly detection, and trend forecasting. His ML solutions are built with Python (Scikit-learn, TensorFlow) and deployed for real business use. <a href='services.html#machine-learning'>View ML Service</a>",
             "python": "Peter is a Python developer specialising in automation, data engineering, machine learning, and AI development. He builds CLI tools, REST APIs, data pipelines, and automation scripts. <a href='services.html#python-automation'>View Python Automation Service</a>",
             "data engineering": "Peter designs and builds data pipelines, ETL workflows, and data cleaning systems. The PLS Nigerian SMB Data Sanitizer is one of his data engineering products. <a href='services.html#data-engineering'>View Data Engineering Service</a>",
             "chatbot": "Peter builds custom chatbots for websites, WhatsApp, and business portals — like the assistant you're chatting with right now! He integrates AI to handle customer queries, lead capture, and FAQ automation. <a href='services.html#chatbot-development'>View Chatbot Development Service</a>",
-            "roadmap": "PLS TechCompany's 2026 product roadmap:<br><br><b>Q3 2026 (Jul–Sep):</b><br>• PLS Nigerian SMB Data Sanitizer Pro<br>• PLS Nigerian SMB Data Sanitizer Web<br>• PLS Business Intelligence Suite Community<br><br><b>Q4 2026 (Oct–Dec):</b><br>• PLS Business Intelligence Suite Pro<br>• PLS Business Intelligence Suite Web<br><br><a href='products.html#roadmap'>View full roadmap</a>",
+            "roadmap": "PLSTech's roadmap: <b>PLS Nexus</b> and <b>DataFlow AI</b> are in active development now. The <b>PLS Nigerian SMB Data Sanitizer</b> Pro & Web editions and the <b>PLS Business Intelligence Suite</b> are coming next. <a href='products.html'>View current status on the Products page</a>",
             "hire peter": "Peter is available for AI development, data engineering, machine learning, and web development projects. Email: <a href='mailto:petereluwade55@gmail.com'>petereluwade55@gmail.com</a> | WhatsApp: +234 810 882 1809<br><a href='contact.html'>Use the Contact Form</a>",
-            "experience": "Peter has over 4 years of experience in AI development, data engineering, Python automation, machine learning, web development, and business intelligence. He has worked on 50+ projects across different industries and built software products under PLS TechCompany. Want to see his <a href='projects.html'>portfolio</a>?",
+            "experience": "Peter has been building since 2024 — 20+ projects and 6+ production products across backend development, AI engineering, Python, Go, and web development. Want to see his <a href='projects.html'>portfolio</a>?",
             
             // Services information
             "web development": "Peter offers professional web development services including responsive website design, e-commerce solutions, website maintenance, and custom web applications. His websites are mobile-friendly, SEO-optimized, and built with modern technologies like HTML5, CSS3, JavaScript, and various frameworks. He ensures that each website not only looks great but also performs excellently across all devices.",
@@ -41,8 +47,8 @@ const botConfig = (function() {
             "digital marketing": "Peter offers digital marketing services including SEO, social media marketing, email campaigns, and content marketing strategies to help businesses increase their online visibility and attract more customers. He analyzes market trends and competitor strategies to develop effective marketing plans that deliver measurable results.",
             
             // Projects information
-            "projects": "Peter has worked on various projects including e-commerce websites, business portfolios, blogs, and social media campaigns. His portfolio includes websites for small businesses, content creation for blogs, graphic design for marketing materials, and comprehensive social media management for growing brands. You can view his portfolio on the Projects page to see examples of his work.",
-            "portfolio": "You can view Peter's portfolio on the Projects page of this website. It showcases his best work across web development, graphic design, and digital marketing projects. Each project demonstrates his technical skills, creativity, and ability to deliver solutions that meet client objectives.",
+            "projects": "Peter's projects span AI/backend systems (PLS Nexus Talent Intelligence), real client work (Faith Centre Global, Cedarville, Coach Gideon, Hope Assessment App), and open-source tools. <a href='projects.html'>Browse all projects</a> or <a href='products.html'>see the live products</a>.",
+            "portfolio": "You can browse Peter's full portfolio on the <a href='projects.html'>Projects page</a> (client work, open source, and experiments) and the <a href='products.html'>Products page</a> (live tools anyone can use right now).",
             
             // Pricing information
             "pricing": "Pricing varies depending on project requirements and scope. Peter offers competitive rates and flexible packages designed to accommodate different budgets. Please contact him directly for a personalized quote based on your specific needs and project details.",
@@ -53,9 +59,9 @@ const botConfig = (function() {
             "turnaround time": "Turnaround time depends on the project scope and complexity. Peter always provides estimated completion times before starting work and strives to deliver on or before deadlines. For urgent requests, he offers expedited services when available.",
             
             // About information
-            "about": "Peter Lightspeed is a dedicated virtual assistant and web developer with a passion for creating digital solutions that help businesses grow. With expertise in web development, graphic design, and digital marketing, he provides comprehensive services to clients worldwide. His approach combines technical skills with creativity to deliver results that exceed client expectations.",
-            "education": "Peter is currently in school to earn a degree in Bachelor of Science in Computer Science from the University of Lagos, Nigeria. He has also completed various certifications in web development, digital marketing, and graphic design to stay updated with the latest industry trends and technologies.",
-            "skills": "Peter's core skills include:<br><b>AI & Data:</b> Python, Machine Learning, Data Engineering, ETL Pipelines, Business Intelligence, Pandas, SQL, OpenAI API<br><b>Web:</b> HTML5, CSS3, JavaScript, Bootstrap, WordPress<br><b>Design & Marketing:</b> Graphic Design (Adobe Suite), Social Media Management, Content Creation, SEO",
+            "about": "Peter Eluwade (Peter Lightspeed) is a backend developer and AI engineer based in Lagos, Nigeria, and the founder of PLSTech. He builds AI-powered SaaS products, backend systems, and developer tools with Python, Go, and FastAPI, and documents the journey through technical content, live coding, and open-source work.",
+            "education": "Peter is currently working toward a Bachelor of Science in Computer Science at the Lagos State University. He's also completed certifications in web development, AI, and digital skills — see the <a href='certifications.html'>Certifications page</a> for the full list.",
+            "skills": "Peter's core skills:<br><b>Backend:</b> Python, Go, FastAPI, Flask, REST APIs, PostgreSQL, Supabase<br><b>Frontend:</b> HTML, CSS, Bootstrap, JavaScript, React, TypeScript<br><b>AI & LLMs:</b> Google Gemini, HuggingFace Transformers, prompt engineering<br><br>Currently learning: Django, Next.js, Docker, AWS, LangChain, and more — see the <a href='about.html#skills'>About page</a> for the full roadmap.",
             
             // Personal information
             "background": "Peter developed an interest in technology at a young age and has been honing his skills ever since. His journey began with learning basic programming and gradually expanded to include web development, design, and digital marketing. His diverse skill set allows him to offer comprehensive solutions to his clients.",
@@ -75,12 +81,12 @@ const botConfig = (function() {
             "technologies": "Peter works with various technologies including HTML5, CSS3, JavaScript, PHP, WordPress, WooCommerce, Shopify, Adobe Creative Suite, and social media APIs. He continuously updates his technical knowledge to incorporate the latest advancements.",
             
             // Navigation hints
-            "navigate": "Here are the main pages on this site:<br><a href='index.html'>Home</a> — Overview<br><a href='projects.html'>Projects</a> — Portfolio<br><a href='services.html'>Services</a> — All services<br><a href='products.html'>Products</a> — PLS TechCompany software<br><a href='about.html'>About</a> — Peter's background<br><a href='contact.html'>Contact</a> — Hire Peter",
+            "navigate": "Here are the main pages on this site:<br><a href='index.html'>Home</a> — Overview<br><a href='projects.html'>Projects</a> — Portfolio<br><a href='services.html'>Services</a> — All services<br><a href='products.html'>Products</a> — PLSTech software<br><a href='about.html'>About</a> — Peter's background<br><a href='contact.html'>Contact</a> — Hire Peter",
             "show me": "Sure! Here's where to find things:<br>• AI/Data services → <a href='services.html#ai-development'>Services page</a><br>• Software products → <a href='products.html'>Products page</a><br>• Portfolio work → <a href='projects.html'>Projects page</a><br>• Hire Peter → <a href='contact.html'>Contact page</a>",
 
             // Fallback responses
-            "default": "I didn't quite catch that. Try asking about:<br>• <b>Peter's services</b> (AI, ML, Python, Web)<br>• <b>PLS TechCompany products</b><br>• <b>How to hire Peter</b><br>• <b>His projects or experience</b><br><br>Or type <b>\"show me\"</b> for a quick site guide.",
-            "greeting": "Hi there! I'm Peter's AI assistant. Ask me about his AI development services, data engineering work, PLS TechCompany products, or how to hire him.",
+            "default": "I didn't quite catch that. Try asking about:<br>• <b>Peter's services</b> (AI, ML, Python, Web)<br>• <b>PLSTech products</b><br>• <b>How to hire Peter</b><br>• <b>His projects or experience</b><br><br>Or type <b>\"show me\"</b> for a quick site guide.",
+            "greeting": "Hi there! I'm Peter's AI assistant. Ask me about his AI development services, data engineering work, PLSTech products, or how to hire him.",
             "wassup": "Hello! How can I assist you today? I'm here to answer questions about Peter's services and expertise.",
             "how far": "i dey boss, how you dey? Shey you get any questions about Peter's services and expertise.",
             "no": "no problem, if you have any question, do not hesitate to chat me in lightspeed.",
@@ -118,8 +124,10 @@ const botConfig = (function() {
                 parsedConfig.knowledgeBase = defaultConfig.knowledgeBase;
             }
             
-            // Ensure the bot avatar is set
-            if (!parsedConfig.botAvatar) {
+            // Ensure the bot avatar is set and absolute (older cached configs
+            // may have a relative path from before this was fixed, which
+            // breaks on any page that isn't the site root)
+            if (!parsedConfig.botAvatar || !parsedConfig.botAvatar.startsWith((window.SITE_BASE || '/'))) {
                 parsedConfig.botAvatar = defaultConfig.botAvatar;
             }
             
@@ -444,6 +452,33 @@ function createChatbotElements() {
             justify-content: center;
         }
 
+        /* Quick reply buttons */
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 4px 12px 12px;
+        }
+        .quick-reply-btn {
+            background: #fff;
+            border: 1px solid #0d6efd;
+            color: #0d6efd;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .quick-reply-btn:hover:not(:disabled) {
+            background: #0d6efd;
+            color: #fff;
+        }
+        .quick-reply-btn:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 576px) {
             #chatbot-widget {
@@ -482,6 +517,10 @@ function openChat() {
         
         // Add welcome message with typing effect
         addBotMessageWithTypingEffect(botConfig.initialMessage);
+
+        // Offer quick replies once the greeting has finished typing out.
+        const estimatedTypingMs = botConfig.initialMessage.length * (botConfig.typingSpeed / 2) + 400;
+        setTimeout(() => addQuickReplies(DEFAULT_QUICK_REPLIES), estimatedTypingMs);
     }
     
     // Focus on input field
@@ -518,15 +557,18 @@ function showNotification() {
 // Handle user message submission
 function handleUserMessage(e) {
     e.preventDefault();
-    
+
     const message = userInput.value.trim();
     if (!message) return;
-    
+
+    userInput.value = '';
+    askQuestion(message);
+}
+
+// Shared by both typed messages and quick-reply button clicks.
+function askQuestion(message) {
     // Add user message to chat
     addUserMessage(message);
-    
-    // Clear input
-    userInput.value = '';
     
     // Process message and get response
     const botResponse = getBotResponse(message);
@@ -543,6 +585,11 @@ function handleUserMessage(e) {
     setTimeout(() => {
         removeTypingIndicator();
         addBotMessageWithTypingEffect(botResponse);
+        // If the bot didn't understand, offer quick replies to steer the
+        // conversation back on track rather than leaving a dead end.
+        if (botResponse === botConfig.knowledgeBase.default) {
+            setTimeout(() => addQuickReplies(DEFAULT_QUICK_REPLIES), 400);
+        }
     }, botConfig.responseDelay + Math.random() * 500); // Add some randomness
     
     // Focus on input field
@@ -833,12 +880,61 @@ function getBotResponse(userMessage) {
 }
 
 // Process message formatting (simple markdown-like)
+// Quick-reply buttons — shown after the greeting and whenever the bot
+// doesn't understand a message, so there's always an easy way forward
+// instead of a dead end.
+const DEFAULT_QUICK_REPLIES = [
+    { label: 'View Projects', query: 'show me your projects' },
+    { label: 'See Products', query: 'what products do you have' },
+    { label: 'My Skills', query: 'what are your skills' },
+    { label: 'Hire Me', query: 'how do I hire you' },
+];
+
+function addQuickReplies(options) {
+    // Remove any previous quick-reply row so they don't pile up.
+    const existing = chatArea.querySelector('.quick-replies');
+    if (existing) existing.remove();
+
+    const row = document.createElement('div');
+    row.className = 'quick-replies';
+
+    options.forEach((opt) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'quick-reply-btn';
+        btn.textContent = opt.label;
+        btn.addEventListener('click', () => {
+            // Disable the whole row once one is picked, so a fast double-click
+            // can't fire two questions at once.
+            row.querySelectorAll('button').forEach((b) => (b.disabled = true));
+            askQuestion(opt.query);
+        });
+        row.appendChild(btn);
+    });
+
+    chatArea.appendChild(row);
+    scrollToBottom();
+}
+
 function processMessageFormatting(message) {
     // Convert URLs to links
     message = message.replace(
         /(https?:\/\/[^\s]+)/g, 
         '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
     );
+
+    // Fix internal links: the knowledge base below writes hrefs like
+    // href='projects.html' assuming the page serving them sits at the site
+    // root. Since this bot now runs on every page (including nested ones
+    // like /projects/some-project/), and the whole site is served from a
+    // GitHub Pages subpath (/portfolio/), a relative link like that resolves
+    // wrong depending on which page the visitor is on. Rewrite any relative,
+    // non-external href here — once, centrally — rather than hand-fixing
+    // hundreds of links throughout the knowledge base individually.
+    const base = (window.SITE_BASE || '/').replace(/\/$/, '');
+    message = message.replace(/href=(['"])(?!https?:|mailto:|tel:|#|\/)([^'"]+)\1/g, (m, quote, path) => {
+        return `href=${quote}${base}/${path}${quote}`;
+    });
     
     // Convert **bold** to <strong>
     message = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');

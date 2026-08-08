@@ -284,3 +284,25 @@ While wiring up the new animation, found that **the homepage itself** had the sa
 
 ### Known limitation, stated plainly
 I don't have a real browser in this environment, so I can't visually confirm the animation's actual on-screen appearance or interaction feel — only that it's syntactically correct, wired in correctly, and every element/class it depends on resolves. Load the live site once deployed and tell me if the motion, colors, or interaction feel need tuning (particle count, connection distance, and cursor-influence radius are all single constants at the top of `js/hero-network.js`, easy to adjust).
+
+## [3.10.0] — Bot Fixes, Smarter Chatbot, Contact Form, Products-in-Projects — 2026-08-06
+
+### Fixed
+- **Chatbot avatar was broken on every page except the homepage.** `js/bot.js` used a relative image path (`images/logos/peter-logo.png`), which resolves differently depending on how deeply nested the current page is — correct on `/portfolio/`, wrong everywhere else (e.g. `/portfolio/projects/some-project/`). Fixed using the same `SITE_BASE` mechanism already in place for `search.js`. Also guarded against a **stale cached avatar path** in `localStorage` from before this fix, so returning visitors don't keep the broken version forever.
+- **Every internal link the chatbot ever generates was broken the same way** — the entire knowledge base writes links like `href='projects.html'`, which only resolve correctly from the site root. Fixed centrally, once, in `processMessageFormatting()` rather than hand-editing hundreds of links throughout the knowledge base — any relative internal link the bot outputs now gets corrected automatically before it's ever displayed.
+- **Contact form showing an error after actually sending successfully** — diagnosed as a CORS mismatch between what's live on Cloudflare and what's in this repo (the Worker deploys separately from GitHub Pages; editing the file here doesn't push it live). The current source already has the correct origin whitelisted — **you need to redeploy `worker/contact-worker.js` to Cloudflare for this to take effect**, see `TODO.md`. In the meantime, made `contact.js` distinguish this specific failure mode from a genuine send failure, so the message shown is accurate either way instead of implying total failure.
+- **6 products were marked `featured: true` but only 4 ever showed on the homepage** — a hardcoded `.slice(0, 4)` silently cut off SMB Data Sanitizer and BI Suite. Expanded to show all 6.
+
+### Chatbot made smarter, per request
+- Fixed factual errors that had gone stale: "PLS TechCompany" → "PLSTech" (site-wide elsewhere), wrong university, "virtual assistant" framing (badly outdated — now correctly describes backend/AI engineering work), an unverifiable "50+ projects" claim replaced with the same real numbers used elsewhere on the site.
+- Rewrote the products/roadmap knowledge entries, which only knew about 2 old products, to cover all 8 current ones with accurate status and live demo links where they exist.
+- **Added quick-reply buttons** — shown after the greeting (View Projects / See Products / My Skills / Hire Me) and automatically whenever the bot doesn't understand a message, so there's always an easy way forward instead of a dead end.
+
+### Added — Products now visible from the Projects page too
+Per request, `/projects/` now has a "Products" section at the top showing all 6 featured products, in addition to the dedicated `/products/` page — so a visitor browsing Projects doesn't miss the things that are actually shippable, working software.
+
+### Verification performed (three full passes, as requested)
+1. JS syntax-checked every file, full subpath-aware link/asset integrity across all 44 pages, 0 unrendered template tokens.
+2. **Full clean reinstall** (`rm -rf node_modules && npm install`) followed by a full rebuild — this is what actually simulates GitHub Actions' fresh environment, not just a local rebuild reusing cached state.
+3. Deep checks: confirmed the bot avatar and quick-reply code are present in the shipped `bot.js`, sitemap (44 URLs)/RSS/search-index (63 entries) all correct, 0 images missing `alt`.
+- Also structurally scanned every generated page for the specific class of Bootstrap layout bug (`.col-*` used without a `.row` parent) that would cause misaligned containers — 0 found across the whole site.

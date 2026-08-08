@@ -128,7 +128,7 @@ function enrich(item) {
 {
   const homeTpl = compilePage("home");
   const featuredProjects = data.projectsPublished.filter((p) => p.featured).slice(0, 6);
-  const featuredProducts = data.productsPublished.filter((p) => p.featured).slice(0, 4);
+  const featuredProducts = data.productsPublished.filter((p) => p.featured).slice(0, 6);
   const testimonialsPreview = data.testimonialsPublished.slice(0, 3);
 
   const currentlyBuilding = (data.site.currentlyBuilding || [])
@@ -167,12 +167,17 @@ function enrich(item) {
   const draftCount = data.projects.filter((p) => p.draft).length;
 
   const groupDefs = [
+    { workType: "__products__", slug: "products-on-projects", label: "Products", icon: "bi-box-seam-fill", description: "Software people can actually use, not just engineering demos.", isProducts: true },
     { workType: "client", slug: "client-work", label: "Client Work", icon: "bi-briefcase-fill", description: "Real sites and platforms built for real clients." },
     { workType: "open-source", slug: "open-source", label: "Open Source", icon: "bi-code-square", description: "Public repositories — tools, tutorials, and code anyone can read or reuse." },
     { workType: "labs", slug: "labs-projects", label: "Labs & Experiments", icon: "bi-flask-fill", description: "Smaller builds, design experiments, and practice pieces." },
   ];
   const groups = groupDefs
-    .map((g, i) => ({ ...g, alt: i % 2 === 1, items: data.projectsPublished.filter((p) => p.workType === g.workType).map(enrich) }))
+    .map((g, i) => ({
+      ...g,
+      alt: i % 2 === 1,
+      items: g.isProducts ? data.productsPublished.filter((p) => p.featured) : data.projectsPublished.filter((p) => p.workType === g.workType).map(enrich),
+    }))
     .filter((g) => g.items.length > 0);
 
   writePage(

@@ -145,12 +145,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error(result.error || 'Network response was not ok');
                 }
             } catch (error) {
+                // A CORS or network-level failure (the browser throws a
+                // generic TypeError for these) can happen even after the
+                // server already received and processed the request — the
+                // failure is in the browser reading the response, not in
+                // whether the message arrived. Word this case differently
+                // so a genuinely-sent message doesn't look like total failure.
+                const likelySentAnyway = error instanceof TypeError;
                 showMessage('error',
                     '<div class="d-flex align-items-center">' +
                     '<i class="bi bi-exclamation-triangle-fill text-danger fs-4 me-3"></i>' +
-                    '<div><h5 class="mb-1">Oops! Something went wrong.</h5>' +
-                    '<p class="mb-0">Please try again, or reach me directly at petereluwade55@gmail.com ' +
-                    'or WhatsApp +234 810 882 1809.</p></div>' +
+                    '<div><h5 class="mb-1">' + (likelySentAnyway ? 'Hmm, that\'s unusual.' : 'Oops! Something went wrong.') + '</h5>' +
+                    '<p class="mb-0">' + (likelySentAnyway
+                        ? 'Your message may have actually gone through — this looks like a connection hiccup on the confirmation, not a failed send. If you don\'t hear back within a day or two, please follow up directly at '
+                        : 'Please try again, or reach me directly at ') +
+                    'petereluwade55@gmail.com or WhatsApp +234 810 882 1809.</p></div>' +
                     '</div>'
                 );
             } finally {

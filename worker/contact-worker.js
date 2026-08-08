@@ -19,10 +19,16 @@ const FROM_EMAIL = 'Portfolio Contact Form <onboarding@resend.dev>'; // update o
 const MAX_TOTAL_ATTACHMENT_BYTES = 10 * 1024 * 1024; // 10MB combined, matches the form's own client-side check
 
 // Restrict which origins are allowed to call this Worker.
+// IMPORTANT: an Origin header from the browser NEVER includes a trailing
+// slash or a path (e.g. "https://peterlightspeed.github.io", not
+// ".../portfolio/" or a trailing "/") — a mismatch here silently breaks
+// CORS: the request still reaches this Worker and still sends the email,
+// but the browser blocks the page from reading the response, so the form
+// shows an error even though the message actually went through.
 const ALLOWED_ORIGINS = [
     'http://127.0.0.1:5500',
     'http://localhost:5500',
-    'https://peterlightspeed.github.io/', 
+    'https://peterlightspeed.github.io',
 ];
 
 function corsHeaders(origin) {

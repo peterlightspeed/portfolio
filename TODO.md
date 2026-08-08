@@ -37,3 +37,9 @@ Acknowledged — update `status`/`statusLabel`/`links` in `data/products.json` w
 ## Process
 - [ ] Run the Lighthouse audit above once deployed and send me the results.
 - [ ] Set the GitHub Pages source as above (one-time, ~30 seconds).
+
+## Contact form — "shows error but still sends" (action needed from you)
+This is very likely a **CORS mismatch between what's live on Cloudflare and what's in this repo** — not a code bug in the current source, which already has the correct origin whitelisted (`worker/contact-worker.js` → `ALLOWED_ORIGINS` includes `https://peterlightspeed.github.io`). Here's what's actually happening: the Cloudflare Worker (a separate service, deployed independently of GitHub Pages) is not part of the GitHub Actions build — editing `worker/contact-worker.js` in this repo does **not** automatically update what's live on Cloudflare. If your live Worker still has an older/different `ALLOWED_ORIGINS` list, the email genuinely sends successfully, but the browser blocks your page from reading the "it worked" response — so the form shows an error even though the message went through.
+
+- [ ] **Redeploy `worker/contact-worker.js` to Cloudflare** — via the Cloudflare dashboard (paste the current file content into your Worker's editor and save) or `wrangler deploy` if you have Wrangler set up. This is the actual fix.
+- [x] Made the error message itself smarter in the meantime: `js/contact.js` now distinguishes this specific failure mode (a `TypeError`, which is what the browser throws for CORS/network-level failures) from a genuine send failure, and tells you your message may have gone through instead of implying total failure.
