@@ -43,6 +43,8 @@
     { "id": "instagram", "label": "Instagram", "url": "https://www.instagram.com/eluwadepeter", "icon": "bi-instagram" },
     { "id": "youtube", "label": "YouTube", "url": "https://www.youtube.com/@petereluwade", "icon": "bi-youtube" },
     { "id": "tiktok", "label": "TikTok", "url": "https://www.tiktok.com/@eluwadepeter", "icon": "bi-tiktok" },
+    { "id": "facebook", "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=61575074189195", "icon": "bi-facebook" },
+    { "id": "whatsapp", "label": "WhatsApp", "url": "https://wa.me/2348108821809", "icon": "bi-whatsapp" },
     { "id": "email", "label": "Email", "url": "mailto:petereluwade55@gmail.com", "icon": "bi-envelope-fill" }
   ],
   "primaryNav": [

@@ -1,0 +1,25 @@
+<!-- ===== SOCIAL MEDIA SIDEBAR ===== -->
+<div class="social-sidebar">
+    <div class="social-sidebar-toggle" id="socialToggle">
+        <i class="bi bi-share-fill"></i>
+    </div>
+    <div class="social-sidebar-content" id="socialContent">
+        <div class="social-sidebar-header">
+            <h6>Follow Me</h6>
+            <button class="close-sidebar" id="closeSidebar" aria-label="Close">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="social-links-sidebar">
+            {{#each site.socials}}
+            <a href="{{this.url}}" {{#unless (eq this.id "email")}}target="_blank" rel="noopener"{{/unless}} class="social-link {{#if (eq this.id "x")}}twitter{{else}}{{this.id}}{{/if}}">
+                <i class="bi {{this.icon}}"></i>
+                <span>{{this.label}}</span>
+            </a>
+            {{/each}}
+        </div>
+        <div class="sidebar-footer">
+            <small>Connect with {{site.alternateName}}</small>
+        </div>
+    </div>
+</div>

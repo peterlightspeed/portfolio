@@ -38,8 +38,21 @@ Acknowledged — update `status`/`statusLabel`/`links` in `data/products.json` w
 - [ ] Run the Lighthouse audit above once deployed and send me the results.
 - [ ] Set the GitHub Pages source as above (one-time, ~30 seconds).
 
-## Contact form — "shows error but still sends" (action needed from you)
-This is very likely a **CORS mismatch between what's live on Cloudflare and what's in this repo** — not a code bug in the current source, which already has the correct origin whitelisted (`worker/contact-worker.js` → `ALLOWED_ORIGINS` includes `https://peterlightspeed.github.io`). Here's what's actually happening: the Cloudflare Worker (a separate service, deployed independently of GitHub Pages) is not part of the GitHub Actions build — editing `worker/contact-worker.js` in this repo does **not** automatically update what's live on Cloudflare. If your live Worker still has an older/different `ALLOWED_ORIGINS` list, the email genuinely sends successfully, but the browser blocks your page from reading the "it worked" response — so the form shows an error even though the message went through.
+## Contact form — "shows error but still sends" (action needed from you — this is the same issue reported again, still needs the manual step below)
+This is a **CORS mismatch between what's live on Cloudflare and what's in this repo** — I've now confirmed the code itself is correct on both the form and the Worker side (checked the form's `action` matches the JS fetch URL exactly, checked `e.preventDefault()` fires correctly, checked `ALLOWED_ORIGINS` in the source already lists `https://peterlightspeed.github.io` correctly). The problem is specifically that **editing `worker/contact-worker.js` in this repo never updates what's actually running on Cloudflare** — that's a separate service you deploy to manually, it's not part of the GitHub Actions build. If your *live* Worker still has different code than what's in this repo, the email genuinely sends, but the browser blocks your page from reading the "it worked" response — so the form shows an error even though the message went through.
 
-- [ ] **Redeploy `worker/contact-worker.js` to Cloudflare** — via the Cloudflare dashboard (paste the current file content into your Worker's editor and save) or `wrangler deploy` if you have Wrangler set up. This is the actual fix.
-- [x] Made the error message itself smarter in the meantime: `js/contact.js` now distinguishes this specific failure mode (a `TypeError`, which is what the browser throws for CORS/network-level failures) from a genuine send failure, and tells you your message may have gone through instead of implying total failure.
+**Step-by-step fix — no command line or software install needed:**
+1. Go to [dash.cloudflare.com](https://dash.cloudflare.com) and log in.
+2. Click **Workers & Pages** in the left sidebar.
+3. Click on your existing contact-form Worker (it's whatever you named it when you first created it).
+4. Click **Edit Code** (sometimes labeled "Quick Edit").
+5. Select all the code in the editor (Ctrl+A / Cmd+A) and delete it.
+6. Open `worker/contact-worker.js` from this zip, copy its entire contents, and paste it into the Cloudflare editor.
+7. Click **Save and Deploy**.
+8. Test your contact form again.
+
+**How to check it worked, without guessing:** visit your Worker's URL directly in a browser (the same URL that's in `js/contact.js`'s `CONTACT_WORKER_URL`, and in `contact.html`'s form `action` attribute — they should match). You'll get back a small JSON status page confirming the Worker is live and showing exactly which origins it currently allows. If `allowedOrigins` doesn't show `https://peterlightspeed.github.io`, the deploy above didn't take — try again. (I added this diagnostic endpoint this round specifically so you can self-check this without needing DevTools or asking me to guess.)
+
+- [x] Made the error message itself smarter in the meantime: `js/contact.js` distinguishes this specific failure mode (a `TypeError`, which is what the browser throws for CORS/network-level failures) from a genuine send failure, and tells you your message may have gone through instead of implying total failure.
+- [x] Added a GET-based self-diagnostic to the Worker itself (see above) so you can verify what's actually deployed without needing my help to check.
+- [ ] **You still need to do the redeploy above** — no code change on my end can complete this step; it requires access to your Cloudflare account.

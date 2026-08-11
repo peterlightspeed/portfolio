@@ -52,7 +52,7 @@
                 <h2 class="h4 fw-bold mt-5 mb-3">Editions</h2>
                 <div class="row g-3">
                     {{#each editions}}
-                    <div class="col-md-4">
+                    <div class="{{colFor ../editions.length}}">
                         <div class="edition-card h-100 p-3 border rounded-3 {{#if (eq status "available")}}border-success{{/if}} {{#if (eq status "private")}}border-secondary{{/if}}">
                             <h3 class="h6 fw-bold">{{name}}</h3>
                             <ul class="list-unstyled small mb-3">

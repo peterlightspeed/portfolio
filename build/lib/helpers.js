@@ -20,7 +20,15 @@ function register(Handlebars, basePath = "") {
   // raw href="/..." or src="/..." directly in a template.
   Handlebars.registerHelper("url", (p) => withBase(p));
 
-  // Equality / comparison, for {{#if (eq a b)}}
+  // Sizes a Bootstrap column based on how many sibling items share the row —
+  // e.g. a product with only 1 edition should get the full row, not a lonely
+  // 1/3-width card next to empty space. Used by product cards/detail pages.
+  Handlebars.registerHelper("colFor", (count) => {
+    if (count <= 1) return "col-12";
+    if (count === 2) return "col-md-6";
+    return "col-md-4";
+  });
+
   Handlebars.registerHelper("eq", (a, b) => a === b);
   Handlebars.registerHelper("gt", (a, b) => a > b);
   Handlebars.registerHelper("includes", (arr, val) => Array.isArray(arr) && arr.includes(val));

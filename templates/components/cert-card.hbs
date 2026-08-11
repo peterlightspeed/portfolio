@@ -5,9 +5,11 @@
         {{#if issuer}}<p class="certification-issuer text-muted small">Issued by: {{issuer}}</p>{{/if}}
         {{#if dateLabel}}<p class="small text-muted">{{dateLabel}}</p>{{/if}}
         {{#if description}}<p class="small">{{description}}</p>{{/if}}
+        {{#if skills.length}}
         <div class="d-flex flex-wrap justify-content-center gap-1 my-2">
             {{#each skills}}<span class="tech-badge">{{this}}</span>{{/each}}
         </div>
+        {{/if}}
         {{#if credentialUrl}}
         <a href="{{credentialUrl}}" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">{{ctaLabel}}</a>
         {{/if}}

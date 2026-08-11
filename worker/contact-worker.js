@@ -86,6 +86,25 @@ export default {
         }
 
         if (request.method !== 'POST') {
+            // Simple self-diagnostic for GET requests: visit this Worker's
+            // URL directly in a browser to confirm (a) this exact code is
+            // actually what's deployed, and (b) whether the origin you're
+            // visiting from is currently whitelisted. Doesn't touch email
+            // sending or expose secrets — read-only, for troubleshooting.
+            if (request.method === 'GET') {
+                return jsonResponse(
+                    {
+                        status: 'ok',
+                        message: 'Contact form Worker is live and reachable.',
+                        yourOrigin: origin || '(none sent — direct browser visits often omit Origin, that\'s normal)',
+                        yourOriginIsAllowed: ALLOWED_ORIGINS.includes(origin),
+                        allowedOrigins: ALLOWED_ORIGINS,
+                        note: 'If yourOriginIsAllowed is false when you load your actual site (not this direct visit) and submit the form, that mismatch is why the form shows an error even when the email sends. Update ALLOWED_ORIGINS above and redeploy.',
+                    },
+                    200,
+                    origin
+                );
+            }
             return jsonResponse({ success: false, error: 'Method not allowed' }, 405, origin);
         }
 

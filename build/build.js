@@ -72,6 +72,8 @@ function registerPartial(name, relPath) {
 registerPartial("head", "partials/head.hbs");
 registerPartial("nav", "partials/nav.hbs");
 registerPartial("footer", "partials/footer.hbs");
+registerPartial("social-sidebar", "partials/social-sidebar.hbs");
+registerPartial("splash-screen", "partials/splash-screen.hbs");
 registerPartial("scripts", "partials/scripts.hbs");
 registerPartial("project-card", "components/project-card.hbs");
 registerPartial("product-card", "components/product-card.hbs");
@@ -576,6 +578,24 @@ function copyDir(src, dest) {
   }
 }
 ["css", "js", "images", "public", "documents"].forEach((dir) => copyDir(path.join(ROOT, dir), path.join(OUT_DIR, dir)));
+
+// Self-host bootstrap-icons (font + CSS) instead of loading it from a CDN.
+// This was previously loaded from cdn.jsdelivr.net — if that CDN is slow,
+// blocked, or unreachable on a visitor's network, every icon sitewide
+// (including the whole navbar) silently fails to render, since the font
+// file never arrives. Bundling it locally removes that single point of
+// failure entirely, the same reasoning as the AOS fallback added earlier.
+{
+  const iconSrc = path.join(ROOT, "node_modules", "bootstrap-icons", "font");
+  const iconDest = path.join(OUT_DIR, "public", "vendor", "bootstrap-icons");
+  if (fs.existsSync(iconSrc)) {
+    fs.mkdirSync(iconDest, { recursive: true });
+    fs.copyFileSync(path.join(iconSrc, "bootstrap-icons.min.css"), path.join(iconDest, "bootstrap-icons.min.css"));
+    copyDir(path.join(iconSrc, "fonts"), path.join(iconDest, "fonts"));
+  } else {
+    console.warn("⚠ bootstrap-icons not found in node_modules — run `npm install` first. Falling back to CDN reference in head.hbs.");
+  }
+}
 
 // ---------------------------------------------------------------------
 // 16. sitemap.xml, rss.xml, search-index.json

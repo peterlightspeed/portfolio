@@ -306,3 +306,64 @@ Per request, `/projects/` now has a "Products" section at the top showing all 6 
 2. **Full clean reinstall** (`rm -rf node_modules && npm install`) followed by a full rebuild — this is what actually simulates GitHub Actions' fresh environment, not just a local rebuild reusing cached state.
 3. Deep checks: confirmed the bot avatar and quick-reply code are present in the shipped `bot.js`, sitemap (44 URLs)/RSS/search-index (63 entries) all correct, 0 images missing `alt`.
 - Also structurally scanned every generated page for the specific class of Bootstrap layout bug (`.col-*` used without a `.row` parent) that would cause misaligned containers — 0 found across the whole site.
+
+## [3.11.0] — Splash Screen, Social Sidebar, New Experience — 2026-08-08
+
+### Investigated: "splash screen not showing"
+Searched the entire codebase — no splash screen implementation existed anywhere (every "splash" match was the word "Unsplash" in image URLs). Nothing to debug; built one fresh instead: a brief full-screen loading overlay (logo + spinner + tagline) that fades out once the page has loaded. Two safety rails so it can never misbehave: a minimum display time (~350ms, so it doesn't flash instantly and look glitchy on fast connections) and a hard maximum (2.5s, so it can never get stuck covering the site if something else hangs). Respects `prefers-reduced-motion`. Deliberately **not** added to the 404 page — a loading screen would only delay the "not found" message a visitor needs immediately there.
+
+### Fixed: social media sidebar was missing sitewide
+Found that `js/script.js` already had fully-working, guarded logic for a floating social sidebar (`#socialToggle`, `.social-sidebar`) — but the actual HTML markup was never carried into any of the new CMS templates during the original migration, so the toggle button simply didn't exist on any page. Rebuilt it as `templates/partials/social-sidebar.hbs`, driven by `data/site.json`'s socials list (not hardcoded) like everything else on the site, and added it to the shared layout so it's back on every page at once.
+
+While rebuilding it, found **Facebook was missing from `site.json` entirely** — it was in the original hardcoded sidebar markup but never made it into the single source of truth. Added it, along with WhatsApp (previously only stored separately for the footer's contact section).
+
+### Added — two new work experience entries
+- **Senior AI & Web Developer** — PLSTech (self-founded), self-employed, Nigeria. Jul 2026 - Present.
+- **Tech Educator** — Self-employed, YouTube & social media, Nigeria. Mar 2026 - Present.
+
+Both feed `/resume.html` and `/timeline.html` automatically from the one entry in `data/experience.json`, reordered to reverse-chronological alongside the existing roles.
+
+### Verification performed
+- JS syntax-checked every file.
+- Full href/src integrity check across all 44 pages — 0 broken, 0 missing subpath prefix.
+- Confirmed the splash screen renders on the homepage and a nested inner page (different URL depths), correctly absent from 404, and `splash.js` loads.
+- Confirmed the social sidebar (with the new Facebook link) renders on multiple pages at different depths.
+- Confirmed both new experience entries render correctly on Resume and Timeline (the `&` in "Senior AI & Web Developer" is correctly HTML-escaped to `&amp;` by Handlebars — verified this wasn't a rendering failure, just proper escaping that my first grep check didn't account for).
+
+## [3.12.0] — Card Correctness Audit — 2026-08-09
+
+### Updated per clarification
+- Work experience title changed to "Founder & Senior AI & Web Developer" at PLSTech (simplified from "PLSTech (Self-Founded)").
+- Tech Educator role broadened from "YouTube & Social Media" to the full platform list: YouTube, LinkedIn, TikTok, Instagram, X.
+
+### Fixed — real bugs found during a full card-by-card audit
+Checked every card component (`project-card`, `product-card`, `testimonial-card`, `cert-card`) against its actual data for empty fields, and checked every grid these cards sit in for alignment issues:
+
+- **Significant alignment bug**: 6 of your 8 products have exactly 1 edition, but the edition grid always sized each edition card as 1/3-width (`col-md-4`) regardless of how many there were — meaning those 6 products' single edition card sat in the left third of the row with two-thirds of the row empty next to it, on both the Products page and every individual product's own page. Added a `colFor` helper that sizes the column based on the actual edition count (1 edition → full width, 2 → half each, 3 → thirds), so this is now correct everywhere it's used and will stay correct automatically if you ever add a 2nd edition to any of these products.
+- **Resume was missing the company/platform name entirely for all work experience** — the Education section correctly showed "institution · period," but Work Experience only ever showed the job title, period, and description, silently dropping *where* the work was done. This affected every job on your resume, not just the two new ones. Fixed, with matching styling.
+- **Empty tag row on the Trade Test certificate card** — it has no `skills` array (accurately, since none were provided), but the card unconditionally rendered its skills-tag container anyway, leaving a small empty gap. Now hidden when there are no skills, matching how every other optional field on that card already behaves.
+- Audited every published project, product, certificate, and testimonial for missing/empty required-looking fields (category, status, tech stack, description, icon, edition features, CTA labels) — found nothing else broken.
+
+### Verification performed
+- Full href/src integrity check across all 44 pages — 0 broken, 0 missing subpath prefix.
+- Confirmed the `colFor` fix renders `col-12` correctly on all 6 single-edition products and unchanged `col-md-4` on the two 3-edition products.
+- Confirmed both updated experience entries and the newly-visible institution names render correctly on the resume.
+- JS syntax-checked every file; 0 unrendered template tokens.
+
+## [3.13.0] — Self-Hosted Icons, Contact Form Diagnostics — 2026-08-10
+
+### Fixed — navbar icons not rendering
+Bootstrap Icons was being loaded from `cdn.jsdelivr.net`. If that CDN is slow, blocked, or unreachable on a visitor's network, every icon sitewide silently fails — most noticeable in the navbar since it's always visible. Same class of risk as the AOS animation library fixed in an earlier milestone. Fixed by **self-hosting bootstrap-icons entirely**: added it as a real npm dependency (`bootstrap-icons@1.10.5`), the build now copies the font files and CSS into `public/vendor/bootstrap-icons/` on every build, and every page (including the standalone 404 page) references the local copy instead of the CDN. Verified this survives a completely fresh `npm install` from scratch, matching what GitHub Actions actually does.
+
+### Contact form — investigated further, root cause confirmed, self-diagnostic added
+Re-verified every piece of the code path end to end: the form's native `action` attribute and the JS `fetch()` URL are identical, `e.preventDefault()` correctly fires before the fetch runs (so there's no race between a native form submission and the JS one), and the Worker's `ALLOWED_ORIGINS` list in this repo already correctly includes `https://peterlightspeed.github.io`. Everything in the *source code* is correct. The problem is specifically that **this source code and what's actually deployed to Cloudflare are two different things** — editing the file here has never updated the live Worker, since Cloudflare Workers deploy separately from GitHub Pages.
+
+- Added a **GET-based self-diagnostic endpoint** to `worker/contact-worker.js` — visiting the Worker's URL directly in a browser now returns a small JSON status page showing whether it's reachable and exactly which origins it currently allows, so this can be verified directly without needing DevTools or guessing.
+- Rewrote the fix instructions in `TODO.md` as a simple dashboard copy-paste-and-save process — no command line or software installation required, since the previous instructions assumed comfort with `wrangler` that may not apply.
+
+### Verification performed
+- **Full clean reinstall from scratch** (`rm -rf node_modules && npm install`) followed by a full rebuild, specifically to confirm the new `bootstrap-icons` dependency installs and wires correctly under the same conditions GitHub Actions uses — not just locally with cached state.
+- Confirmed self-hosted icon CSS/fonts are referenced on every single generated page, with zero remaining CDN references anywhere in the built output.
+- Confirmed the two pages that don't reference the icon CSS are the intentional 0-second redirect stubs for the old flat `projects.html`/`products.html` URLs (they render nothing, by design) — not a gap.
+- Syntax-checked every JS file plus the Worker itself (as an ES module, its actual runtime format).
+- Full href/src integrity check across all 44 pages — 0 broken, 0 missing subpath prefix.

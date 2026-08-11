@@ -11,6 +11,26 @@
   },
   {
     "type": "work",
+    "title": "Founder & Senior AI & Web Developer",
+    "institution": "PLSTech",
+    "period": "Jul 2026 - Present",
+    "icon": "bi-briefcase-fill",
+    "color": "primary",
+    "description": "Founder and senior AI & web developer at PLSTech, self-employed, based in Nigeria. Building AI-powered SaaS products, backend systems, and developer tools with Python, Go, and FastAPI, and shipping free tools alongside client and open-source work.",
+    "draft": false
+  },
+  {
+    "type": "work",
+    "title": "Tech Educator",
+    "institution": "Self-Employed — YouTube, LinkedIn, TikTok, Instagram, X",
+    "period": "Mar 2026 - Present",
+    "icon": "bi-camera-reels-fill",
+    "color": "danger",
+    "description": "Self-employed tech educator based in Nigeria, teaching backend development, Python, and AI concepts through YouTube tutorials, live coding sessions, and content across LinkedIn, TikTok, Instagram, and X.",
+    "draft": false
+  },
+  {
+    "type": "work",
     "title": "Founder & SEO Blogger — PLS WorldNews",
     "institution": "PLS WorldNews",
     "period": "Mar 2025 - Present · Hybrid",

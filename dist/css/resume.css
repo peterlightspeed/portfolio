@@ -96,3 +96,9 @@
         padding: 1.5rem;
     }
 }
+
+.resume-institution {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.25rem;
+}
