@@ -745,5 +745,53 @@
     "caseStudy": false,
     "draft": false,
     "workType": "labs"
+  },
+  {
+    "slug": "oibsip-python-internship",
+    "title": "Oasis Infobyte Python Internship Submissions (OIBSIP)",
+    "shortDescription": "Five Python programming tasks submitted for the Oasis Infobyte Summer Internship Programme, all at the Advanced tier: a voice assistant, BMI calculator, password generator, weather app, and chat application.",
+    "problem": "",
+    "solution": "Task submissions for the Python Programming track of the Oasis Infobyte Summer Internship Programme (SIP). The completion rule required at least 3 of 5 tasks; all 5 were completed at the Advanced tier.",
+    "architecture": "",
+    "techStack": [
+      "Python",
+      "tkinter",
+      "sqlite3",
+      "matplotlib",
+      "socket",
+      "threading",
+      "requests",
+      "Pillow",
+      "OpenWeatherMap API"
+    ],
+    "features": [
+      "Voice Assistant (speech_recognition, pyttsx3, smtplib, OpenWeatherMap, intent parsing)",
+      "BMI Calculator (tkinter, sqlite3, matplotlib)",
+      "Random Password Generator (secrets, tkinter, pyperclip)",
+      "Basic Weather App (requests, Pillow, tkinter, OpenWeatherMap)",
+      "Chat Application (socket, threading, sqlite3, tkinter)"
+    ],
+    "challenges": "",
+    "lessonsLearned": "",
+    "futureImprovements": "",
+    "links": {
+      "github": "https://github.com/peterlightspeed/OIBSIP",
+      "liveDemo": "",
+      "video": ""
+    },
+    "image": "",
+    "screenshots": [],
+    "status": "Completed",
+    "date": "2026",
+    "category": "python",
+    "tags": [
+      "python",
+      "internship",
+      "desktop-apps"
+    ],
+    "featured": false,
+    "caseStudy": false,
+    "draft": false,
+    "workType": "personal"
   }
 ]

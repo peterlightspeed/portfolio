@@ -12,6 +12,9 @@
                         <a href="{{url '/timeline.html'}}" class="btn btn-outline-secondary btn-sm">
                             <i class="bi bi-signpost-split me-1"></i>Timeline View
                         </a>
+                        <a href="{{url '/resume/'}}" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-person-badge me-1"></i>Role-Specific Resumes
+                        </a>
                     </div>
                 </div>
 
@@ -64,8 +67,10 @@
                                 <h3>{{title}}</h3>
                                 <span class="resume-meta">{{period}}</span>
                             </div>
-                            {{#if institution}}<p class="resume-institution">{{institution}}</p>{{/if}}
+                            {{#if institution}}<p class="resume-institution">{{institution}}{{#if employmentType}} &middot; {{employmentType}}{{/if}}</p>{{/if}}
                             <p>{{description}}</p>
+                            {{#if responsibilities}}<ul>{{#each responsibilities}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+                            {{#if technologies}}<p class="small mb-0"><strong>Technologies:</strong> {{#each technologies}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
                         </div>
                         {{/if}}
                         {{/each}}

@@ -60,6 +60,24 @@ function register(Handlebars, basePath = "") {
     return withBase(p);
   });
 
+  // width/height attributes read from the real file at build time, so the
+  // browser reserves the right space before the image loads (no layout
+  // shift). Optional second arg scales to a fixed display height.
+  // External URLs and unreadable files return "" (attributes are simply omitted).
+  Handlebars.registerHelper("imgAttrs", (p, fixedHeight) => {
+    try {
+      if (!p || String(p).startsWith("http")) return "";
+      const { imageSize } = require("image-size");
+      const file = require("path").join(__dirname, "..", "..", String(p).replace(/^\//, ""));
+      const dim = imageSize(require("fs").readFileSync(file));
+      let w = dim.width, h = dim.height;
+      if (typeof fixedHeight === "number") { w = Math.round((w * fixedHeight) / h); h = fixedHeight; }
+      return new Handlebars.SafeString(`width="${w}" height="${h}"`);
+    } catch (e) {
+      return "";
+    }
+  });
+
   // JSON dump — used to embed structured data / search index inline
   Handlebars.registerHelper("json", (context) => JSON.stringify(context));
 

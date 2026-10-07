@@ -52,7 +52,7 @@
                 <h2 class="section-title text-center mb-5" data-aos="fade-up">My Skills &amp; Expertise</h2>
                 <div class="row g-4 mb-5">
                     {{#each skills.core}}
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-skill-group="{{group}}">
                         <h3 class="h6 fw-bold"><i class="bi {{icon}} me-2 text-primary"></i>{{group}}</h3>
                         <p class="small text-muted">{{note}}</p>
                         <div class="d-flex flex-wrap gap-2">{{#each items}}<span class="tech-badge">{{this}}</span>{{/each}}</div>
@@ -81,13 +81,26 @@
                 <h2 class="section-title text-center mb-5" data-aos="fade-up">Experience &amp; Education</h2>
                 <div class="row g-4">
                     {{#each experience}}
-                    <div class="col-md-6">
+                    <div class="col-md-6 experience-item" {{#if id}}data-exp-id="{{id}}"{{/if}}>
                         <div class="d-flex gap-3">
                             <div class="flex-shrink-0"><i class="bi {{icon}} fs-3 text-{{color}}"></i></div>
                             <div>
                                 <h3 class="h6 mb-1">{{title}}</h3>
-                                <p class="small text-muted mb-1">{{institution}} &middot; {{period}}</p>
-                                <p class="small mb-0">{{description}}</p>
+                                <p class="small text-muted mb-1">{{institution}} &middot; {{period}}{{#if employmentType}} &middot; {{employmentType}}{{/if}}</p>
+                                <p class="small mb-2">{{description}}</p>
+                                {{#if responsibilities}}
+                                <details class="experience-details small">
+                                    <summary>Responsibilities, impact &amp; skills</summary>
+                                    <p class="fw-semibold mb-1 mt-2">Responsibilities</p>
+                                    <ul class="ps-3 mb-2">{{#each responsibilities}}<li>{{this}}</li>{{/each}}</ul>
+                                    {{#if impact}}<p class="fw-semibold mb-1">Impact</p>
+                                    <ul class="ps-3 mb-2">{{#each impact}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+                                    {{#if technologies}}<p class="fw-semibold mb-1">Technologies</p>
+                                    <div class="d-flex flex-wrap gap-1 mb-2">{{#each technologies}}<span class="tech-badge">{{this}}</span>{{/each}}</div>{{/if}}
+                                    {{#if skillsGained}}<p class="fw-semibold mb-1">Skills gained</p>
+                                    <p class="mb-0">{{#each skillsGained}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+                                </details>
+                                {{/if}}
                             </div>
                         </div>
                     </div>
@@ -143,3 +156,4 @@
                 <a href="{{url '/contact.html'}}" class="btn btn-light text-primary fw-bold mt-3">Get in Touch</a>
             </div>
         </section>
+        <script type="application/json" id="career-config">{{{careerConfigJson}}}</script>

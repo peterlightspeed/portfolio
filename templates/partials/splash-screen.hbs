@@ -1,7 +1,19 @@
-<div id="splashScreen" class="splash-screen" role="status" aria-label="Loading">
+<div id="splashScreen" class="splash-screen" role="status" aria-live="polite" aria-label="Loading">
+    <div class="splash-orbs" aria-hidden="true">
+        <span class="splash-orb splash-orb-1"></span>
+        <span class="splash-orb splash-orb-2"></span>
+        <span class="splash-orb splash-orb-3"></span>
+    </div>
     <div class="splash-content">
-        <img src="{{asset site.logo}}" alt="" class="splash-logo">
-        <div class="splash-spinner"></div>
+        <div class="splash-ring-wrap">
+            <svg class="splash-ring" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="splash-ring-track" cx="60" cy="60" r="54"></circle>
+                <circle class="splash-ring-fill" id="splashRingFill" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <img src="{{asset site.logo}}" alt="" class="splash-logo" {{imgAttrs site.logo}}>
+            <span class="splash-percent" id="splashPercent">0%</span>
+        </div>
         <p class="splash-tagline">{{site.alternateName}}</p>
+        <p class="splash-caption" id="splashCaption">Gathering resources...</p>
     </div>
 </div>

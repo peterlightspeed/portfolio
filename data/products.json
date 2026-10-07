@@ -484,6 +484,55 @@
     ],
     "featured": true,
     "draft": false,
-    "workType": "product"
+    "workType": "product",
+    "links": {
+      "github": "https://github.com/peterlightspeed/PLS_Business_Intelligence_Suite",
+      "liveDemo": ""
+    }
+  },
+  {
+    "slug": "pls-jarvis",
+    "title": "PLS Jarvis",
+    "badge": "FastAPI / React / Supabase",
+    "icon": "bi-robot",
+    "shortDescription": "An AI assistant ecosystem — a FastAPI backend routing across 5 AI providers (Gemini, OpenAI, Anthropic, Groq, OpenRouter) with automatic fallback, a credits system with Paystack payment integration, and an admin dashboard.",
+    "longDescription": "PLS Jarvis routes requests across multiple AI providers with automatic fallback if one is unavailable, rather than depending on a single vendor. Includes a credits-based usage system with Paystack payment integration and an admin dashboard for managing the platform.",
+    "techStack": [
+      "FastAPI",
+      "React",
+      "Supabase",
+      "Paystack API"
+    ],
+    "features": [
+      "Multi-provider AI routing (Gemini, OpenAI, Anthropic, Groq, OpenRouter) with automatic fallback",
+      "Credits system with Paystack payment integration",
+      "Admin dashboard"
+    ],
+    "links": {
+      "github": "",
+      "liveDemo": ""
+    },
+    "editions": [
+      {
+        "name": "Platform",
+        "tier": "flagship",
+        "features": [
+          "In development"
+        ],
+        "status": "in-development",
+        "statusLabel": "In Development",
+        "cta": {
+          "label": "In Development",
+          "href": "",
+          "icon": "bi-hourglass-split"
+        }
+      }
+    ],
+    "workType": "product",
+    "featured": false,
+    "draft": false,
+    "_todo": [
+      "Confirm current status/links before making this fully public-facing — added from resume content, no GitHub link or live demo confirmed yet. Add a screenshot once there is a UI worth showing."
+    ]
   }
 ]

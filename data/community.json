@@ -1,17 +1,79 @@
 {
   "intro": "I document the journey publicly instead of building in isolation.",
   "activities": [
-    { "icon": "bi-linkedin", "iconColor": "primary", "title": "LinkedIn Live", "description": "Live coding sessions and technical discussions.", "cta": "Follow on LinkedIn", "href": "https://www.linkedin.com/in/peter-eluwade-5b8a73363/" },
-    { "icon": "bi-youtube", "iconColor": "danger", "title": "YouTube Tutorials", "description": "Technical tutorials and walkthroughs.", "cta": "Watch on YouTube", "href": "https://www.youtube.com/@petereluwade" },
-    { "icon": "bi-github", "iconColor": "", "title": "GitHub", "description": "Open-source projects and code in progress.", "cta": "View GitHub", "href": "https://github.com/peterlightspeed" },
-    { "icon": "bi-file-earmark-text", "iconColor": "primary", "title": "Technical Articles", "description": "Writing about what I'm building and learning.", "cta": "Read on X", "href": "https://x.com/peterlightspeed" },
-    { "icon": "bi-code-slash", "iconColor": "primary", "title": "Open-Source Work", "description": "Public repos, including PLS Nexus components as they mature.", "cta": "Browse Repos", "href": "https://github.com/peterlightspeed" },
-    { "icon": "bi-calendar-week", "iconColor": "primary", "title": "Weekly Progress Updates", "description": "Regular updates on what's shipped and what's next.", "cta": "Get in Touch", "href": "/contact.html" }
+    {
+      "icon": "bi-linkedin",
+      "iconColor": "primary",
+      "title": "LinkedIn Live",
+      "description": "Live coding sessions and technical discussions.",
+      "cta": "Follow on LinkedIn",
+      "href": "https://www.linkedin.com/in/peter-eluwade-5b8a73363/"
+    },
+    {
+      "icon": "bi-youtube",
+      "iconColor": "danger",
+      "title": "YouTube Tutorials",
+      "description": "Technical tutorials and walkthroughs.",
+      "cta": "Watch on YouTube",
+      "href": "https://www.youtube.com/@peterlight_speed"
+    },
+    {
+      "icon": "bi-whatsapp",
+      "iconColor": "success",
+      "title": "WhatsApp Community",
+      "description": "A community for learners and builders to ask questions and share progress.",
+      "cta": "Join the community",
+      "href": "https://chat.whatsapp.com/FKrkqrawLbO5AHOCREzSUQ"
+    },
+    {
+      "icon": "bi-github",
+      "iconColor": "",
+      "title": "GitHub",
+      "description": "Open-source projects and code in progress.",
+      "cta": "View GitHub",
+      "href": "https://github.com/peterlightspeed"
+    },
+    {
+      "icon": "bi-file-earmark-text",
+      "iconColor": "primary",
+      "title": "Technical Articles",
+      "description": "Writing about what I'm building and learning.",
+      "cta": "Read on X",
+      "href": "https://x.com/peterlightspeed"
+    },
+    {
+      "icon": "bi-code-slash",
+      "iconColor": "primary",
+      "title": "Open-Source Work",
+      "description": "Public repos, including PLS Nexus components as they mature.",
+      "cta": "Browse Repos",
+      "href": "https://github.com/peterlightspeed"
+    },
+    {
+      "icon": "bi-calendar-week",
+      "iconColor": "primary",
+      "title": "Weekly Progress Updates",
+      "description": "Regular updates on what's shipped and what's next.",
+      "cta": "Get in Touch",
+      "href": "/contact.html"
+    }
   ],
   "metrics": [
-    { "value": "80K+", "label": "Content Impressions" },
-    { "icon": "bi-linkedin", "label": "LinkedIn Live Instructor" },
-    { "icon": "bi-code-slash", "label": "Open Source Projects" },
-    { "icon": "bi-rocket-takeoff", "label": "Active Development" }
+    {
+      "value": "80K+",
+      "label": "Content Impressions"
+    },
+    {
+      "icon": "bi-linkedin",
+      "label": "LinkedIn Live Instructor"
+    },
+    {
+      "icon": "bi-code-slash",
+      "label": "Open Source Projects"
+    },
+    {
+      "icon": "bi-rocket-takeoff",
+      "label": "Active Development"
+    }
   ]
 }

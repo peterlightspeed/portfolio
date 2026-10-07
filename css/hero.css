@@ -141,3 +141,10 @@
         height: 200px;
     }
 }
+
+/* Career mode / audience switcher (progressive enhancement).
+   Space is reserved up front so revealing it never shifts the layout. */
+.career-switcher { min-height: 2.6rem; visibility: hidden; max-width: 22rem; }
+.career-switcher.is-ready { visibility: visible; }
+.career-switcher-label { display: block; font-size: .8rem; color: rgba(255, 255, 255, .8); margin-bottom: .25rem; }
+.career-switcher-select { background-color: rgba(255, 255, 255, .95); }

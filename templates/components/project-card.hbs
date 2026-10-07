@@ -1,4 +1,4 @@
-<div class="col-md-6 col-lg-4 project-item" data-category="{{category}}" data-tags="{{#each tags}}{{this}} {{/each}}">
+<div class="col-md-6 col-lg-4 project-item" data-slug="{{slug}}"{{#if hidden}} hidden{{/if}} data-category="{{category}}" data-tags="{{#each tags}}{{this}} {{/each}}">
     <div class="card shadow-sm h-100 project-card">
         {{#if image}}
         <img loading="lazy" src="{{asset image}}" class="card-img-top" alt="{{title}}">

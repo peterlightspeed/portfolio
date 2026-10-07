@@ -5,6 +5,7 @@
  */
 const fs = require("fs");
 const path = require("path");
+const { resolveRoles } = require("./career");
 
 const DATA_DIR = path.join(__dirname, "..", "..", "data");
 
@@ -34,6 +35,8 @@ function loadAll() {
   const articles = readJSON("articles.json");
   const talks = readJSON("talks.json");
   const awards = readJSON("awards.json");
+  const career = readJSON("career.json");
+  const careerRoles = resolveRoles(career.roles);
 
   return {
     site,
@@ -58,6 +61,9 @@ function loadAll() {
     talksPublished: published(talks),
     awards,
     awardsPublished: published(awards),
+    career: { ...career, roles: careerRoles },
+    coverLetter: career.coverLetter,
+    resumeProfilesPublished: published(careerRoles),
     buildDate: new Date().toISOString().slice(0, 10),
   };
 }

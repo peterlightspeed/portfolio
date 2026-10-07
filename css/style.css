@@ -11,7 +11,11 @@ html {
     /* Smooth scrolling behavior for anchor links */
     scroll-behavior: smooth;
     /* Offset for fixed navbar to prevent content from being hidden */
-    scroll-padding-top: 70px; 
+    scroll-padding-top: 70px;
+    /* Prevent horizontal scroll here, not on body — overflow on body
+       creates a new scrolling context that breaks position:sticky for
+       descendants (like the navbar) in many browsers. */
+    overflow-x: hidden;
 }
 
 body {
@@ -21,7 +25,6 @@ body {
     background-color: #f8f9fa;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-     overflow-x: hidden;
     /* Main fade-in animation for the entire page */
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
@@ -254,14 +257,20 @@ img {
    ===================================================================== */
 h2 {
     font-weight: bold;
-    text-align: center;
     color: #212529;
+}
+
+/* Decorative underline is opt-in via .section-title, not on every h2.
+   It was previously global, so it also appeared under product card titles
+   and resume section headers where it looked misaligned. */
+.section-title {
+    text-align: center;
     margin-bottom: 40px;
     position: relative;
     z-index: 1;
 }
 
-h2::after {
+.section-title::after {
     content: '';
     position: absolute;
     bottom: -10px;

@@ -1,15 +1,115 @@
 [
   {
+    "id": "presales-eesolutions",
     "type": "work",
-    "title": "AI & Python Development Intern",
-    "institution": "Oasis Infobyte",
-    "period": "Aug 2026 - Present",
-    "icon": "bi-briefcase-fill",
+    "title": "Presales Engineer / IT",
+    "institution": "EESolutions Limited",
+    "period": "Oct 2026 - Present",
+    "employmentType": "Full-time (Hybrid)",
+    "icon": "bi-shield-lock-fill",
     "color": "primary",
-    "description": "Building production-quality Python projects and developing AI and automation solutions. Writing clean, maintainable, production-ready code, using Git and GitHub professionally, and creating documentation and project demonstrations while applying software engineering best practices. Ongoing — this entry will be updated as the internship progresses.",
+    "description": "Presales Engineer / IT at EESolutions Limited. Supporting enterprise IT operations while developing expertise in cybersecurity solutions, technical support, infrastructure, networking, and customer-facing solution engineering.",
+    "responsibilities": [
+      "Support enterprise IT operations.",
+      "Assist with technical support and troubleshooting.",
+      "Learn and support cybersecurity solutions.",
+      "Participate in presales activities and customer engagements.",
+      "Work with senior engineers on solution design.",
+      "Assist with demonstrations and customer requirement gathering."
+    ],
+    "technologies": [
+      "Enterprise IT",
+      "Networking",
+      "Microsoft 365",
+      "Windows",
+      "Cybersecurity Solutions",
+      "Technical Documentation"
+    ],
+    "impact": [
+      "Currently onboarding and gaining real enterprise IT and cybersecurity experience while contributing to customer-focused technical solutions."
+    ],
+    "skillsGained": [
+      "Enterprise IT",
+      "Presales Engineering",
+      "Cybersecurity Fundamentals",
+      "Technical Communication",
+      "Customer Requirement Analysis",
+      "Solution Design"
+    ],
+    "projectsCompleted": [],
+    "links": [],
     "draft": false
   },
   {
+    "id": "cto-moi-doctar",
+    "type": "work",
+    "title": "Chief Technology Officer",
+    "institution": "Moi Doctar",
+    "period": "Aug 2026 - Present",
+    "employmentType": "Part-time / Startup Leadership",
+    "icon": "bi-cpu-fill",
+    "color": "primary",
+    "description": "Chief Technology Officer at Moi Doctar, an AI-powered healthcare startup focused on helping patients better understand their health and access healthcare services. Responsible for guiding the technical direction, backend architecture, AI strategy, and engineering decisions, and for collaborating with product and engineering teams.",
+    "responsibilities": [
+      "Led technical architecture and backend planning.",
+      "Reviewed product requirements and translated them into technical implementation plans.",
+      "Guided backend development using Python and FastAPI.",
+      "Collaborated with engineering and product teams on system design.",
+      "Reviewed database architecture and API design.",
+      "Contributed to AI integration strategy and technical decision-making.",
+      "Supported planning, task allocation, and engineering discussions."
+    ],
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "REST APIs",
+      "JWT Authentication",
+      "Git & GitHub",
+      "AI/LLM Integration"
+    ],
+    "impact": [
+      "Helped shape the technical direction of the product.",
+      "Designed scalable backend architecture.",
+      "Contributed to AI healthcare product planning.",
+      "Worked closely with cross-functional startup teams."
+    ],
+    "skillsGained": [
+      "Technical Leadership",
+      "Backend Architecture",
+      "Product Thinking",
+      "API Design",
+      "Team Collaboration",
+      "Startup Engineering"
+    ],
+    "projectsCompleted": [],
+    "links": [],
+    "draft": false
+  },
+  {
+    "id": "oasis-infobyte-internship",
+    "type": "work",
+    "title": "Oasis Infobyte AI & Python Internship (Completed — Certificate Not Claimed)",
+    "institution": "Oasis Infobyte",
+    "period": "Aug 2026 - Completed",
+    "icon": "bi-briefcase-fill",
+    "color": "secondary",
+    "description": "Completed the Oasis Infobyte Python Programming internship tasks (all five submitted at the Advanced tier — see the OIBSIP repository), building a voice assistant, BMI calculator, password generator, weather app, and chat application in Python. The internship has ended. I did not obtain the completion certificate (it required a PayPal payment I couldn't make at the time), so no certificate is claimed.",
+    "draft": false,
+    "technologies": [
+      "Python",
+      "tkinter",
+      "sqlite3",
+      "socket & threading",
+      "REST API integration"
+    ],
+    "projectsCompleted": [
+      "oibsip-python-internship"
+    ]
+  },
+  {
+    "id": "founder-plstech",
     "type": "work",
     "title": "Founder & Senior AI & Web Developer",
     "institution": "PLSTech",
@@ -20,6 +120,7 @@
     "draft": false
   },
   {
+    "id": "tech-educator",
     "type": "work",
     "title": "Tech Educator",
     "institution": "Self-Employed — YouTube, LinkedIn, TikTok, Instagram, X",
@@ -30,6 +131,7 @@
     "draft": false
   },
   {
+    "id": "plsworldnews-founder",
     "type": "work",
     "title": "Founder & SEO Blogger — PLS WorldNews",
     "institution": "PLS WorldNews",
@@ -40,6 +142,7 @@
     "draft": false
   },
   {
+    "id": "freelance-web-developer",
     "type": "work",
     "title": "Freelance Web Developer",
     "institution": "Self-employed",
@@ -50,6 +153,7 @@
     "draft": false
   },
   {
+    "id": "camex-instructor",
     "type": "work",
     "title": "Frontend Web Developer / Master Instructor",
     "institution": "Camex Global Concept",
@@ -60,6 +164,7 @@
     "draft": false
   },
   {
+    "id": "lsu-bsc-computer-science",
     "type": "education",
     "title": "Bachelor of Science in Computer Science",
     "institution": "Lagos State University",
@@ -70,6 +175,7 @@
     "draft": false
   },
   {
+    "id": "glory-crown-high-school",
     "type": "education",
     "title": "High School Certificate (GCE)",
     "institution": "Glory Crown International High School — President, Junior Engineers, Technologists, and Scientists (JETS) Club",
@@ -80,6 +186,7 @@
     "draft": false
   },
   {
+    "id": "camex-digital-internship",
     "type": "education",
     "title": "Digital Services Internship",
     "institution": "Camex Global Concept",
@@ -90,6 +197,7 @@
     "draft": false
   },
   {
+    "id": "website-development-course",
     "type": "education",
     "title": "Website Development",
     "institution": "February 2025",
@@ -100,6 +208,7 @@
     "draft": false
   },
   {
+    "id": "wapa-computer-studies",
     "type": "education",
     "title": "Computer Studies",
     "institution": "WAPA",

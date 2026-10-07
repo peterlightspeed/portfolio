@@ -102,3 +102,38 @@
     color: #495057;
     margin-bottom: 0.25rem;
 }
+
+/* Resume hub (/resume/) — role picker cards */
+.resume-hub-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resume-hub-tag {
+    font-size: 0.85rem;
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+/* Role-specific resume pages (/resume/<slug>/) — on-screen only reminder
+   of which audience this version was generated for; hidden on print so
+   the printed/PDF copy reads like a normal resume. */
+.resume-variant-banner {
+    display: inline-block;
+    background: #e7f1ff;
+    color: #0d6efd;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+}
+
+/* Cover letters (/cover-letters/<slug>/) */
+.cover-letter p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}

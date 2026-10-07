@@ -1,0 +1,742 @@
+{
+  "_readme": "CAREER CONTROL FILE — the one place that decides how your career is presented. Roles drive: resume pages, cover letters, homepage career modes, and the profile switcher. Everything here REFERENCES other data files by slug/id; it never copies their content. See PERSONAL_GUIDE.md.",
+  "goals": {
+    "headline": "Grow from backend/AI engineer to technical founder, building practical software that solves real business problems.",
+    "shortTerm": [
+      "Deepen backend, AI, and cybersecurity experience in current roles",
+      "Build public proof: projects, products, talks, and teaching"
+    ],
+    "longTerm": [
+      "Lead engineering as CTO and build PLS Tech Company into a lasting software company"
+    ],
+    "_note": "Edit freely. Aspirations only — not shown as facts anywhere."
+  },
+  "targetIndustries": [
+    "SaaS",
+    "AI / LLM Applications",
+    "Healthcare Technology",
+    "Cybersecurity",
+    "Business Intelligence & Analytics"
+  ],
+  "preferredRoles": [
+    "backend-engineer",
+    "ai-engineer",
+    "python-developer",
+    "fastapi-developer",
+    "saas-builder",
+    "founder",
+    "cto",
+    "presales-engineer",
+    "automation-engineer",
+    "data-engineer",
+    "software-engineer",
+    "startup-founder",
+    "solutions-engineer",
+    "it-engineer",
+    "cybersecurity",
+    "go-developer"
+  ],
+  "defaultRole": "backend-engineer",
+  "summaryTemplates": {
+    "default": "{{label}} with a background building practical software for real business problems. Currently: {{currentRoles}}.",
+    "_tokens": "{{label}}, {{currentRoles}}, {{productCount}}, {{projectCount}} — usable inside any role's summary too."
+  },
+  "resumeRules": {
+    "maxWorkSamples": 8,
+    "includeEducation": true,
+    "includeCertificates": true,
+    "letterSkillCount": 6,
+    "hubOrder": "preferredRoles"
+  },
+  "coverLetter": {
+    "placeholders": {
+      "date": "[Date]",
+      "recipient": "[Hiring Manager's Name]",
+      "company": "[Company Name]",
+      "role": "[Role Title]"
+    },
+    "greeting": "Dear {{recipient}},",
+    "applicationLine": "I'm writing to apply for the {{role}} position at {{company}}.",
+    "highlightIntro": "A good example of how I work is {{title}}: {{shortDescription}}",
+    "skillsLine": "The tools I use most day to day are {{skills}}.",
+    "portfolioLine": "You can see the full set of projects, and a role-specific resume, at {{portfolioUrl}}.",
+    "signOff": "Sincerely,"
+  },
+  "roles": [
+    {
+      "slug": "backend-engineer",
+      "label": "Backend Engineer",
+      "roleTag": "Backend Engineer | Python • FastAPI • PostgreSQL",
+      "audience": "Recruiters and hiring managers for backend/API roles.",
+      "summary": "Backend Engineer specializing in Python, FastAPI, and PostgreSQL. Builds asynchronous REST APIs, secure authentication flows, and production-grade backend services, from a single AI-powered resume screening backend to a suite of five live FastAPI-based web tools.",
+      "featuredSkillGroups": [
+        "Backend",
+        "AI & LLMs"
+      ],
+      "featuredSkills": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "SQLAlchemy (Async)",
+        "REST APIs",
+        "JWT (python-jose)",
+        "Async Programming",
+        "Docker",
+        "Linux",
+        "Git",
+        "GitHub"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence"
+      ],
+      "productSlugs": [
+        "pls-nexus",
+        "pls-compress",
+        "pls-qr",
+        "pls-snip",
+        "pls-crack",
+        "dataflow-ai"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp",
+        "ai-academy-africa-bootcamp"
+      ],
+      "ctaLabel": "View backend projects",
+      "ctaHref": "/projects/",
+      "letter": {
+        "openingHook": "I'm a backend engineer who builds asynchronous, production-grade APIs — most recently an AI-powered resume-screening backend I designed and shipped end to end.",
+        "highlightSlug": "pls-nexus-talent-intelligence",
+        "closingNote": "I'd welcome the chance to talk about how my backend and API experience could support your team."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "cto-moi-doctar",
+        "founder-plstech",
+        "freelance-web-developer"
+      ]
+    },
+    {
+      "slug": "python-developer",
+      "label": "Python Developer",
+      "roleTag": "Python Developer | Automation • Data Processing • APIs",
+      "audience": "Recruiters looking specifically for Python skills across scripting, data, and web.",
+      "summary": "Python Developer building production-grade tools end to end — data engineering pipelines, FastAPI web services, and automation utilities — with an emphasis on clean, tested, maintainable code.",
+      "featuredSkillGroups": [
+        "Backend"
+      ],
+      "featuredSkills": [
+        "Python",
+        "FastAPI",
+        "Flask",
+        "Pandas",
+        "NumPy",
+        "PostgreSQL",
+        "SQLAlchemy (Async)",
+        "Git",
+        "GitHub",
+        "Automation"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence",
+        "peterlightspeed-projects"
+      ],
+      "productSlugs": [
+        "smb-data-sanitizer",
+        "bi-suite",
+        "pls-compress",
+        "pls-qr"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp",
+        "ai-academy-africa-bootcamp"
+      ],
+      "ctaLabel": "View Python projects",
+      "ctaHref": "/projects/",
+      "letter": {
+        "openingHook": "I'm a Python developer who enjoys turning messy, real-world data and repetitive processes into clean, tested, production-grade tools.",
+        "highlightSlug": "smb-data-sanitizer",
+        "closingNote": "I'd be glad to walk through how I approach data quality and automation in more detail."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "founder-plstech",
+        "oasis-infobyte-internship"
+      ]
+    },
+    {
+      "slug": "fastapi-developer",
+      "label": "FastAPI Developer",
+      "roleTag": "FastAPI Developer | Async APIs • Auth • Deployment",
+      "audience": "Teams specifically hiring for FastAPI experience.",
+      "summary": "FastAPI specialist who has shipped five separate FastAPI-based products to production, plus an async AI resume-screening backend — covering JWT auth, async SQLAlchemy, Pydantic validation, and multi-provider AI integration.",
+      "featuredSkillGroups": [
+        "Backend"
+      ],
+      "featuredSkills": [
+        "FastAPI",
+        "Uvicorn",
+        "Pydantic v2",
+        "SQLAlchemy (Async)",
+        "Alembic",
+        "JWT (python-jose)",
+        "bcrypt",
+        "PostgreSQL",
+        "REST APIs"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence"
+      ],
+      "productSlugs": [
+        "pls-nexus",
+        "dataflow-ai",
+        "pls-compress",
+        "pls-qr",
+        "pls-snip",
+        "pls-crack",
+        "pls-jarvis"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp"
+      ],
+      "ctaLabel": "View live FastAPI tools",
+      "ctaHref": "/products/",
+      "letter": {
+        "openingHook": "FastAPI is the framework I reach for by default — I've shipped five separate FastAPI-based products to production, each handling real traffic with no sign-up friction for the user.",
+        "highlightSlug": "pls-compress",
+        "closingNote": "Happy to walk through the architecture decisions behind any of these tools."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "cto-moi-doctar",
+        "founder-plstech"
+      ]
+    },
+    {
+      "slug": "ai-engineer",
+      "label": "AI Engineer",
+      "roleTag": "AI Engineer | LLM Integration • Prompt Engineering",
+      "audience": "Roles focused on integrating LLMs and AI providers into real products, not classical ML/model training.",
+      "summary": "AI Engineer integrating large language models into production backends — from a Google Gemini-powered resume analyzer to a multi-provider AI routing system with automatic fallback across five providers.",
+      "featuredSkillGroups": [
+        "AI & LLMs",
+        "Backend"
+      ],
+      "featuredSkills": [
+        "AI Integration",
+        "LLM APIs (Google Gemini)",
+        "HuggingFace Transformers",
+        "Prompt Engineering",
+        "Python",
+        "FastAPI"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence",
+        "peterlightspeed-ai-cover-letter"
+      ],
+      "productSlugs": [
+        "pls-jarvis",
+        "dataflow-ai"
+      ],
+      "certificateSlugs": [
+        "ai-academy-africa-bootcamp",
+        "techcrush-ai-bootcamp"
+      ],
+      "ctaLabel": "See AI-powered projects",
+      "ctaHref": "/projects/",
+      "letter": {
+        "openingHook": "I integrate large language models into real backends rather than treating AI as a demo layer — including a multi-provider routing system with automatic fallback across five different AI providers.",
+        "highlightSlug": "pls-jarvis",
+        "closingNote": "I'd enjoy discussing how I think about reliability and cost when building on top of LLM APIs."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "cto-moi-doctar",
+        "founder-plstech"
+      ]
+    },
+    {
+      "slug": "software-engineer",
+      "label": "Software Engineer",
+      "roleTag": "Software Engineer | Full-Stack • Backend-Leaning",
+      "audience": "General software engineering roles that want breadth across the stack.",
+      "summary": "Software Engineer with backend-leaning full-stack experience — from async Python APIs to client-facing websites and a Next.js/React healthcare platform — shipping real products for clients, a startup, and open-source use.",
+      "featuredSkillGroups": [
+        "Backend",
+        "Frontend & Tools"
+      ],
+      "featuredSkills": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "JavaScript",
+        "React",
+        "TypeScript",
+        "Git",
+        "GitHub"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence",
+        "hope-assessment-app",
+        "faith-centre-global",
+        "personal-portfolio-website"
+      ],
+      "productSlugs": [
+        "pls-nexus",
+        "dataflow-ai"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp",
+        "freecodecamp-rwd"
+      ],
+      "ctaLabel": "View all projects",
+      "ctaHref": "/projects/",
+      "letter": {
+        "openingHook": "I work comfortably across the stack, but lean backend — recent work spans an async Python API, a Next.js/React healthcare platform, and client-facing websites shipped end to end.",
+        "highlightSlug": "hope-assessment-app",
+        "closingNote": "I'd welcome a conversation about where my range across the stack could be useful to your team."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "founder-plstech",
+        "cto-moi-doctar",
+        "freelance-web-developer"
+      ]
+    },
+    {
+      "slug": "automation-engineer",
+      "label": "Automation Engineer",
+      "roleTag": "Automation Engineer | Python • Workflow Tooling",
+      "audience": "Roles focused on scripting, tooling, and automating manual/business processes.",
+      "summary": "Builds Python automation tools that remove manual, repetitive work — from a data-sanitization pipeline for SME transaction records to a suite of no-sign-up utilities (compression, QR generation, link shortening) that run unattended in production.",
+      "featuredSkillGroups": [
+        "Backend"
+      ],
+      "featuredSkills": [
+        "Python",
+        "Automation",
+        "Pandas",
+        "NumPy",
+        "FastAPI"
+      ],
+      "projectSlugs": [],
+      "productSlugs": [
+        "smb-data-sanitizer",
+        "pls-compress",
+        "pls-qr",
+        "pls-snip",
+        "pls-crack"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp"
+      ],
+      "ctaLabel": "View automation tools",
+      "ctaHref": "/products/",
+      "letter": {
+        "openingHook": "I build Python tools that quietly remove manual work — a data-sanitization pipeline for SME transaction records, and a suite of no-sign-up utilities that run unattended in production.",
+        "highlightSlug": "pls-snip",
+        "closingNote": "I'd be glad to talk through how I approach automating a manual process end to end."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "founder-plstech"
+      ]
+    },
+    {
+      "slug": "data-engineer",
+      "label": "Data Engineer",
+      "roleTag": "Data Engineer | Python • Pandas • PostgreSQL",
+      "audience": "Roles focused on data pipelines, cleaning, and reporting rather than application backends.",
+      "summary": "Builds data engineering pipelines that ingest, clean, standardize, and structure raw business data for reporting and downstream use — including a production-grade sanitization pipeline for Nigerian SME transaction data and a business-intelligence suite covering ingestion through executive dashboards.",
+      "featuredSkillGroups": [
+        "Backend"
+      ],
+      "featuredSkills": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "PostgreSQL",
+        "SQL",
+        "Data Engineering",
+        "Power BI"
+      ],
+      "projectSlugs": [],
+      "productSlugs": [
+        "smb-data-sanitizer",
+        "bi-suite",
+        "dataflow-ai"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp"
+      ],
+      "ctaLabel": "View data projects",
+      "ctaHref": "/products/",
+      "letter": {
+        "openingHook": "I build data pipelines that take raw, inconsistent business data and turn it into something reliable enough to report on — including a production-grade sanitization pipeline for Nigerian SME transaction data.",
+        "highlightSlug": "bi-suite",
+        "closingNote": "I'd welcome the chance to discuss how I approach data quality and reporting pipelines."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "founder-plstech"
+      ]
+    },
+    {
+      "slug": "founder",
+      "label": "Founder",
+      "roleTag": "Founder | PLS Tech Company",
+      "audience": "Contexts where the founder/leadership story matters as much as the code — partnerships, collaborators, hiring for PLSTech.",
+      "summary": "Founder of PLS Tech Company, building and shipping a portfolio of AI-powered SaaS products and developer tools — from the flagship PLS Nexus platform to five live, no-sign-up web utilities — while personally handling engineering, product decisions, and go-to-market.",
+      "featuredSkillGroups": [
+        "Backend",
+        "AI & LLMs"
+      ],
+      "featuredSkills": [
+        "Python",
+        "Go",
+        "FastAPI",
+        "PostgreSQL",
+        "AI Integration"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence"
+      ],
+      "productSlugs": [
+        "pls-nexus",
+        "dataflow-ai",
+        "pls-compress",
+        "pls-qr",
+        "pls-snip",
+        "pls-crack",
+        "smb-data-sanitizer",
+        "bi-suite",
+        "pls-jarvis"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp",
+        "ai-academy-africa-bootcamp"
+      ],
+      "ctaLabel": "Explore PLS Tech products",
+      "ctaHref": "/products/",
+      "letter": {
+        "openingHook": "I founded PLS Tech Company and personally build, ship, and run its products — from the flagship PLS Nexus platform to a suite of live web utilities.",
+        "highlightSlug": "pls-nexus",
+        "closingNote": "I'd welcome a conversation about how we could work together."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "founder-plstech",
+        "cto-moi-doctar",
+        "plsworldnews-founder"
+      ]
+    },
+    {
+      "slug": "startup-founder",
+      "label": "Startup Founder",
+      "roleTag": "Startup Founder | AI SaaS • Product & Engineering",
+      "audience": "Investor-, partner-, or accelerator-facing contexts — leads with product vision over job-seeking framing.",
+      "summary": "Solo technical founder of PLS Tech Company, taking AI-powered SaaS products from idea to shipped software — architecting PLS Nexus as a modular platform (starting with an AI resume-screening backend) and building a portfolio of live tools that already serve real users, entirely self-funded and self-built.",
+      "featuredSkillGroups": [
+        "Backend",
+        "AI & LLMs"
+      ],
+      "featuredSkills": [
+        "Python",
+        "Go",
+        "FastAPI",
+        "PostgreSQL",
+        "AI Integration"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence"
+      ],
+      "productSlugs": [
+        "pls-nexus",
+        "dataflow-ai",
+        "bi-suite",
+        "smb-data-sanitizer"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp",
+        "ai-academy-africa-bootcamp"
+      ],
+      "ctaLabel": "See the PLS Nexus vision",
+      "ctaHref": "/products/pls-nexus/",
+      "letter": {
+        "openingHook": "I'm the solo technical founder of PLS Tech Company, taking AI-powered SaaS products from idea to shipped software, entirely self-built.",
+        "highlightSlug": "pls-nexus",
+        "closingNote": "I'd be glad to share the product vision and roadmap in more detail."
+      },
+      "draft": false,
+      "experienceOrder": [
+        "founder-plstech",
+        "cto-moi-doctar"
+      ]
+    },
+    {
+      "slug": "cto",
+      "label": "CTO",
+      "roleTag": "CTO | Backend Architecture • AI Strategy • Startup Engineering",
+      "audience": "Startup, healthcare-tech, and leadership contexts where technical direction matters.",
+      "summary": "Chief Technology Officer at Moi Doctar, an AI-powered healthcare startup — guiding technical direction, backend architecture, AI strategy, and engineering decisions with product and engineering teams. Also founder of PLS Tech Company, building and shipping AI-powered software products end to end.",
+      "featuredSkillGroups": [
+        "Leadership & Architecture",
+        "Backend",
+        "AI & LLMs"
+      ],
+      "featuredSkills": [
+        "Technical Leadership",
+        "Backend Architecture",
+        "API Design",
+        "Startup Engineering",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "AI Integration"
+      ],
+      "experienceOrder": [
+        "cto-moi-doctar",
+        "founder-plstech"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence"
+      ],
+      "productSlugs": [
+        "pls-nexus",
+        "pls-jarvis",
+        "dataflow-ai"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp",
+        "ai-academy-africa-bootcamp"
+      ],
+      "ctaLabel": "See what I build",
+      "ctaHref": "/products/",
+      "letter": {
+        "openingHook": "I'm the CTO of an AI-powered healthcare startup and the founder of a software company, so I'm used to owning both the technical direction and the hands-on backend work.",
+        "highlightSlug": "pls-nexus",
+        "closingNote": "I'd welcome a conversation about how I could help guide your technical direction."
+      },
+      "draft": false
+    },
+    {
+      "slug": "presales-engineer",
+      "label": "Presales Engineer",
+      "roleTag": "Presales Engineer / IT | Enterprise IT • Cybersecurity Solutions",
+      "audience": "Enterprise IT, cybersecurity, and solution-engineering employers.",
+      "summary": "Presales Engineer / IT at EESolutions Limited, supporting enterprise IT operations while building expertise in cybersecurity solutions, networking, and customer-facing solution engineering. Brings a software engineering background (Python, APIs, automation) to customer requirement gathering, demonstrations, and technical documentation.",
+      "featuredSkillGroups": [
+        "Enterprise IT & Cybersecurity",
+        "Leadership & Architecture",
+        "Backend"
+      ],
+      "featuredSkills": [
+        "Enterprise IT",
+        "Networking",
+        "Microsoft 365",
+        "Windows",
+        "Cybersecurity Fundamentals",
+        "Technical Documentation",
+        "Python"
+      ],
+      "experienceOrder": [
+        "presales-eesolutions",
+        "cto-moi-doctar",
+        "founder-plstech"
+      ],
+      "projectSlugs": [],
+      "productSlugs": [
+        "smb-data-sanitizer",
+        "pls-compress"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp"
+      ],
+      "ctaLabel": "Get in touch",
+      "ctaHref": "/contact.html",
+      "letter": {
+        "openingHook": "I'm currently a Presales Engineer / IT at EESolutions Limited, combining hands-on enterprise IT and cybersecurity exposure with a software engineering background.",
+        "highlightSlug": "smb-data-sanitizer",
+        "closingNote": "I'd be glad to discuss how my mix of IT, customer-facing, and engineering experience could support your team."
+      },
+      "draft": false
+    },
+    {
+      "slug": "solutions-engineer",
+      "extends": "presales-engineer",
+      "label": "Solutions Engineer",
+      "roleTag": "Solutions Engineer | Customer Requirements • Solution Design • Demos",
+      "audience": "Solutions-engineering roles (closely related to Presales Engineer).",
+      "summary": "Solutions-minded engineer currently working as a Presales Engineer / IT at EESolutions Limited: gathering customer requirements, assisting with demonstrations and solution design alongside senior engineers, and translating technical detail for customers. Backed by hands-on software engineering (Python, APIs, automation).",
+      "featuredSkills": [
+        "Solution Design",
+        "Customer Requirement Analysis",
+        "Technical Communication",
+        "Presales Engineering",
+        "Enterprise IT",
+        "Python"
+      ],
+      "draft": false
+    },
+    {
+      "slug": "it-engineer",
+      "extends": "presales-engineer",
+      "label": "IT Engineer",
+      "roleTag": "IT Engineer | Enterprise IT • Networking • Microsoft 365",
+      "audience": "IT support, infrastructure, and systems roles.",
+      "summary": "IT professional supporting enterprise IT operations at EESolutions Limited — technical support and troubleshooting across Windows and Microsoft 365, networking fundamentals, and technical documentation — with a software engineering background that helps with automation and scripting.",
+      "featuredSkills": [
+        "Enterprise IT",
+        "Networking",
+        "Microsoft 365",
+        "Windows",
+        "Technical Documentation",
+        "Automation",
+        "Python"
+      ],
+      "draft": false
+    },
+    {
+      "slug": "cybersecurity",
+      "extends": "presales-engineer",
+      "label": "Cybersecurity (Early Career)",
+      "roleTag": "IT / Cybersecurity | Early-Career Cybersecurity Solutions",
+      "audience": "Cybersecurity employers hiring for entry-level or early-career paths. Honest framing: experience is currently on-the-job and growing.",
+      "summary": "Software engineer moving into cybersecurity: currently gaining professional experience with cybersecurity solutions and enterprise IT at EESolutions Limited, alongside a backend background that includes JWT authentication, password hashing, and secure API design.",
+      "featuredSkills": [
+        "Cybersecurity Fundamentals",
+        "Enterprise IT",
+        "Networking",
+        "Technical Documentation",
+        "JWT (python-jose)",
+        "bcrypt",
+        "Python"
+      ],
+      "draft": false
+    },
+    {
+      "slug": "saas-builder",
+      "label": "SaaS Builder",
+      "roleTag": "SaaS Builder | AI Products • Payments • Backend",
+      "audience": "SaaS, startup, and product-minded contexts.",
+      "summary": "Builds SaaS products end to end — from the PLS Nexus platform to PLS Jarvis (multi-provider AI routing with a credits system and Paystack payments) and a suite of live web tools — handling backend, data, and product decisions.",
+      "featuredSkillGroups": [
+        "Backend",
+        "AI & LLMs"
+      ],
+      "featuredSkills": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "AI Integration",
+        "Automation"
+      ],
+      "experienceOrder": [
+        "founder-plstech",
+        "cto-moi-doctar"
+      ],
+      "projectSlugs": [
+        "pls-nexus-talent-intelligence"
+      ],
+      "productSlugs": [
+        "pls-nexus",
+        "pls-jarvis",
+        "dataflow-ai",
+        "pls-compress",
+        "pls-qr"
+      ],
+      "certificateSlugs": [
+        "techcrush-ai-bootcamp"
+      ],
+      "ctaLabel": "Explore the products",
+      "ctaHref": "/products/",
+      "letter": {
+        "openingHook": "I build SaaS products end to end, including AI routing, credits, and payment integration.",
+        "highlightSlug": "pls-jarvis",
+        "closingNote": "I'd enjoy talking through how I approach shipping and maintaining a product."
+      },
+      "draft": false
+    },
+    {
+      "slug": "go-developer",
+      "label": "Go Developer",
+      "roleTag": "Go Developer",
+      "audience": "PENDING — no Go project exists in the CMS yet.",
+      "summary": "PENDING — add a real Go project first.",
+      "featuredSkillGroups": [],
+      "featuredSkills": [],
+      "experienceOrder": [],
+      "projectSlugs": [],
+      "productSlugs": [],
+      "certificateSlugs": [],
+      "pendingNote": "Go is listed under core Backend skills in skills.json, but the old CV listed Go as 'currently learning' and no Go project is in projects.json/products.json. Add a real Go project (or move Go to 'learning'), then fill in this role and set draft to false.",
+      "draft": true
+    }
+  ],
+  "audiences": [
+    {
+      "slug": "backend-recruiter",
+      "label": "Backend Recruiter",
+      "role": "backend-engineer",
+      "sectionOrder": [
+        "featured-projects",
+        "featured-products",
+        "testimonials-preview",
+        "currently-building"
+      ],
+      "ctaLabel": "View my resume",
+      "ctaHref": "/resume/backend-engineer/"
+    },
+    {
+      "slug": "startup-founder",
+      "label": "Startup Founder",
+      "role": "startup-founder",
+      "sectionOrder": [
+        "featured-products",
+        "currently-building",
+        "featured-projects",
+        "testimonials-preview"
+      ],
+      "ctaLabel": "See the PLS Nexus vision",
+      "ctaHref": "/products/pls-nexus/"
+    },
+    {
+      "slug": "client",
+      "label": "Client",
+      "role": "software-engineer",
+      "sectionOrder": [
+        "testimonials-preview",
+        "featured-projects",
+        "featured-products",
+        "currently-building"
+      ],
+      "ctaLabel": "Hire me for a project",
+      "ctaHref": "/services.html"
+    },
+    {
+      "slug": "open-source-contributor",
+      "label": "Open Source Contributor",
+      "role": "python-developer",
+      "sectionOrder": [
+        "featured-projects",
+        "featured-products",
+        "currently-building",
+        "testimonials-preview"
+      ],
+      "ctaLabel": "Browse my GitHub",
+      "ctaHref": "https://github.com/peterlightspeed"
+    },
+    {
+      "slug": "cybersecurity-employer",
+      "label": "Cybersecurity Employer",
+      "role": "cybersecurity",
+      "sectionOrder": [
+        "currently-building",
+        "featured-products",
+        "featured-projects",
+        "testimonials-preview"
+      ],
+      "ctaLabel": "Let's talk",
+      "ctaHref": "/contact.html"
+    }
+  ]
+}

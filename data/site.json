@@ -30,52 +30,209 @@
     "interests": "Saxophone performance, technical content creation, open-source"
   },
   "values": [
-    { "icon": "bi-lightning-charge-fill", "color": "primary", "title": "Speed", "description": "I deliver quality work with exceptional efficiency, respecting your time and deadlines." },
-    { "icon": "bi-shield-check", "color": "success", "title": "Reliability", "description": "You can count on me to deliver on my promises and be there when you need support." },
-    { "icon": "bi-graph-up-arrow", "color": "info", "title": "Growth", "description": "I'm committed to continuous learning and helping your business grow and succeed." }
+    {
+      "icon": "bi-lightning-charge-fill",
+      "color": "primary",
+      "title": "Speed",
+      "description": "I deliver quality work with exceptional efficiency, respecting your time and deadlines."
+    },
+    {
+      "icon": "bi-shield-check",
+      "color": "success",
+      "title": "Reliability",
+      "description": "You can count on me to deliver on my promises and be there when you need support."
+    },
+    {
+      "icon": "bi-graph-up-arrow",
+      "color": "info",
+      "title": "Growth",
+      "description": "I'm committed to continuous learning and helping your business grow and succeed."
+    }
   ],
   "defaultOgImage": "public/opengraph.jpg",
   "favicon": "public/favicon.svg",
   "socials": [
-    { "id": "github", "label": "GitHub", "url": "https://github.com/peterlightspeed", "icon": "bi-github" },
-    { "id": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/peter-eluwade-5b8a73363/", "icon": "bi-linkedin" },
-    { "id": "x", "label": "X", "url": "https://x.com/peterlightspeed", "icon": "bi-twitter" },
-    { "id": "instagram", "label": "Instagram", "url": "https://www.instagram.com/eluwadepeter", "icon": "bi-instagram" },
-    { "id": "youtube", "label": "YouTube", "url": "https://www.youtube.com/@petereluwade", "icon": "bi-youtube" },
-    { "id": "tiktok", "label": "TikTok", "url": "https://www.tiktok.com/@eluwadepeter", "icon": "bi-tiktok" },
-    { "id": "facebook", "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=61575074189195", "icon": "bi-facebook" },
-    { "id": "whatsapp", "label": "WhatsApp", "url": "https://wa.me/2348108821809", "icon": "bi-whatsapp" },
-    { "id": "email", "label": "Email", "url": "mailto:petereluwade55@gmail.com", "icon": "bi-envelope-fill" }
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/peterlightspeed",
+      "icon": "bi-github"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/peter-eluwade-5b8a73363/",
+      "icon": "bi-linkedin"
+    },
+    {
+      "id": "x",
+      "label": "X",
+      "url": "https://x.com/peterlightspeed",
+      "icon": "bi-twitter"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/eluwadepeter",
+      "icon": "bi-instagram"
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@peterlight_speed",
+      "icon": "bi-youtube"
+    },
+    {
+      "id": "tiktok",
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@eluwadepeter",
+      "icon": "bi-tiktok"
+    },
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61575074189195",
+      "icon": "bi-facebook"
+    },
+    {
+      "id": "whatsapp",
+      "label": "WhatsApp",
+      "url": "https://wa.me/2348108821809",
+      "icon": "bi-whatsapp"
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "url": "mailto:petereluwade55@gmail.com",
+      "icon": "bi-envelope-fill"
+    }
   ],
   "primaryNav": [
-    { "label": "Home", "href": "/", "match": "home" },
-    { "label": "Projects", "href": "/projects/", "match": "projects" },
-    { "label": "Products", "href": "/products/", "match": "products" },
-    { "label": "About", "href": "/about.html", "match": "about" },
-    { "label": "Contact", "href": "/contact.html", "match": "contact" }
+    {
+      "label": "Home",
+      "href": "/",
+      "match": "home"
+    },
+    {
+      "label": "Projects",
+      "href": "/projects/",
+      "match": "projects"
+    },
+    {
+      "label": "Products",
+      "href": "/products/",
+      "match": "products"
+    },
+    {
+      "label": "About",
+      "href": "/about.html",
+      "match": "about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact.html",
+      "match": "contact"
+    }
   ],
   "moreNav": [
-    { "label": "Timeline", "href": "/timeline.html", "icon": "bi-signpost-split-fill" },
-    { "label": "Now", "href": "/now.html", "icon": "bi-lightning-charge-fill" },
-    { "label": "Community", "href": "/community.html", "icon": "bi-people-fill" },
-    { "label": "Labs", "href": "/labs.html", "icon": "bi-flask" },
-    { "label": "Live Demos", "href": "/demo.html", "icon": "bi-play-circle-fill" },
-    { "label": "Sax Services", "href": "/sax.html", "icon": "bi-music-note-beamed" },
-    { "label": "Testimonials", "href": "/testimonials.html", "icon": "bi-chat-quote-fill" },
-    { "label": "Certifications", "href": "/certifications.html", "icon": "bi-award-fill" },
-    { "divider": true },
-    { "label": "Sponsor Me", "href": "/sponsor.html", "icon": "bi-heart-fill" },
-    { "label": "Resume", "href": "/resume.html", "icon": "bi-file-earmark-person-fill" },
-    { "label": "Download CV", "href": "/cv.html", "icon": "bi-file-earmark-pdf-fill" }
+    {
+      "label": "Timeline",
+      "href": "/timeline.html",
+      "icon": "bi-signpost-split-fill"
+    },
+    {
+      "label": "Now",
+      "href": "/now.html",
+      "icon": "bi-lightning-charge-fill"
+    },
+    {
+      "label": "Community",
+      "href": "/community.html",
+      "icon": "bi-people-fill"
+    },
+    {
+      "label": "Labs",
+      "href": "/labs.html",
+      "icon": "bi-flask"
+    },
+    {
+      "label": "Live Demos",
+      "href": "/demo.html",
+      "icon": "bi-play-circle-fill"
+    },
+    {
+      "label": "Sax Services",
+      "href": "/sax.html",
+      "icon": "bi-music-note-beamed"
+    },
+    {
+      "label": "Testimonials",
+      "href": "/testimonials.html",
+      "icon": "bi-chat-quote-fill"
+    },
+    {
+      "label": "Certifications",
+      "href": "/certifications.html",
+      "icon": "bi-award-fill"
+    },
+    {
+      "divider": true
+    },
+    {
+      "label": "Sponsor Me",
+      "href": "/sponsor.html",
+      "icon": "bi-heart-fill"
+    },
+    {
+      "label": "Resume",
+      "href": "/resume.html",
+      "icon": "bi-file-earmark-person-fill"
+    },
+    {
+      "label": "Resume by Role",
+      "href": "/resume/",
+      "icon": "bi-person-badge-fill"
+    },
+    {
+      "label": "Cover Letters",
+      "href": "/cover-letters/",
+      "icon": "bi-envelope-paper-fill"
+    },
+    {
+      "label": "Download CV",
+      "href": "/cv.html",
+      "icon": "bi-file-earmark-pdf-fill"
+    }
   ],
   "footerServices": [
-    { "label": "Web Development", "href": "/services.html#web-development" },
-    { "label": "Graphic Design", "href": "/services.html#graphic-design" },
-    { "label": "Social Media", "href": "/services.html#social-media" },
-    { "label": "Data Entry", "href": "/services.html#data-entry" },
-    { "label": "Content Creation", "href": "/services.html#content-creation" },
-    { "label": "Digital Marketing", "href": "/services.html#digital-marketing" },
-    { "label": "AI & Web Solutions", "href": "/services.html#ai-web-solutions" }
+    {
+      "label": "Web Development",
+      "href": "/services.html#web-development"
+    },
+    {
+      "label": "Graphic Design",
+      "href": "/services.html#graphic-design"
+    },
+    {
+      "label": "Social Media",
+      "href": "/services.html#social-media"
+    },
+    {
+      "label": "Data Entry",
+      "href": "/services.html#data-entry"
+    },
+    {
+      "label": "Content Creation",
+      "href": "/services.html#content-creation"
+    },
+    {
+      "label": "Digital Marketing",
+      "href": "/services.html#digital-marketing"
+    },
+    {
+      "label": "AI & Web Solutions",
+      "href": "/services.html#ai-web-solutions"
+    }
   ],
   "availability": {
     "status": "available",
@@ -83,17 +240,105 @@
     "responseTime": "I typically reply within 24 hours"
   },
   "metrics": [
-    { "icon": "bi-calendar3", "value": "2024", "label": "Building Since" },
-    { "icon": "bi-collection-fill", "value": "20+", "label": "Projects Built" },
-    { "icon": "bi-box-seam-fill", "value": "6", "label": "Production Products" },
-    { "icon": "bi-cpu-fill", "value": "AI · Python · Go", "label": "Backend Developer" },
-    { "icon": "bi-git", "value": "Open Source", "label": "Developer" }
+    {
+      "icon": "bi-calendar3",
+      "value": "2024",
+      "label": "Building Since"
+    },
+    {
+      "icon": "bi-collection-fill",
+      "value": "20+",
+      "label": "Projects Built"
+    },
+    {
+      "icon": "bi-box-seam-fill",
+      "value": "6",
+      "label": "Production Products"
+    },
+    {
+      "icon": "bi-cpu-fill",
+      "value": "AI · Python · Go",
+      "label": "Backend Developer"
+    },
+    {
+      "icon": "bi-git",
+      "value": "Open Source",
+      "label": "Developer"
+    }
   ],
-  "currentlyBuilding": ["pls-nexus", "dataflow-ai", "pls-nexus-talent-intelligence"],
+  "currentlyBuilding": [
+    "pls-nexus",
+    "dataflow-ai",
+    "pls-nexus-talent-intelligence"
+  ],
   "stats": {
     "projectsCompleted": "50+",
     "clientSatisfaction": "95%",
     "supportAvailable": "24/7",
     "yearsExperience": "4+"
-  }
+  },
+  "booking": {
+    "provider": "calendly",
+    "label": "Book a 30-minute call",
+    "url": "https://calendly.com/petereluwade55/30min"
+  },
+  "whatsappCommunity": "https://chat.whatsapp.com/FKrkqrawLbO5AHOCREzSUQ",
+  "analytics": {
+    "_readme": "Provider-agnostic analytics. Set provider to goatcounter | plausible | none. Nothing loads until the provider's identifier below is filled in. To swap providers later, change 'provider' only (adapters live in js/analytics.js).",
+    "provider": "goatcounter",
+    "goatcounter": {
+      "code": ""
+    },
+    "plausible": {
+      "domain": ""
+    },
+    "respectDoNotTrack": true
+  },
+  "contactChannels": [
+    {
+      "id": "booking",
+      "icon": "bi-calendar-check-fill",
+      "title": "Book a call",
+      "description": "Pick a 30-minute slot that suits you.",
+      "ctaLabel": "Choose a time",
+      "source": "booking",
+      "track": "contact-booking"
+    },
+    {
+      "id": "youtube",
+      "icon": "bi-youtube",
+      "title": "YouTube",
+      "description": "Tutorials and walkthroughs.",
+      "ctaLabel": "Watch on YouTube",
+      "source": "social:youtube",
+      "track": "contact-youtube"
+    },
+    {
+      "id": "x",
+      "icon": "bi-twitter-x",
+      "title": "X (Twitter)",
+      "description": "Build-in-public updates.",
+      "ctaLabel": "Follow on X",
+      "source": "social:x",
+      "track": "contact-x"
+    },
+    {
+      "id": "github",
+      "icon": "bi-github",
+      "title": "GitHub",
+      "description": "Code, repos, and open-source work.",
+      "ctaLabel": "View GitHub",
+      "source": "social:github",
+      "track": "contact-github"
+    },
+    {
+      "id": "whatsapp-community",
+      "icon": "bi-people-fill",
+      "title": "WhatsApp Community",
+      "description": "Join the learning and tech community.",
+      "ctaLabel": "Join the community",
+      "source": "whatsappCommunity",
+      "track": "contact-whatsapp-community"
+    }
+  ]
 }

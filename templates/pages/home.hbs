@@ -8,15 +8,31 @@
                             <span class="availability-dot"></span>{{site.availability.label}}
                         </span>
                         {{/if}}
+                        <div class="career-switcher mb-3" id="careerSwitcher">
+                            <label for="careerSelect" class="career-switcher-label">View this portfolio as</label>
+                            <select id="careerSelect" class="form-select form-select-sm career-switcher-select">
+                                <option value="">Default view</option>
+                                <optgroup label="I am a&hellip;">
+                                    {{#each modeOptions.audiences}}<option value="aud:{{this.slug}}">{{this.label}}</option>{{/each}}
+                                </optgroup>
+                                <optgroup label="Show me my&hellip;">
+                                    {{#each modeOptions.roles}}<option value="role:{{this.slug}}">{{this.label}}</option>{{/each}}
+                                </optgroup>
+                            </select>
+                        </div>
+                        <noscript><style>.career-switcher{display:none}</style></noscript>
                         <h1 class="display-4 fw-bold mb-3 text-white">Hi, I'm <span class="text-danger">{{site.name}}</span></h1>
-                        <h2 class="h3 text-light mb-4 fw-light">{{site.tagline}}</h2>
-                        <p class="lead mb-4 text-light">{{site.shortBio}} <strong class="text-warning">You can also call me {{site.alternateName}}</strong></p>
+                        <h2 class="h3 text-light mb-4 fw-light" data-career="headline">{{site.tagline}}</h2>
+                        <p class="lead mb-4 text-light"><span data-career="subline">{{site.shortBio}}</span> <strong class="text-warning">You can also call me {{site.alternateName}}</strong></p>
                         <div class="hero-buttons">
-                            <a href="{{url '/contact.html'}}" class="btn btn-danger btn-lg me-2 mb-2 mb-md-0">
-                                <i class="bi bi-envelope-fill me-2"></i>Hire Me!
+                            <a href="{{url '/contact.html'}}" class="btn btn-danger btn-lg me-2 mb-2" data-career="cta">
+                                <i class="bi bi-envelope-fill me-2"></i><span data-career="cta-label">Hire Me!</span>
                             </a>
-                            <a href="{{url '/projects/'}}" class="btn btn-outline-light btn-lg">
+                            <a href="{{url '/projects/'}}" class="btn btn-outline-light btn-lg me-2 mb-2">
                                 <i class="bi bi-collection me-2"></i>View Projects
+                            </a>
+                            <a href="{{url '/resume/'}}" class="btn btn-outline-light btn-lg mb-2" data-career="resume" data-track="hero-resume">
+                                <i class="bi bi-file-earmark-person me-2"></i>Resume
                             </a>
                         </div>
                         <div class="social-icons mt-4 d-flex gap-3">
@@ -29,7 +45,7 @@
                     </div>
                     <div class="col-lg-5 col-md-6 position-relative hero-image-container" data-aos="fade-left">
                         <div class="hero-image">
-                            <img src="{{asset site.profileImage}}" alt="{{site.name}}" class="img-fluid">
+                            <img src="{{asset site.profileImage}}" alt="{{site.name}}" class="img-fluid" {{imgAttrs site.profileImage}}>
                         </div>
                     </div>
                 </div>
@@ -131,3 +147,4 @@
                 <a href="{{url '/contact.html'}}" class="btn btn-light btn-lg text-primary fw-bold"><i class="bi bi-envelope-fill me-2"></i>Get in Touch</a>
             </div>
         </section>
+        <script type="application/json" id="career-config">{{{careerConfigJson}}}</script>

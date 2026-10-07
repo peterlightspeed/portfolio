@@ -1,0 +1,20 @@
+        <!-- CONNECT CHANNELS (generated from data/site.json -> contactChannels) -->
+        <section class="py-5" id="connect" aria-labelledby="connect-title">
+            <div class="container">
+                <h2 class="section-title text-center mb-2" id="connect-title">More Ways to Connect</h2>
+                <p class="text-center text-muted mb-5">Prefer a call, a video, or a community? Pick what suits you.</p>
+                <div class="row g-4 justify-content-center">
+                    {{#each channels}}
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="contact-card h-100 text-center">
+                            <div class="contact-icon"><i class="bi {{this.icon}}" aria-hidden="true"></i></div>
+                            <h3>{{this.title}}</h3>
+                            <p>{{this.description}}</p>
+                            <a href="{{this.url}}" target="_blank" rel="noopener" class="contact-link" data-track="{{this.track}}">{{this.ctaLabel}} <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+

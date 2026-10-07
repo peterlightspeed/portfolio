@@ -7,7 +7,12 @@
     "dateLabel": "July 29, 2024",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwPA38bfpP90HMnemLGXtB4RmKfHO8VhoO0w&s",
     "description": "Completed soft skills training focused on communication, emotional intelligence, problem-solving, and entrepreneurship management.",
-    "skills": ["entrepreneurship", "problem-solving", "emotional intelligence", "entrepreneurship management"],
+    "skills": [
+      "entrepreneurship",
+      "problem-solving",
+      "emotional intelligence",
+      "entrepreneurship management"
+    ],
     "credentialUrl": "https://acrobat.adobe.com/id/urn:aaid:sc:EU:fe4db523-f86e-4486-964a-17c73cbbf9e3",
     "ctaLabel": "View Certificate",
     "draft": false
@@ -21,7 +26,11 @@
     "logo": "images/certificates/plsworldnews.webp",
     "description": "I created and maintain a Blogger site, designing the layout, managing SEO, writing content, and integrating Google AdSense for monetization.",
     "tagline": "Entertainment and lifestyle blog with daily posts.",
-    "skills": ["Social Media Strategy", "Content Creation", "Analytics"],
+    "skills": [
+      "Social Media Strategy",
+      "Content Creation",
+      "Analytics"
+    ],
     "credentialUrl": "https://plsworldnews.com",
     "ctaLabel": "View Blog",
     "draft": false
@@ -34,7 +43,11 @@
     "dateLabel": "",
     "logo": "https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_small.png",
     "description": "Completed FreeCodeCamp's responsive web design certification, gaining hands-on experience building websites and layouts with HTML5, Flexbox, and CSS Grid.",
-    "skills": ["HTML", "CSS", "Responsive Web Design"],
+    "skills": [
+      "HTML",
+      "CSS",
+      "Responsive Web Design"
+    ],
     "credentialUrl": "https://www.freecodecamp.org/certification/peterlightspeed/responsive-web-design",
     "ctaLabel": "View Certificate",
     "draft": false
@@ -47,7 +60,12 @@
     "dateLabel": "February 2025 • No Expiration",
     "logo": "https://i.imgur.com/1dEPgUh.jpeg",
     "description": "Certified in digital skills including typing, basic graphic design, file conversion, and document formatting during hands-on training.",
-    "skills": ["Photoshop", "Document formatting", "Front end development", "Graphic Design"],
+    "skills": [
+      "Photoshop",
+      "Document formatting",
+      "Front end development",
+      "Graphic Design"
+    ],
     "credentialUrl": "https://i.imgur.com/3MUPR3u.png",
     "ctaLabel": "View Certificate",
     "draft": false
@@ -60,7 +78,11 @@
     "dateLabel": "July 2025 – July 2026",
     "logo": "images/certificates/google-logo.png",
     "description": "",
-    "skills": ["Google", "AI-Ads", "Google Ads"],
+    "skills": [
+      "Google",
+      "AI-Ads",
+      "Google Ads"
+    ],
     "credentialUrl": "",
     "ctaLabel": "View Certificate",
     "draft": false
@@ -73,7 +95,11 @@
     "dateLabel": "July 2025 • No Expiration",
     "logo": "images/logos/wapa-logo.jpg",
     "description": "",
-    "skills": ["Graphics Design", "Microsoft Office", "PowerPoint"],
+    "skills": [
+      "Graphics Design",
+      "Microsoft Office",
+      "PowerPoint"
+    ],
     "credentialUrl": "",
     "ctaLabel": "View Certificate",
     "draft": false
@@ -86,7 +112,11 @@
     "dateLabel": "November 2025 • No Expiration",
     "logo": "images/logos/ai-logo.jpeg",
     "description": "",
-    "skills": ["Machine Learning", "Artificial Intelligence", "Python"],
+    "skills": [
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Python"
+    ],
     "credentialUrl": "",
     "ctaLabel": "View Certificate",
     "draft": false
@@ -100,6 +130,21 @@
     "logo": "",
     "description": "",
     "skills": [],
+    "credentialUrl": "",
+    "ctaLabel": "View Certificate",
+    "draft": false
+  },
+  {
+    "slug": "techcrush-ai-bootcamp",
+    "title": "Artificial Intelligence — TechCrush AI Bootcamp Scholarship (Cohort 7)",
+    "issuer": "TechCrush, accredited by ACTD, USA",
+    "date": "",
+    "dateLabel": "",
+    "logo": "",
+    "description": "Completed on scholarship. Score: 85.40%.",
+    "skills": [
+      "Artificial Intelligence"
+    ],
     "credentialUrl": "",
     "ctaLabel": "View Certificate",
     "draft": false

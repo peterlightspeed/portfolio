@@ -1,0 +1,119 @@
+        <section class="py-5">
+            <div class="container resume-container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 no-print">
+                    <div>
+                        <a href="{{url '/resume/'}}" class="small d-block mb-1"><i class="bi bi-arrow-left me-1"></i>All roles</a>
+                        <h1 class="h4 mb-0">{{v.label}} Resume</h1>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary btn-sm" onclick="window.print()">
+                            <i class="bi bi-printer me-1"></i>Print / Save as PDF
+                        </button>
+                        {{#if v.ctaHref}}
+                        <a href="{{url v.ctaHref}}" class="btn btn-primary btn-sm">{{v.ctaLabel}}</a>
+                        {{/if}}
+                    </div>
+                </div>
+
+                <article class="resume-sheet" data-aos="fade-up">
+                    <div class="resume-variant-banner no-print">Tailored for: {{v.label}}</div>
+
+                    <header class="resume-header">
+                        <h2 class="resume-name">{{site.name}} Toluwanimi</h2>
+                        <p class="resume-headline">{{v.roleTag}}</p>
+                        <p class="resume-contact">
+                            {{site.location.country}} &nbsp;&middot;&nbsp; {{site.email}} &nbsp;&middot;&nbsp;
+                            <a href="{{url '/'}}">peterlightspeed.github.io/portfolio</a>
+                            {{#each site.socials}}
+                            {{#if (eq this.id "linkedin")}}&nbsp;&middot;&nbsp; <a href="{{this.url}}" target="_blank" rel="noopener">{{this.label}}</a>{{/if}}
+                            {{#if (eq this.id "github")}}&nbsp;&middot;&nbsp; <a href="{{this.url}}" target="_blank" rel="noopener">{{this.label}}</a>{{/if}}
+                            {{/each}}
+                        </p>
+                    </header>
+
+                    <section class="resume-section">
+                        <h2>Summary</h2>
+                        <p>{{v.summary}}</p>
+                    </section>
+
+                    {{#if v.skillGroups}}
+                    <section class="resume-section">
+                        <h2>Relevant Skills</h2>
+                        {{#each v.skillGroups}}
+                        <p><strong>{{this.group}}:</strong> {{#each this.items}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
+                        {{/each}}
+                    </section>
+                    {{/if}}
+
+                    {{#if v.workSamples}}
+                    <section class="resume-section">
+                        <h2>Relevant Projects &amp; Products</h2>
+                        {{#each v.workSamples}}
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>{{this.title}}</h3>
+                                <span class="resume-meta">{{this.kind}}</span>
+                            </div>
+                            <p>{{this.shortDescription}}</p>
+                            {{#if this.techStack}}<p class="small text-muted mb-0">{{#each this.techStack}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+                        </div>
+                        {{/each}}
+                    </section>
+                    {{/if}}
+
+                    {{#if v.experience}}
+                    <section class="resume-section">
+                        <h2>Work Experience</h2>
+                        {{#each v.experience}}
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>{{this.title}}</h3>
+                                <span class="resume-meta">{{this.period}}</span>
+                            </div>
+                            {{#if this.institution}}<p class="resume-institution">{{this.institution}}{{#if this.employmentType}} &middot; {{this.employmentType}}{{/if}}</p>{{/if}}
+                            <p>{{this.description}}</p>
+                            {{#if this.responsibilities}}
+                            <ul>
+                                {{#each this.responsibilities}}<li>{{this}}</li>{{/each}}
+                            </ul>
+                            {{/if}}
+                            {{#if this.impact}}
+                            <ul>
+                                {{#each this.impact}}<li>{{this}}</li>{{/each}}
+                            </ul>
+                            {{/if}}
+                            {{#if this.technologies}}<p class="small mb-0"><strong>Technologies:</strong> {{#each this.technologies}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+                        </div>
+                        {{/each}}
+                    </section>
+                    {{/if}}
+
+                    {{#if v.education}}
+                    <section class="resume-section">
+                        <h2>Education</h2>
+                        {{#each v.education}}
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <h3>{{this.title}}</h3>
+                                <span class="resume-meta">{{this.period}}</span>
+                            </div>
+                            {{#if this.institution}}<p>{{this.institution}}</p>{{/if}}
+                        </div>
+                        {{/each}}
+                    </section>
+                    {{/if}}
+
+                    {{#if v.certificates}}
+                    <section class="resume-section">
+                        <h2>Certifications</h2>
+                        <ul>
+                            {{#each v.certificates}}
+                            <li>{{this.title}}{{#if this.issuer}} — {{this.issuer}}{{/if}}</li>
+                            {{/each}}
+                        </ul>
+                        <p class="small text-muted no-print">Full details on the <a href="{{url '/certifications.html'}}">Certifications page</a>.</p>
+                    </section>
+                    {{/if}}
+                </article>
+            </div>
+        </section>

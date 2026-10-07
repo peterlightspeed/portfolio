@@ -1,5 +1,46 @@
 # Changelog
 
+## [Unreleased] — career.json, career modes, analytics — 2026-09-28
+
+### Added
+- **`data/career.json`** — single control file: goals, target industries, preferred roles, summary templates, resume rules, cover-letter wording, roles (resume + letter + homepage mode), audiences. Replaces `resume-profiles.json` and `cover-letter.json`. Roles support `extends` (Solutions Engineer / IT Engineer / Cybersecurity extend Presales Engineer). All references verified at build (`build/lib/career.js`, `build/lib/validate.js`, `build/build.js` §4b).
+- **Career modes + audience switcher** on the homepage (`js/career-mode.js`, progressive enhancement, remembered in localStorage, `?mode=` / `?as=`). Reorders hero, CTA, resume link, featured projects/products; About page reorders skills and experience.
+- New roles: CTO, Presales Engineer, Solutions Engineer, IT Engineer, Cybersecurity (early career), SaaS Builder. Go Developer held as draft (no Go project exists). Machine Learning Engineer intentionally not created.
+- Real CTO (Moi Doctar) and Presales Engineer / IT (EESolutions) experience; Oasis Infobyte shown as "Completed — Certificate Not Claimed". Experience entries now have stable `id`s and render responsibilities/impact/technologies (About, resume pages).
+- New skill groups: Enterprise IT & Cybersecurity, Leadership & Architecture.
+- New project: OIBSIP (Oasis Infobyte internship submissions, from its README). BI Suite GitHub link added.
+- Analytics facade `js/analytics.js` (GoatCounter adapter + Plausible adapter); ships nothing until `site.json → analytics.goatcounter.code` is set.
+- Contact: Calendly booking, YouTube (corrected), X, GitHub, WhatsApp Community via `site.json → contactChannels`.
+- Width/height auto-added to logo and hero images (`imgAttrs` helper, uses `image-size`) to reduce layout shift.
+- Cover letters are now `noindex` and excluded from the sitemap.
+- `PERSONAL_GUIDE.md`; `.gitignore` hardened (TODO.md, AI_HANDOFF.md, notes, secrets, env files).
+
+## [Unreleased] — Resume Builder + career-OS groundwork — 2026-09-27
+
+### Added — Resume Builder (multi-role resume generation)
+- New collection `data/resume-profiles.json` + schema (`resumeProfileSchema` in `build/schemas.js`, registered in `build/lib/validate.js`) — each entry is a role-specific resume that **references** existing projects/products/experience/skills/certificates by slug or exact title+institution match. No profile duplicates content from another file.
+- New build step in `build/build.js` resolves every reference against the published collections and **fails the build with a specific error** if a slug, experience match, or skill doesn't resolve — a resume can never silently ship missing a project or claiming an unverified skill.
+- New pages: `/resume/` (hub — pick a role) and `/resume/<slug>/` (one page per variant), using new templates `templates/pages/resume-hub.hbs` and `templates/pages/resume-variant.hbs`, plus new styles appended to `css/resume.css`. Both reuse the existing print stylesheet, so "Print / Save as PDF" works identically to the general resume.
+- 9 real, fully-populated resume variants shipped: Backend Engineer, Python Developer, FastAPI Developer, AI Engineer, Software Engineer, Automation Engineer, Data Engineer, Founder, Startup Founder — built entirely from data already on the site (no invented facts).
+- 3 stub variants shipped as `draft: true` with a `pendingNote` field: CTO, Presales Engineer, IT Engineer — these activate automatically once the matching placeholder entries in `data/experience.json` (added this round for Moi Doctar / EESolutions Limited, also `draft: true`) are filled in with real details.
+- `HOW_TO_GENERATE_NEW_RESUME.md` — full guide to adding/editing a resume variant with one JSON entry.
+- Cross-links added both ways: `/resume.html` now links to `/resume/`, and `data/site.json`'s `moreNav` gained a "Resume by Role" entry.
+- Added "Async Programming" and "Automation" to `data/skills.json`'s Backend group — both were already true (evidenced by async FastAPI/SQLAlchemy work and the automation-tool products) but weren't listed anywhere, which the new skill-verification check in the Resume Builder caught.
+
+### Added — Cover Letter Builder
+- `/cover-letters/` hub and `/cover-letters/<slug>/` per live resume profile, generated from the same resolved data as the resumes. New `data/cover-letter.json` (shared editable wording + placeholder tokens), optional `letter` block on each resume profile, templates `cover-letter-hub.hbs` / `cover-letter-variant.hbs`, copy-to-clipboard + print. Build fails if `letter.highlightSlug` isn't one of the profile's projects/products.
+- `AI_HANDOFF.md` added: full done / blocked / remaining status board.
+
+### Added — experience data placeholders (pending confirmation)
+- Two new entries added to `data/experience.json`, both `draft: true` with `"PLACEHOLDER - ..."` field values: CTO at Moi Doctar (Aug 2026–Present) and Presales Engineer / IT (Cybersecurity Path) at EESolutions Limited (Oct 2026–Present). Dates confirmed by Peter; responsibilities/technologies/achievements/business impact still pending real details.
+- Oasis Infobyte internship's `period` updated to flag it has ended (exact end month still pending) and its description updated to note no completion certificate was received.
+
+### Verification performed
+- `npm run validate` passes clean (14 collections including the new `resume-profiles.json`).
+- Fresh `node build/build.js` — 58 pages generated (up from 55), 0 template errors.
+- `node -c` syntax check on every `.js` file in `build/` and `js/` — clean.
+- Custom subpath-aware link/asset integrity check across all 58 generated pages — 2,885 local `href`/`src` references checked, **0 broken**.
+
 ## [3.0.0] — CMS Architecture — 2026-08-02
 
 ### Added — the CMS itself
@@ -367,3 +408,15 @@ Re-verified every piece of the code path end to end: the form's native `action` 
 - Confirmed the two pages that don't reference the icon CSS are the intentional 0-second redirect stubs for the old flat `projects.html`/`products.html` URLs (they render nothing, by design) — not a gap.
 - Syntax-checked every JS file plus the Worker itself (as an ES module, its actual runtime format).
 - Full href/src integrity check across all 44 pages — 0 broken, 0 missing subpath prefix.
+
+## [3.14.0] — Sticky Navbar, Heading Decoration Scope, Splash Redesign — 2026-08-12
+
+### Fixed
+- Navbar not staying sticky while scrolling — `overflow-x: hidden` on `<body>` breaks `position: sticky` in many browsers. Moved to `<html>`.
+- A global `h2::after` rule added a decorative underline to every `<h2>` sitewide, including product card titles and resume section headers where it was never intended and looked misaligned. Scoped to a `.section-title` class; added that class to the genuine section headers that relied on the old behavior.
+
+### Redesigned
+- Splash screen rebuilt with a progress ring, live percentage counter, and rotating captions, per request. Retains the min/max display-time safety rails.
+
+### Handoff
+- Final milestone of this session. See `HANDOFF_NOTES.md` at the repo root for the full continuation brief: the redefined per-role resume task, outstanding SEO work, and the still-open icons/contact-form items.

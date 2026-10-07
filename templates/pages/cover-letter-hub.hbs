@@ -1,0 +1,28 @@
+        <section class="py-5">
+            <div class="container resume-container">
+                <div class="mb-4 no-print">
+                    <h1 class="h3 mb-2">Cover Letters — Choose a Role</h1>
+                    <p class="text-muted mb-3">
+                        Each draft is generated from the same data as the matching resume. Replace the
+                        <strong>[bracketed]</strong> parts (name, company, role, date), then copy or print.
+                    </p>
+                    <a href="{{url '/resume/'}}" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-person-badge me-1"></i>Role-specific resumes
+                    </a>
+                </div>
+                <div class="row g-4">
+                    {{#each letters}}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="resume-hub-card h-100">
+                            <h2 class="h5 mb-1">{{this.label}}</h2>
+                            <p class="resume-hub-tag mb-2">{{this.roleTag}}</p>
+                            {{#if this.audience}}<p class="small text-muted mb-3">{{this.audience}}</p>{{/if}}
+                            <a href="{{url this.href}}" class="btn btn-primary btn-sm">
+                                Open letter <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>

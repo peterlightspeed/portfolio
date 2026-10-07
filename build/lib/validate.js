@@ -19,6 +19,7 @@
 const fs = require("fs");
 const path = require("path");
 const schemas = require("../schemas");
+const { resolveRoles } = require("./career");
 
 const DATA_DIR = path.join(__dirname, "..", "..", "data");
 
@@ -94,6 +95,35 @@ function validateAll({ throwOnError = true } = {}) {
         }
       });
     }
+  }
+
+
+  // career.json — the central control file. Validate each role AFTER
+  // inheritance ("extends") is resolved, and every cross-reference.
+  try {
+    const career = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "career.json"), "utf8"));
+    loaded["career.json"] = career;
+    if (!Array.isArray(career.roles)) throw new Error('"roles" must be an array');
+    const seen = new Set();
+    career.roles.forEach((r) => {
+      if (!r.slug) allErrors.push("career.json: a role is missing its slug");
+      else if (seen.has(r.slug)) allErrors.push(`career.json: duplicate role slug "${r.slug}"`);
+      else seen.add(r.slug);
+    });
+    const roles = resolveRoles(career.roles);
+    roles.forEach((r) => {
+      allErrors = allErrors.concat(validateItem(r, schemas.resumeProfileSchema, `career.json role (${r.slug})`));
+    });
+    const check = (slug, where) => {
+      if (slug && !seen.has(slug)) allErrors.push(`career.json: ${where} references unknown role "${slug}"`);
+    };
+    (career.preferredRoles || []).forEach((s) => check(s, "preferredRoles"));
+    check(career.defaultRole, "defaultRole");
+    (career.audiences || []).forEach((a) => check(a.role, `audience "${a.slug}"`));
+    const dr = roles.find((r) => r.slug === career.defaultRole);
+    if (dr && dr.draft) allErrors.push(`career.json: defaultRole "${career.defaultRole}" is a draft`);
+  } catch (e) {
+    allErrors.push(`career.json: ${e.message}`);
   }
 
   // site.json — just confirm it parses and has the fields templates rely on

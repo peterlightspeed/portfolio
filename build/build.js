@@ -64,6 +64,21 @@ const githubMeta = readGithubCache();
 // root instead and 404s/breaks. basePath is derived once, here, from the
 // single source of truth (site.baseUrl) so it can never drift out of sync.
 const basePath = new URL(data.site.baseUrl).pathname.replace(/\/$/, "");
+
+// Analytics: emitted only when a provider is configured AND its identifier
+// is filled in, so an unconfigured site ships no tracking code at all.
+{
+  const a = data.site.analytics || {};
+  const idOk = (a.provider === "goatcounter" && a.goatcounter && a.goatcounter.code) || (a.provider === "plausible" && a.plausible && a.plausible.domain);
+  if (idOk) {
+    data.site.analyticsConfigJson = JSON.stringify({
+      provider: a.provider,
+      goatcounter: a.goatcounter || {},
+      plausible: a.plausible || {},
+      respectDoNotTrack: a.respectDoNotTrack !== false,
+    }).replace(/</g, "\\u003c");
+  }
+}
 helpers.register(Handlebars, basePath);
 
 function registerPartial(name, relPath) {
@@ -125,12 +140,160 @@ function enrich(item) {
 }
 
 // ---------------------------------------------------------------------
+// 4b. Career resolution — data/career.json is the single control file.
+//     Every role in it drives (1) a resume, (2) a cover letter, (3) a
+//     homepage "career mode", and (4) the audience switcher. Roles only
+//     REFERENCE other data (slugs / experience ids / skill names), and
+//     every reference is verified here so a typo fails the build instead
+//     of silently shipping a wrong or misleading page.
+//     See PERSONAL_GUIDE.md and HOW_TO_GENERATE_NEW_RESUME.md.
+// ---------------------------------------------------------------------
+const career = data.career;
+const careerRules = {
+  maxWorkSamples: 8,
+  includeEducation: true,
+  includeCertificates: true,
+  letterSkillCount: 6,
+  ...(career.resumeRules || {}),
+};
+
+function joinList(items) {
+  if (items.length <= 1) return items.join("");
+  return items.slice(0, -1).join(", ") + " and " + items[items.length - 1];
+}
+const presentJobs = data.experiencePublished.filter((e) => e.type === "work" && /present/i.test(e.period || ""));
+const summaryTokens = {
+  currentRoles: joinList(presentJobs.map((e) => `${e.title} at ${e.institution}`)),
+  productCount: String(data.productsPublished.length),
+  projectCount: String(data.projectsPublished.length),
+};
+function fillTokens(text, extra = {}) {
+  const vars = { ...summaryTokens, ...extra };
+  return String(text || "").replace(/\{\{(\w+)\}\}/g, (m, k) => (k in vars ? vars[k] : m));
+}
+
+// Every skill term that actually exists somewhere real. A role can only
+// feature a skill that resolves against this pool, so a resume can never
+// claim expertise that isn't backed by something else in the CMS.
+const skillPool = new Set();
+const addTerm = (t) => skillPool.add(String(t).toLowerCase());
+data.skills.core.forEach((g) => g.items.forEach(addTerm));
+(data.skills.learning.items || []).forEach(addTerm);
+[...data.projectsPublished, ...data.productsPublished].forEach((i) => (i.techStack || []).forEach(addTerm));
+data.experiencePublished.forEach((e) => [...(e.technologies || []), ...(e.skillsGained || [])].forEach(addTerm));
+
+function assertSkillIsReal(term, roleSlug) {
+  const t = term.toLowerCase();
+  const ok = skillPool.has(t) || [...skillPool].some((p) => p.includes(t) || t.includes(p));
+  if (!ok) throw new Error(`career.json (${roleSlug}): featured skill "${term}" isn't in skills.json, any tech stack, or any experience entry.`);
+}
+function resolveSkillGroups(names, roleSlug) {
+  return (names || []).map((name) => {
+    const g = data.skills.core.find((x) => x.group === name);
+    if (!g) throw new Error(`career.json (${roleSlug}): no skill group "${name}" in skills.json`);
+    return g;
+  });
+}
+function resolveExperience(ids, roleSlug) {
+  return (ids || []).map((id) => {
+    const m = data.experiencePublished.find((e) => e.id === id);
+    if (!m) throw new Error(`career.json (${roleSlug}): no published experience entry with id "${id}" (typo, missing "id" field, or draft:true in experience.json).`);
+    return m;
+  });
+}
+function resolveBySlug(collection, slugs, kind, roleSlug) {
+  return (slugs || []).map((slug) => {
+    const m = collection.find((i) => i.slug === slug);
+    if (!m) throw new Error(`career.json (${roleSlug}): no published ${kind} with slug "${slug}"`);
+    return m;
+  });
+}
+const educationEntries = careerRules.includeEducation ? data.experiencePublished.filter((e) => e.type === "education") : [];
+const preferredIndex = (slug) => {
+  const i = (career.preferredRoles || []).indexOf(slug);
+  return i === -1 ? 9999 : i;
+};
+
+const resumeVariants = data.resumeProfilesPublished
+  .slice()
+  .sort((a, b) => preferredIndex(a.slug) - preferredIndex(b.slug))
+  .map((role) => {
+    (role.featuredSkills || []).forEach((s) => assertSkillIsReal(s, role.slug));
+    const toSample = (kind) => (p) => ({
+      title: p.title,
+      shortDescription: p.shortDescription,
+      techStack: p.techStack,
+      link: (p.links && (p.links.liveDemo || p.links.github)) || "",
+      kind,
+      slug: p.slug,
+    });
+    const projects = resolveBySlug(data.projectsPublished, role.projectSlugs, "project", role.slug).map(toSample("Project"));
+    const products = resolveBySlug(data.productsPublished, role.productSlugs, "product", role.slug).map(toSample("Product"));
+    const summary = fillTokens(role.summary || career.summaryTemplates.default, { label: role.label });
+    return {
+      ...role,
+      summary,
+      href: `/resume/${role.slug}/`,
+      letterHref: `/cover-letters/${role.slug}/`,
+      skillGroups: resolveSkillGroups(role.featuredSkillGroups, role.slug),
+      experience: resolveExperience(role.experienceOrder, role.slug),
+      education: educationEntries,
+      certificates: careerRules.includeCertificates ? resolveBySlug(data.certificatesPublished, role.certificateSlugs, "certificate", role.slug) : [],
+      workSamples: [...projects, ...products].slice(0, careerRules.maxWorkSamples),
+    };
+  });
+
+if (!resumeVariants.find((v) => v.slug === career.defaultRole)) {
+  throw new Error(`career.json: defaultRole "${career.defaultRole}" is not a published role.`);
+}
+
+// Client-side config for the homepage career modes + audience switcher.
+const careerConfig = {
+  base: new URL(data.site.baseUrl).pathname.replace(/\/$/, ""),
+  defaultRole: career.defaultRole,
+  roles: Object.fromEntries(
+    resumeVariants.map((v) => [
+      v.slug,
+      {
+        label: v.label,
+        headline: (v.hero && v.hero.headline) || v.roleTag,
+        subline: (v.hero && v.hero.subline) || v.summary,
+        ctaLabel: v.ctaLabel || "",
+        ctaHref: v.ctaHref || "",
+        resumeHref: v.href,
+        letterHref: v.letterHref,
+        projects: v.projectSlugs || [],
+        products: v.productSlugs || [],
+        skillGroups: v.featuredSkillGroups || [],
+        experience: v.experienceOrder || [],
+      },
+    ])
+  ),
+  audiences: (career.audiences || [])
+    .filter((a) => resumeVariants.find((v) => v.slug === a.role))
+    .map((a) => ({ slug: a.slug, label: a.label, role: a.role, sectionOrder: a.sectionOrder || [], ctaLabel: a.ctaLabel || "", ctaHref: a.ctaHref || "" })),
+};
+const careerConfigJson = JSON.stringify(careerConfig).replace(/</g, "\\u003c");
+
+// ---------------------------------------------------------------------
 // 5. Home page
 // ---------------------------------------------------------------------
 {
   const homeTpl = compilePage("home");
-  const featuredProjects = data.projectsPublished.filter((p) => p.featured).slice(0, 6);
-  const featuredProducts = data.productsPublished.filter((p) => p.featured).slice(0, 6);
+  // Default view = the items marked featured. Every item any career mode
+  // wants is also rendered but `hidden`, so the mode switcher can reveal and
+  // reorder them client-side without fetching anything (no CLS, no requests).
+  const defaultProjects = data.projectsPublished.filter((p) => p.featured).slice(0, 6);
+  const defaultProducts = data.productsPublished.filter((p) => p.featured).slice(0, 6);
+  const withVisibility = (all, defaults, slugs) => {
+    const keep = new Set([...defaults.map((d) => d.slug), ...slugs]);
+    const order = [...defaults, ...all.filter((i) => !defaults.includes(i))];
+    return order.filter((i) => keep.has(i.slug)).map((i) => ({ ...i, hidden: !defaults.includes(i) }));
+  };
+  const modeProjectSlugs = Object.values(careerConfig.roles).flatMap((r) => r.projects);
+  const modeProductSlugs = Object.values(careerConfig.roles).flatMap((r) => r.products);
+  const featuredProjects = withVisibility(data.projectsPublished, defaultProjects, modeProjectSlugs);
+  const featuredProducts = withVisibility(data.productsPublished, defaultProducts, modeProductSlugs);
   const testimonialsPreview = data.testimonialsPublished.slice(0, 3);
 
   const currentlyBuilding = (data.site.currentlyBuilding || [])
@@ -152,9 +315,9 @@ function enrich(item) {
   writePage(
     "index.html",
     homeTpl,
-    { site: data.site, featuredProjects, featuredProducts, testimonialsPreview, currentlyBuilding },
+    { site: data.site, featuredProjects, featuredProducts, testimonialsPreview, currentlyBuilding, careerConfigJson, modeOptions: { roles: resumeVariants.map((v) => ({ slug: v.slug, label: v.label })), audiences: careerConfig.audiences } },
     buildMeta(data.site, { path: "/", description: data.site.shortBio }),
-    { page: "home", priority: 1.0, changefreq: "weekly", extraStyles: ["hero"], extraScripts: ["js/hero-network.js"] }
+    { page: "home", priority: 1.0, changefreq: "weekly", extraStyles: ["hero"], extraScripts: ["js/hero-network.js", "js/career-mode.js"] }
   );
 }
 
@@ -322,13 +485,13 @@ function enrich(item) {
   writePage(
     "about.html",
     tpl,
-    { site: data.site, skills: data.skills, experience: data.experiencePublished, community: data.community, storyHtml: marked.parse(storyMd), awards: data.awardsPublished },
+    { site: data.site, skills: data.skills, experience: data.experiencePublished, community: data.community, storyHtml: marked.parse(storyMd), awards: data.awardsPublished, careerConfigJson },
     buildMeta(data.site, {
       path: "/about.html",
       title: "About",
       description: `Discover ${data.site.name}, a ${data.site.jobTitle.toLowerCase()} from ${data.site.location.city}, ${data.site.location.country}.`,
     }),
-    { page: "about", priority: 0.7, extraStyles: ["about"] }
+    { page: "about", priority: 0.7, extraStyles: ["about"], extraScripts: ["js/career-mode.js"] }
   );
 }
 
@@ -502,8 +665,35 @@ const groupAPages = [
   { slug: "demo", page: "demo", priority: 0.4, extraScripts: ["js/demo.js"], extraStyles: [] },
 ];
 
+// Contact channels (calendar, YouTube, X, GitHub, WhatsApp community...) come from
+// data/site.json -> contactChannels. Each channel names its URL source, so a
+// URL lives in exactly one place.
+function resolveContactChannels() {
+  const site = data.site;
+  return (site.contactChannels || [])
+    .map((c) => {
+      let url = "";
+      if (c.source === "booking") url = site.booking && site.booking.url;
+      else if (c.source === "whatsappCommunity") url = site.whatsappCommunity;
+      else if (c.source && c.source.startsWith("social:")) {
+        const s = site.socials.find((x) => x.id === c.source.slice(7));
+        url = s && s.url;
+      } else url = c.url;
+      return url ? { ...c, url } : null;
+    })
+    .filter(Boolean);
+}
+
 groupAPages.forEach(({ slug, page, priority, extraScripts, extraStyles }) => {
-  const { body, title, description } = extractLegacyBody(slug);
+  const extracted = extractLegacyBody(slug);
+  const { title, description } = extracted;
+  let body = extracted.body;
+  if (slug === "contact") {
+    const connect = compilePage("contact-connect")({ channels: resolveContactChannels() });
+    const marker = "<!-- CONTACT FORM SECTION -->";
+    if (!body.includes(marker)) throw new Error("contact: legacy body no longer contains the form-section marker; update build.js");
+    body = body.replace(marker, connect + marker);
+  }
   const bodyFn = () => body;
   writePage(
     `${slug}.html`,
@@ -550,6 +740,107 @@ groupAPages.forEach(({ slug, page, priority, extraScripts, extraStyles }) => {
   // intent for error pages) so it bypasses writePage()/layout entirely.
   const html404 = notFoundTpl({ site: data.site });
   fs.writeFileSync(path.join(OUT_DIR, "404.html"), html404);
+}
+
+// ---------------------------------------------------------------------
+// 14a½. Resume + cover-letter pages, generated from the resolved roles in
+//       section 4b (data/career.json). Nothing here is role-specific.
+// ---------------------------------------------------------------------
+{
+  const hubTpl = compilePage("resume-hub");
+  const variantTpl = compilePage("resume-variant");
+  const fill = (tpl, vars) => String(tpl).replace(/\{\{(\w+)\}\}/g, (m, k) => (k in vars ? vars[k] : m));
+  const hubCrumbs = [{ label: "Home", href: "/" }, { label: "Resume", href: "/resume/" }];
+
+  writePage(
+    "resume/index.html",
+    hubTpl,
+    { site: data.site, variants: resumeVariants },
+    buildMeta(data.site, {
+      path: "/resume/",
+      title: "Resume — Choose a Role",
+      description: `Role-specific, ATS-friendly resumes for ${data.site.name} — Backend Engineer, AI Engineer, Founder, and more, all generated from one source of truth.`,
+      breadcrumbs: hubCrumbs,
+    }),
+    { page: "resume", priority: 0.6, extraStyles: ["resume"], breadcrumbs: hubCrumbs }
+  );
+
+  resumeVariants.forEach((variant) => {
+    const url = `resume/${variant.slug}/`;
+    const crumbs = [...hubCrumbs, { label: variant.label, href: "/" + url }];
+    writePage(
+      `${url}index.html`,
+      variantTpl,
+      { site: data.site, v: variant },
+      buildMeta(data.site, {
+        path: "/" + url,
+        title: `${variant.label} Resume`,
+        description: `${data.site.name}'s ${variant.label} resume — ${variant.roleTag}.`,
+        breadcrumbs: crumbs,
+      }),
+      { page: "resume", priority: 0.5, extraStyles: ["resume", "print"], breadcrumbs: crumbs }
+    );
+  });
+
+  // ---- Cover letters (drafts with [placeholders]: noindex, not in sitemap) ----
+  const letterWording = data.coverLetter;
+  const portfolioUrl = String(data.site.baseUrl || "").replace(/\/$/, "");
+  const letters = resumeVariants
+    .filter((v) => v.letter)
+    .map((v) => {
+      const hl = v.workSamples.find((w) => w.slug === v.letter.highlightSlug);
+      if (!hl) throw new Error(`career.json (${v.slug}): letter.highlightSlug "${v.letter.highlightSlug}" isn't one of this role's projectSlugs/productSlugs.`);
+      const ph = letterWording.placeholders;
+      const skills = (v.featuredSkills || []).slice(0, careerRules.letterSkillCount).join(", ");
+      return {
+        slug: v.slug,
+        label: v.label,
+        href: v.letterHref,
+        resumeHref: v.href,
+        roleTag: v.roleTag,
+        audience: v.audience,
+        date: ph.date,
+        greeting: fill(letterWording.greeting, { recipient: ph.recipient }),
+        paragraphs: [
+          fill(letterWording.applicationLine, { role: ph.role, company: ph.company }) + " " + v.letter.openingHook,
+          fill(letterWording.highlightIntro, { title: hl.title, shortDescription: hl.shortDescription }) + " " + fill(letterWording.skillsLine, { skills }),
+          fill(letterWording.portfolioLine, { portfolioUrl: portfolioUrl || "my portfolio" }) + " " + v.letter.closingNote,
+        ],
+        signOff: letterWording.signOff,
+      };
+    });
+
+  const letterHubCrumbs = [{ label: "Home", href: "/" }, { label: "Cover Letters", href: "/cover-letters/" }];
+  writePage(
+    "cover-letters/index.html",
+    compilePage("cover-letter-hub"),
+    { site: data.site, letters },
+    buildMeta(data.site, {
+      path: "/cover-letters/",
+      title: "Cover Letters — Choose a Role",
+      description: `Role-specific cover letter drafts for ${data.site.name}, generated from the same data as the resumes.`,
+      breadcrumbs: letterHubCrumbs,
+      noindex: true,
+    }),
+    { page: "resume", noindex: true, extraStyles: ["resume"], breadcrumbs: letterHubCrumbs }
+  );
+  const letterVariantTpl = compilePage("cover-letter-variant");
+  letters.forEach((l) => {
+    const crumbs = [...letterHubCrumbs, { label: l.label, href: l.href }];
+    writePage(
+      `cover-letters/${l.slug}/index.html`,
+      letterVariantTpl,
+      { site: data.site, l },
+      buildMeta(data.site, {
+        path: l.href,
+        title: `${l.label} Cover Letter`,
+        description: `Cover letter draft for ${l.label} roles by ${data.site.name}.`,
+        breadcrumbs: crumbs,
+        noindex: true,
+      }),
+      { page: "resume", noindex: true, extraStyles: ["resume", "print"], breadcrumbs: crumbs }
+    );
+  });
 }
 
 // ---------------------------------------------------------------------

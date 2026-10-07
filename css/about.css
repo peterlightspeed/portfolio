@@ -409,3 +409,5 @@
 }
 
 
+
+.experience-details summary { cursor: pointer; color: var(--bs-primary, #0d6efd); }

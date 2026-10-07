@@ -4,43 +4,185 @@
       "group": "Backend",
       "icon": "bi-hdd-stack",
       "note": "Technologies I can genuinely build projects with.",
-      "items": ["Python", "Go", "FastAPI", "Flask", "REST APIs", "PostgreSQL", "Supabase"]
+      "items": [
+        "Python",
+        "Go",
+        "FastAPI",
+        "Flask",
+        "REST APIs",
+        "Async Programming",
+        "Automation",
+        "PostgreSQL",
+        "Supabase"
+      ]
     },
     {
       "group": "Frontend & Tools",
       "icon": "bi-code-slash",
       "note": "Technologies I can genuinely build projects with.",
-      "items": ["HTML", "CSS", "Bootstrap", "JavaScript", "React", "TypeScript", "Git", "GitHub"]
+      "items": [
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "JavaScript",
+        "React",
+        "TypeScript",
+        "Git",
+        "GitHub"
+      ]
     },
     {
       "group": "AI & LLMs",
       "icon": "bi-robot",
       "note": "Applied in shipped projects — see PLS Nexus Talent Intelligence (Google Gemini via google-genai) and the AI Cover Letter Generator (HuggingFace Transformers).",
-      "items": ["AI Integration", "LLM APIs (Google Gemini)", "HuggingFace Transformers", "Prompt Engineering"]
+      "items": [
+        "AI Integration",
+        "LLM APIs (Google Gemini)",
+        "HuggingFace Transformers",
+        "Prompt Engineering"
+      ]
+    },
+    {
+      "group": "Enterprise IT & Cybersecurity",
+      "icon": "bi-shield-lock",
+      "note": "Building real enterprise experience in my Presales Engineer / IT role at EESolutions Limited (Oct 2026 – Present).",
+      "items": [
+        "Enterprise IT",
+        "Networking",
+        "Microsoft 365",
+        "Windows",
+        "Cybersecurity Fundamentals",
+        "Technical Documentation"
+      ]
+    },
+    {
+      "group": "Leadership & Architecture",
+      "icon": "bi-diagram-3",
+      "note": "From my CTO role at Moi Doctar and founding PLS Tech Company.",
+      "items": [
+        "Technical Leadership",
+        "Backend Architecture",
+        "API Design",
+        "Product Thinking",
+        "Team Collaboration",
+        "Startup Engineering",
+        "Presales Engineering",
+        "Solution Design",
+        "Customer Requirement Analysis",
+        "Technical Communication"
+      ]
     }
   ],
   "learning": {
     "note": "Actively studying — not claiming production experience yet.",
-    "items": ["Django", "Next.js", "Docker", "Redis", "Linux", "Nginx", "AWS", "GraphQL", "Microservices", "CI/CD", "Testing", "LangChain", "RAG", "Vector Databases", "AI Agents", "System Design"],
+    "items": [
+      "Django",
+      "Next.js",
+      "Docker",
+      "Redis",
+      "Linux",
+      "Nginx",
+      "AWS",
+      "GraphQL",
+      "Microservices",
+      "CI/CD",
+      "Testing",
+      "LangChain",
+      "RAG",
+      "Vector Databases",
+      "AI Agents",
+      "System Design"
+    ],
     "roadmap": [
-      { "category": "Backend", "icon": "bi-hdd-stack", "items": ["Django", "GraphQL", "Microservices", "System Design"] },
-      { "category": "Frontend", "icon": "bi-code-slash", "items": ["Next.js"] },
-      { "category": "Cloud", "icon": "bi-cloud", "items": ["AWS"] },
-      { "category": "AI", "icon": "bi-robot", "items": ["LangChain", "RAG", "Vector Databases", "AI Agents"] },
-      { "category": "DevOps", "icon": "bi-gear-wide-connected", "items": ["Docker", "Redis", "Linux", "Nginx", "CI/CD", "Testing"] }
+      {
+        "category": "Backend",
+        "icon": "bi-hdd-stack",
+        "items": [
+          "Django",
+          "GraphQL",
+          "Microservices",
+          "System Design"
+        ]
+      },
+      {
+        "category": "Frontend",
+        "icon": "bi-code-slash",
+        "items": [
+          "Next.js"
+        ]
+      },
+      {
+        "category": "Cloud",
+        "icon": "bi-cloud",
+        "items": [
+          "AWS"
+        ]
+      },
+      {
+        "category": "AI",
+        "icon": "bi-robot",
+        "items": [
+          "LangChain",
+          "RAG",
+          "Vector Databases",
+          "AI Agents"
+        ]
+      },
+      {
+        "category": "DevOps",
+        "icon": "bi-gear-wide-connected",
+        "items": [
+          "Docker",
+          "Redis",
+          "Linux",
+          "Nginx",
+          "CI/CD",
+          "Testing"
+        ]
+      }
     ]
   },
   "softSkillsIntro": "Alongside backend development, Python, Go, and AI engineering, I bring strong time management, communication, problem solving, teamwork, creativity, and adaptability to every project and mentorship session.",
   "tools": [
-    { "name": "HTML5", "icon": "bi-filetype-html" },
-    { "name": "CSS3", "icon": "bi-filetype-css" },
-    { "name": "JavaScript", "icon": "bi-filetype-js" },
-    { "name": "WordPress", "icon": "bi-wordpress" },
-    { "name": "Bootstrap", "icon": "bi-bootstrap" },
-    { "name": "Photoshop", "text": "Ps" },
-    { "name": "Canva", "text": "Cv" },
-    { "name": "Microsoft Office", "icon": "bi-microsoft" },
-    { "name": "Google Analytics", "icon": "bi-graph-up" },
-    { "name": "GitHub", "icon": "bi-github" }
+    {
+      "name": "HTML5",
+      "icon": "bi-filetype-html"
+    },
+    {
+      "name": "CSS3",
+      "icon": "bi-filetype-css"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "bi-filetype-js"
+    },
+    {
+      "name": "WordPress",
+      "icon": "bi-wordpress"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "bi-bootstrap"
+    },
+    {
+      "name": "Photoshop",
+      "text": "Ps"
+    },
+    {
+      "name": "Canva",
+      "text": "Cv"
+    },
+    {
+      "name": "Microsoft Office",
+      "icon": "bi-microsoft"
+    },
+    {
+      "name": "Google Analytics",
+      "icon": "bi-graph-up"
+    },
+    {
+      "name": "GitHub",
+      "icon": "bi-github"
+    }
   ]
 }

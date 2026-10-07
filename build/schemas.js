@@ -101,11 +101,40 @@ const awardSchema = {
 };
 
 const experienceSchema = {
+  id: { required: false, type: "string" },
   type: { required: true, type: "string" },
   title: { required: true, type: "string" },
   institution: { required: false, type: "string" },
   period: { required: false, type: "string" },
   description: { required: false, type: "string" },
+  draft: { required: true, type: "boolean" },
+};
+
+// A resume profile never carries its own copy of a project, product,
+// experience entry, or skill — only references (slugs / title+institution
+// pairs / skill strings) into the collections above. build.js resolves
+// each reference against the *published* collection and throws a build
+// error if one doesn't match, so a typo can never silently ship a resume
+// that quietly drops a project or claims a skill that isn't backed by
+// anything real elsewhere on the site. See HOW_TO_GENERATE_NEW_RESUME.md.
+const resumeProfileSchema = {
+  slug: { required: true, type: "string" },
+  extends: { required: false, type: "string" },
+  hero: { required: false, type: "object" },
+  label: { required: true, type: "string" },
+  roleTag: { required: true, type: "string" },
+  audience: { required: false, type: "string" },
+  summary: { required: true, type: "string" },
+  featuredSkillGroups: { required: false, type: "array" },
+  featuredSkills: { required: false, type: "array" },
+  experienceOrder: { required: true, type: "array" },
+  projectSlugs: { required: false, type: "array" },
+  productSlugs: { required: false, type: "array" },
+  certificateSlugs: { required: false, type: "array" },
+  ctaLabel: { required: false, type: "string" },
+  ctaHref: { required: false, type: "string" },
+  letter: { required: false, type: "object" },
+  pendingNote: { required: false, type: "string" },
   draft: { required: true, type: "boolean" },
 };
 
@@ -118,4 +147,5 @@ module.exports = {
   talkSchema,
   awardSchema,
   experienceSchema,
+  resumeProfileSchema,
 };

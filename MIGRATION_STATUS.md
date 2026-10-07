@@ -16,6 +16,7 @@ Honest record of what's fully on the new CMS architecture vs. what's still the o
 | `/now.html` | `data/now.json` |
 | `/community.html` | `data/community.json`, `data/talks.json` |
 | `/resume.html` | `data/experience.json`, `data/skills.json`, `data/projects.json`, `data/certificates.json` |
+| `/resume/` + one page per role | `data/resume-profiles.json`, resolved against `data/experience.json`, `data/skills.json`, `data/projects.json`, `data/products.json`, `data/certificates.json` — see `HOW_TO_GENERATE_NEW_RESUME.md` |
 | `/cv.html` | `data/site.json` (documents, additional info) |
 | `/404.html` | `data/site.json` (standalone template, no shared nav by design) |
 | `/services.html` | `data/services.json` |

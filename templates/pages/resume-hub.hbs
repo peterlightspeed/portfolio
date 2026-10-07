@@ -1,0 +1,29 @@
+        <section class="py-5">
+            <div class="container resume-container">
+                <div class="mb-4 no-print">
+                    <h1 class="h3 mb-2">Resume — Choose a Role</h1>
+                    <p class="text-muted mb-3">
+                        Same underlying experience, projects, and skills — each version below re-orders and re-weights
+                        it for a specific audience so you get one focused document, not everything at once.
+                    </p>
+                    <a href="{{url '/resume.html'}}" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-file-earmark-person me-1"></i>View the general resume instead
+                    </a>
+                </div>
+
+                <div class="row g-4">
+                    {{#each variants}}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="resume-hub-card h-100">
+                            <h2 class="h5 mb-1">{{this.label}}</h2>
+                            <p class="resume-hub-tag mb-2">{{this.roleTag}}</p>
+                            {{#if this.audience}}<p class="small text-muted mb-3">{{this.audience}}</p>{{/if}}
+                            <a href="{{url this.href}}" class="btn btn-primary btn-sm">
+                                View resume <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
